@@ -1,0 +1,51 @@
+manager_id: "23"
+manager_name: Pete_Cullen
+team_name: Keano’s_magic_hat
+captured_at: "2026-08-29T21:41:58Z"
+source: guysports
+players:
+    - player_id: jordan-pickford
+      name: Jordan Pickford
+      position: GK
+      team_name: Everton FC
+    - player_id: adam-smith
+      name: Adam Smith
+      position: DEF
+      team_name: AFC Bournemouth
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: pau-torres
+      name: Pau Torres
+      position: DEF
+      team_name: Aston Villa FC
+    - player_id: ryan-sessegnon
+      name: Ryan Sessegnon
+      position: DEF
+      team_name: Fulham FC
+    - player_id: adam-wharton
+      name: Adam Wharton
+      position: MID
+      team_name: Crystal Palace FC
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: morgan-gibbs-white
+      name: Morgan Gibbs-White
+      position: MID
+      team_name: Nottingham Forest FC
+    - player_id: enzo-le-fée
+      name: Enzo Le Fée
+      position: MID
+      team_name: Sunderland AFC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=23&name=Keano%E2%80%99s+magic+hat&view=public

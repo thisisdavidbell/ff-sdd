@@ -1,0 +1,51 @@
+manager_id: "30"
+manager_name: Steve_Heath
+team_name: It_Ain't_Half_Hot_Mum
+captured_at: "2026-08-29T21:41:58Z"
+source: guysports
+players:
+    - player_id: robin-roefs
+      name: Robin Roefs
+      position: GK
+      team_name: Sunderland AFC
+    - player_id: maxim-de-cuyper
+      name: Maxim De Cuyper
+      position: DEF
+      team_name: Brighton & Hove Albion FC
+    - player_id: marco-palestra
+      name: Marco Palestra
+      position: DEF
+      team_name: Chelsea FC
+    - player_id: leif-davis
+      name: Leif Davis
+      position: DEF
+      team_name: Ipswich Town FC
+    - player_id: bukayo-saka
+      name: Bukayo Saka
+      position: MID
+      team_name: Arsenal FC
+    - player_id: christos-tzolis
+      name: Christos Tzolis
+      position: MID
+      team_name: Arsenal FC
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: promise-david
+      name: Promise David
+      position: STR
+      team_name: Brighton & Hove Albion FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=30&name=It+Ain%27t+Half+Hot+Mum&view=public

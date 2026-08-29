@@ -1,0 +1,51 @@
+manager_id: "25"
+manager_name: Chris_Whyley
+team_name: Yak_Attack
+captured_at: "2026-08-29T21:41:58Z"
+source: guysports
+players:
+    - player_id: antonín-kinsky
+      name: Antonín Kinsky
+      position: GK
+      team_name: Tottenham Hotspur FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: maxim-de-cuyper
+      name: Maxim De Cuyper
+      position: DEF
+      team_name: Brighton & Hove Albion FC
+    - player_id: harry-maguire
+      name: Harry Maguire
+      position: DEF
+      team_name: Manchester United FC
+    - player_id: martin-ødegaard
+      name: Martin Ødegaard
+      position: MID
+      team_name: Arsenal FC
+    - player_id: dango-ouattara
+      name: Dango Ouattara
+      position: MID
+      team_name: Brentford FC
+    - player_id: harry-wilson
+      name: Harry Wilson
+      position: MID
+      team_name: Leeds United FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+    - player_id: brian-brobbey
+      name: Brian Brobbey
+      position: STR
+      team_name: Sunderland AFC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=25&name=Yak+Attack&view=public

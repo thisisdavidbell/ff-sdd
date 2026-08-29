@@ -2,10 +2,6 @@
 /bin/
 *.exe
 
-# Local runtime data and generated outputs
-/data/
-/docs/
-
 # Test and temporary files
 *.tmp
 *.swp

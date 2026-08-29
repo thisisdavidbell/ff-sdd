@@ -1,0 +1,51 @@
+manager_id: "29"
+manager_name: Danny_Barden
+team_name: Throwing_Schade
+captured_at: "2026-08-29T21:41:58Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: issa-diop
+      name: Issa Diop
+      position: DEF
+      team_name: Ipswich Town FC
+    - player_id: luke-shaw
+      name: Luke Shaw
+      position: DEF
+      team_name: Manchester United FC
+    - player_id: kevin-schade
+      name: Kevin Schade
+      position: MID
+      team_name: Brentford FC
+    - player_id: iliman-ndiaye
+      name: Iliman Ndiaye
+      position: MID
+      team_name: Everton FC
+    - player_id: oscar-bobb
+      name: Oscar Bobb
+      position: MID
+      team_name: Fulham FC
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: igor-thiago
+      name: Igor Thiago
+      position: STR
+      team_name: Brentford FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=29&name=Throwing+Schade&view=public
