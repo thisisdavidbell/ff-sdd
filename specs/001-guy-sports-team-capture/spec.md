@@ -20,9 +20,9 @@ A league administrator or analyst needs to understand how team composition chang
 
 **Acceptance Scenarios**:
 
-1. **Given** a season page listing active users and their selected players, **When** the scheduled capture runs, **Then** the system records a new snapshot for each user and stores the team composition from that point in time.
+1. **Given** a season table with multiple pages of user teams, **When** the scheduled capture runs, **Then** the system checks each page from page 1 through the available final page, including pages that contain fewer teams, and records the team composition for every user found.
 2. **Given** a user has changed players since the previous capture, **When** the next capture runs, **Then** the system preserves both the prior and current team states and records the change.
-3. **Given** the same user appears on multiple season pages, **When** the capture runs, **Then** the system avoids losing historical records and treats the new data as an additional point in time rather than overwriting the past.
+3. **Given** the same user appears on multiple season pages or the page count changes over time, **When** the capture runs, **Then** the system avoids losing historical records and treats the new data as an additional point in time rather than overwriting the past.
 
 ---
 
@@ -37,7 +37,6 @@ A user wants to see how many managers selected each player across the league. Th
 **Acceptance Scenarios**:
 
 1. **Given** a set of historical team snapshots, **When** the aggregation step runs, **Then** the system reports how many users selected each player in the most recent snapshot and in the selected comparison window.
-2. **Given** a player is selected by multiple users, **When** the report is generated, **Then** the total counts are summed across the stored data without duplicating the same user's selection.
 
 ---
 
@@ -52,8 +51,8 @@ A user wants to understand how many team changes each manager has made during th
 **Acceptance Scenarios**:
 
 1. **Given** a user has a team snapshot and a later snapshot with different players, **When** the change analysis runs, **Then** the system counts the number of changes made since the previous snapshot.
-2. **Given** a user has six or fewer allowed changes in the season, **When** the seasonal summary is generated, **Then** the system reports the total change count in a way that matches the known league rules.
-3. **Given** a user has no changes between snapshots, **When** the analysis runs, **Then** the system does not count a change where the roster is unchanged.
+2. **Given** a manager changes their team more than once across several captures, **When** the seasonal summary is generated, **Then** the system sums all changes made by that manager from the start of the season through the latest recorded snapshot.
+3. **Given** a manager has made team changes across multiple snapshots, **When** the detailed view is opened, **Then** the system shows the date of the latest change and allows the reader to inspect each individual change event, including when it happened and what changed.
 
 ---
 
@@ -68,7 +67,7 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 **Acceptance Scenarios**:
 
 1. **Given** processed data for player counts and change totals, **When** the presentation step runs, **Then** the system outputs a readable Markdown summary that can be viewed in GitHub and locally.
-2. **Given** the output includes chart-like or visual summaries, **When** the document is rendered, **Then** it remains understandable without requiring live data access.
+2. **Given** a Markdown or chart-based report is rendered for review, **When** it is opened in GitHub or locally, **Then** it never requests or depends on live data access and is fully viewable from the stored captured data alone.
 
 ### Edge Cases
 
@@ -91,34 +90,39 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - **FR-007**: The system MUST record the players in each user's team for each capture event, including enough metadata to identify the team state at that point in time.
 - **FR-008**: The system MUST track changes between successive team snapshots so that user-level change counts can be calculated accurately.
 - **FR-009**: The system MUST compute the number of users who selected each player across the relevant captured snapshots and time window.
-- **FR-010**: The system MUST compute each user's total team changes within a season using historical team snapshots.
-- **FR-011**: The system MUST support processing of captured data into viewable summary outputs for local and GitHub-based review.
-- **FR-012**: The system MUST provide a format for presenting processed results in Markdown and visual summaries that do not require live data access.
-- **FR-013**: The system MUST separate data capture, data processing, and presentation concerns into distinct commands or tools.
-- **FR-014**: The system MUST support manual execution of capture commands for initial setup and testing before automation is enabled.
-- **FR-015**: The system MUST explicitly exclude player score data and price data from this initial phase and focus only on players listed in users' teams.
-- **FR-016**: The system MUST preserve historical records even when a team remains unchanged between two capture runs, so the record of time and state remains auditable.
-- **FR-017**: The system MUST be designed to support future expansion for additional data sources and additional player-related datasets without breaking the historical capture model.
+- **FR-010**: The system MUST capture selection counts as historical values for each capture event so that changes in player popularity over time can be shown, not just the latest count.
+- **FR-011**: The system MUST compute each user's total team changes within a season using historical team snapshots.
+- **FR-012**: The system MUST show, in human-readable output, the date of each manager's latest team change and provide a deeper view of individual change events, including the timestamp and the players affected.
+- **FR-013**: The system MUST support processing of captured data into viewable summary outputs for local and GitHub-based review.
+- **FR-014**: The system MUST provide a format for presenting processed results in Markdown and visual summaries that do not require live data access.
+- **FR-015**: The system MUST separate data capture, data processing, and presentation concerns into distinct commands or tools.
+- **FR-016**: The system MUST support manual execution of capture commands for initial setup and testing before automation is enabled.
+- **FR-017**: The system MUST explicitly exclude player score data and price data from this initial phase and focus only on players listed in users' teams.
+- **FR-018**: The system MUST preserve historical records even when a team remains unchanged between two capture runs, so the record of time and state remains auditable.
+- **FR-019**: The system MUST make it possible to clear local capture and processed data without affecting the official stored dataset, so local experimentation can be safely reset while production data remains intact.
+- **FR-020**: The system MUST be designed to support future expansion for additional data sources and additional player-related datasets without breaking the historical capture model.
 
 ### Key Entities
 
 - **User Team Snapshot**: A record of one user's team state at a specific capture time, including the season context and the roster of selected players.
 - **Player Selection**: A player that appears in a user's team snapshot, along with the user and time context that identifies the selection event.
 - **Season**: The league season or time window within which team snapshots are compared and aggregated.
-- **User Change Count**: A derived value showing how many times a user has changed their team between snapshots during the season.
-- **Player Selection Aggregate**: A processed summary showing how many users selected each player across the stored dataset.
-- **Presentation Output**: A generated Markdown or chart-based document used to view processed results in GitHub or locally.
+- **User Change Count**: A derived value showing how many times a user has changed their team between snapshots during the season and the timestamp of the most recent change.
+- **Player Selection Aggregate**: A processed summary showing how many users selected each player across the stored dataset and how that count changed across time.
+- **Team Change Event**: A specific change between two snapshots, including the timestamp, the manager, the players removed, and the players added.
+- **Presentation Output**: A generated Markdown or chart-based document used to view processed results in GitHub or locally without live data access.
 
 ## Success Criteria *(mandatory)*
 
 ### Measurable Outcomes
 
-- **SC-001**: The system captures team snapshots for all known users on Guy Sports season pages during each scheduled run, with no silent omission of page entries.
+- **SC-001**: The system captures team snapshots for all known users across all available Guy Sports season pages during each scheduled run, including pages with fewer than the maximum number of teams.
 - **SC-002**: Historical records remain available for all processed snapshots, allowing analysts to compare team states across the season without losing prior data.
-- **SC-003**: Player selection counts are reported accurately for the current state and selected historical windows, with no double-counting of a user's team membership.
-- **SC-004**: Each user’s total team-change count is calculated accurately from sequential snapshots without overcounting unchanged states.
-- **SC-005**: Processed outputs are generated in a repo-friendly format that can be reviewed in GitHub and locally without a live data dependency.
-- **SC-006**: The initial release supports Guy Sports as the primary source while leaving room for future expansion to additional data sources and derived metrics.
+- **SC-003**: Player selection counts are reported accurately for the current state and selected historical windows, with no double-counting of a user's team membership, and the change in counts over time is viewable from stored historical totals.
+- **SC-004**: Each user’s total team-change count is calculated accurately from sequential snapshots without overcounting unchanged states, and the total includes all change events since the start of the season.
+- **SC-005**: Each manager's latest change date is clearly displayed, and a deeper drill-down view shows the change event details, including the date and the players added or removed.
+- **SC-006**: Processed outputs are generated in a repo-friendly format that can be reviewed in GitHub and locally without a live data dependency, and local test runs can be reset cleanly without disturbing the official captured dataset.
+- **SC-007**: The initial release supports Guy Sports as the primary source while leaving room for future expansion to additional data sources and derived metrics.
 
 ## Assumptions
 
@@ -128,3 +132,5 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - Historical capture can be performed in scheduled runs or manual execution during testing, with the same processing path used in both modes.
 - User queries and presentation views rely only on persisted historical data and not on direct access to the upstream website.
 - The data collection process is expected to preserve both state and change history, even when users do not change their teams between consecutive captures.
+- Local testing may generate temporary data in a disposable local working set, and a reset command may be used to discard the local generated data while preserving the official captured dataset used for scheduled production updates.
+- The project may eventually run the capture and processing tools via GitHub Actions or similar automation, but this is a future operational consideration rather than a requirement for the initial feature scope.
