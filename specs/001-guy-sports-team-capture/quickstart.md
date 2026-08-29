@@ -13,7 +13,7 @@
    - go build -o ./bin/render ./cmd/render
 2. Capture raw team data:
    - ./bin/capture --source guysports
-3. Review the captured YAML snapshots under data/raw/
+3. Review the captured YAML snapshots under `data/<season>/raw/`
 4. Process the snapshots into derived analytics:
    - ./bin/process
 5. Render the reader-facing HTML summary:
@@ -31,6 +31,6 @@
 - Final project usage should rely on compiled binaries so the workflow is reproducible and matches the release-ready process.
 
 ## Local reset behavior
-- Local experimentation may discard generated processed output or the newest HTML render.
+- Local experimentation may discard uncommitted generated processed output or the newest HTML render without committing those changes.
 - The authoritative raw capture history remains intact and should not be removed unless intentional archive cleanup is planned.
-- The last known-good HTML file remains the reader-facing artifact.
+- The last known-good HTML file remains the reader-facing artifact, and the render step uses the processed data currently available in the repo state at the time it runs.

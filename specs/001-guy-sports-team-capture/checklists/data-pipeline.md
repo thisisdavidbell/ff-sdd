@@ -19,7 +19,7 @@
 ## Requirement Clarity
 
 - [x] CHK005 Is the distinction between raw capture data, processed derived data, and the generated HTML render unambiguous to readers and implementers? [Clarity, Spec §FR-003, FR-015, FR-022, FR-023]
-- [x] CHK006 Is the phrase “latest committed processed data” sufficiently precise for the implementation and review process, especially in relation to local experimental changes? [Clarity, Spec §FR-022, FR-023]
+- [x] CHK006 Is the phrase “latest processed data currently available in the local repo state” sufficiently precise for the implementation and review process, especially in relation to local experimental changes? [Clarity, Spec §FR-022, FR-023]
 - [x] CHK007 Are the storage boundaries and permissions clear for raw historical data versus local disposable working data? [Clarity, Spec §FR-021, FR-023, Assumptions]
 - [x] CHK008 Is the requirement for “human-browsable” storage defined well enough to support design decisions without leaving multiple incompatible interpretations? [Clarity, Spec §FR-013, FR-014]
 

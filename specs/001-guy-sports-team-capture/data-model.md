@@ -85,13 +85,13 @@ Validation rules:
 - data/<season>/processed/manager-changes/<timestamp>.yaml
 - or a single YAML file per manager under the season raw directory if the dataset remains manageable
 
-The raw directory is append-only. Every new capture creates another snapshot, never overwriting the previous one. Processed files are derived outputs; the latest committed processed data is the canonical source used to generate the latest HTML render, and only uncommitted local experimental changes may be discarded during testing.
+The raw directory is append-only. Every new capture creates another snapshot, never overwriting the previous one. Processed files are derived outputs; the latest processed data currently present in the local repository state is the source used to generate the HTML render, whether that state comes from the latest commit or from the latest local processing run, and only uncommitted local experimental changes may be discarded during testing.
 
 ### Rendered output
 - docs/index.html
-- generated from the latest committed processed data only, without live queries
+- generated from the latest processed data available in the local repo state, without live queries
 
-The rendered HTML is the reader-facing artifact that should remain available as the last known-good version and must be regenerated from the latest committed processed output rather than being treated as disposable local state.
+The rendered HTML is the reader-facing artifact that should remain available as the last known-good version and must be regenerated from the latest processed output present in the local repository rather than being treated as disposable local state.
 
 ## Relationships
 - One manager may have many ManagerSnapshot records across time.

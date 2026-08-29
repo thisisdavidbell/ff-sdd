@@ -21,7 +21,7 @@ Command: ./bin/process
 Behavior:
 - Reads the raw YAML snapshots.
 - Produces ownership aggregates and manager change summaries.
-- Writes derived YAML outputs under data/processed.
+- Writes derived YAML outputs under `data/<season>/processed/`.
 - Does not mutate raw capture history.
 
 Failure modes:
@@ -33,7 +33,7 @@ Failure modes:
 Command: ./bin/render
 
 Behavior:
-- Reads processed aggregate data.
+- Reads the latest processed aggregate data currently present in the local repository state, whether from the latest committed data or the latest local processing run.
 - Produces static HTML pages for local viewing and GitHub Pages hosting.
 - Writes to docs/.
 - Uses embedded templates and static assets with no live API dependency.
@@ -44,4 +44,4 @@ Failure modes:
 
 ## Reset/local cleanup policy
 
-Local test runs may remove generated working files, but must not modify the raw capture archive unless explicitly approved as a deliberate cleanup action.
+Local test runs may discard uncommitted generated working files, but must not modify the raw capture archive unless explicitly approved as a deliberate cleanup action.

@@ -38,16 +38,21 @@ A league administrator or analyst needs to understand how team composition chang
 
 ### User Story 2 - Show how often each player is selected by managers (Priority: P1)
 
-A manager or analyst wants to see how many managers selected each player across the league. The system must process stored snapshots into an aggregated view that shows player selection counts over time and for the current state in a way that is easy for a reader to compare.
+A manager or analyst wants to see how often each player appears in the league. The system must produce two distinct but related outputs from the stored snapshots:
+
+1. A current-state ownership view that looks only at each manager's latest team snapshot and counts how many managers currently hold each player.
+2. A historical trend view that keeps the player-count totals from each capture event across the season so the change in popularity over time can be shown in a graph or trend table.
+
+These two views must be easy to compare in a reader-friendly format.
 
 **Why this priority**: This is the primary analytical output described for the first release and provides useful insight for fans and analysts.
 
-**Independent Test**: Can be fully tested by processing captured team snapshots and verifying that the reported player counts match the number of managers holding each player in the selected time window.
+**Independent Test**: Can be fully tested by processing captured team snapshots and verifying that the current-state counts use only the newest team snapshot for each manager while the historical trend preserves the count at each recorded capture time.
 
 **Acceptance Scenarios**:
 
-1. **Given** a set of historical team snapshots, **When** the aggregation step runs, **Then** the system reports the latest player ownership count for each player, ordered from highest count to lowest, and provides an easy way to inspect how that count changed over time.
-2. **Given** a reader wants to understand player popularity over time, **When** they open the historical trend view, **Then** the system shows the count for each player across the stored capture history in a clear, browsable format.
+1. **Given** a set of historical team snapshots, **When** the aggregation step runs, **Then** the system uses each manager's most recent team snapshot to calculate the current player ownership count for each player, ordered from highest count to lowest, and presents the current snapshot in a clear summary.
+2. **Given** a reader wants to understand player popularity over time, **When** they open the historical trend view, **Then** the system shows the count for each player across the stored capture timestamps in a clear, browsable format so changes over time can be reviewed.
 
 ---
 
@@ -114,10 +119,10 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - **FR-019**: The system MUST explicitly exclude player score data and price data from this initial phase and focus only on players listed in users' teams.
 - **FR-020**: The system MUST preserve historical records even when a team remains unchanged between two capture runs, so the record of time and state remains auditable.
 - **FR-021**: The system MUST make it possible to clear local experimental capture and processed data without affecting the official stored dataset, so local experimentation can be safely reset while production data remains intact.
-- **FR-022**: The system MUST retain the latest committed processed data as the authoritative input for the latest HTML render, and the generated HTML render MUST remain a reader-facing artifact that is valuable to maintain and review.
-- **FR-023**: The system MUST allow local testing to discard only uncommitted experimental changes to processed data or render outputs, while preserving the last committed processed state and ensuring the official raw historical capture data remains append-only and unmodified.
+- **FR-022**: The system MUST use the latest processed data currently available in the local repository state as the input for the HTML render, whether that state is the latest committed data or the latest data produced by a local capture/process run, and the generated HTML render MUST remain a reader-facing artifact that is valuable to maintain and review.
+- **FR-023**: The system MUST allow local testing to discard only uncommitted experimental changes to processed data or render outputs, while preserving the current repo state used for the latest render and ensuring the official raw historical capture data remains append-only and unmodified.
 - **FR-024**: The system MUST keep all normal validation, unit tests, integration tests, and code-change checks offline and MUST NOT access the live Guy Sports or DreamTeamFC sites during routine validation.
-- **FR-025**: The system MAY perform a limited live smoke test against the live site only when strictly necessary, such as after changing the retrieval logic, and only for the smallest possible validation: confirm that the connection to the live source works and that a small subset of the data is retrieved in the expected format, with Guy Sports as the only live site in scope for the initial implementation.
+- **FR-025**: The system MAY perform a limited live smoke test against the live site only when strictly necessary, such as after changing the retrieval logic, and only for the smallest possible validation: confirm that the connection to the live source works and that a small subset of the data is retrieved in the expected format, with Guy Sports as the only live site in scope for the initial implementation. This smoke test is not part of the normal validation cycle and is run only when the retrieval code has changed or when it has been explicitly requested.
 - **FR-026**: The system MUST be designed to support future expansion for additional data sources and additional player-related datasets without breaking the historical capture model.
 
 ### Key Entities
@@ -156,5 +161,5 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - Local testing may generate temporary data in a disposable local working set, and a reset command may be used to discard the local generated data while preserving the official captured dataset used for scheduled production updates.
 - The project may eventually run the capture and processing tools via GitHub Actions or similar automation, but this is a future operational consideration rather than a requirement for the initial feature scope.
 - Raw capture data is append-only and must never be overwritten by normal operation or local test runs; every later fetch from Guy Sports or DreamTeamFC creates a new historical capture record that can be preserved, deleted, or rolled back independently.
-- Processed data and rendered HTML outputs are derived artifacts that are important to readers because they make the analysis accessible, but only uncommitted local experimental changes may be discarded; the latest committed processed data must be retained because it is the source used to generate the latest HTML report while the official historical raw dataset remains untouched.
+- Processed data and rendered HTML outputs are derived artifacts that are important to readers because they make the analysis accessible, but only uncommitted local experimental changes may be discarded; the latest processed data currently available in the repo state is the source used to generate the latest HTML report, while the official historical raw dataset remains untouched.
 - Routine validation MUST use fixtures and offline stored data only. Live access to Guy Sports or DreamTeamFC is forbidden during standard test runs and code-change validation. Only a narrowly scoped live smoke test is permitted when retrieval logic has changed or when an explicit manual request indicates it is needed, and that smoke test must be limited to confirming connectivity and a very small subset of expected format.
