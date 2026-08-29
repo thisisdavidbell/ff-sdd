@@ -1,6 +1,25 @@
 <!doctype html>
 <html><head><meta charset="utf-8"><title>Guy Sports Team Report</title>
-<style>body{font-family:sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem}table{border-collapse:collapse;width:100%;margin:1rem 0}th,td{border:1px solid #ccc;padding:.5rem;text-align:left}th{background:#f5f5f5}</style></head><body>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;max-width:1150px;margin:2rem auto;padding:0 1.5rem;color:#222;line-height:1.5}
+h1{border-bottom:2px solid #eaeaea;padding-bottom:.5rem;margin-bottom:1.5rem}
+h2{margin-top:2rem;margin-bottom:.75rem;color:#333}
+table{border-collapse:collapse;width:100%;margin:1rem 0;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+th,td{border:1px solid #ddd;padding:.6rem .8rem;text-align:left}
+th{background:#f8f9fa;font-weight:600}
+tr:nth-child(even){background:#fafafa}
+tr:hover{background:#f1f5f9}
+.chart-container{width:100%;overflow-x:auto;margin:1.5rem 0;border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:1rem;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.trend-chart{width:100%;min-height:750px;height:800px;display:block}
+.player-line{transition:stroke-width 0.2s,opacity 0.2s;opacity:0.85;cursor:pointer}
+.player-line:hover{stroke-width:4px !important;opacity:1 !important}
+.player-point{transition:r 0.2s;cursor:pointer}
+.player-point:hover{r:6}
+.legend-container{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;max-height:220px;overflow-y:auto;padding:.5rem;border:1px solid #edf2f7;border-radius:6px;background:#f8fafc}
+.legend-item{display:inline-flex;align-items:center;font-size:12px;padding:3px 8px;border-radius:4px;background:#fff;border:1px solid #e2e8f0;cursor:pointer;user-select:none;transition:all .15s}
+.legend-item:hover{border-color:#94a3b8;background:#f1f5f9}
+.legend-color{width:10px;height:10px;border-radius:50%;margin-right:6px;display:inline-block}
+</style></head><body>
 <h1>Guy Sports Team Report</h1>
 <h2>Player ownership</h2>
 <table><thead><tr><th>Player</th><th>Managers</th></tr></thead><tbody>
@@ -18,7 +37,7 @@
 <tr><td>Dominik Szoboszlai</td><td>5</td></tr>
 <tr><td>Harry Maguire</td><td>5</td></tr>
 <tr><td>Jurriën Timber</td><td>5</td></tr>
-<tr><td>Nico O'Reilly</td><td>5</td></tr>
+<tr><td>Nico O&#39;Reilly</td><td>5</td></tr>
 <tr><td>Robin Roefs</td><td>5</td></tr>
 <tr><td>Alexander Isak</td><td>4</td></tr>
 <tr><td>Antoine Semenyo</td><td>4</td></tr>
@@ -132,10 +151,10 @@
 </tbody></table>
 <h2>Manager changes</h2>
 <table><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>
-<tr><td>Arthur</td><td>Arthur's_Blue_Army</td><td>0</td><td></td></tr>
+<tr><td>Arthur</td><td>Arthur&#39;s_Blue_Army</td><td>0</td><td></td></tr>
 <tr><td>Boardmen</td><td>Kopper_Highlights</td><td>0</td><td></td></tr>
 <tr><td>Brian_D</td><td>Tulyar</td><td>0</td><td></td></tr>
-<tr><td>Caroline_Squire</td><td>Linus's_Legends</td><td>0</td><td></td></tr>
+<tr><td>Caroline_Squire</td><td>Linus&#39;s_Legends</td><td>0</td><td></td></tr>
 <tr><td>Chris_Whyley</td><td>Yak_Attack</td><td>0</td><td></td></tr>
 <tr><td>Chrissie_Bell</td><td>Mineicorn</td><td>0</td><td></td></tr>
 <tr><td>Colin_Berns</td><td>South_Fork_Farmers</td><td>0</td><td></td></tr>
@@ -159,136 +178,804 @@
 <tr><td>Pete_Cullen</td><td>Keano’s_magic_hat</td><td>0</td><td></td></tr>
 <tr><td>Richard_Pearce</td><td>Daisen_Giants</td><td>0</td><td></td></tr>
 <tr><td>Sally</td><td>Schnapps_Cat_XI</td><td>0</td><td></td></tr>
-<tr><td>Steve_Heath</td><td>It_Ain't_Half_Hot_Mum</td><td>0</td><td></td></tr>
+<tr><td>Steve_Heath</td><td>It_Ain&#39;t_Half_Hot_Mum</td><td>0</td><td></td></tr>
 <tr><td>Steve_Whyley</td><td>Mr_Brobbey</td><td>0</td><td></td></tr>
 <tr><td>Steve_Whyley_Snr</td><td>Rogues_Gallery</td><td>0</td><td></td></tr>
 <tr><td>The_Monk</td><td>Vinnies_XI</td><td>0</td><td></td></tr>
 <tr><td>Will_Watkins</td><td>Willy’s_Wanderers</td><td>0</td><td></td></tr>
 </tbody></table>
 <h2>Historical trends</h2>
-<p><strong>Adam Smith</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Adam Wharton</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Adrien Truffert</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Alex Scott</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Alexander Isak</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Alexis Mac Allister</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Andy Robertson</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Antoine Semenyo</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Antonín Kinsky</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Aurèle Amenda</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Bart Verbruggen</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Benjamin Sesko</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Bobby Thomas</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Brenden Aaronson</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Brian Brobbey</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Brian Madjo</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Bruno Fernandes</strong>: 2026-08-29T21:41:58Z: 18</p>
-<p><strong>Bruno Guimarães</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Bryan Mbeumo</strong>: 2026-08-29T21:41:58Z: 10</p>
-<p><strong>Bukayo Saka</strong>: 2026-08-29T21:41:58Z: 6</p>
-<p><strong>Caoimhín Kelleher</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Christos Tzolis</strong>: 2026-08-29T21:41:58Z: 6</p>
-<p><strong>Cole Palmer</strong>: 2026-08-29T21:41:58Z: 6</p>
-<p><strong>Daizen Maeda</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Dango Ouattara</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Daniel Muñoz</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Darko Gyabi</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>David Raya</strong>: 2026-08-29T21:41:58Z: 11</p>
-<p><strong>Declan Rice</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Diego Gómez</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Dominic Calvert-Lewin</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Dominik Szoboszlai</strong>: 2026-08-29T21:41:58Z: 5</p>
-<p><strong>Emersonn</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Emiliano Buendía</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Emiliano Martínez</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Enzo Le Fée</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Erling Haaland</strong>: 2026-08-29T21:41:58Z: 28</p>
-<p><strong>Evanilson</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Ezri Konsa</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Ferdi Kadioglu</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Florian Wirtz</strong>: 2026-08-29T21:41:58Z: 7</p>
-<p><strong>Gabriel</strong>: 2026-08-29T21:41:58Z: 20</p>
-<p><strong>George Hemmings</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Harry Maguire</strong>: 2026-08-29T21:41:58Z: 5</p>
-<p><strong>Harry Wilson</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Igor Jesus</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Igor Thiago</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Iliman Ndiaye</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Ismaïla Sarr</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Issa Diop</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>James Garner</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>James Hill</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>James Trafford</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Jean-Philippe Mateta</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Joe Gauci</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Joe Rodon</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>John McGinn</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Jordan Pickford</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Jorrel Hato</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Josko Gvardiol</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>João Pedro</strong>: 2026-08-29T21:41:58Z: 19</p>
-<p><strong>Jurriën Timber</strong>: 2026-08-29T21:41:58Z: 5</p>
-<p><strong>Jérémy Doku</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Jérémy Jacquet</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Kai Havertz</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Kayne van Oevelen</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Kevin Schade</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Kieran Dowell</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Kobbie Mainoo</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Kristoffer Ajer</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Leif Davis</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Lewis Cook</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Lewis Dunk</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Lewis Hall</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Luka Vuskovic</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Luke Shaw</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Malick Thiaw</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Marc Guéhi</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Marco Palestra</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Marcus Tavernier</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Martin Ødegaard</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Mason Burstow</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Matheus Cunha</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Mathias Jensen</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Matty Cash</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Maxence Lacroix</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Maxim De Cuyper</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Michael Kayode</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Micky van de Ven</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Miguel Ángel Brau</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Milan van Ewijk</strong>: 2026-08-29T21:41:58Z: 4</p>
-<p><strong>Morgan Gibbs-White</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Morgan Rogers</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Nathan Collins</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Neco Williams</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Nico O'Reilly</strong>: 2026-08-29T21:41:58Z: 5</p>
-<p><strong>Nordi Mukiele</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Ola Aina</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Ollie Watkins</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Oscar Bobb</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Pascal Groß</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Pau Torres</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Pedro Porro</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Promise David</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Rayan</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Rayan Cherki</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Reece James</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Regan Slater</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Riccardo Calafiori</strong>: 2026-08-29T21:41:58Z: 7</p>
-<p><strong>Rio Ngumoha</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Robert Sánchez</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Robin Roefs</strong>: 2026-08-29T21:41:58Z: 5</p>
-<p><strong>Ronald Araujo</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Ryan Gravenberch</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Ryan Sessegnon</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Sandro Tonali</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Senne Lammens</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Tarik Muharemovic</strong>: 2026-08-29T21:41:58Z: 2</p>
-<p><strong>Timothy Castagne</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Trai Hume</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Tyler Adams</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Virgil van Dijk</strong>: 2026-08-29T21:41:58Z: 3</p>
-<p><strong>Wesley Fofana</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>William Saliba</strong>: 2026-08-29T21:41:58Z: 1</p>
-<p><strong>Zion Suzuki</strong>: 2026-08-29T21:41:58Z: 1</p>
+<div class="chart-container">
+<svg class="trend-chart" viewBox="0 0 1100 800" preserveAspectRatio="xMidYMid meet">
+<rect x="60.0" y="50.0" width="840.0" height="650.0" fill="#fcfcfd" stroke="#e2e8f0" stroke-width="1" />
+<line x1="60.0" y1="700.0" x2="900.0" y2="700.0" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1" />
+<text x="52.0" y="704.0" text-anchor="end" font-size="12" fill="#64748b" font-family="sans-serif">0</text>
+<line x1="60.0" y1="591.7" x2="900.0" y2="591.7" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1" />
+<text x="52.0" y="595.7" text-anchor="end" font-size="12" fill="#64748b" font-family="sans-serif">5</text>
+<line x1="60.0" y1="483.3" x2="900.0" y2="483.3" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1" />
+<text x="52.0" y="487.3" text-anchor="end" font-size="12" fill="#64748b" font-family="sans-serif">10</text>
+<line x1="60.0" y1="375.0" x2="900.0" y2="375.0" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1" />
+<text x="52.0" y="379.0" text-anchor="end" font-size="12" fill="#64748b" font-family="sans-serif">15</text>
+<line x1="60.0" y1="266.7" x2="900.0" y2="266.7" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1" />
+<text x="52.0" y="270.7" text-anchor="end" font-size="12" fill="#64748b" font-family="sans-serif">20</text>
+<line x1="60.0" y1="158.3" x2="900.0" y2="158.3" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1" />
+<text x="52.0" y="162.3" text-anchor="end" font-size="12" fill="#64748b" font-family="sans-serif">25</text>
+<line x1="60.0" y1="50.0" x2="900.0" y2="50.0" stroke="#e2e8f0" stroke-dasharray="4,4" stroke-width="1" />
+<text x="52.0" y="54.0" text-anchor="end" font-size="12" fill="#64748b" font-family="sans-serif">30</text>
+<text x="18.0" y="375.0" text-anchor="middle" transform="rotate(-90 18.0, 375.0)" font-size="13" font-weight="600" fill="#475569" font-family="sans-serif">Manager Count</text>
+<line x1="480.0" y1="50.0" x2="480.0" y2="700.0" stroke="#f1f5f9" stroke-width="1" />
+<line x1="480.0" y1="700.0" x2="480.0" y2="706.0" stroke="#94a3b8" stroke-width="1.5" />
+<text x="480.0" y="720.0" transform="rotate(-35 480.0, 720.0)" text-anchor="end" font-size="11" fill="#475569" font-family="sans-serif">2026-08-29 22:11</text>
+<circle cx="480.0" cy="93.3" r="3.5" fill="hsl(0, 70%, 42%)" class="player-point" data-player-id="erling-haaland">
+<title>Erling Haaland: 28 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="96.8" font-size="11" font-weight="500" fill="hsl(0, 70%, 42%)" font-family="sans-serif" data-player-id="erling-haaland">Erling Haaland (28)</text>
+<circle cx="480.0" cy="266.7" r="3.5" fill="hsl(137, 70%, 42%)" class="player-point" data-player-id="gabriel">
+<title>Gabriel: 20 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="270.2" font-size="11" font-weight="500" fill="hsl(137, 70%, 42%)" font-family="sans-serif" data-player-id="gabriel">Gabriel (20)</text>
+<circle cx="480.0" cy="288.3" r="3.5" fill="hsl(275, 70%, 42%)" class="player-point" data-player-id="joão-pedro">
+<title>João Pedro: 19 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="291.8" font-size="11" font-weight="500" fill="hsl(275, 70%, 42%)" font-family="sans-serif" data-player-id="joão-pedro">João Pedro (19)</text>
+<circle cx="480.0" cy="310.0" r="3.5" fill="hsl(52, 70%, 42%)" class="player-point" data-player-id="bruno-fernandes">
+<title>Bruno Fernandes: 18 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="313.5" font-size="11" font-weight="500" fill="hsl(52, 70%, 42%)" font-family="sans-serif" data-player-id="bruno-fernandes">Bruno Fernandes (18)</text>
+<circle cx="480.0" cy="461.7" r="3.5" fill="hsl(190, 70%, 42%)" class="player-point" data-player-id="david-raya">
+<title>David Raya: 11 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="465.2" font-size="11" font-weight="500" fill="hsl(190, 70%, 42%)" font-family="sans-serif" data-player-id="david-raya">David Raya (11)</text>
+<circle cx="480.0" cy="483.3" r="3.5" fill="hsl(327, 70%, 42%)" class="player-point" data-player-id="bryan-mbeumo">
+<title>Bryan Mbeumo: 10 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="486.8" font-size="11" font-weight="500" fill="hsl(327, 70%, 42%)" font-family="sans-serif" data-player-id="bryan-mbeumo">Bryan Mbeumo (10)</text>
+<circle cx="480.0" cy="548.3" r="3.5" fill="hsl(105, 70%, 42%)" class="player-point" data-player-id="florian-wirtz">
+<title>Florian Wirtz: 7 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="551.8" font-size="11" font-weight="500" fill="hsl(105, 70%, 42%)" font-family="sans-serif" data-player-id="florian-wirtz">Florian Wirtz (7)</text>
+<circle cx="480.0" cy="548.3" r="3.5" fill="hsl(242, 70%, 42%)" class="player-point" data-player-id="riccardo-calafiori">
+<title>Riccardo Calafiori: 7 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="551.8" font-size="11" font-weight="500" fill="hsl(242, 70%, 42%)" font-family="sans-serif" data-player-id="riccardo-calafiori">Riccardo Calafiori (7)</text>
+<circle cx="480.0" cy="570.0" r="3.5" fill="hsl(20, 70%, 42%)" class="player-point" data-player-id="bukayo-saka">
+<title>Bukayo Saka: 6 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="573.5" font-size="11" font-weight="500" fill="hsl(20, 70%, 42%)" font-family="sans-serif" data-player-id="bukayo-saka">Bukayo Saka (6)</text>
+<circle cx="480.0" cy="570.0" r="3.5" fill="hsl(157, 70%, 42%)" class="player-point" data-player-id="christos-tzolis">
+<title>Christos Tzolis: 6 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="573.5" font-size="11" font-weight="500" fill="hsl(157, 70%, 42%)" font-family="sans-serif" data-player-id="christos-tzolis">Christos Tzolis (6)</text>
+<circle cx="480.0" cy="570.0" r="3.5" fill="hsl(295, 70%, 42%)" class="player-point" data-player-id="cole-palmer">
+<title>Cole Palmer: 6 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="573.5" font-size="11" font-weight="500" fill="hsl(295, 70%, 42%)" font-family="sans-serif" data-player-id="cole-palmer">Cole Palmer (6)</text>
+<circle cx="480.0" cy="591.7" r="3.5" fill="hsl(72, 70%, 42%)" class="player-point" data-player-id="dominik-szoboszlai">
+<title>Dominik Szoboszlai: 5 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="595.2" font-size="11" font-weight="500" fill="hsl(72, 70%, 42%)" font-family="sans-serif" data-player-id="dominik-szoboszlai">Dominik Szoboszlai (5)</text>
+<circle cx="480.0" cy="591.7" r="3.5" fill="hsl(210, 70%, 42%)" class="player-point" data-player-id="harry-maguire">
+<title>Harry Maguire: 5 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="595.2" font-size="11" font-weight="500" fill="hsl(210, 70%, 42%)" font-family="sans-serif" data-player-id="harry-maguire">Harry Maguire (5)</text>
+<circle cx="480.0" cy="591.7" r="3.5" fill="hsl(347, 70%, 42%)" class="player-point" data-player-id="jurriën-timber">
+<title>Jurriën Timber: 5 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="595.2" font-size="11" font-weight="500" fill="hsl(347, 70%, 42%)" font-family="sans-serif" data-player-id="jurriën-timber">Jurriën Timber (5)</text>
+<circle cx="480.0" cy="591.7" r="3.5" fill="hsl(125, 70%, 42%)" class="player-point" data-player-id="nico-o-reilly">
+<title>Nico O&#39;Reilly: 5 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="595.2" font-size="11" font-weight="500" fill="hsl(125, 70%, 42%)" font-family="sans-serif" data-player-id="nico-o-reilly">Nico O&#39;Reilly (5)</text>
+<circle cx="480.0" cy="591.7" r="3.5" fill="hsl(262, 70%, 42%)" class="player-point" data-player-id="robin-roefs">
+<title>Robin Roefs: 5 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="595.2" font-size="11" font-weight="500" fill="hsl(262, 70%, 42%)" font-family="sans-serif" data-player-id="robin-roefs">Robin Roefs (5)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(40, 70%, 42%)" class="player-point" data-player-id="alexander-isak">
+<title>Alexander Isak: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(40, 70%, 42%)" font-family="sans-serif" data-player-id="alexander-isak">Alexander Isak (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(177, 70%, 42%)" class="player-point" data-player-id="antoine-semenyo">
+<title>Antoine Semenyo: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(177, 70%, 42%)" font-family="sans-serif" data-player-id="antoine-semenyo">Antoine Semenyo (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(315, 70%, 42%)" class="player-point" data-player-id="brian-brobbey">
+<title>Brian Brobbey: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(315, 70%, 42%)" font-family="sans-serif" data-player-id="brian-brobbey">Brian Brobbey (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(92, 70%, 42%)" class="player-point" data-player-id="declan-rice">
+<title>Declan Rice: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(92, 70%, 42%)" font-family="sans-serif" data-player-id="declan-rice">Declan Rice (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(230, 70%, 42%)" class="player-point" data-player-id="enzo-le-fée">
+<title>Enzo Le Fée: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(230, 70%, 42%)" font-family="sans-serif" data-player-id="enzo-le-fée">Enzo Le Fée (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(7, 70%, 42%)" class="player-point" data-player-id="igor-thiago">
+<title>Igor Thiago: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(7, 70%, 42%)" font-family="sans-serif" data-player-id="igor-thiago">Igor Thiago (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(145, 70%, 42%)" class="player-point" data-player-id="leif-davis">
+<title>Leif Davis: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(145, 70%, 42%)" font-family="sans-serif" data-player-id="leif-davis">Leif Davis (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(282, 70%, 42%)" class="player-point" data-player-id="luke-shaw">
+<title>Luke Shaw: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(282, 70%, 42%)" font-family="sans-serif" data-player-id="luke-shaw">Luke Shaw (4)</text>
+<circle cx="480.0" cy="613.3" r="3.5" fill="hsl(60, 70%, 42%)" class="player-point" data-player-id="milan-van-ewijk">
+<title>Milan van Ewijk: 4 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="616.8" font-size="11" font-weight="500" fill="hsl(60, 70%, 42%)" font-family="sans-serif" data-player-id="milan-van-ewijk">Milan van Ewijk (4)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(197, 70%, 42%)" class="player-point" data-player-id="antonín-kinsky">
+<title>Antonín Kinsky: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(197, 70%, 42%)" font-family="sans-serif" data-player-id="antonín-kinsky">Antonín Kinsky (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(335, 70%, 42%)" class="player-point" data-player-id="bruno-guimarães">
+<title>Bruno Guimarães: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(335, 70%, 42%)" font-family="sans-serif" data-player-id="bruno-guimarães">Bruno Guimarães (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(112, 70%, 42%)" class="player-point" data-player-id="darko-gyabi">
+<title>Darko Gyabi: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(112, 70%, 42%)" font-family="sans-serif" data-player-id="darko-gyabi">Darko Gyabi (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(250, 70%, 42%)" class="player-point" data-player-id="dominic-calvert-lewin">
+<title>Dominic Calvert-Lewin: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(250, 70%, 42%)" font-family="sans-serif" data-player-id="dominic-calvert-lewin">Dominic Calvert-Lewin (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(27, 70%, 42%)" class="player-point" data-player-id="emiliano-buendía">
+<title>Emiliano Buendía: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(27, 70%, 42%)" font-family="sans-serif" data-player-id="emiliano-buendía">Emiliano Buendía (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(165, 70%, 42%)" class="player-point" data-player-id="iliman-ndiaye">
+<title>Iliman Ndiaye: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(165, 70%, 42%)" font-family="sans-serif" data-player-id="iliman-ndiaye">Iliman Ndiaye (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(302, 70%, 42%)" class="player-point" data-player-id="james-trafford">
+<title>James Trafford: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(302, 70%, 42%)" font-family="sans-serif" data-player-id="james-trafford">James Trafford (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(80, 70%, 42%)" class="player-point" data-player-id="jérémy-doku">
+<title>Jérémy Doku: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(80, 70%, 42%)" font-family="sans-serif" data-player-id="jérémy-doku">Jérémy Doku (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(217, 70%, 42%)" class="player-point" data-player-id="kai-havertz">
+<title>Kai Havertz: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(217, 70%, 42%)" font-family="sans-serif" data-player-id="kai-havertz">Kai Havertz (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(355, 70%, 42%)" class="player-point" data-player-id="martin-ødegaard">
+<title>Martin Ødegaard: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(355, 70%, 42%)" font-family="sans-serif" data-player-id="martin-ødegaard">Martin Ødegaard (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(132, 70%, 42%)" class="player-point" data-player-id="morgan-gibbs-white">
+<title>Morgan Gibbs-White: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(132, 70%, 42%)" font-family="sans-serif" data-player-id="morgan-gibbs-white">Morgan Gibbs-White (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(270, 70%, 42%)" class="player-point" data-player-id="neco-williams">
+<title>Neco Williams: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(270, 70%, 42%)" font-family="sans-serif" data-player-id="neco-williams">Neco Williams (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(47, 70%, 42%)" class="player-point" data-player-id="pedro-porro">
+<title>Pedro Porro: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(47, 70%, 42%)" font-family="sans-serif" data-player-id="pedro-porro">Pedro Porro (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(185, 70%, 42%)" class="player-point" data-player-id="trai-hume">
+<title>Trai Hume: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(185, 70%, 42%)" font-family="sans-serif" data-player-id="trai-hume">Trai Hume (3)</text>
+<circle cx="480.0" cy="635.0" r="3.5" fill="hsl(322, 70%, 42%)" class="player-point" data-player-id="virgil-van-dijk">
+<title>Virgil van Dijk: 3 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="638.5" font-size="11" font-weight="500" fill="hsl(322, 70%, 42%)" font-family="sans-serif" data-player-id="virgil-van-dijk">Virgil van Dijk (3)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(100, 70%, 42%)" class="player-point" data-player-id="alex-scott">
+<title>Alex Scott: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(100, 70%, 42%)" font-family="sans-serif" data-player-id="alex-scott">Alex Scott (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(237, 70%, 42%)" class="player-point" data-player-id="aurèle-amenda">
+<title>Aurèle Amenda: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(237, 70%, 42%)" font-family="sans-serif" data-player-id="aurèle-amenda">Aurèle Amenda (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(15, 70%, 42%)" class="player-point" data-player-id="daizen-maeda">
+<title>Daizen Maeda: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(15, 70%, 42%)" font-family="sans-serif" data-player-id="daizen-maeda">Daizen Maeda (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(152, 70%, 42%)" class="player-point" data-player-id="igor-jesus">
+<title>Igor Jesus: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(152, 70%, 42%)" font-family="sans-serif" data-player-id="igor-jesus">Igor Jesus (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(290, 70%, 42%)" class="player-point" data-player-id="ismaïla-sarr">
+<title>Ismaïla Sarr: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(290, 70%, 42%)" font-family="sans-serif" data-player-id="ismaïla-sarr">Ismaïla Sarr (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(67, 70%, 42%)" class="player-point" data-player-id="issa-diop">
+<title>Issa Diop: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(67, 70%, 42%)" font-family="sans-serif" data-player-id="issa-diop">Issa Diop (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(205, 70%, 42%)" class="player-point" data-player-id="james-hill">
+<title>James Hill: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(205, 70%, 42%)" font-family="sans-serif" data-player-id="james-hill">James Hill (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(342, 70%, 42%)" class="player-point" data-player-id="jean-philippe-mateta">
+<title>Jean-Philippe Mateta: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(342, 70%, 42%)" font-family="sans-serif" data-player-id="jean-philippe-mateta">Jean-Philippe Mateta (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(120, 70%, 42%)" class="player-point" data-player-id="jordan-pickford">
+<title>Jordan Pickford: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(120, 70%, 42%)" font-family="sans-serif" data-player-id="jordan-pickford">Jordan Pickford (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(257, 70%, 42%)" class="player-point" data-player-id="josko-gvardiol">
+<title>Josko Gvardiol: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(257, 70%, 42%)" font-family="sans-serif" data-player-id="josko-gvardiol">Josko Gvardiol (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(35, 70%, 42%)" class="player-point" data-player-id="kevin-schade">
+<title>Kevin Schade: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(35, 70%, 42%)" font-family="sans-serif" data-player-id="kevin-schade">Kevin Schade (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(172, 70%, 42%)" class="player-point" data-player-id="kieran-dowell">
+<title>Kieran Dowell: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(172, 70%, 42%)" font-family="sans-serif" data-player-id="kieran-dowell">Kieran Dowell (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(310, 70%, 42%)" class="player-point" data-player-id="marc-guéhi">
+<title>Marc Guéhi: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(310, 70%, 42%)" font-family="sans-serif" data-player-id="marc-guéhi">Marc Guéhi (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(87, 70%, 42%)" class="player-point" data-player-id="marcus-tavernier">
+<title>Marcus Tavernier: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(87, 70%, 42%)" font-family="sans-serif" data-player-id="marcus-tavernier">Marcus Tavernier (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(225, 70%, 42%)" class="player-point" data-player-id="maxim-de-cuyper">
+<title>Maxim De Cuyper: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(225, 70%, 42%)" font-family="sans-serif" data-player-id="maxim-de-cuyper">Maxim De Cuyper (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(2, 70%, 42%)" class="player-point" data-player-id="miguel-ángel-brau">
+<title>Miguel Ángel Brau: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(2, 70%, 42%)" font-family="sans-serif" data-player-id="miguel-ángel-brau">Miguel Ángel Brau (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(140, 70%, 42%)" class="player-point" data-player-id="morgan-rogers">
+<title>Morgan Rogers: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(140, 70%, 42%)" font-family="sans-serif" data-player-id="morgan-rogers">Morgan Rogers (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(277, 70%, 42%)" class="player-point" data-player-id="nordi-mukiele">
+<title>Nordi Mukiele: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(277, 70%, 42%)" font-family="sans-serif" data-player-id="nordi-mukiele">Nordi Mukiele (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(55, 70%, 42%)" class="player-point" data-player-id="pascal-groß">
+<title>Pascal Groß: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(55, 70%, 42%)" font-family="sans-serif" data-player-id="pascal-groß">Pascal Groß (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(192, 70%, 42%)" class="player-point" data-player-id="rayan">
+<title>Rayan: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(192, 70%, 42%)" font-family="sans-serif" data-player-id="rayan">Rayan (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(330, 70%, 42%)" class="player-point" data-player-id="rayan-cherki">
+<title>Rayan Cherki: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(330, 70%, 42%)" font-family="sans-serif" data-player-id="rayan-cherki">Rayan Cherki (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(107, 70%, 42%)" class="player-point" data-player-id="regan-slater">
+<title>Regan Slater: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(107, 70%, 42%)" font-family="sans-serif" data-player-id="regan-slater">Regan Slater (2)</text>
+<circle cx="480.0" cy="656.7" r="3.5" fill="hsl(245, 70%, 42%)" class="player-point" data-player-id="tarik-muharemovic">
+<title>Tarik Muharemovic: 2 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="660.2" font-size="11" font-weight="500" fill="hsl(245, 70%, 42%)" font-family="sans-serif" data-player-id="tarik-muharemovic">Tarik Muharemovic (2)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(23, 70%, 42%)" class="player-point" data-player-id="adam-smith">
+<title>Adam Smith: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(23, 70%, 42%)" font-family="sans-serif" data-player-id="adam-smith">Adam Smith (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(160, 70%, 42%)" class="player-point" data-player-id="adam-wharton">
+<title>Adam Wharton: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(160, 70%, 42%)" font-family="sans-serif" data-player-id="adam-wharton">Adam Wharton (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(298, 70%, 42%)" class="player-point" data-player-id="adrien-truffert">
+<title>Adrien Truffert: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(298, 70%, 42%)" font-family="sans-serif" data-player-id="adrien-truffert">Adrien Truffert (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(75, 70%, 42%)" class="player-point" data-player-id="alexis-mac-allister">
+<title>Alexis Mac Allister: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(75, 70%, 42%)" font-family="sans-serif" data-player-id="alexis-mac-allister">Alexis Mac Allister (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(213, 70%, 42%)" class="player-point" data-player-id="andy-robertson">
+<title>Andy Robertson: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(213, 70%, 42%)" font-family="sans-serif" data-player-id="andy-robertson">Andy Robertson (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(350, 70%, 42%)" class="player-point" data-player-id="bart-verbruggen">
+<title>Bart Verbruggen: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(350, 70%, 42%)" font-family="sans-serif" data-player-id="bart-verbruggen">Bart Verbruggen (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(128, 70%, 42%)" class="player-point" data-player-id="benjamin-sesko">
+<title>Benjamin Sesko: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(128, 70%, 42%)" font-family="sans-serif" data-player-id="benjamin-sesko">Benjamin Sesko (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(265, 70%, 42%)" class="player-point" data-player-id="bobby-thomas">
+<title>Bobby Thomas: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(265, 70%, 42%)" font-family="sans-serif" data-player-id="bobby-thomas">Bobby Thomas (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(43, 70%, 42%)" class="player-point" data-player-id="brenden-aaronson">
+<title>Brenden Aaronson: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(43, 70%, 42%)" font-family="sans-serif" data-player-id="brenden-aaronson">Brenden Aaronson (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(180, 70%, 42%)" class="player-point" data-player-id="brian-madjo">
+<title>Brian Madjo: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(180, 70%, 42%)" font-family="sans-serif" data-player-id="brian-madjo">Brian Madjo (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(318, 70%, 42%)" class="player-point" data-player-id="caoimhín-kelleher">
+<title>Caoimhín Kelleher: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(318, 70%, 42%)" font-family="sans-serif" data-player-id="caoimhín-kelleher">Caoimhín Kelleher (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(95, 70%, 42%)" class="player-point" data-player-id="dango-ouattara">
+<title>Dango Ouattara: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(95, 70%, 42%)" font-family="sans-serif" data-player-id="dango-ouattara">Dango Ouattara (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(233, 70%, 42%)" class="player-point" data-player-id="daniel-muñoz">
+<title>Daniel Muñoz: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(233, 70%, 42%)" font-family="sans-serif" data-player-id="daniel-muñoz">Daniel Muñoz (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(10, 70%, 42%)" class="player-point" data-player-id="diego-gómez">
+<title>Diego Gómez: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(10, 70%, 42%)" font-family="sans-serif" data-player-id="diego-gómez">Diego Gómez (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(148, 70%, 42%)" class="player-point" data-player-id="emersonn">
+<title>Emersonn: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(148, 70%, 42%)" font-family="sans-serif" data-player-id="emersonn">Emersonn (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(285, 70%, 42%)" class="player-point" data-player-id="emiliano-martínez">
+<title>Emiliano Martínez: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(285, 70%, 42%)" font-family="sans-serif" data-player-id="emiliano-martínez">Emiliano Martínez (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(63, 70%, 42%)" class="player-point" data-player-id="evanilson">
+<title>Evanilson: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(63, 70%, 42%)" font-family="sans-serif" data-player-id="evanilson">Evanilson (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(200, 70%, 42%)" class="player-point" data-player-id="ezri-konsa">
+<title>Ezri Konsa: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(200, 70%, 42%)" font-family="sans-serif" data-player-id="ezri-konsa">Ezri Konsa (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(338, 70%, 42%)" class="player-point" data-player-id="ferdi-kadioglu">
+<title>Ferdi Kadioglu: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(338, 70%, 42%)" font-family="sans-serif" data-player-id="ferdi-kadioglu">Ferdi Kadioglu (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(115, 70%, 42%)" class="player-point" data-player-id="george-hemmings">
+<title>George Hemmings: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(115, 70%, 42%)" font-family="sans-serif" data-player-id="george-hemmings">George Hemmings (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(253, 70%, 42%)" class="player-point" data-player-id="harry-wilson">
+<title>Harry Wilson: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(253, 70%, 42%)" font-family="sans-serif" data-player-id="harry-wilson">Harry Wilson (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(30, 70%, 42%)" class="player-point" data-player-id="james-garner">
+<title>James Garner: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(30, 70%, 42%)" font-family="sans-serif" data-player-id="james-garner">James Garner (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(168, 70%, 42%)" class="player-point" data-player-id="joe-gauci">
+<title>Joe Gauci: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(168, 70%, 42%)" font-family="sans-serif" data-player-id="joe-gauci">Joe Gauci (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(305, 70%, 42%)" class="player-point" data-player-id="joe-rodon">
+<title>Joe Rodon: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(305, 70%, 42%)" font-family="sans-serif" data-player-id="joe-rodon">Joe Rodon (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(83, 70%, 42%)" class="player-point" data-player-id="john-mcginn">
+<title>John McGinn: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(83, 70%, 42%)" font-family="sans-serif" data-player-id="john-mcginn">John McGinn (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(220, 70%, 42%)" class="player-point" data-player-id="jorrel-hato">
+<title>Jorrel Hato: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(220, 70%, 42%)" font-family="sans-serif" data-player-id="jorrel-hato">Jorrel Hato (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(358, 70%, 42%)" class="player-point" data-player-id="jérémy-jacquet">
+<title>Jérémy Jacquet: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(358, 70%, 42%)" font-family="sans-serif" data-player-id="jérémy-jacquet">Jérémy Jacquet (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(135, 70%, 42%)" class="player-point" data-player-id="kayne-van-oevelen">
+<title>Kayne van Oevelen: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(135, 70%, 42%)" font-family="sans-serif" data-player-id="kayne-van-oevelen">Kayne van Oevelen (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(273, 70%, 42%)" class="player-point" data-player-id="kobbie-mainoo">
+<title>Kobbie Mainoo: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(273, 70%, 42%)" font-family="sans-serif" data-player-id="kobbie-mainoo">Kobbie Mainoo (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(50, 70%, 42%)" class="player-point" data-player-id="kristoffer-ajer">
+<title>Kristoffer Ajer: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(50, 70%, 42%)" font-family="sans-serif" data-player-id="kristoffer-ajer">Kristoffer Ajer (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(188, 70%, 42%)" class="player-point" data-player-id="lewis-cook">
+<title>Lewis Cook: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(188, 70%, 42%)" font-family="sans-serif" data-player-id="lewis-cook">Lewis Cook (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(325, 70%, 42%)" class="player-point" data-player-id="lewis-dunk">
+<title>Lewis Dunk: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(325, 70%, 42%)" font-family="sans-serif" data-player-id="lewis-dunk">Lewis Dunk (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(103, 70%, 42%)" class="player-point" data-player-id="lewis-hall">
+<title>Lewis Hall: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(103, 70%, 42%)" font-family="sans-serif" data-player-id="lewis-hall">Lewis Hall (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(240, 70%, 42%)" class="player-point" data-player-id="luka-vuskovic">
+<title>Luka Vuskovic: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(240, 70%, 42%)" font-family="sans-serif" data-player-id="luka-vuskovic">Luka Vuskovic (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(18, 70%, 42%)" class="player-point" data-player-id="malick-thiaw">
+<title>Malick Thiaw: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(18, 70%, 42%)" font-family="sans-serif" data-player-id="malick-thiaw">Malick Thiaw (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(155, 70%, 42%)" class="player-point" data-player-id="marco-palestra">
+<title>Marco Palestra: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(155, 70%, 42%)" font-family="sans-serif" data-player-id="marco-palestra">Marco Palestra (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(293, 70%, 42%)" class="player-point" data-player-id="mason-burstow">
+<title>Mason Burstow: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(293, 70%, 42%)" font-family="sans-serif" data-player-id="mason-burstow">Mason Burstow (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(70, 70%, 42%)" class="player-point" data-player-id="matheus-cunha">
+<title>Matheus Cunha: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(70, 70%, 42%)" font-family="sans-serif" data-player-id="matheus-cunha">Matheus Cunha (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(208, 70%, 42%)" class="player-point" data-player-id="mathias-jensen">
+<title>Mathias Jensen: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(208, 70%, 42%)" font-family="sans-serif" data-player-id="mathias-jensen">Mathias Jensen (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(345, 70%, 42%)" class="player-point" data-player-id="matty-cash">
+<title>Matty Cash: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(345, 70%, 42%)" font-family="sans-serif" data-player-id="matty-cash">Matty Cash (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(123, 70%, 42%)" class="player-point" data-player-id="maxence-lacroix">
+<title>Maxence Lacroix: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(123, 70%, 42%)" font-family="sans-serif" data-player-id="maxence-lacroix">Maxence Lacroix (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(260, 70%, 42%)" class="player-point" data-player-id="michael-kayode">
+<title>Michael Kayode: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(260, 70%, 42%)" font-family="sans-serif" data-player-id="michael-kayode">Michael Kayode (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(38, 70%, 42%)" class="player-point" data-player-id="micky-van-de-ven">
+<title>Micky van de Ven: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(38, 70%, 42%)" font-family="sans-serif" data-player-id="micky-van-de-ven">Micky van de Ven (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(175, 70%, 42%)" class="player-point" data-player-id="nathan-collins">
+<title>Nathan Collins: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(175, 70%, 42%)" font-family="sans-serif" data-player-id="nathan-collins">Nathan Collins (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(313, 70%, 42%)" class="player-point" data-player-id="ola-aina">
+<title>Ola Aina: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(313, 70%, 42%)" font-family="sans-serif" data-player-id="ola-aina">Ola Aina (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(90, 70%, 42%)" class="player-point" data-player-id="ollie-watkins">
+<title>Ollie Watkins: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(90, 70%, 42%)" font-family="sans-serif" data-player-id="ollie-watkins">Ollie Watkins (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(228, 70%, 42%)" class="player-point" data-player-id="oscar-bobb">
+<title>Oscar Bobb: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(228, 70%, 42%)" font-family="sans-serif" data-player-id="oscar-bobb">Oscar Bobb (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(5, 70%, 42%)" class="player-point" data-player-id="pau-torres">
+<title>Pau Torres: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(5, 70%, 42%)" font-family="sans-serif" data-player-id="pau-torres">Pau Torres (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(143, 70%, 42%)" class="player-point" data-player-id="promise-david">
+<title>Promise David: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(143, 70%, 42%)" font-family="sans-serif" data-player-id="promise-david">Promise David (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(280, 70%, 42%)" class="player-point" data-player-id="reece-james">
+<title>Reece James: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(280, 70%, 42%)" font-family="sans-serif" data-player-id="reece-james">Reece James (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(58, 70%, 42%)" class="player-point" data-player-id="rio-ngumoha">
+<title>Rio Ngumoha: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(58, 70%, 42%)" font-family="sans-serif" data-player-id="rio-ngumoha">Rio Ngumoha (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(195, 70%, 42%)" class="player-point" data-player-id="robert-sánchez">
+<title>Robert Sánchez: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(195, 70%, 42%)" font-family="sans-serif" data-player-id="robert-sánchez">Robert Sánchez (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(333, 70%, 42%)" class="player-point" data-player-id="ronald-araujo">
+<title>Ronald Araujo: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(333, 70%, 42%)" font-family="sans-serif" data-player-id="ronald-araujo">Ronald Araujo (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(110, 70%, 42%)" class="player-point" data-player-id="ryan-gravenberch">
+<title>Ryan Gravenberch: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(110, 70%, 42%)" font-family="sans-serif" data-player-id="ryan-gravenberch">Ryan Gravenberch (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(248, 70%, 42%)" class="player-point" data-player-id="ryan-sessegnon">
+<title>Ryan Sessegnon: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(248, 70%, 42%)" font-family="sans-serif" data-player-id="ryan-sessegnon">Ryan Sessegnon (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(25, 70%, 42%)" class="player-point" data-player-id="sandro-tonali">
+<title>Sandro Tonali: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(25, 70%, 42%)" font-family="sans-serif" data-player-id="sandro-tonali">Sandro Tonali (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(163, 70%, 42%)" class="player-point" data-player-id="senne-lammens">
+<title>Senne Lammens: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(163, 70%, 42%)" font-family="sans-serif" data-player-id="senne-lammens">Senne Lammens (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(300, 70%, 42%)" class="player-point" data-player-id="timothy-castagne">
+<title>Timothy Castagne: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(300, 70%, 42%)" font-family="sans-serif" data-player-id="timothy-castagne">Timothy Castagne (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(78, 70%, 42%)" class="player-point" data-player-id="tyler-adams">
+<title>Tyler Adams: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(78, 70%, 42%)" font-family="sans-serif" data-player-id="tyler-adams">Tyler Adams (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(215, 70%, 42%)" class="player-point" data-player-id="wesley-fofana">
+<title>Wesley Fofana: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(215, 70%, 42%)" font-family="sans-serif" data-player-id="wesley-fofana">Wesley Fofana (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(353, 70%, 42%)" class="player-point" data-player-id="william-saliba">
+<title>William Saliba: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(353, 70%, 42%)" font-family="sans-serif" data-player-id="william-saliba">William Saliba (1)</text>
+<circle cx="480.0" cy="678.3" r="3.5" fill="hsl(130, 70%, 42%)" class="player-point" data-player-id="zion-suzuki">
+<title>Zion Suzuki: 1 managers at 2026-08-29T22:11:10Z</title>
+</circle>
+<text x="488.0" y="681.8" font-size="11" font-weight="500" fill="hsl(130, 70%, 42%)" font-family="sans-serif" data-player-id="zion-suzuki">Zion Suzuki (1)</text>
+</svg>
+</div>
+<div class="legend-container" id="trend-legend">
+<span class="legend-item" data-player-id="erling-haaland" onmouseover="highlightPlayer('erling-haaland')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(0, 70%, 42%);"></span><strong>Erling Haaland</strong>&nbsp;(28)</span>
+<span class="legend-item" data-player-id="gabriel" onmouseover="highlightPlayer('gabriel')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(137, 70%, 42%);"></span><strong>Gabriel</strong>&nbsp;(20)</span>
+<span class="legend-item" data-player-id="joão-pedro" onmouseover="highlightPlayer('joão-pedro')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(275, 70%, 42%);"></span><strong>João Pedro</strong>&nbsp;(19)</span>
+<span class="legend-item" data-player-id="bruno-fernandes" onmouseover="highlightPlayer('bruno-fernandes')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(52, 70%, 42%);"></span><strong>Bruno Fernandes</strong>&nbsp;(18)</span>
+<span class="legend-item" data-player-id="david-raya" onmouseover="highlightPlayer('david-raya')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(190, 70%, 42%);"></span><strong>David Raya</strong>&nbsp;(11)</span>
+<span class="legend-item" data-player-id="bryan-mbeumo" onmouseover="highlightPlayer('bryan-mbeumo')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(327, 70%, 42%);"></span><strong>Bryan Mbeumo</strong>&nbsp;(10)</span>
+<span class="legend-item" data-player-id="florian-wirtz" onmouseover="highlightPlayer('florian-wirtz')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(105, 70%, 42%);"></span><strong>Florian Wirtz</strong>&nbsp;(7)</span>
+<span class="legend-item" data-player-id="riccardo-calafiori" onmouseover="highlightPlayer('riccardo-calafiori')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(242, 70%, 42%);"></span><strong>Riccardo Calafiori</strong>&nbsp;(7)</span>
+<span class="legend-item" data-player-id="bukayo-saka" onmouseover="highlightPlayer('bukayo-saka')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(20, 70%, 42%);"></span><strong>Bukayo Saka</strong>&nbsp;(6)</span>
+<span class="legend-item" data-player-id="christos-tzolis" onmouseover="highlightPlayer('christos-tzolis')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(157, 70%, 42%);"></span><strong>Christos Tzolis</strong>&nbsp;(6)</span>
+<span class="legend-item" data-player-id="cole-palmer" onmouseover="highlightPlayer('cole-palmer')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(295, 70%, 42%);"></span><strong>Cole Palmer</strong>&nbsp;(6)</span>
+<span class="legend-item" data-player-id="dominik-szoboszlai" onmouseover="highlightPlayer('dominik-szoboszlai')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(72, 70%, 42%);"></span><strong>Dominik Szoboszlai</strong>&nbsp;(5)</span>
+<span class="legend-item" data-player-id="harry-maguire" onmouseover="highlightPlayer('harry-maguire')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(210, 70%, 42%);"></span><strong>Harry Maguire</strong>&nbsp;(5)</span>
+<span class="legend-item" data-player-id="jurriën-timber" onmouseover="highlightPlayer('jurriën-timber')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(347, 70%, 42%);"></span><strong>Jurriën Timber</strong>&nbsp;(5)</span>
+<span class="legend-item" data-player-id="nico-o-reilly" onmouseover="highlightPlayer('nico-o-reilly')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(125, 70%, 42%);"></span><strong>Nico O&#39;Reilly</strong>&nbsp;(5)</span>
+<span class="legend-item" data-player-id="robin-roefs" onmouseover="highlightPlayer('robin-roefs')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(262, 70%, 42%);"></span><strong>Robin Roefs</strong>&nbsp;(5)</span>
+<span class="legend-item" data-player-id="alexander-isak" onmouseover="highlightPlayer('alexander-isak')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(40, 70%, 42%);"></span><strong>Alexander Isak</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="antoine-semenyo" onmouseover="highlightPlayer('antoine-semenyo')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(177, 70%, 42%);"></span><strong>Antoine Semenyo</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="brian-brobbey" onmouseover="highlightPlayer('brian-brobbey')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(315, 70%, 42%);"></span><strong>Brian Brobbey</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="declan-rice" onmouseover="highlightPlayer('declan-rice')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(92, 70%, 42%);"></span><strong>Declan Rice</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="enzo-le-fée" onmouseover="highlightPlayer('enzo-le-fée')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(230, 70%, 42%);"></span><strong>Enzo Le Fée</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="igor-thiago" onmouseover="highlightPlayer('igor-thiago')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(7, 70%, 42%);"></span><strong>Igor Thiago</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="leif-davis" onmouseover="highlightPlayer('leif-davis')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(145, 70%, 42%);"></span><strong>Leif Davis</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="luke-shaw" onmouseover="highlightPlayer('luke-shaw')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(282, 70%, 42%);"></span><strong>Luke Shaw</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="milan-van-ewijk" onmouseover="highlightPlayer('milan-van-ewijk')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(60, 70%, 42%);"></span><strong>Milan van Ewijk</strong>&nbsp;(4)</span>
+<span class="legend-item" data-player-id="antonín-kinsky" onmouseover="highlightPlayer('antonín-kinsky')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(197, 70%, 42%);"></span><strong>Antonín Kinsky</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="bruno-guimarães" onmouseover="highlightPlayer('bruno-guimarães')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(335, 70%, 42%);"></span><strong>Bruno Guimarães</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="darko-gyabi" onmouseover="highlightPlayer('darko-gyabi')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(112, 70%, 42%);"></span><strong>Darko Gyabi</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="dominic-calvert-lewin" onmouseover="highlightPlayer('dominic-calvert-lewin')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(250, 70%, 42%);"></span><strong>Dominic Calvert-Lewin</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="emiliano-buendía" onmouseover="highlightPlayer('emiliano-buendía')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(27, 70%, 42%);"></span><strong>Emiliano Buendía</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="iliman-ndiaye" onmouseover="highlightPlayer('iliman-ndiaye')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(165, 70%, 42%);"></span><strong>Iliman Ndiaye</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="james-trafford" onmouseover="highlightPlayer('james-trafford')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(302, 70%, 42%);"></span><strong>James Trafford</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="jérémy-doku" onmouseover="highlightPlayer('jérémy-doku')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(80, 70%, 42%);"></span><strong>Jérémy Doku</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="kai-havertz" onmouseover="highlightPlayer('kai-havertz')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(217, 70%, 42%);"></span><strong>Kai Havertz</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="martin-ødegaard" onmouseover="highlightPlayer('martin-ødegaard')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(355, 70%, 42%);"></span><strong>Martin Ødegaard</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="morgan-gibbs-white" onmouseover="highlightPlayer('morgan-gibbs-white')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(132, 70%, 42%);"></span><strong>Morgan Gibbs-White</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="neco-williams" onmouseover="highlightPlayer('neco-williams')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(270, 70%, 42%);"></span><strong>Neco Williams</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="pedro-porro" onmouseover="highlightPlayer('pedro-porro')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(47, 70%, 42%);"></span><strong>Pedro Porro</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="trai-hume" onmouseover="highlightPlayer('trai-hume')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(185, 70%, 42%);"></span><strong>Trai Hume</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="virgil-van-dijk" onmouseover="highlightPlayer('virgil-van-dijk')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(322, 70%, 42%);"></span><strong>Virgil van Dijk</strong>&nbsp;(3)</span>
+<span class="legend-item" data-player-id="alex-scott" onmouseover="highlightPlayer('alex-scott')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(100, 70%, 42%);"></span><strong>Alex Scott</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="aurèle-amenda" onmouseover="highlightPlayer('aurèle-amenda')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(237, 70%, 42%);"></span><strong>Aurèle Amenda</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="daizen-maeda" onmouseover="highlightPlayer('daizen-maeda')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(15, 70%, 42%);"></span><strong>Daizen Maeda</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="igor-jesus" onmouseover="highlightPlayer('igor-jesus')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(152, 70%, 42%);"></span><strong>Igor Jesus</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="ismaïla-sarr" onmouseover="highlightPlayer('ismaïla-sarr')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(290, 70%, 42%);"></span><strong>Ismaïla Sarr</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="issa-diop" onmouseover="highlightPlayer('issa-diop')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(67, 70%, 42%);"></span><strong>Issa Diop</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="james-hill" onmouseover="highlightPlayer('james-hill')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(205, 70%, 42%);"></span><strong>James Hill</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="jean-philippe-mateta" onmouseover="highlightPlayer('jean-philippe-mateta')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(342, 70%, 42%);"></span><strong>Jean-Philippe Mateta</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="jordan-pickford" onmouseover="highlightPlayer('jordan-pickford')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(120, 70%, 42%);"></span><strong>Jordan Pickford</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="josko-gvardiol" onmouseover="highlightPlayer('josko-gvardiol')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(257, 70%, 42%);"></span><strong>Josko Gvardiol</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="kevin-schade" onmouseover="highlightPlayer('kevin-schade')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(35, 70%, 42%);"></span><strong>Kevin Schade</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="kieran-dowell" onmouseover="highlightPlayer('kieran-dowell')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(172, 70%, 42%);"></span><strong>Kieran Dowell</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="marc-guéhi" onmouseover="highlightPlayer('marc-guéhi')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(310, 70%, 42%);"></span><strong>Marc Guéhi</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="marcus-tavernier" onmouseover="highlightPlayer('marcus-tavernier')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(87, 70%, 42%);"></span><strong>Marcus Tavernier</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="maxim-de-cuyper" onmouseover="highlightPlayer('maxim-de-cuyper')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(225, 70%, 42%);"></span><strong>Maxim De Cuyper</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="miguel-ángel-brau" onmouseover="highlightPlayer('miguel-ángel-brau')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(2, 70%, 42%);"></span><strong>Miguel Ángel Brau</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="morgan-rogers" onmouseover="highlightPlayer('morgan-rogers')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(140, 70%, 42%);"></span><strong>Morgan Rogers</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="nordi-mukiele" onmouseover="highlightPlayer('nordi-mukiele')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(277, 70%, 42%);"></span><strong>Nordi Mukiele</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="pascal-groß" onmouseover="highlightPlayer('pascal-groß')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(55, 70%, 42%);"></span><strong>Pascal Groß</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="rayan" onmouseover="highlightPlayer('rayan')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(192, 70%, 42%);"></span><strong>Rayan</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="rayan-cherki" onmouseover="highlightPlayer('rayan-cherki')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(330, 70%, 42%);"></span><strong>Rayan Cherki</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="regan-slater" onmouseover="highlightPlayer('regan-slater')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(107, 70%, 42%);"></span><strong>Regan Slater</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="tarik-muharemovic" onmouseover="highlightPlayer('tarik-muharemovic')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(245, 70%, 42%);"></span><strong>Tarik Muharemovic</strong>&nbsp;(2)</span>
+<span class="legend-item" data-player-id="adam-smith" onmouseover="highlightPlayer('adam-smith')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(23, 70%, 42%);"></span><strong>Adam Smith</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="adam-wharton" onmouseover="highlightPlayer('adam-wharton')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(160, 70%, 42%);"></span><strong>Adam Wharton</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="adrien-truffert" onmouseover="highlightPlayer('adrien-truffert')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(298, 70%, 42%);"></span><strong>Adrien Truffert</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="alexis-mac-allister" onmouseover="highlightPlayer('alexis-mac-allister')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(75, 70%, 42%);"></span><strong>Alexis Mac Allister</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="andy-robertson" onmouseover="highlightPlayer('andy-robertson')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(213, 70%, 42%);"></span><strong>Andy Robertson</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="bart-verbruggen" onmouseover="highlightPlayer('bart-verbruggen')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(350, 70%, 42%);"></span><strong>Bart Verbruggen</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="benjamin-sesko" onmouseover="highlightPlayer('benjamin-sesko')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(128, 70%, 42%);"></span><strong>Benjamin Sesko</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="bobby-thomas" onmouseover="highlightPlayer('bobby-thomas')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(265, 70%, 42%);"></span><strong>Bobby Thomas</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="brenden-aaronson" onmouseover="highlightPlayer('brenden-aaronson')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(43, 70%, 42%);"></span><strong>Brenden Aaronson</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="brian-madjo" onmouseover="highlightPlayer('brian-madjo')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(180, 70%, 42%);"></span><strong>Brian Madjo</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="caoimhín-kelleher" onmouseover="highlightPlayer('caoimhín-kelleher')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(318, 70%, 42%);"></span><strong>Caoimhín Kelleher</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="dango-ouattara" onmouseover="highlightPlayer('dango-ouattara')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(95, 70%, 42%);"></span><strong>Dango Ouattara</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="daniel-muñoz" onmouseover="highlightPlayer('daniel-muñoz')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(233, 70%, 42%);"></span><strong>Daniel Muñoz</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="diego-gómez" onmouseover="highlightPlayer('diego-gómez')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(10, 70%, 42%);"></span><strong>Diego Gómez</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="emersonn" onmouseover="highlightPlayer('emersonn')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(148, 70%, 42%);"></span><strong>Emersonn</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="emiliano-martínez" onmouseover="highlightPlayer('emiliano-martínez')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(285, 70%, 42%);"></span><strong>Emiliano Martínez</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="evanilson" onmouseover="highlightPlayer('evanilson')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(63, 70%, 42%);"></span><strong>Evanilson</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="ezri-konsa" onmouseover="highlightPlayer('ezri-konsa')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(200, 70%, 42%);"></span><strong>Ezri Konsa</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="ferdi-kadioglu" onmouseover="highlightPlayer('ferdi-kadioglu')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(338, 70%, 42%);"></span><strong>Ferdi Kadioglu</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="george-hemmings" onmouseover="highlightPlayer('george-hemmings')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(115, 70%, 42%);"></span><strong>George Hemmings</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="harry-wilson" onmouseover="highlightPlayer('harry-wilson')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(253, 70%, 42%);"></span><strong>Harry Wilson</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="james-garner" onmouseover="highlightPlayer('james-garner')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(30, 70%, 42%);"></span><strong>James Garner</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="joe-gauci" onmouseover="highlightPlayer('joe-gauci')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(168, 70%, 42%);"></span><strong>Joe Gauci</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="joe-rodon" onmouseover="highlightPlayer('joe-rodon')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(305, 70%, 42%);"></span><strong>Joe Rodon</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="john-mcginn" onmouseover="highlightPlayer('john-mcginn')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(83, 70%, 42%);"></span><strong>John McGinn</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="jorrel-hato" onmouseover="highlightPlayer('jorrel-hato')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(220, 70%, 42%);"></span><strong>Jorrel Hato</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="jérémy-jacquet" onmouseover="highlightPlayer('jérémy-jacquet')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(358, 70%, 42%);"></span><strong>Jérémy Jacquet</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="kayne-van-oevelen" onmouseover="highlightPlayer('kayne-van-oevelen')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(135, 70%, 42%);"></span><strong>Kayne van Oevelen</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="kobbie-mainoo" onmouseover="highlightPlayer('kobbie-mainoo')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(273, 70%, 42%);"></span><strong>Kobbie Mainoo</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="kristoffer-ajer" onmouseover="highlightPlayer('kristoffer-ajer')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(50, 70%, 42%);"></span><strong>Kristoffer Ajer</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="lewis-cook" onmouseover="highlightPlayer('lewis-cook')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(188, 70%, 42%);"></span><strong>Lewis Cook</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="lewis-dunk" onmouseover="highlightPlayer('lewis-dunk')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(325, 70%, 42%);"></span><strong>Lewis Dunk</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="lewis-hall" onmouseover="highlightPlayer('lewis-hall')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(103, 70%, 42%);"></span><strong>Lewis Hall</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="luka-vuskovic" onmouseover="highlightPlayer('luka-vuskovic')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(240, 70%, 42%);"></span><strong>Luka Vuskovic</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="malick-thiaw" onmouseover="highlightPlayer('malick-thiaw')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(18, 70%, 42%);"></span><strong>Malick Thiaw</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="marco-palestra" onmouseover="highlightPlayer('marco-palestra')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(155, 70%, 42%);"></span><strong>Marco Palestra</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="mason-burstow" onmouseover="highlightPlayer('mason-burstow')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(293, 70%, 42%);"></span><strong>Mason Burstow</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="matheus-cunha" onmouseover="highlightPlayer('matheus-cunha')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(70, 70%, 42%);"></span><strong>Matheus Cunha</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="mathias-jensen" onmouseover="highlightPlayer('mathias-jensen')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(208, 70%, 42%);"></span><strong>Mathias Jensen</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="matty-cash" onmouseover="highlightPlayer('matty-cash')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(345, 70%, 42%);"></span><strong>Matty Cash</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="maxence-lacroix" onmouseover="highlightPlayer('maxence-lacroix')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(123, 70%, 42%);"></span><strong>Maxence Lacroix</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="michael-kayode" onmouseover="highlightPlayer('michael-kayode')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(260, 70%, 42%);"></span><strong>Michael Kayode</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="micky-van-de-ven" onmouseover="highlightPlayer('micky-van-de-ven')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(38, 70%, 42%);"></span><strong>Micky van de Ven</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="nathan-collins" onmouseover="highlightPlayer('nathan-collins')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(175, 70%, 42%);"></span><strong>Nathan Collins</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="ola-aina" onmouseover="highlightPlayer('ola-aina')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(313, 70%, 42%);"></span><strong>Ola Aina</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="ollie-watkins" onmouseover="highlightPlayer('ollie-watkins')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(90, 70%, 42%);"></span><strong>Ollie Watkins</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="oscar-bobb" onmouseover="highlightPlayer('oscar-bobb')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(228, 70%, 42%);"></span><strong>Oscar Bobb</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="pau-torres" onmouseover="highlightPlayer('pau-torres')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(5, 70%, 42%);"></span><strong>Pau Torres</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="promise-david" onmouseover="highlightPlayer('promise-david')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(143, 70%, 42%);"></span><strong>Promise David</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="reece-james" onmouseover="highlightPlayer('reece-james')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(280, 70%, 42%);"></span><strong>Reece James</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="rio-ngumoha" onmouseover="highlightPlayer('rio-ngumoha')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(58, 70%, 42%);"></span><strong>Rio Ngumoha</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="robert-sánchez" onmouseover="highlightPlayer('robert-sánchez')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(195, 70%, 42%);"></span><strong>Robert Sánchez</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="ronald-araujo" onmouseover="highlightPlayer('ronald-araujo')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(333, 70%, 42%);"></span><strong>Ronald Araujo</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="ryan-gravenberch" onmouseover="highlightPlayer('ryan-gravenberch')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(110, 70%, 42%);"></span><strong>Ryan Gravenberch</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="ryan-sessegnon" onmouseover="highlightPlayer('ryan-sessegnon')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(248, 70%, 42%);"></span><strong>Ryan Sessegnon</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="sandro-tonali" onmouseover="highlightPlayer('sandro-tonali')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(25, 70%, 42%);"></span><strong>Sandro Tonali</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="senne-lammens" onmouseover="highlightPlayer('senne-lammens')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(163, 70%, 42%);"></span><strong>Senne Lammens</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="timothy-castagne" onmouseover="highlightPlayer('timothy-castagne')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(300, 70%, 42%);"></span><strong>Timothy Castagne</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="tyler-adams" onmouseover="highlightPlayer('tyler-adams')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(78, 70%, 42%);"></span><strong>Tyler Adams</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="wesley-fofana" onmouseover="highlightPlayer('wesley-fofana')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(215, 70%, 42%);"></span><strong>Wesley Fofana</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="william-saliba" onmouseover="highlightPlayer('william-saliba')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(353, 70%, 42%);"></span><strong>William Saliba</strong>&nbsp;(1)</span>
+<span class="legend-item" data-player-id="zion-suzuki" onmouseover="highlightPlayer('zion-suzuki')" onmouseout="resetHighlight()">
+<span class="legend-color" style="background-color:hsl(130, 70%, 42%);"></span><strong>Zion Suzuki</strong>&nbsp;(1)</span>
+</div>
+<script>
+function highlightPlayer(id) {
+  document.querySelectorAll('.player-line').forEach(function(el) {
+    if (el.getAttribute('data-player-id') === id) {
+      el.style.strokeWidth = '4.5px';
+      el.style.opacity = '1';
+    } else {
+      el.style.opacity = '0.15';
+    }
+  });
+}
+function resetHighlight() {
+  document.querySelectorAll('.player-line').forEach(function(el) {
+    el.style.strokeWidth = '2px';
+    el.style.opacity = '0.85';
+  });
+}
+</script>
 </body></html>

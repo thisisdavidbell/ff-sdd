@@ -1,0 +1,51 @@
+manager_id: "15"
+manager_name: Ollie_Dineen
+team_name: The_Worthy_Wanderers
+captured_at: "2026-08-29T22:11:10Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: daniel-muñoz
+      name: Daniel Muñoz
+      position: DEF
+      team_name: Crystal Palace FC
+    - player_id: leif-davis
+      name: Leif Davis
+      position: DEF
+      team_name: Ipswich Town FC
+    - player_id: nico-o-reilly
+      name: Nico O'Reilly
+      position: DEF
+      team_name: Manchester City FC
+    - player_id: marcus-tavernier
+      name: Marcus Tavernier
+      position: MID
+      team_name: AFC Bournemouth
+    - player_id: john-mcginn
+      name: John McGinn
+      position: MID
+      team_name: Aston Villa FC
+    - player_id: daizen-maeda
+      name: Daizen Maeda
+      position: MID
+      team_name: Ipswich Town FC
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=15&name=The+Worthy+Wanderers&view=public

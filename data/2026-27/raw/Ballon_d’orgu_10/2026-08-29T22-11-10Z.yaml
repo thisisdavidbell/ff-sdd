@@ -1,0 +1,51 @@
+manager_id: "10"
+manager_name: Finn_whyley
+team_name: Ballon_d’orgu
+captured_at: "2026-08-29T22:11:10Z"
+source: guysports
+players:
+    - player_id: robin-roefs
+      name: Robin Roefs
+      position: GK
+      team_name: Sunderland AFC
+    - player_id: james-hill
+      name: James Hill
+      position: DEF
+      team_name: AFC Bournemouth
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: luka-vuskovic
+      name: Luka Vuskovic
+      position: DEF
+      team_name: Brighton & Hove Albion FC
+    - player_id: virgil-van-dijk
+      name: Virgil van Dijk
+      position: DEF
+      team_name: Liverpool FC
+    - player_id: harry-maguire
+      name: Harry Maguire
+      position: DEF
+      team_name: Manchester United FC
+    - player_id: pascal-groß
+      name: Pascal Groß
+      position: MID
+      team_name: Brighton & Hove Albion FC
+    - player_id: ismaïla-sarr
+      name: Ismaïla Sarr
+      position: MID
+      team_name: Crystal Palace FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: enzo-le-fée
+      name: Enzo Le Fée
+      position: MID
+      team_name: Sunderland AFC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=10&name=Ballon+d%E2%80%99orgu&view=public

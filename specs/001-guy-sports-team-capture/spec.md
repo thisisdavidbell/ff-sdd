@@ -42,18 +42,19 @@ A league administrator or analyst needs to understand how team composition chang
 A manager or analyst wants to see how often each player appears in the league. The system must produce two distinct but related outputs from the stored snapshots:
 
 1. A current-state ownership view that looks only at each manager's latest team snapshot and counts how many managers currently hold each player.
-2. A historical trend view that keeps the player-count totals from each capture event across the season so the change in popularity over time can be shown in a graph or trend table.
+2. A historical trend view that keeps the player-count totals from each capture event across the season so the change in popularity over time is displayed as a large line chart showing player counts over time with consistent x-axis spacing between capture dates and sufficient vertical height to comfortably see and distinguish many players.
 
 These two views must be easy to compare in a reader-friendly format.
 
 **Why this priority**: This is the primary analytical output described for the first release and provides useful insight for fans and analysts.
 
-**Independent Test**: Can be fully tested by processing captured team snapshots and verifying that the current-state counts use only the newest team snapshot for each manager while the historical trend preserves the count at each recorded capture time.
+**Independent Test**: Can be fully tested by processing captured team snapshots and verifying that the current-state counts use only the newest team snapshot for each manager while the historical trend preserves the count at each recorded capture time and renders a large line chart with consistent date spacing and clear multi-player visibility.
 
 **Acceptance Scenarios**:
 
 1. **Given** a set of historical team snapshots across manager directories, **When** the aggregation step runs, **Then** the system outputs a single `data/<season>/processed/player-ownership.yaml` file containing both the current player ownership counts and historical count trends across capture timestamps.
 2. **Given** an HTML report is rendered, **When** the player ownership table is generated, **Then** players are ordered by manager count descending (highest first), with ties broken alphabetically by player name.
+3. **Given** historical trend data across multiple capture events, **When** the HTML report is generated, **Then** the historical trends section renders as a large line chart with consistent gaps between snapshot dates on the x-axis and generous height to clearly show changes across many players.
 
 ---
 
@@ -79,12 +80,12 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 
 **Why this priority**: This enables the project to deliver value even before a full user-facing web experience exists and gives the project a clean, professional presentation without requiring live data access.
 
-**Independent Test**: Can be fully tested by generating a rendered output and confirming that it is clear in a local browser or a static GitHub Pages-style host without any live network dependency.
+**Independent Test**: Can be fully tested by generating a rendered output and confirming that it is clear in a local browser or a static GitHub Pages-style host without any live network dependency, including validating that the historical trends section displays as a large line chart with consistent x-axis date spacing.
 
 **Acceptance Scenarios**:
 
 1. **Given** processed data in `player-ownership.yaml` and `manager-changes/*.yaml`, **When** the presentation step runs, **Then** the system outputs a readable HTML-based summary (`docs/index.html`) that can be viewed locally and in a static GitHub Pages-style environment.
-2. **Given** an HTML report is rendered for review, **When** it is opened locally or on a static host, **Then** it shows the player ownership counts sorted highest first, the historical count trend for each player, and the manager change summary displaying Manager Name and Team Name with latest change dates, and it never requests or depends on live data access.
+2. **Given** an HTML report is rendered for review, **When** it is opened locally or on a static host, **Then** it shows the player ownership counts sorted highest first, a large line chart representing the historical count trend for each player over time with consistent gaps between dates on the x-axis and sufficient vertical height to comfortably differentiate many players, and the manager change summary displaying Manager Name and Team Name with latest change dates, and it never requests or depends on live data access.
 3. **Given** a local test run produces newer processed data or a new HTML render, **When** the experiment is discarded, **Then** the last known-good committed render remains available for the reader while the local test artifact may be reset without affecting the authoritative captured dataset.
 
 ### Edge Cases
@@ -120,15 +121,15 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - **FR-019**: The system MUST display manager changes in the rendered HTML table with both Manager Name and Team Name, rather than only manager ID.
 - **FR-020**: The system MUST read runtime configuration from a dedicated configuration file (`config.yaml`), including the active season (e.g. `2026-27`) and the number of season table pages to capture (default `3`).
 - **FR-021**: The system MUST capture data across all configured season table pages (pages 1 through N as specified in `config.yaml`, initially pages 1, 2, and 3), deduplicating managers discovered across pages before fetching rosters.
-- **FR-021**: The system MUST make it possible to clear local experimental capture and processed data without affecting the official stored dataset, so local experimentation can be safely reset while production data remains intact.
-- **FR-022**: The system MUST use the latest processed data currently available in the local repository state as the input for the HTML render, whether that state is the latest committed data or the latest data produced by a local capture/process run, and the generated HTML render MUST remain a reader-facing artifact that is valuable to maintain and review.
-- **FR-023**: The system MUST allow local testing to discard only uncommitted experimental changes to processed data or render outputs, while preserving the current repo state used for the latest render and ensuring the official raw historical capture data remains append-only and unmodified.
-- **FR-024**: The system MUST keep all normal validation, unit tests, integration tests, and code-change checks offline and MUST NOT access the live Guy Sports or DreamTeamFC sites during routine validation.
-- **FR-025**: The system MAY perform a limited live smoke test against the live site only when strictly necessary, such as after changing the retrieval logic, and only for the smallest possible validation: confirm that the connection to the live source works and that a small subset of the data is retrieved in the expected format, with Guy Sports as the only live site in scope for the initial implementation. This smoke test is not part of the normal validation cycle and is run only when the retrieval code has changed or when it has been explicitly requested. AI assistants MUST NOT directly access Guy Sports; live capture is performed only by an explicitly user-invoked or authorized scheduled capture command.
-- **FR-026**: The system MUST be designed to support future expansion for additional data sources and additional player-related datasets without breaking the historical capture model.
-- **FR-027**: The system MUST NOT write sample, placeholder, fixture, or test data into the canonical project data directories used for real capture output. Example data for tests or demos MUST be stored in a temporary directory or a dedicated test-fixture location, never under `data/` or `docs/`.
-- **FR-028**: The system MUST use the season directory naming convention `2026-27` for the current season and MUST support easy change-over to future seasons via a single configuration variable or equivalent project setting.
-- **FR-029**: The system MUST default to live capture behavior for the Guy Sports source: the capture command, when explicitly run by a user or authorized scheduler, is the only phase that may query Guy Sports, and it must retrieve current manager team data from the live season pages and store it as append-only historical snapshots under the configured season directory. AI assistants MUST NOT directly access Guy Sports. The processing and HTML rendering phases MUST use only the locally stored captured data and MUST NOT call Guy Sports or any live source during normal execution.
+- **FR-022**: The system MUST render the historical trends section in the HTML report as a large line chart showing the change in player manager counts over time. The chart MUST be tall enough (e.g. at least 600px–800px tall) to comfortably see and distinguish many players, and MUST have consistent (uniform/equidistant) horizontal gaps between snapshot dates on the x-axis, regardless of whether the raw snapshots were captured with regular or irregular time intervals between them.
+- **FR-023**: The system MUST never generate data in the data directory or html in the docs directory during testing. only execution of the capture, process or render commands can do this.
+- **FR-024**: The system MUST use the latest processed data currently available in the local repository state as the input for the HTML render, whether that state is the latest committed data or the latest data produced by a local capture/process run, and the generated HTML render MUST remain a reader-facing artifact that is valuable to maintain and review.
+- **FR-026**: The system MUST keep all normal validation, unit tests, integration tests, and code-change checks offline and MUST NOT access the live Guy Sports or DreamTeamFC sites during routine validation.
+- **FR-027**: The system MAY perform a limited live smoke test against the live site only when strictly necessary, such as after changing the retrieval logic, and only for the smallest possible validation, but even then it must request permission first: confirm that the connection to the live source works and that a small subset of the data is retrieved in the expected format, with Guy Sports as the only live site in scope for the initial implementation. This smoke test is not part of the normal validation cycle and is run only when the retrieval code has changed or when it has been explicitly requested. AI assistants MUST NOT directly access Guy Sports; live capture is performed only by an explicitly user-invoked or authorized scheduled capture command.
+- **FR-028**: The system MUST be designed to support future expansion for additional data sources and additional player-related datasets without breaking the historical capture model.
+- **FR-029**: The system MUST NOT write sample, placeholder, fixture, or test data into the canonical project data directories used for real capture output. Example data for tests or demos MUST be stored in a temporary directory or a dedicated test-fixture location, never under `data/` or `docs/`.
+- **FR-030**: The system MUST use the season directory naming convention `2026-27` for the current season and MUST support easy change-over to future seasons via a single configuration variable.
+- **FR-031**: The system MUST default to live capture behavior for the Guy Sports source: the capture command, when explicitly run by a user or authorized scheduler, is the only phase that may query Guy Sports, and it must retrieve current manager team data from the live season pages and store it as append-only historical snapshots under the configured season directory. AI assistants MUST NOT directly access Guy Sports. The processing and HTML rendering phases MUST use only the locally stored captured data and MUST NOT call Guy Sports or any live source during normal execution.
 
 ### Key Entities
 
@@ -147,10 +148,10 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 
 - **SC-001**: The system captures team snapshots for all known managers across all available Guy Sports season pages during each scheduled run, including pages with fewer than the maximum number of teams.
 - **SC-002**: Historical records remain available for all processed snapshots, allowing analysts to compare team states across the season without losing prior data.
-- **SC-003**: Player selection counts are reported accurately for the current state and selected historical windows, with no double-counting of a manager's team membership, and the change in counts over time is viewable from stored historical totals, ordered from highest to lowest in the latest summary.
+- **SC-003**: Player selection counts are reported accurately for the current state and selected historical windows, with no double-counting of a manager's team membership, and the change in counts over time is viewable from stored historical totals, ordered from highest to lowest in the latest summary and rendered as a large line chart with consistent gaps between snapshot dates on the x-axis and ample vertical height to comfortably distinguish many players.
 - **SC-004**: Each manager's total team-change count is calculated accurately from sequential snapshots without overcounting unchanged states, and the total includes all change events since the start of the season.
 - **SC-005**: Each manager's latest change date is clearly displayed, managers with changes since the last snapshot are highlighted, and a deeper drill-down view shows the change event details, including the date and the players added or removed.
-- **SC-006**: Processed outputs are generated in a professional, repo-friendly HTML format that can be reviewed locally and in a GitHub Pages-style environment without a live data dependency, the latest valid render remains available to readers, and local test runs can be reset cleanly without disturbing the official captured dataset or the last known-good working render.
+- **SC-006**: Processed outputs are generated in a professional, repo-friendly HTML format that can be reviewed locally and in a GitHub Pages-style environment without a live data dependency, featuring a large, readable historical trends line chart with uniform x-axis date spacing, the latest valid render remains available to readers, and local test runs can be reset cleanly without disturbing the official captured dataset or the last known-good working render.
 - **SC-007**: The initial release supports Guy Sports as the primary source while leaving room for future expansion to additional data sources and derived metrics.
 
 ## Assumptions

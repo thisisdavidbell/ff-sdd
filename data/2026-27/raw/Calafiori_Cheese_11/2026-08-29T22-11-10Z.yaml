@@ -1,0 +1,51 @@
+manager_id: "11"
+manager_name: Guy
+team_name: Calafiori_Cheese
+captured_at: "2026-08-29T22:11:10Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal FC
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: lewis-dunk
+      name: Lewis Dunk
+      position: DEF
+      team_name: Brighton & Hove Albion FC
+    - player_id: maxence-lacroix
+      name: Maxence Lacroix
+      position: DEF
+      team_name: Chelsea FC
+    - player_id: bukayo-saka
+      name: Bukayo Saka
+      position: MID
+      team_name: Arsenal FC
+    - player_id: christos-tzolis
+      name: Christos Tzolis
+      position: MID
+      team_name: Arsenal FC
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea FC
+    - player_id: morgan-rogers
+      name: Morgan Rogers
+      position: MID
+      team_name: Chelsea FC
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United FC
+    - player_id: kai-havertz
+      name: Kai Havertz
+      position: STR
+      team_name: Arsenal FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=11&name=Calafiori+Cheese&view=public

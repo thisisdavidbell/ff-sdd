@@ -1,0 +1,51 @@
+manager_id: "24"
+manager_name: Sally
+team_name: Schnapps_Cat_XI
+captured_at: "2026-08-29T22:11:10Z"
+source: guysports
+players:
+    - player_id: antonín-kinsky
+      name: Antonín Kinsky
+      position: GK
+      team_name: Tottenham Hotspur FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: ronald-araujo
+      name: Ronald Araujo
+      position: DEF
+      team_name: Liverpool FC
+    - player_id: josko-gvardiol
+      name: Josko Gvardiol
+      position: DEF
+      team_name: Manchester City FC
+    - player_id: pedro-porro
+      name: Pedro Porro
+      position: DEF
+      team_name: Tottenham Hotspur FC
+    - player_id: bruno-guimarães
+      name: Bruno Guimarães
+      position: MID
+      team_name: Arsenal FC
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea FC
+    - player_id: regan-slater
+      name: Regan Slater
+      position: MID
+      team_name: Hull City AFC
+    - player_id: florian-wirtz
+      name: Florian Wirtz
+      position: MID
+      team_name: Liverpool FC
+    - player_id: dominic-calvert-lewin
+      name: Dominic Calvert-Lewin
+      position: STR
+      team_name: Leeds United FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=24&name=Schnapps+Cat+XI&view=public

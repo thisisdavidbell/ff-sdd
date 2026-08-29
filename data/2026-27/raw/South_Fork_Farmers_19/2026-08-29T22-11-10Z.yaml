@@ -1,0 +1,51 @@
+manager_id: "19"
+manager_name: Colin_Berns
+team_name: South_Fork_Farmers
+captured_at: "2026-08-29T22:11:10Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: nathan-collins
+      name: Nathan Collins
+      position: DEF
+      team_name: Brentford FC
+    - player_id: kristoffer-ajer
+      name: Kristoffer Ajer
+      position: DEF
+      team_name: Brentford FC
+    - player_id: marc-guéhi
+      name: Marc Guéhi
+      position: DEF
+      team_name: Manchester City FC
+    - player_id: emiliano-buendía
+      name: Emiliano Buendía
+      position: MID
+      team_name: Aston Villa FC
+    - player_id: alexis-mac-allister
+      name: Alexis Mac Allister
+      position: MID
+      team_name: Liverpool FC
+    - player_id: ryan-gravenberch
+      name: Ryan Gravenberch
+      position: MID
+      team_name: Liverpool FC
+    - player_id: jérémy-doku
+      name: Jérémy Doku
+      position: MID
+      team_name: Manchester City FC
+    - player_id: igor-thiago
+      name: Igor Thiago
+      position: STR
+      team_name: Brentford FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=19&name=South+Fork+Farmers&view=public

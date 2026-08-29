@@ -113,6 +113,7 @@ The raw directory is append-only. Only distinct team states are added; unchanged
 - Generated from `player-ownership.yaml` and `manager-changes/*.yaml` without live queries.
 - Player ownership table is sorted by manager count descending (highest first).
 - Manager changes table displays Manager Name and Team Name.
+- Historical trends section is rendered as a large line chart showing the change in player counts over time across snapshot capture dates, featuring consistent (uniform/equidistant) horizontal gaps between dates on the x-axis and generous vertical height (e.g. 600px–800px) so many players can be comfortably distinguished.
 
 ## Relationships
 - One manager may have many ManagerSnapshot records across time.

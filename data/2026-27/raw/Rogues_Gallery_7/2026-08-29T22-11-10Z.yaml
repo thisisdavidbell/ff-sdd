@@ -1,0 +1,51 @@
+manager_id: "7"
+manager_name: Steve_Whyley_Snr
+team_name: Rogues_Gallery
+captured_at: "2026-08-29T22:11:10Z"
+source: guysports
+players:
+    - player_id: zion-suzuki
+      name: Zion Suzuki
+      position: GK
+      team_name: Aston Villa FC
+    - player_id: james-hill
+      name: James Hill
+      position: DEF
+      team_name: AFC Bournemouth
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: harry-maguire
+      name: Harry Maguire
+      position: DEF
+      team_name: Manchester United FC
+    - player_id: nordi-mukiele
+      name: Nordi Mukiele
+      position: DEF
+      team_name: Sunderland AFC
+    - player_id: bukayo-saka
+      name: Bukayo Saka
+      position: MID
+      team_name: Arsenal FC
+    - player_id: declan-rice
+      name: Declan Rice
+      position: MID
+      team_name: Arsenal FC
+    - player_id: bruno-guimarães
+      name: Bruno Guimarães
+      position: MID
+      team_name: Arsenal FC
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=7&name=Rogues+Gallery&view=public

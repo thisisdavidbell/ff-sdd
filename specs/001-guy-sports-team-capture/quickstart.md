@@ -37,7 +37,7 @@ Important: no fake or example data may ever be written into the project’s cano
    - No live Guy Sports calls are allowed in this step.
 5. Render the reader-facing HTML summary from the local processed data:
    - ./bin/render
-   - Renders `docs/index.html` with player ownership sorted highest count first and manager changes showing Manager Name and Team Name.
+   - Renders `docs/index.html` with player ownership sorted highest count first, manager changes showing Manager Name and Team Name, and a large historical trends line chart with consistent x-axis spacing between capture dates.
    - No live Guy Sports calls are allowed in this step.
 6. Open the generated HTML file in a browser to review the report
 
@@ -45,7 +45,7 @@ Important: no fake or example data may ever be written into the project’s cano
 - Verify raw files are stored under per-manager directories `data/2026-27/raw/<team_name>_<manager_id>/`.
 - Verify unchanged teams do not produce redundant duplicate snapshots.
 - Verify processed player ownership is consolidated into `data/2026-27/processed/player-ownership.yaml`.
-- Verify rendered HTML orders players by count descending and displays manager and team names.
+- Verify rendered HTML orders players by count descending, displays manager and team names, and renders historical trends as a large line chart with consistent date spacing and comfortable height for distinguishing many players.
 - Verify the page loads without live network access.
 
 ## Testing note

@@ -1,0 +1,51 @@
+manager_id: "2"
+manager_name: Graeme_Mansell
+team_name: Ken_Dodds_Dads_Dog
+captured_at: "2026-08-29T22:11:10Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal FC
+    - player_id: ezri-konsa
+      name: Ezri Konsa
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: leif-davis
+      name: Leif Davis
+      position: DEF
+      team_name: Ipswich Town FC
+    - player_id: trai-hume
+      name: Trai Hume
+      position: DEF
+      team_name: Sunderland AFC
+    - player_id: martin-ødegaard
+      name: Martin Ødegaard
+      position: MID
+      team_name: Arsenal FC
+    - player_id: kevin-schade
+      name: Kevin Schade
+      position: MID
+      team_name: Brentford FC
+    - player_id: florian-wirtz
+      name: Florian Wirtz
+      position: MID
+      team_name: Liverpool FC
+    - player_id: antoine-semenyo
+      name: Antoine Semenyo
+      position: MID
+      team_name: Manchester City FC
+    - player_id: kai-havertz
+      name: Kai Havertz
+      position: STR
+      team_name: Arsenal FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=2&name=Ken+Dodds+Dads+Dog&view=public
