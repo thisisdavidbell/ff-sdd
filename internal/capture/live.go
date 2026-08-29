@@ -17,38 +17,139 @@ import (
 type ManagerSummary struct {
 	ID        string
 	Name      string
+	TeamName  string
+	Manager   string
 	DetailURL string
 	Players   []models.PlayerReference
 }
 
+// FormatWithUnderscores replaces whitespace sequences with a single underscore.
+func FormatWithUnderscores(s string) string {
+	s = strings.TrimSpace(s)
+	fields := strings.Fields(s)
+	return strings.Join(fields, "_")
+}
+
 // ExtractManagersFromHTML parses the season table for publicteamdetail links.
 func ExtractManagersFromHTML(page string) []ManagerSummary {
-	pattern := regexp.MustCompile(`(?i)publicteamdetail\.php\?[^'"<>[:space:]]+`)
-	matches := pattern.FindAllString(page, -1)
-	if len(matches) == 0 {
-		return nil
-	}
+	// First attempt row-based extraction to capture both team and manager names if present in table columns
+	rowPattern := regexp.MustCompile(`(?is)<tr[^>]*>(.*?)</tr>`)
+	rows := rowPattern.FindAllString(page, -1)
 
-	out := make([]ManagerSummary, 0, len(matches))
-	seenIDs := make(map[string]struct{}, len(matches))
-	for _, match := range matches {
-		parsed, err := url.Parse(html.UnescapeString(match))
+	out := make([]ManagerSummary, 0)
+	seenIDs := make(map[string]struct{})
+
+	for _, row := range rows {
+		if !strings.Contains(strings.ToLower(row), "publicteamdetail.php") {
+			continue
+		}
+		linkPattern := regexp.MustCompile(`(?i)publicteamdetail\.php\?[^'"<>[:space:]]+`)
+		linkMatch := linkPattern.FindString(row)
+		if linkMatch == "" {
+			continue
+		}
+		parsed, err := url.Parse(html.UnescapeString(linkMatch))
 		if err != nil {
 			continue
 		}
 		id := strings.TrimSpace(parsed.Query().Get("id"))
-		name := strings.TrimSpace(parsed.Query().Get("name"))
-		if id == "" || name == "" {
+		urlName := strings.TrimSpace(parsed.Query().Get("name"))
+		if id == "" {
 			continue
 		}
 		if _, seen := seenIDs[id]; seen {
 			continue
 		}
 		seenIDs[id] = struct{}{}
-		detailURL := fmt.Sprintf("https://www.guysports.co.uk/guysports/publicteamdetail.php?id=%s&name=%s&view=public", id, url.QueryEscape(name))
-		out = append(out, ManagerSummary{ID: id, Name: name, DetailURL: detailURL})
+
+		// Extract cell texts if multiple columns exist
+		cellPattern := regexp.MustCompile(`(?is)<td[^>]*>(.*?)</td>`)
+		cells := cellPattern.FindAllStringSubmatch(row, -1)
+
+		teamName := urlName
+		managerName := urlName
+
+		if len(cells) >= 3 {
+			c1 := stripTags(cells[1][1])
+			c2 := stripTags(cells[2][1])
+			if c1 != "" && !strings.EqualFold(c1, "team") && !strings.EqualFold(c1, "manager") {
+				teamName = c1
+			}
+			if c2 != "" && !strings.EqualFold(c2, "manager") && !strings.EqualFold(c2, "team") && !strings.EqualFold(c2, "pts") && !strings.EqualFold(c2, "points") {
+				managerName = c2
+			}
+		}
+
+		teamFormatted := FormatWithUnderscores(teamName)
+		managerFormatted := FormatWithUnderscores(managerName)
+		if teamFormatted == "" {
+			teamFormatted = fmt.Sprintf("Team_%s", id)
+		}
+		if managerFormatted == "" {
+			managerFormatted = teamFormatted
+		}
+
+		detailURL := fmt.Sprintf("https://www.guysports.co.uk/guysports/publicteamdetail.php?id=%s&name=%s&view=public", id, url.QueryEscape(teamName))
+		out = append(out, ManagerSummary{
+			ID:        id,
+			Name:      teamName,
+			TeamName:  teamFormatted,
+			Manager:   managerFormatted,
+			DetailURL: detailURL,
+		})
 	}
+
+	// Fallback to direct link extraction if no rows were matched
+	if len(out) == 0 {
+		pattern := regexp.MustCompile(`(?i)publicteamdetail\.php\?[^'"<>[:space:]]+`)
+		matches := pattern.FindAllString(page, -1)
+		for _, match := range matches {
+			parsed, err := url.Parse(html.UnescapeString(match))
+			if err != nil {
+				continue
+			}
+			id := strings.TrimSpace(parsed.Query().Get("id"))
+			name := strings.TrimSpace(parsed.Query().Get("name"))
+			if id == "" {
+				continue
+			}
+			if _, seen := seenIDs[id]; seen {
+				continue
+			}
+			seenIDs[id] = struct{}{}
+			formatted := FormatWithUnderscores(name)
+			if formatted == "" {
+				formatted = fmt.Sprintf("Team_%s", id)
+			}
+			detailURL := fmt.Sprintf("https://www.guysports.co.uk/guysports/publicteamdetail.php?id=%s&name=%s&view=public", id, url.QueryEscape(name))
+			out = append(out, ManagerSummary{
+				ID:        id,
+				Name:      name,
+				TeamName:  formatted,
+				Manager:   formatted,
+				DetailURL: detailURL,
+			})
+		}
+	}
+
 	return out
+}
+
+// IsRosterUnchanged checks if two player reference slices contain the exact same player IDs.
+func IsRosterUnchanged(existing, current []models.PlayerReference) bool {
+	if len(existing) != len(current) {
+		return false
+	}
+	existingMap := make(map[string]bool, len(existing))
+	for _, p := range existing {
+		existingMap[p.PlayerID] = true
+	}
+	for _, p := range current {
+		if !existingMap[p.PlayerID] {
+			return false
+		}
+	}
+	return true
 }
 
 // FetchAndParseManagerDetail loads the live public team page and extracts the players in the manager's team.

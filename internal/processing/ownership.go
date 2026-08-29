@@ -128,6 +128,14 @@ func BuildChangeSummaries(snapshots []models.ManagerSnapshot) ([]models.ManagerC
 			}
 			last = currentPlayers
 		}
+		if len(entries) > 0 {
+			latestSnap := entries[len(entries)-1]
+			summary.ManagerName = latestSnap.ManagerName
+			summary.TeamName = latestSnap.TeamName
+			if summary.TeamName == "" {
+				summary.TeamName = summary.ManagerName
+			}
+		}
 		if summary.TotalChanges == 0 {
 			summary.ChangedSinceLastSnapshot = false
 			summary.LatestChangeAt = ""

@@ -41,11 +41,11 @@
 
 ### Implementation for User Story 1
 
-- [X] T011 [P] [US1] Implement `ManagerSnapshot` and `PlayerReference` structs in `internal/models/snapshot.go`
-- [X] T012 [P] [US1] Implement the raw YAML writer/reader for per-manager or per-season append-only storage in `internal/storage/yaml_store.go`
-- [X] T013 [US1] Implement season-page parsing and manager roster extraction for Guy Sports fixtures in `internal/capture/parser.go`
-- [X] T014 [US1] Implement the capture pipeline that collects manager teams, attaches timestamps, and writes raw YAML under `data/<season>/raw/`
-- [X] T015 [US1] Implement `cmd/capture/main.go` with the CLI contract for `./bin/capture --source guysports`
+- [X] T011 [P] [US1] Implement `ManagerSnapshot` and `PlayerReference` structs with `team_name`, `manager_name`, and underscore space replacement in `internal/models/snapshot.go`
+- [X] T012 [P] [US1] Implement the raw YAML writer/reader for per-manager directories `data/<season>/raw/<team_name>_<manager_id>/<timestamp>.yaml` in `internal/storage/yaml_store.go`
+- [X] T013 [US1] Implement multi-page season-table parsing across configured pages (default 3) and manager roster extraction in `internal/capture/parser.go`
+- [X] T014 [US1] Implement the capture pipeline that collects manager teams, attaches timestamps, skips duplicate snapshots for unchanged teams, and writes raw YAML under `data/<season>/raw/<team_name>_<manager_id>/`
+- [X] T015 [US1] Implement `cmd/capture/main.go` loading configuration from `config.yaml` with the CLI contract for `./bin/capture --source guysports`
 - [X] T016 [US1] Add validation for malformed snapshots, partial page failures, and duplicate capture handling
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and independently testable.
@@ -54,11 +54,11 @@
 
 ## Phase 4: User Story 2 - Show how often each player is selected by managers (Priority: P1)
 
-**Goal**: Produce two complementary outputs from the stored raw snapshots:
+**Goal**: Produce two complementary outputs from the stored raw snapshots into a single human-readable file `data/<season>/processed/player-ownership.yaml`:
 1. Use each manager's latest recorded team state to calculate the current player-usage count, counting each player only from the newest team snapshot for that manager.
 2. Preserve the per-capture historical player counts across the season so the trend in ownership over time can be graphed and compared.
 
-**Independent Test**: Process known fixture snapshots and confirm that the latest team snapshot for each manager is used to produce the current counts, while the full historical capture sequence is retained to produce the ownership trend over time.
+**Independent Test**: Process known fixture snapshots and confirm that the latest team snapshot for each manager is used to produce the current counts, while the full historical capture sequence is retained to produce the ownership trend over time in `player-ownership.yaml`.
 
 ### Tests for User Story 2
 
@@ -67,8 +67,8 @@
 
 ### Implementation for User Story 2
 
-- [X] T019 [P] [US2] Define the derived aggregate model for player ownership in `internal/models/ownership.go`
-- [X] T020 [US2] Implement the processing step that reads raw snapshots, builds the latest ownership view from each manager's newest team state, and writes historical trend output under `data/<season>/processed/player-ownership/`
+- [X] T019 [P] [US2] Define the derived aggregate model for player ownership and historical trend in `internal/models/ownership.go`
+- [X] T020 [US2] Implement the processing step that reads raw snapshots across manager directories, builds the latest ownership view and historical trend, and writes single output `data/<season>/processed/player-ownership.yaml`
 - [X] T021 [US2] Implement ordering and trend logic separately for the current snapshot-based counts and the historical time-series counts
 - [X] T022 [US2] Implement `cmd/process/main.go` to run the offline processing workflow from persisted raw data
 - [X] T023 [US2] Add clear error handling for missing data, malformed records, and empty seasons
@@ -79,7 +79,7 @@
 
 ## Phase 5: User Story 3 - Show each manager's team-change activity across the season (Priority: P1)
 
-**Goal**: Compute manager change counts and change-event details from sequential team snapshots.
+**Goal**: Compute manager change counts and change-event details from sequential team snapshots and save them by team name.
 
 **Independent Test**: Compare a manager's consecutive snapshots and verify the total change count, latest change timestamp, and event detail match the expected diffs.
 
@@ -90,10 +90,10 @@
 
 ### Implementation for User Story 3
 
-- [X] T026 [P] [US3] Define the derived change-event and manager summary models in `internal/models/change_summary.go`
+- [X] T026 [P] [US3] Define the derived change-event and manager summary models with `manager_name` and `team_name` in `internal/models/change_summary.go`
 - [X] T027 [US3] Implement the diff logic that compares consecutive snapshots and records added/removed players without overcounting unchanged states
 - [X] T028 [US3] Implement cumulative season summaries for `total_changes`, `latest_change_at`, and `changed_since_last_snapshot`
-- [X] T029 [US3] Write derived manager-change YAML output under `data/<season>/processed/manager-changes/`
+- [X] T029 [US3] Write derived manager-change YAML output named `<team_name>_<manager_id>.yaml` under `data/<season>/processed/manager-changes/`
 - [X] T030 [US3] Add validation to ensure duplicate snapshots and unchanged states are treated correctly
 
 **Checkpoint**: At this point, team-change history should be fully derived and ready for viewing in the static report.
@@ -102,20 +102,20 @@
 
 ## Phase 6: User Story 4 - Present results in a GitHub-friendly and local-friendly format (Priority: P2)
 
-**Goal**: Generate a static HTML report from the latest processed data currently available in the local repository state, whether that is the latest committed data or the latest data produced by a local capture/process run. The render command should consume the current processed output without needing to know how it was produced.
+**Goal**: Generate a static HTML report from the latest processed data currently available in the local repository state. The HTML must display player ownership sorted highest count first and manager changes with Manager Name and Team Name.
 
-**Independent Test**: Render the report from fixture processed data and verify the HTML is readable locally and contains ownership and change summaries.
+**Independent Test**: Render the report from fixture processed data and verify the HTML is readable locally and contains sorted ownership and change summaries.
 
 ### Tests for User Story 4
 
-- [X] T031 [P] [US4] Add a failing unit test for HTML template output and ordering in `tests/unit/test_render_output.go`
+- [X] T031 [P] [US4] Add a failing unit test for HTML template output, descending ordering, and manager/team name display in `tests/unit/test_render_output.go`
 - [X] T032 [P] [US4] Add a failing integration test for render-from-processed-data flow in `tests/integration/test_render_flow.go`
 
 ### Implementation for User Story 4
 
 - [X] T033 [P] [US4] Implement the HTML render model and template structure in `internal/render/`
-- [X] T034 [US4] Implement the render pipeline that reads processed player ownership and manager change YAML and emits static HTML into `docs/`
-- [X] T035 [US4] Implement `cmd/render/main.go` to generate the latest GitHub Pages-friendly report from the currently available processed data in the local repository
+- [X] T034 [US4] Implement the render pipeline that reads processed `player-ownership.yaml` and manager change YAML files and emits static HTML into `docs/index.html`
+- [X] T035 [US4] Implement `cmd/render/main.go` to generate the latest report with descending player ownership sort and Manager/Team name display
 - [X] T036 [US4] Ensure the rendered report never queries live sources and preserves the last known-good HTML if local generation fails
 - [X] T037 [US4] Add a reset/local cleanup guide and validation notes to the quickstart workflow, including the rule that uncommitted local processed/render changes can be discarded instead of being committed
 - [X] T037b [P] Document the optional Guy Sports live smoke test as a narrowly scoped check for retrieval-code changes or explicit requests only; it is not part of the normal validation cycle

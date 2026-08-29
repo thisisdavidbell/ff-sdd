@@ -30,9 +30,10 @@ A league administrator or analyst needs to understand how team composition chang
 
 **Acceptance Scenarios**:
 
-1. **Given** a season table with multiple pages of manager teams, **When** the scheduled capture runs, **Then** the system checks each page from page 1 through the available final page, including pages that contain fewer teams, and records the team composition for every manager found.
-2. **Given** a manager has changed players since the previous capture, **When** the next capture runs, **Then** the system preserves both the prior and current team states and records the change.
-3. **Given** the same manager appears on multiple season pages or the page count changes over time, **When** the capture runs, **Then** the system avoids losing historical records and treats the new data as an additional point in time rather than overwriting the past.
+1. **Given** a season table configured for 3 pages in `config.yaml`, **When** the capture runs, **Then** the system checks pages 1, 2, and 3, discovers all managers across those pages, formats manager and team names with underscores replacing spaces, and saves snapshots under `data/<season>/raw/<team_name>_<manager_id>/<timestamp>.yaml`.
+2. **Given** a manager has changed players since the previous capture, **When** the next capture runs, **Then** the system preserves the prior snapshot and records the new snapshot in the manager's directory.
+3. **Given** a manager has not changed players since their latest snapshot, **When** the capture runs, **Then** the system detects that the team is unchanged and does not write a duplicate snapshot.
+4. **Given** the same manager appears on multiple season pages or the page count changes over time, **When** the capture runs, **Then** the system deduplicates manager entries across pages before detail retrieval.
 
 ---
 
@@ -51,8 +52,8 @@ These two views must be easy to compare in a reader-friendly format.
 
 **Acceptance Scenarios**:
 
-1. **Given** a set of historical team snapshots, **When** the aggregation step runs, **Then** the system uses each manager's most recent team snapshot to calculate the current player ownership count for each player, ordered from highest count to lowest, and presents the current snapshot in a clear summary.
-2. **Given** a reader wants to understand player popularity over time, **When** they open the historical trend view, **Then** the system shows the count for each player across the stored capture timestamps in a clear, browsable format so changes over time can be reviewed.
+1. **Given** a set of historical team snapshots across manager directories, **When** the aggregation step runs, **Then** the system outputs a single `data/<season>/processed/player-ownership.yaml` file containing both the current player ownership counts and historical count trends across capture timestamps.
+2. **Given** an HTML report is rendered, **When** the player ownership table is generated, **Then** players are ordered by manager count descending (highest first), with ties broken alphabetically by player name.
 
 ---
 
@@ -66,9 +67,9 @@ A manager wants to understand how many team changes they have made during the se
 
 **Acceptance Scenarios**:
 
-1. **Given** a manager has a team snapshot and a later snapshot with different players, **When** the change analysis runs, **Then** the system counts the number of changes made since the previous snapshot.
+1. **Given** a manager has a team snapshot and a later snapshot with different players, **When** the change analysis runs, **Then** the system counts the number of changes made since the previous snapshot and saves the summary under `data/<season>/processed/manager-changes/<team_name>_<manager_id>.yaml`.
 2. **Given** a manager changes their team more than once across several captures, **When** the seasonal summary is generated, **Then** the system sums all changes made by that manager from the start of the season through the latest recorded snapshot.
-3. **Given** a manager has made team changes across multiple snapshots, **When** the detailed view is opened, **Then** the system shows the date of the latest change, indicates whether a manager has changed since the last snapshot, and allows the reader to inspect each individual change event, including when it happened and what changed.
+3. **Given** a manager has made team changes across multiple snapshots, **When** the detailed view is opened, **Then** the system shows the date of the latest change, indicates whether a manager has changed since the last snapshot, shows the manager name and team name, and allows the reader to inspect each individual change event.
 
 ---
 
@@ -82,8 +83,8 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 
 **Acceptance Scenarios**:
 
-1. **Given** processed data for player counts and change totals, **When** the presentation step runs, **Then** the system outputs a readable HTML-based summary that can be viewed locally and in a static GitHub Pages-style environment.
-2. **Given** an HTML report is rendered for review, **When** it is opened locally or on a static host, **Then** it shows the latest player ownership counts ordered highest first, the historical count trend for each player, and the manager change summary with latest change dates and drill-down detail, and it never requests or depends on live data access.
+1. **Given** processed data in `player-ownership.yaml` and `manager-changes/*.yaml`, **When** the presentation step runs, **Then** the system outputs a readable HTML-based summary (`docs/index.html`) that can be viewed locally and in a static GitHub Pages-style environment.
+2. **Given** an HTML report is rendered for review, **When** it is opened locally or on a static host, **Then** it shows the player ownership counts sorted highest first, the historical count trend for each player, and the manager change summary displaying Manager Name and Team Name with latest change dates, and it never requests or depends on live data access.
 3. **Given** a local test run produces newer processed data or a new HTML render, **When** the experiment is discarded, **Then** the last known-good committed render remains available for the reader while the local test artifact may be reset without affecting the authoritative captured dataset.
 
 ### Edge Cases
@@ -110,14 +111,15 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - **FR-010**: The system MUST capture selection counts as historical values for each capture event so that changes in player popularity over time can be shown, not just the latest count.
 - **FR-011**: The system MUST compute each manager's total team changes within a season using historical team snapshots.
 - **FR-012**: The system MUST show, in human-readable output, the date of each manager's latest team change and provide a deeper view of individual change events, including the timestamp and the players affected.
-- **FR-013**: The system MUST prefer a human-browsable storage model in which each manager has a dedicated data record or directory, with timestamped snapshots retained in chronological order for easy manual inspection.
-- **FR-014**: The system MUST allow the raw historical data to be organized as either a single YAML file per manager or a per-manager directory containing timestamped snapshot files, provided the chosen structure remains efficient for processing and manual browsing.
-- **FR-015**: The system MUST support processing of captured data into the structured outputs required for presentation, including latest player ownership counts, historical trend data for each player, and manager-level change summaries with timestamps.
-- **FR-016**: The system MUST provide a reader-facing presentation that uses HTML-based rendering for a professional, static output that can be viewed locally and in a GitHub Pages-style environment without live data access.
-- **FR-017**: The system MUST separate data capture, data processing, and presentation concerns into distinct commands or tools.
-- **FR-018**: The system MUST support manual execution of capture commands for initial setup and testing before automation is enabled.
-- **FR-019**: The system MUST explicitly exclude player score data and price data from this initial phase and focus only on players listed in users' teams.
-- **FR-020**: The system MUST preserve historical records even when a team remains unchanged between two capture runs, so the record of time and state remains auditable.
+- **FR-013**: The system MUST store each manager's raw historical data in a dedicated directory named by team name and manager ID (e.g. `<team_name>_<manager_id>`), containing timestamped snapshot YAML files to ensure human navigability and uniqueness.
+- **FR-014**: The system MUST skip creating and storing a new snapshot for a manager whose team composition has not changed since their most recent recorded snapshot.
+- **FR-015**: The system MUST store processed player ownership counts and historical player-count trends in a single, human-readable YAML file (`data/<season>/processed/player-ownership.yaml`) containing both the latest counts and the chronological historical trend for each player, allowing the render phase direct access to historical changes.
+- **FR-016**: The system MUST format team names and manager names in raw snapshots and models with spaces replaced by underscores (`_`), preserving the full name text.
+- **FR-017**: The system MUST name processed manager change summary files based on the team name with the manager ID suffix (e.g. `<team_name>_<manager_id>.yaml`).
+- **FR-018**: The system MUST order player ownership in the rendered HTML output by manager count descending (highest count first), with ties broken alphabetically by player name.
+- **FR-019**: The system MUST display manager changes in the rendered HTML table with both Manager Name and Team Name, rather than only manager ID.
+- **FR-020**: The system MUST read runtime configuration from a dedicated configuration file (`config.yaml`), including the active season (e.g. `2026-27`) and the number of season table pages to capture (default `3`).
+- **FR-021**: The system MUST capture data across all configured season table pages (pages 1 through N as specified in `config.yaml`, initially pages 1, 2, and 3), deduplicating managers discovered across pages before fetching rosters.
 - **FR-021**: The system MUST make it possible to clear local experimental capture and processed data without affecting the official stored dataset, so local experimentation can be safely reset while production data remains intact.
 - **FR-022**: The system MUST use the latest processed data currently available in the local repository state as the input for the HTML render, whether that state is the latest committed data or the latest data produced by a local capture/process run, and the generated HTML render MUST remain a reader-facing artifact that is valuable to maintain and review.
 - **FR-023**: The system MUST allow local testing to discard only uncommitted experimental changes to processed data or render outputs, while preserving the current repo state used for the latest render and ensuring the official raw historical capture data remains append-only and unmodified.

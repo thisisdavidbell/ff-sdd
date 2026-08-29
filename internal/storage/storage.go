@@ -35,23 +35,34 @@ func ReadSnapshotFile(path string) (models.ManagerSnapshot, error) {
 	return snapshot, nil
 }
 
-// SnapshotFiles reads all YAML files in a directory and returns their parsed snapshots.
+// SnapshotFiles reads all YAML files in a directory and any subdirectories, returning their parsed snapshots.
 func SnapshotFiles(dir string) ([]models.ManagerSnapshot, error) {
-	entries, err := os.ReadDir(dir)
+	var out []models.ManagerSnapshot
+	err := filepath.WalkDir(dir, func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			if os.IsNotExist(err) {
+				return nil
+			}
+			return err
+		}
+		if d.IsDir() {
+			return nil
+		}
+		ext := filepath.Ext(d.Name())
+		if ext != ".yaml" && ext != ".yml" {
+			return nil
+		}
+		snap, readErr := ReadSnapshotFile(path)
+		if readErr != nil {
+			return fmt.Errorf("read %s: %w", path, readErr)
+		}
+		if snap.ManagerID != "" {
+			out = append(out, snap)
+		}
+		return nil
+	})
 	if err != nil {
 		return nil, err
-	}
-	var out []models.ManagerSnapshot
-	for _, entry := range entries {
-		if entry.IsDir() || filepath.Ext(entry.Name()) != ".yaml" && filepath.Ext(entry.Name()) != ".yml" {
-			continue
-		}
-		path := filepath.Join(dir, entry.Name())
-		snap, err := ReadSnapshotFile(path)
-		if err != nil {
-			return nil, fmt.Errorf("read %s: %w", path, err)
-		}
-		out = append(out, snap)
 	}
 	return out, nil
 }
