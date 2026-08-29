@@ -14,6 +14,15 @@ sources including www.guysports.co.uk and dreamteamfc.com. All governance,
 implementation, and validation decisions must preserve the reliability and clarity of
 that data work.
 
+## Terminology
+- **Manager**: a person entered into the Guy Sports competition who selects a team.
+- **Player**: a footballer who a manager may select for their team.
+- **Team**: a manager's selection of 11 players that follows the game rules and
+  roster constraints for the competition.
+
+These definitions apply throughout this project and must be used consistently in
+specifications, implementation work, and project documentation.
+
 ## Core Principles
 
 ### I. Spec-First Delivery
