@@ -8,7 +8,6 @@ Represents the state of one manager's team at a specific capture time.
 Fields:
 - manager_id: string
 - manager_name: string
-- season: string
 - captured_at: RFC3339 timestamp
 - source: string
 - players: []PlayerReference
@@ -19,6 +18,7 @@ Validation rules:
 - captured_at must be present and in UTC or RFC3339.
 - players must be unique within a snapshot.
 - source must be one of the supported upstream sources (initially Guy Sports).
+- Season-specific storage is done by directory structure, not by a field on the snapshot itself.
 
 ### PlayerReference
 A single footballer referenced in a manager's team.
@@ -26,12 +26,12 @@ A single footballer referenced in a manager's team.
 Fields:
 - player_id: string
 - name: string
-- team_name: string (optional)
-- position: string (optional)
+- position: string
+- team_name: string
 
 Validation rules:
 - player_id should be stable enough to allow aggregation across snapshots.
-- name and player_id should be kept as stored from the source to preserve traceability.
+- name, position, and team_name should be retained to support human inspection of changes and to make manager change detail readable.
 
 ### TeamChangeEvent
 A derived change between two snapshots for the same manager.
@@ -57,11 +57,11 @@ Fields:
 - player_name: string
 - captured_at: RFC3339 timestamp
 - manager_count: int
-- managers: []string
 
 Validation rules:
 - manager_count equals the number of unique managers holding the player at that snapshot.
 - history is built from the sequence of capture timestamps.
+- The project stores only the count; it does not retain a list of managers who own each player.
 
 ### ManagerChangeSummary
 Derived summary of team changes for a manager.
@@ -79,23 +79,19 @@ Validation rules:
 
 ## Storage model
 
-### Raw data
-- data/raw/<source>/<manager-id>/<timestamp>.yaml
-- or a single YAML file per manager if the dataset remains manageable
+### Raw and processed data per season
+- data/<season>/raw/<source>/<manager-id>/<timestamp>.yaml
+- data/<season>/processed/player-ownership/<timestamp>.yaml
+- data/<season>/processed/manager-changes/<timestamp>.yaml
+- or a single YAML file per manager under the season raw directory if the dataset remains manageable
 
-The raw directory is append-only. Every new capture creates another snapshot, never overwriting the previous one.
-
-### Processed data
-- data/processed/player-ownership/<timestamp>.yaml
-- data/processed/manager-changes/<timestamp>.yaml
-
-Processed files are derived outputs; they may be regenerated and retained or discarded during local testing.
+The raw directory is append-only. Every new capture creates another snapshot, never overwriting the previous one. Processed files are derived outputs; the latest committed processed data is the canonical source used to generate the latest HTML render, and only uncommitted local experimental changes may be discarded during testing.
 
 ### Rendered output
-- site/index.html or docs/index.html
-- generated from processed data only, without live queries
+- docs/index.html
+- generated from the latest committed processed data only, without live queries
 
-The rendered HTML is the reader-facing artifact that should remain available as the last known-good version.
+The rendered HTML is the reader-facing artifact that should remain available as the last known-good version and must be regenerated from the latest committed processed output rather than being treated as disposable local state.
 
 ## Relationships
 - One manager may have many ManagerSnapshot records across time.

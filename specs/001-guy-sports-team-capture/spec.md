@@ -113,9 +113,10 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - **FR-018**: The system MUST support manual execution of capture commands for initial setup and testing before automation is enabled.
 - **FR-019**: The system MUST explicitly exclude player score data and price data from this initial phase and focus only on players listed in users' teams.
 - **FR-020**: The system MUST preserve historical records even when a team remains unchanged between two capture runs, so the record of time and state remains auditable.
-- **FR-021**: The system MUST make it possible to clear local capture and processed data without affecting the official stored dataset, so local experimentation can be safely reset while production data remains intact.
-- **FR-022**: The system MUST retain the generated HTML render as a reader-facing artifact that is valuable to maintain and review, while still allowing local testing to discard the latest experimental processed data or render output in favour of the previous known-good working version without altering the official raw historical capture data.
-- **FR-023**: The system MUST be designed to support future expansion for additional data sources and additional player-related datasets without breaking the historical capture model.
+- **FR-021**: The system MUST make it possible to clear local experimental capture and processed data without affecting the official stored dataset, so local experimentation can be safely reset while production data remains intact.
+- **FR-022**: The system MUST retain the latest committed processed data as the authoritative input for the latest HTML render, and the generated HTML render MUST remain a reader-facing artifact that is valuable to maintain and review.
+- **FR-023**: The system MUST allow local testing to discard only uncommitted experimental changes to processed data or render outputs, while preserving the last committed processed state and ensuring the official raw historical capture data remains append-only and unmodified.
+- **FR-024**: The system MUST be designed to support future expansion for additional data sources and additional player-related datasets without breaking the historical capture model.
 
 ### Key Entities
 
@@ -153,4 +154,4 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - Local testing may generate temporary data in a disposable local working set, and a reset command may be used to discard the local generated data while preserving the official captured dataset used for scheduled production updates.
 - The project may eventually run the capture and processing tools via GitHub Actions or similar automation, but this is a future operational consideration rather than a requirement for the initial feature scope.
 - Raw capture data is append-only and must never be overwritten by normal operation or local test runs; every later fetch from Guy Sports or DreamTeamFC creates a new historical capture record that can be preserved, deleted, or rolled back independently.
-- Processed data and rendered HTML outputs are derived artifacts that are important to readers because they make the analysis accessible, but local testing may intentionally discard the newest experimental generated files and keep the previous known-good working version while leaving the official historical raw dataset untouched.
+- Processed data and rendered HTML outputs are derived artifacts that are important to readers because they make the analysis accessible, but only uncommitted local experimental changes may be discarded; the latest committed processed data must be retained because it is the source used to generate the latest HTML report while the official historical raw dataset remains untouched.

@@ -2,7 +2,7 @@
 
 ## Capture command
 
-Command: go run ./cmd/capture --source guysports
+Command: ./bin/capture --source guysports
 
 Behavior:
 - Fetches the current page set from the configured Guy Sports season table pages.
@@ -16,12 +16,12 @@ Failure modes:
 
 ## Process command
 
-Command: go run ./cmd/process
+Command: ./bin/process
 
 Behavior:
 - Reads the raw YAML snapshots.
 - Produces ownership aggregates and manager change summaries.
-- Writes derived YAML or JSON outputs under data/processed.
+- Writes derived YAML outputs under data/processed.
 - Does not mutate raw capture history.
 
 Failure modes:
@@ -30,12 +30,12 @@ Failure modes:
 
 ## Render command
 
-Command: go run ./cmd/render
+Command: ./bin/render
 
 Behavior:
 - Reads processed aggregate data.
 - Produces static HTML pages for local viewing and GitHub Pages hosting.
-- Writes to site/ or docs/.
+- Writes to docs/.
 - Uses embedded templates and static assets with no live API dependency.
 
 Failure modes:
