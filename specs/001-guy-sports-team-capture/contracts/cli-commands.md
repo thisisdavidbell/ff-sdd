@@ -9,6 +9,7 @@ Behavior:
 - Stores timestamped manager snapshots in YAML.
 - Appends new records instead of replacing existing raw snapshots.
 - Returns a summary of managers captured and files written.
+- This is the only command in the normal workflow that may query the live Guy Sports site.
 
 Failure modes:
 - Upstream page unavailable: log the error and exit non-zero.
@@ -19,10 +20,11 @@ Failure modes:
 Command: ./bin/process
 
 Behavior:
-- Reads the raw YAML snapshots.
+- Reads the raw YAML snapshots from the local configured season directory.
 - Produces ownership aggregates and manager change summaries.
 - Writes derived YAML outputs under `data/<season>/processed/`.
 - Does not mutate raw capture history.
+- Must not query Guy Sports or any other live source.
 
 Failure modes:
 - Empty or malformed input: warn, skip invalid records, and continue where possible.
@@ -37,6 +39,7 @@ Behavior:
 - Produces static HTML pages for local viewing and GitHub Pages hosting.
 - Writes to docs/.
 - Uses embedded templates and static assets with no live API dependency.
+- Must not query Guy Sports or any live source.
 
 Failure modes:
 - Missing processed data: fail clearly and instruct the user to run capture/process first.

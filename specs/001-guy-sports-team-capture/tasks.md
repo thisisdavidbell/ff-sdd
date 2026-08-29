@@ -8,9 +8,9 @@
 
 **Purpose**: Create the Go project skeleton and basic tooling needed for the capture, process, and render pipeline.
 
-- [ ] T001 Create the repository structure for Go CLI commands and internal packages under `cmd/`, `internal/`, `data/`, `docs/`, and `tests/`
-- [ ] T002 Initialize the Go module and project metadata for the feature in the repository root
-- [ ] T003 [P] Configure Go formatting and validation workflow (`gofmt`, `go test`, and a simple local validation command)
+- [X] T001 Create the repository structure for Go CLI commands and internal packages under `cmd/`, `internal/`, `data/`, `docs/`, and `tests/`
+- [X] T002 Initialize the Go module and project metadata for the feature in the repository root
+- [X] T003 [P] Configure Go formatting and validation workflow (`gofmt`, `go test`, and a simple local validation command)
 
 ---
 
@@ -20,11 +20,11 @@
 
 **Checkpoint**: Foundation ready — capture, processing, and render work can begin in parallel.
 
-- [ ] T004 Define the shared data model for snapshots, player references, and seasonal storage in `internal/models/`
-- [ ] T005 [P] Implement the storage abstraction for append-only YAML records and season-based directories in `internal/storage/`
-- [ ] T006 [P] Implement common validation and timestamp helpers used by capture, processing, and rendering in `internal/validation/`
-- [ ] T007 Create the command scaffolding for `cmd/capture`, `cmd/process`, and `cmd/render` with shared CLI wiring
-- [ ] T008 Create the seasonal data-layout contract and path resolution helpers for `data/<season>/raw`, `data/<season>/processed`, and `docs/`
+- [X] T004 Define the shared data model for snapshots, player references, and seasonal storage in `internal/models/`
+- [X] T005 [P] Implement the storage abstraction for append-only YAML records and season-based directories in `internal/storage/`
+- [X] T006 [P] Implement common validation and timestamp helpers used by capture, processing, and rendering in `internal/validation/`
+- [X] T007 Create the command scaffolding for `cmd/capture`, `cmd/process`, and `cmd/render` with shared CLI wiring
+- [X] T008 Create the seasonal data-layout contract and path resolution helpers for `data/<season>/raw`, `data/<season>/processed`, and `docs/`
 
 ---
 
@@ -36,17 +36,17 @@
 
 ### Tests for User Story 1
 
-- [ ] T009 [P] [US1] Add a failing unit test for snapshot serialization and validation in `tests/unit/test_snapshot_model.go`
-- [ ] T010 [P] [US1] Add a failing integration test for the append-only capture flow in `tests/integration/test_capture_flow.go`
+- [X] T009 [P] [US1] Add a failing unit test for snapshot serialization and validation in `tests/unit/test_snapshot_model.go`
+- [X] T010 [P] [US1] Add a failing integration test for the append-only capture flow in `tests/integration/test_capture_flow.go`
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] Implement `ManagerSnapshot` and `PlayerReference` structs in `internal/models/snapshot.go`
-- [ ] T012 [P] [US1] Implement the raw YAML writer/reader for per-manager or per-season append-only storage in `internal/storage/yaml_store.go`
-- [ ] T013 [US1] Implement season-page parsing and manager roster extraction for Guy Sports fixtures in `internal/capture/parser.go`
-- [ ] T014 [US1] Implement the capture pipeline that collects manager teams, attaches timestamps, and writes raw YAML under `data/<season>/raw/`
-- [ ] T015 [US1] Implement `cmd/capture/main.go` with the CLI contract for `./bin/capture --source guysports`
-- [ ] T016 [US1] Add validation for malformed snapshots, partial page failures, and duplicate capture handling
+- [X] T011 [P] [US1] Implement `ManagerSnapshot` and `PlayerReference` structs in `internal/models/snapshot.go`
+- [X] T012 [P] [US1] Implement the raw YAML writer/reader for per-manager or per-season append-only storage in `internal/storage/yaml_store.go`
+- [X] T013 [US1] Implement season-page parsing and manager roster extraction for Guy Sports fixtures in `internal/capture/parser.go`
+- [X] T014 [US1] Implement the capture pipeline that collects manager teams, attaches timestamps, and writes raw YAML under `data/<season>/raw/`
+- [X] T015 [US1] Implement `cmd/capture/main.go` with the CLI contract for `./bin/capture --source guysports`
+- [X] T016 [US1] Add validation for malformed snapshots, partial page failures, and duplicate capture handling
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and independently testable.
 
@@ -62,16 +62,16 @@
 
 ### Tests for User Story 2
 
-- [ ] T017 [P] [US2] Add a failing unit test for aggregation logic in `tests/unit/test_player_ownership.go`
-- [ ] T018 [P] [US2] Add a failing integration test for processing raw snapshots into derived ownership YAML in `tests/integration/test_process_ownership.go`
+- [X] T017 [P] [US2] Add a failing unit test for aggregation logic in `tests/unit/test_player_ownership.go`
+- [X] T018 [P] [US2] Add a failing integration test for processing raw snapshots into derived ownership YAML in `tests/integration/test_process_ownership.go`
 
 ### Implementation for User Story 2
 
-- [ ] T019 [P] [US2] Define the derived aggregate model for player ownership in `internal/models/ownership.go`
-- [ ] T020 [US2] Implement the processing step that reads raw snapshots, builds the latest ownership view from each manager's newest team state, and writes historical trend output under `data/<season>/processed/player-ownership/`
-- [ ] T021 [US2] Implement ordering and trend logic separately for the current snapshot-based counts and the historical time-series counts
-- [ ] T022 [US2] Implement `cmd/process/main.go` to run the offline processing workflow from persisted raw data
-- [ ] T023 [US2] Add clear error handling for missing data, malformed records, and empty seasons
+- [X] T019 [P] [US2] Define the derived aggregate model for player ownership in `internal/models/ownership.go`
+- [X] T020 [US2] Implement the processing step that reads raw snapshots, builds the latest ownership view from each manager's newest team state, and writes historical trend output under `data/<season>/processed/player-ownership/`
+- [X] T021 [US2] Implement ordering and trend logic separately for the current snapshot-based counts and the historical time-series counts
+- [X] T022 [US2] Implement `cmd/process/main.go` to run the offline processing workflow from persisted raw data
+- [X] T023 [US2] Add clear error handling for missing data, malformed records, and empty seasons
 
 **Checkpoint**: At this point, player selection output should be generated from historical snapshots and be ready for presentation.
 
@@ -85,16 +85,16 @@
 
 ### Tests for User Story 3
 
-- [ ] T024 [P] [US3] Add a failing unit test for sequential diffing of manager snapshots in `tests/unit/test_manager_changes.go`
-- [ ] T025 [P] [US3] Add a failing integration test for manager summary generation in `tests/integration/test_manager_changes.go`
+- [X] T024 [P] [US3] Add a failing unit test for sequential diffing of manager snapshots in `tests/unit/test_manager_changes.go`
+- [X] T025 [P] [US3] Add a failing integration test for manager summary generation in `tests/integration/test_manager_changes.go`
 
 ### Implementation for User Story 3
 
-- [ ] T026 [P] [US3] Define the derived change-event and manager summary models in `internal/models/change_summary.go`
-- [ ] T027 [US3] Implement the diff logic that compares consecutive snapshots and records added/removed players without overcounting unchanged states
-- [ ] T028 [US3] Implement cumulative season summaries for `total_changes`, `latest_change_at`, and `changed_since_last_snapshot`
-- [ ] T029 [US3] Write derived manager-change YAML output under `data/<season>/processed/manager-changes/`
-- [ ] T030 [US3] Add validation to ensure duplicate snapshots and unchanged states are treated correctly
+- [X] T026 [P] [US3] Define the derived change-event and manager summary models in `internal/models/change_summary.go`
+- [X] T027 [US3] Implement the diff logic that compares consecutive snapshots and records added/removed players without overcounting unchanged states
+- [X] T028 [US3] Implement cumulative season summaries for `total_changes`, `latest_change_at`, and `changed_since_last_snapshot`
+- [X] T029 [US3] Write derived manager-change YAML output under `data/<season>/processed/manager-changes/`
+- [X] T030 [US3] Add validation to ensure duplicate snapshots and unchanged states are treated correctly
 
 **Checkpoint**: At this point, team-change history should be fully derived and ready for viewing in the static report.
 
@@ -108,17 +108,17 @@
 
 ### Tests for User Story 4
 
-- [ ] T031 [P] [US4] Add a failing unit test for HTML template output and ordering in `tests/unit/test_render_output.go`
-- [ ] T032 [P] [US4] Add a failing integration test for render-from-processed-data flow in `tests/integration/test_render_flow.go`
+- [X] T031 [P] [US4] Add a failing unit test for HTML template output and ordering in `tests/unit/test_render_output.go`
+- [X] T032 [P] [US4] Add a failing integration test for render-from-processed-data flow in `tests/integration/test_render_flow.go`
 
 ### Implementation for User Story 4
 
-- [ ] T033 [P] [US4] Implement the HTML render model and template structure in `internal/render/`
-- [ ] T034 [US4] Implement the render pipeline that reads processed player ownership and manager change YAML and emits static HTML into `docs/`
-- [ ] T035 [US4] Implement `cmd/render/main.go` to generate the latest GitHub Pages-friendly report from the currently available processed data in the local repository
-- [ ] T036 [US4] Ensure the rendered report never queries live sources and preserves the last known-good HTML if local generation fails
-- [ ] T037 [US4] Add a reset/local cleanup guide and validation notes to the quickstart workflow, including the rule that uncommitted local processed/render changes can be discarded instead of being committed
-- [ ] T037b [P] Document the optional Guy Sports live smoke test as a narrowly scoped check for retrieval-code changes or explicit requests only; it is not part of the normal validation cycle
+- [X] T033 [P] [US4] Implement the HTML render model and template structure in `internal/render/`
+- [X] T034 [US4] Implement the render pipeline that reads processed player ownership and manager change YAML and emits static HTML into `docs/`
+- [X] T035 [US4] Implement `cmd/render/main.go` to generate the latest GitHub Pages-friendly report from the currently available processed data in the local repository
+- [X] T036 [US4] Ensure the rendered report never queries live sources and preserves the last known-good HTML if local generation fails
+- [X] T037 [US4] Add a reset/local cleanup guide and validation notes to the quickstart workflow, including the rule that uncommitted local processed/render changes can be discarded instead of being committed
+- [X] T037b [P] Document the optional Guy Sports live smoke test as a narrowly scoped check for retrieval-code changes or explicit requests only; it is not part of the normal validation cycle
 
 **Checkpoint**: The system should now be able to show static, reader-friendly results from historical stored data without network access.
 
@@ -128,11 +128,11 @@
 
 **Purpose**: Final repository-wide verification, documentation, and offline smoke checks.
 
-- [ ] T038 [P] Run the offline Go test suite across unit and integration tests for capture, processing, and rendering
-- [ ] T039 [P] Validate the CLI commands against fixture datasets and confirm output paths and file formats match the planned storage model
-- [ ] T040 [P] Update the project README and feature quickstart to explain the capture → process → render workflow and reset policy
-- [ ] T041 [P] Verify the repository honors the governance constraints: append-only raw data, committed processed-data authority, and no live-source validation by default
-- [ ] T042 Run the full offline validation command from the quickstart and confirm the generated HTML is consistent with the committed processed state
+- [X] T038 [P] Run the offline Go test suite across unit and integration tests for capture, processing, and rendering
+- [X] T039 [P] Validate the CLI commands against fixture datasets and confirm output paths and file formats match the planned storage model
+- [X] T040 [P] Update the project README and feature quickstart to explain the capture → process → render workflow and reset policy
+- [X] T041 [P] Verify the repository honors the governance constraints: append-only raw data, committed processed-data authority, and no live-source validation by default
+- [X] T042 Run the full offline validation command from the quickstart and confirm the generated HTML is consistent with the committed processed state
 
 ---
 
