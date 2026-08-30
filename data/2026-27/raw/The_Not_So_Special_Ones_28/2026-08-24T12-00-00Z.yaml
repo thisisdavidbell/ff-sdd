@@ -1,0 +1,51 @@
+manager_id: "28"
+manager_name: Mike_Whyley
+team_name: The_Not_So_Special_Ones
+captured_at: "2026-08-24T12:00:00Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal FC
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: harry-maguire
+      name: Harry Maguire
+      position: DEF
+      team_name: Manchester United FC
+    - player_id: andy-robertson
+      name: Andy Robertson
+      position: DEF
+      team_name: Tottenham Hotspur FC
+    - player_id: christos-tzolis
+      name: Christos Tzolis
+      position: MID
+      team_name: Arsenal FC
+    - player_id: bruno-guimarães
+      name: Bruno Guimarães
+      position: MID
+      team_name: Arsenal FC
+    - player_id: rio-ngumoha
+      name: Rio Ngumoha
+      position: MID
+      team_name: Liverpool FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: kai-havertz
+      name: Kai Havertz
+      position: STR
+      team_name: Arsenal FC
+    - player_id: brian-madjo
+      name: Brian Madjo
+      position: STR
+      team_name: Aston Villa FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=28&name=The+Not+So+Special+Ones&view=public

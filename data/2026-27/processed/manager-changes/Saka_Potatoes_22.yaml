@@ -1,5 +1,21 @@
 manager_id: "22"
 manager_name: Mat_the_cat
 team_name: Saka_Potatoes
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 2
+latest_change_at: "2026-08-29T22:11:10Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "22"
+      from_captured_at: "2026-08-24T12:00:00Z"
+      to_captured_at: "2026-08-29T22:11:10Z"
+      added_players:
+        - player_id: emersonn
+          name: Emersonn
+        - player_id: riccardo-calafiori
+          name: Riccardo Calafiori
+      removed_players:
+        - player_id: unknown-3
+          name: Unknown
+        - player_id: unknown-4
+          name: Unknown
+      change_count: 2

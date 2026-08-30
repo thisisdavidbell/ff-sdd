@@ -1,5 +1,17 @@
 manager_id: "19"
 manager_name: Colin_Berns
 team_name: South_Fork_Farmers
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-08-29T22:11:10Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "19"
+      from_captured_at: "2026-08-24T12:00:00Z"
+      to_captured_at: "2026-08-29T22:11:10Z"
+      added_players:
+        - player_id: marc-guéhi
+          name: Marc Guéhi
+      removed_players:
+        - player_id: unknown-2
+          name: Unknown
+      change_count: 1

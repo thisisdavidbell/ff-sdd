@@ -1,5 +1,17 @@
 manager_id: "26"
 manager_name: Les_Fathers
 team_name: Staggered_United
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-08-29T22:11:10Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "26"
+      from_captured_at: "2026-08-24T12:00:00Z"
+      to_captured_at: "2026-08-29T22:11:10Z"
+      added_players:
+        - player_id: igor-thiago
+          name: Igor Thiago
+      removed_players:
+        - player_id: unknown-5
+          name: Unknown
+      change_count: 1

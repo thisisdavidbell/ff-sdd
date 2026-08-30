@@ -3,6 +3,7 @@
 *.exe
 
 # Test and temporary files
+/tmp/
 *.tmp
 *.swp
 .DS_Store

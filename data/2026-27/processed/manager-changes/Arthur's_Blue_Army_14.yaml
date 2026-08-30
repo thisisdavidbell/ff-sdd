@@ -1,5 +1,17 @@
 manager_id: "14"
 manager_name: Arthur
 team_name: Arthur's_Blue_Army
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-08-29T22:11:10Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "14"
+      from_captured_at: "2026-08-24T12:00:00Z"
+      to_captured_at: "2026-08-29T22:11:10Z"
+      added_players:
+        - player_id: joão-pedro
+          name: João Pedro
+      removed_players:
+        - player_id: unknown-1
+          name: Unknown
+      change_count: 1

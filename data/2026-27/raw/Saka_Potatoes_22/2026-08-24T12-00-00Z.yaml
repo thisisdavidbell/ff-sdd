@@ -1,0 +1,51 @@
+manager_id: "22"
+manager_name: Mat_the_cat
+team_name: Saka_Potatoes
+captured_at: "2026-08-24T12:00:00Z"
+source: guysports
+players:
+    - player_id: antonín-kinsky
+      name: Antonín Kinsky
+      position: GK
+      team_name: Tottenham Hotspur FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: unknown-4
+      name: Unknown
+      position: DEF
+      team_name: Unknown FC
+    - player_id: luke-shaw
+      name: Luke Shaw
+      position: DEF
+      team_name: Manchester United FC
+    - player_id: neco-williams
+      name: Neco Williams
+      position: DEF
+      team_name: Nottingham Forest FC
+    - player_id: declan-rice
+      name: Declan Rice
+      position: MID
+      team_name: Arsenal FC
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea FC
+    - player_id: enzo-le-fée
+      name: Enzo Le Fée
+      position: MID
+      team_name: Sunderland AFC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: unknown-3
+      name: Unknown
+      position: STR
+      team_name: Unknown FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=22&name=Saka+Potatoes&view=public

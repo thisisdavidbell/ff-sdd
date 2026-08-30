@@ -1,0 +1,51 @@
+manager_id: "17"
+manager_name: Will_Watkins
+team_name: Willy’s_Wanderers
+captured_at: "2026-08-24T12:00:00Z"
+source: guysports
+players:
+    - player_id: jordan-pickford
+      name: Jordan Pickford
+      position: GK
+      team_name: Everton FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: milan-van-ewijk
+      name: Milan van Ewijk
+      position: DEF
+      team_name: Coventry City FC
+    - player_id: rayan
+      name: Rayan
+      position: MID
+      team_name: AFC Bournemouth
+    - player_id: iliman-ndiaye
+      name: Iliman Ndiaye
+      position: MID
+      team_name: Everton FC
+    - player_id: florian-wirtz
+      name: Florian Wirtz
+      position: MID
+      team_name: Liverpool FC
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+    - player_id: benjamin-sesko
+      name: Benjamin Sesko
+      position: STR
+      team_name: Manchester United FC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=17&name=Willy%E2%80%99s+Wanderers&view=public

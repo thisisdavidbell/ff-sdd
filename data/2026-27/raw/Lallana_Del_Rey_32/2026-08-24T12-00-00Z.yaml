@@ -1,0 +1,51 @@
+manager_id: "32"
+manager_name: James_Berns
+team_name: Lallana_Del_Rey
+captured_at: "2026-08-24T12:00:00Z"
+source: guysports
+players:
+    - player_id: robin-roefs
+      name: Robin Roefs
+      position: GK
+      team_name: Sunderland AFC
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: reece-james
+      name: Reece James
+      position: DEF
+      team_name: Chelsea FC
+    - player_id: trai-hume
+      name: Trai Hume
+      position: DEF
+      team_name: Sunderland AFC
+    - player_id: christos-tzolis
+      name: Christos Tzolis
+      position: MID
+      team_name: Arsenal FC
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United FC
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United FC
+    - player_id: morgan-gibbs-white
+      name: Morgan Gibbs-White
+      position: MID
+      team_name: Nottingham Forest FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+    - player_id: brian-brobbey
+      name: Brian Brobbey
+      position: STR
+      team_name: Sunderland AFC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=32&name=Lallana+Del+Rey&view=public
