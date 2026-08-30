@@ -7,8 +7,8 @@
 
 ### 1. Source-Specific Capture Command Architecture
 
-- **Decision**: Rename `cmd/capture` to `cmd/capture-guysports` which compiles to `bin/capture-guysports`.
-- **Rationale**: Isolates provider-specific HTTP fetching and HTML parsing logic for GuySports. Allows future capture sources (e.g. `cmd/capture-dreamteam`) to be added cleanly without overloading flags or conditional branches in a single generic capture command.
+- **Decision**: Rename `cmd/capture` to `cmd/capture-guysports`.
+- **Rationale**: Isolates provider-specific HTTP fetching and HTML parsing logic for GuySports. Moving the directory `cmd/capture` -> `cmd/capture-guysports` explicitly separates GuySports collection without requiring internal code changes in `main.go`. Allows future capture sources (e.g. `cmd/capture-dreamteam`) to be added cleanly.
 - **Alternatives Considered**:
   - *Keep `cmd/capture` and use a `--source` flag*: Rejected because future sources will require different flags, parser configs, and endpoints. Source-specific entrypoints isolate dependencies and CLI contracts.
   - *Use Go subcommands (e.g., `capture guysports`)*: Rejected because the current repo pattern uses distinct binary targets in `bin/` (`bin/process`, `bin/render`).

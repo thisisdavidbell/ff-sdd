@@ -58,11 +58,6 @@ specs/002-automated-data-pipeline/
 └── workflows/
     └── schedule-run-action.yml # Scheduled & manual workflow
 
-bin/
-├── capture-guysports           # Compiled GuySports capture binary
-├── process                     # Compiled processing binary
-└── render                      # Compiled rendering binary
-
 cmd/
 ├── capture-guysports/
 │   └── main.go                 # GuySports specific capture entrypoint
@@ -71,7 +66,7 @@ cmd/
 └── render/
     └── main.go                 # Rendering entrypoint
 
-run.sh                          # Root pipeline execution script
+run.sh                          # Root pipeline execution script (using go run)
 
 data/                           # Versioned raw & processed YAML data
 docs/                           # Rendered static HTML report

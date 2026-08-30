@@ -33,10 +33,10 @@ go run ./cmd/capture-guysports [flags]
 ```
 
 ### Behavior & Execution Sequence
-1. Compiles binaries or executes commands in sequence:
-   1. `capture-guysports`
-   2. `process`
-   3. `render`
+1. Executes commands directly via `go run` in sequence:
+   1. `go run ./cmd/capture-guysports`
+   2. `go run ./cmd/process`
+   3. `go run ./cmd/render`
 2. Configured with `set -euo pipefail`.
 3. Stops immediately on non-zero exit code from any stage.
 

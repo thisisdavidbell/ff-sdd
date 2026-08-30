@@ -21,14 +21,11 @@ This guide describes how to validate the automated data pipeline and capture sou
 
 ### Scenario 1: Verify Direct GuySports Capture Target
 
-Validate that `capture-guysports` can be executed directly as a standalone CLI tool.
+Validate that `capture-guysports` can be executed directly as a standalone CLI tool via `go run`.
 
 ```bash
-# Build binary target
-go build -o bin/capture-guysports ./cmd/capture-guysports
-
-# Run capture tool
-./bin/capture-guysports -pages 1
+# Run capture tool directly via go run
+go run ./cmd/capture-guysports -pages 1
 ```
 
 **Expected Outcome**:
@@ -39,7 +36,7 @@ go build -o bin/capture-guysports ./cmd/capture-guysports
 
 ### Scenario 2: Verify End-to-End Pipeline Script Execution (`run.sh`)
 
-Validate that `run.sh` executes build/capture, process, and render stages sequentially.
+Validate that `run.sh` executes capture, process, and render stages sequentially using `go run`.
 
 ```bash
 # Make run.sh executable
