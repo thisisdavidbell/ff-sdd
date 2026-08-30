@@ -7,31 +7,37 @@
 
 This feature orchestrates and automates the flow of data through existing storage entities. No schema changes are made to existing YAML files; however, the pipeline enforces strict additive state transitions across the storage lineage.
 
+The first three pipeline stages (`capture-guysports`, `process`, `render`) are executed sequentially inside the `run.sh` script. The final git commit and push step is the only step executed outside `run.sh` (by the GitHub Actions workflow).
+
 ```
-+--------------------------+
-| Upstream (guysports.co.uk)|
-+--------------------------+
-             |
-             | capture-guysports
-             v
-+--------------------------+
-|  Raw Data Snapshots      |  (Additive YAML in data/{season}/raw/)
-+--------------------------+
-             |
-             | process
-             v
-+--------------------------+
-|  Processed State         |  (Ownership & Manager Changes YAML in data/{season}/processed/)
-+--------------------------+
-             |
-             | render
-             v
-+--------------------------+
-|  Static HTML Report      |  (Rendered report in docs/index.html)
-+--------------------------+
-             |
-             | git commit & push (CI)
-             v
++--------------------------------------------------------------------------+
+| Executed inside run.sh                                                   |
+|                                                                          |
+|  +--------------------------+                                            |
+|  | Upstream (guysports.co.uk)|                                            |
+|  +--------------------------+                                            |
+|               |                                                          |
+|               | capture-guysports                                        |
+|               v                                                          |
+|  +--------------------------+                                            |
+|  |  Raw Data Snapshots      |  (Additive YAML in data/{season}/raw/)     |
+|  +--------------------------+                                            |
+|               |                                                          |
+|               | process                                                  |
+|               v                                                          |
+|  +--------------------------+                                            |
+|  |  Processed State         |  (Ownership YAML in data/{season}/processed/)|
+|  +--------------------------+                                            |
+|               |                                                          |
+|               | render                                                   |
+|               v                                                          |
+|  +--------------------------+                                            |
+|  |  Static HTML Report      |  (Rendered report in docs/index.html)      |
+|  +--------------------------+                                            |
++--------------------------------------------------------------------------+
+               |
+               | git commit & push (Executed outside run.sh by GitHub Action)
+               v
 +--------------------------+
 |  Version Control Branch  |  (Persisted repository state)
 +--------------------------+
@@ -42,21 +48,21 @@ This feature orchestrates and automates the flow of data through existing storag
 ### 1. Raw Snapshot Entity (Existing, Additive)
 - **Path**: `data/{season}/raw/{TeamName}_{ManagerID}/{Timestamp}.yaml`
 - **Mutability**: Append-only (new snapshots created per run if changes detected; unchanged snapshots skipped).
-- **Source**: `capture-guysports` CLI target.
+- **Source**: `capture-guysports` CLI target (executed inside `run.sh`).
 
 ### 2. Processed Derived Entities (Existing, Updated)
 - **Paths**:
   - `data/{season}/processed/player-ownership.yaml`
   - `data/{season}/processed/manager-changes/{TeamName}_{ManagerID}.yaml`
 - **Mutability**: Overwritten/updated deterministically based on raw snapshot lineage.
-- **Source**: `process` CLI target.
+- **Source**: `process` CLI target (executed inside `run.sh`).
 
 ### 3. Rendered Presentation Entity (Existing, Updated)
 - **Path**: `docs/index.html`
 - **Mutability**: Overwritten deterministically based on processed state.
-- **Source**: `render` CLI target.
+- **Source**: `render` CLI target (executed inside `run.sh`).
 
 ### 4. Git Commit Artifact (New Automated Behavior)
 - **Scope**: Includes modified/added files in `data/` and `docs/`.
-- **Commit Message Format**: `chore(data): automated weekly pipeline run [skip ci]` or equivalent.
-- **Trigger**: GitHub Actions scheduled or manual workflow completion.
+- **Commit Message Format**: `Automated weekly pipeline run [skip ci]` or equivalent.
+- **Trigger**: GitHub Actions scheduled or manual workflow completion (executed outside `run.sh`).

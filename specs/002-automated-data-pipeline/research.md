@@ -26,7 +26,7 @@
 - **Decision**: Define `.github/workflows/schedule-run-action.yml` with:
   - Triggers: `schedule` with cron `0 18 * * 5` (Friday at 18:00 UTC) and `workflow_dispatch` (manual trigger).
   - Environment: `ubuntu-latest` with Go 1.22.x.
-  - Execution: Checkout repo -> setup Go -> run `./run.sh` -> commit and push modified files (`data/`, `docs/`) back to the branch using `GITHUB_TOKEN` git identity.
+  - Execution: Checkout repo -> setup Go -> run `./run.sh` -> commit (`Automated weekly pipeline run`) and push modified files (`data/`, `docs/`) back to the branch using `GITHUB_TOKEN` git identity.
 - **Rationale**: Meets FR-005, FR-006, and FR-008. Automated git commit preserves historical snapshots additively in accordance with Constitution Principle VI.
 - **Alternatives Considered**:
   - *Commit via third-party Action*: Using standard `git` commands with `GITHUB_TOKEN` inside the workflow step keeps dependencies minimal and fully transparent.

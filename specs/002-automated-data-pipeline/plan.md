@@ -6,7 +6,7 @@
 
 ## Summary
 
-Automate the Fantasy Football data collection pipeline by creating a unified pipeline execution script (`run.sh`), separating the GuySports capture CLI binary target (`cmd/capture-guysports`), and configuring a scheduled and manual GitHub Actions workflow (`.github/workflows/schedule-run-action.yml`). Updates to raw data, processed state, and rendered HTML reports will be saved back to the repository branch automatically.
+Automate the Fantasy Football data collection pipeline by creating a unified pipeline execution script (`run.sh`), separating the GuySports capture CLI binary target (`cmd/capture-guysports`), and configuring a scheduled and manual GitHub Actions workflow (`.github/workflows/schedule-run-action.yml`). Updates to raw data, processed state, and rendered HTML reports will be committed and pushed back to the repository branch by the GitHub Actions workflow.
 
 ## Technical Context
 
@@ -16,7 +16,7 @@ Automate the Fantasy Football data collection pipeline by creating a unified pip
 
 **Storage**: Local raw YAML files (`data/2026-27/raw/`), processed YAML files (`data/2026-27/processed/`), static HTML (`docs/index.html`)
 
-**Testing**: Go standard testing (`go test ./...`), integration tests in `tests/integration/` and unit tests in `tests/unit/`
+**Testing**: Go standard testing (`go test ./...`), integration tests in `tests/integration/` and unit tests in `tests/unit/`. **Development Directive**: At no point during the implementation of this feature should real live capture, process, or render pipeline commands be run automatically by agents/tooling against production endpoints/files. The user should be asked to manually run and verify live execution scenarios when desired and tidy up any unwanted changes after doing so.
 
 **Target Platform**: Linux (GitHub Actions `ubuntu-latest`), macOS / Linux local development environments
 
@@ -24,9 +24,7 @@ Automate the Fantasy Football data collection pipeline by creating a unified pip
 
 **Performance Goals**: Rapid sequential pipeline execution (capture, process, render)
 
-**Constraints**: Additive historical data preservation per Constitution Principle VI; strict error handling (`set -euo pipefail`); commit changes back to repository branch in CI
-
-**Scale/Scope**: ~30 manager snapshots per run across 3 crawl pages; weekly schedule (Friday 18:00 UTC)
+**Constraints**: Additive historical data preservation per Constitution Principle VI; strict error handling (`set -euo pipefail`); commit and push changes back to repository branch in CI workflow step; no automated live production runs during feature implementation.
 
 ## Constitution Check
 

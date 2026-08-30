@@ -15,7 +15,7 @@ go run ./cmd/capture-guysports [flags]
 ### Command Flags
 - `-config string`: Path to configuration file (default: `config.yaml`).
 - `-source string`: Data source identifier (default: `guysports`).
-- `-output string`: Target raw directory path (default: evaluated from `config.yaml`).
+- `-output string`: Target raw directory path (default: derived path `data/<season>/raw` based on active season).
 - `-pages int`: Number of season pages to crawl (default: evaluated from `config.yaml`).
 
 ### Behavior & Exit Codes
@@ -62,5 +62,5 @@ on:
 3. **Execute Pipeline**: Execute `./run.sh`.
 4. **Commit & Push Changes**:
    - Detect changes in `data/` and `docs/`.
-   - Commit message: `chore(data): automated weekly pipeline run`
+   - Commit message: `Automated weekly pipeline run`
    - Push to active repository branch.

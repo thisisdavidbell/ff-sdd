@@ -5,6 +5,10 @@
 
 This guide describes how to validate the automated data pipeline and capture source separation locally and in CI/CD.
 
+> **Important Verification Directive**:
+> AI agents and automated tools MUST NOT execute live `capture-guysports`, `process`, or `render` commands against production endpoints/files during feature development.
+> The user is requested to manually execute and verify these validation scenarios, and then clean up any unwanted working tree changes afterwards (e.g., via `git restore data/ docs/`).
+
 ## Prerequisites
 
 - Go 1.22+ installed locally.
@@ -13,7 +17,7 @@ This guide describes how to validate the automated data pipeline and capture sou
 
 ---
 
-## Validation Scenarios
+## Manual Validation Scenarios (User Executed)
 
 ### Scenario 1: Verify Direct GuySports Capture Target
 
