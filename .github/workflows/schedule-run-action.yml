@@ -1,0 +1,39 @@
+name: Scheduled Data Pipeline Run
+
+on:
+  schedule:
+    - cron: '0 18 * * 5' # Every Friday at 18:00 UTC
+  workflow_dispatch:     # Manual on-demand execution
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.x'
+
+      - name: Run pipeline script
+        run: |
+          chmod +x run.sh
+          ./run.sh
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          if git diff --staged --quiet; then
+            echo "No changes in data or docs to commit."
+          else
+            git commit -m "Automated weekly pipeline run"
+            git push
+          fi

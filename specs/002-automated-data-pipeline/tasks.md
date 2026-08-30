@@ -17,7 +17,7 @@
 
 **Purpose**: Verify development environment and setup workspace structure
 
-- [ ] T001 Verify project structure and Go dependencies per `specs/002-automated-data-pipeline/plan.md`
+- [X] T001 Verify project structure and Go dependencies per `specs/002-automated-data-pipeline/plan.md`
 
 ---
 
@@ -29,9 +29,9 @@
 
 ### Implementation for User Story 3
 
-- [ ] T002 [US3] Move `cmd/capture/` directory to `cmd/capture-guysports/`
-- [ ] T003 [P] [US3] Update capture target references and test imports in `tests/integration/test_capture_flow_test.go` and `tests/unit/test_capture_parser_test.go`
-- [ ] T004 [P] [US3] Update `README.md` to document `go run ./cmd/capture-guysports` usage
+- [X] T002 [US3] Move `cmd/capture/` directory to `cmd/capture-guysports/`
+- [X] T003 [P] [US3] Update capture target references and test imports in `tests/integration/test_capture_flow_test.go` and `tests/unit/test_capture_parser_test.go`
+- [X] T004 [P] [US3] Update `README.md` to document `go run ./cmd/capture-guysports` usage
 
 **Checkpoint**: User Story 3 complete - `cmd/capture-guysports` is isolated and verified independently.
 
@@ -45,12 +45,12 @@
 
 ### Tests for User Story 1
 
-- [ ] T005 [P] [US1] Create script verification test in `tests/unit/test_run_script_test.go` to validate error trapping and stage ordering of `run.sh`
+- [X] T005 [P] [US1] Create script verification test in `tests/unit/test_run_script_test.go` to validate error trapping and stage ordering of `run.sh`
 
 ### Implementation for User Story 1
 
-- [ ] T006 [US1] Implement root pipeline execution script `run.sh` with `set -euo pipefail` sequentially invoking `go run ./cmd/capture-guysports`, `go run ./cmd/process`, and `go run ./cmd/render`
-- [ ] T007 [US1] Grant executable permissions to `run.sh` (`chmod +x run.sh`) and add inline usage comments
+- [X] T006 [US1] Implement root pipeline execution script `run.sh` with `set -euo pipefail` sequentially invoking `go run ./cmd/capture-guysports`, `go run ./cmd/process`, and `go run ./cmd/render`
+- [X] T007 [US1] Grant executable permissions to `run.sh` (`chmod +x run.sh`) and add inline usage comments
 
 **Checkpoint**: User Story 1 complete - `./run.sh` provides one-command local execution using `go run`.
 
@@ -64,8 +64,8 @@
 
 ### Implementation for User Story 2
 
-- [ ] T008 [US2] Create GitHub Actions workflow file `.github/workflows/schedule-run-action.yml` with `schedule` (`cron: '0 18 * * 5'`) and `workflow_dispatch` triggers
-- [ ] T009 [US2] Add workflow build, checkout, Go setup, `./run.sh` execution, and git commit (`Automated weekly pipeline run`) & push steps in `.github/workflows/schedule-run-action.yml`
+- [X] T008 [US2] Create GitHub Actions workflow file `.github/workflows/schedule-run-action.yml` with `schedule` (`cron: '0 18 * * 5'`) and `workflow_dispatch` triggers
+- [X] T009 [US2] Add workflow build, checkout, Go setup, `./run.sh` execution, and git commit (`Automated weekly pipeline run`) & push steps in `.github/workflows/schedule-run-action.yml`
 
 **Checkpoint**: User Story 2 complete - scheduled and manual CI/CD automation configured.
 
@@ -75,8 +75,8 @@
 
 **Purpose**: Final documentation updates and manual verification guidance
 
-- [ ] T010 [P] Update `AGENTS.md` repository guidelines to reflect `cmd/capture-guysports` entrypoint and `run.sh` automation
-- [ ] T011 Prompt user to manually run and verify quickstart validation scenarios in `specs/002-automated-data-pipeline/quickstart.md` and clean up working tree changes afterwards
+- [X] T010 [P] Update `AGENTS.md` repository guidelines to reflect `cmd/capture-guysports` entrypoint and `run.sh` automation
+- [X] T011 Prompt user to manually run and verify quickstart validation scenarios in `specs/002-automated-data-pipeline/quickstart.md` and clean up working tree changes afterwards
 
 ---
 

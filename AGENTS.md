@@ -4,9 +4,10 @@
 
 This repository provides a Go-based fantasy football data pipeline:
 
-- `capture` gathers manager team snapshots into raw, append-only YAML data.
-- `process` derives player ownership and manager-change data.
-- `render` produces the static HTML report in `docs/`.
+- `cmd/capture-guysports` gathers manager team snapshots into raw, append-only YAML data for GuySports.
+- `cmd/process` derives player ownership and manager-change data.
+- `cmd/render` produces the static HTML report in `docs/`.
+- `run.sh` executes capture, processing, and rendering sequentially.
 
 ## Development Process
 
