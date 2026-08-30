@@ -1,5 +1,17 @@
 manager_id: "10"
 manager_name: Finn_whyley
 team_name: Ballon_d’orgu
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-08-30T19:35:06Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "10"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-08-30T19:35:06Z"
+      added_players:
+        - player_id: martin-ødegaard
+          name: Martin Ødegaard
+      removed_players:
+        - player_id: ismaïla-sarr
+          name: Ismaïla Sarr
+      change_count: 1
