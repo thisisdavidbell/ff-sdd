@@ -59,7 +59,7 @@ Fields:
 
 Validation rules:
 - `added_players` and `removed_players` are computed from the set difference between consecutive snapshots, and MUST include player `name` in addition to `player_id`.
-- `change_count` represents the number of substitutions/transfers made in the event and MUST be calculated as `max(len(added_players), len(removed_players))` (e.g. 1 player added and 1 player removed equals 1 change, 2 added and 2 removed equals 2 changes).
+- `change_count` represents the number of player substitution/transfer pairs made in the event and MUST be calculated as `max(len(added_players), len(removed_players))` (e.g. 1 player added and 1 player removed equals 1 change, 2 added and 2 removed equals 2 changes).
 - only actual team differences generate a change event.
 - unchanged snapshots do not create a new change event.
 
@@ -79,9 +79,9 @@ Fields:
 
 Validation rules:
 - At any capture timestamp $T$, a manager's active team composition is defined as their most recent snapshot captured on or before timestamp $T$.
-- For every capture timestamp $T$, `manager_count` in `history` MUST be evaluated across the active teams of all known managers in the league as of timestamp $T$.
+- For every capture timestamp $T$, `manager_count` in `history` MUST be evaluated across the active teams of all known managers in the league as of timestamp $T$ (combining newly captured snapshots for changed teams with the latest active snapshots for unchanged teams).
 - `current_count` is derived from the latest recorded snapshot of each manager across the league, ensuring `current_count` equals the count at the final `captured_at` timestamp in `history`.
-- `current_count`, the HTML player ownership table, and the final point in the historical trend chart MUST be 100% consistent with each other. Partial capture runs (where unchanged teams produce no new snapshot file) MUST NOT cause player counts to drop for players on unchanged teams.
+- `current_count`, the HTML player ownership table, and the final point in the historical trend chart MUST be 100% consistent with each other. Capture runs where only a subset of managers create new snapshot files MUST calculate player ownership by combining updated teams with unchanged active teams, so that total player counts and trend points accurately reflect net ownership shifts without omitting unchanged teams.
 
 ### ManagerChangeSummary
 Derived summary of team changes for a manager.
@@ -96,7 +96,7 @@ Fields:
 - `event_history`: []TeamChangeEvent
 
 Validation rules:
-- `total_changes` is the cumulative sum of `change_count` for all `TeamChangeEvent` records in `event_history` (`total_changes = sum(event.change_count)`).
+- `total_changes` is the cumulative count of all player removal/addition pairs across all `TeamChangeEvent` records in `event_history` (`total_changes = sum(event.change_count)`).
 - `latest_change_at` is blank if no changes have occurred.
 - Stored as `data/<season>/processed/manager-changes/<team_name>_<manager_id>.yaml`.
 

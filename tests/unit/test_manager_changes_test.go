@@ -86,3 +86,60 @@ func TestSingleSubstitutionCountsAsOneChange(t *testing.T) {
 		t.Fatalf("expected RemovedPlayers to contain Salah with name, got %#v", event.RemovedPlayers)
 	}
 }
+
+func TestDoubleSubstitutionCountsAsTwoChanges(t *testing.T) {
+	base := time.Date(2026, 1, 10, 9, 0, 0, 0, time.UTC)
+	snapshots := []models.ManagerSnapshot{
+		{
+			ManagerID:   "m1",
+			ManagerName: "John_Doe",
+			CapturedAt:  base.Add(0).Format(time.RFC3339),
+			Players: []models.PlayerReference{
+				{PlayerID: "p1", Name: "Haaland"},
+				{PlayerID: "p2", Name: "Salah"},
+				{PlayerID: "p3", Name: "De Bruyne"},
+			},
+		},
+		{
+			ManagerID:   "m1",
+			ManagerName: "John_Doe",
+			CapturedAt:  base.Add(24 * time.Hour).Format(time.RFC3339),
+			Players: []models.PlayerReference{
+				{PlayerID: "p1", Name: "Haaland"},
+				{PlayerID: "p4", Name: "Saka"},    // Swapped Salah for Saka
+				{PlayerID: "p5", Name: "Palmer"},  // Swapped De Bruyne for Palmer
+			},
+		},
+	}
+
+	summaries, err := processing.BuildChangeSummaries(snapshots)
+	if err != nil {
+		t.Fatalf("BuildChangeSummaries returned error: %v", err)
+	}
+
+	if len(summaries) != 1 {
+		t.Fatalf("expected 1 summary, got %d", len(summaries))
+	}
+
+	sum := summaries[0]
+	if sum.TotalChanges != 2 {
+		t.Fatalf("expected TotalChanges == 2 for double substitution (2 in, 2 out), got %d", sum.TotalChanges)
+	}
+
+	if len(sum.EventHistory) != 1 {
+		t.Fatalf("expected 1 event, got %d", len(sum.EventHistory))
+	}
+
+	event := sum.EventHistory[0]
+	if event.ChangeCount != 2 {
+		t.Fatalf("expected Event.ChangeCount == 2 for 2 player changes in one delta, got %d", event.ChangeCount)
+	}
+
+	if len(event.AddedPlayers) != 2 {
+		t.Fatalf("expected 2 added players, got %d", len(event.AddedPlayers))
+	}
+
+	if len(event.RemovedPlayers) != 2 {
+		t.Fatalf("expected 2 removed players, got %d", len(event.RemovedPlayers))
+	}
+}

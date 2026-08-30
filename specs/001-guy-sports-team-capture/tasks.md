@@ -95,8 +95,9 @@
 - [X] T026 [P] [US3] Define the derived change-event and manager summary models with `manager_name` and `team_name` in `internal/models/change_summary.go`
 - [X] T027 [US3] Implement the diff logic that compares consecutive snapshots and records added/removed players without overcounting unchanged states
 - [X] T028 [US3] Implement cumulative season summaries for `total_changes`, `latest_change_at`, and `changed_since_last_snapshot`
-- [X] T028b [US3] Fix transfer change count logic in `internal/processing/ownership.go` so single substitutions (1 player added, 1 removed) count as 1 change (`max(added, removed)`), include player names on change events, and calculate `total_changes` as the sum of event change counts
+- [X] T028b [US3] Fix transfer change count logic in `internal/processing/ownership.go` so player substitution pairs (removing and adding N players) count as N changes (`max(len(added), len(removed))`), include player names on change events, and calculate `total_changes` as the cumulative count of all player removal/addition pairs across event history
 - [X] T028c [US3] Add unit test in `tests/unit/test_manager_changes_test.go` verifying that swapping 1 player out for 1 player in produces `ChangeCount == 1` and `TotalChanges == 1` with player names populated
+- [X] T028d [US3] Add unit test `TestDoubleSubstitutionCountsAsTwoChanges` in `tests/unit/test_manager_changes_test.go` verifying that removing 2 players and adding 2 new players in a single delta produces `ChangeCount == 2` and `TotalChanges == 2`
 - [X] T029 [US3] Write derived manager-change YAML output named `<team_name>_<manager_id>.yaml` under `data/<season>/processed/manager-changes/`
 - [X] T030 [US3] Add validation to ensure duplicate snapshots and unchanged states are treated correctly
 
