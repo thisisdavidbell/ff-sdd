@@ -145,3 +145,55 @@ func TestHistoricalTrendsChartSingleTimestamp(t *testing.T) {
 		t.Fatalf("expected Haaland in chart output")
 	}
 }
+
+func TestRenderHTMLIncludesInteractiveManagerChangeDetails(t *testing.T) {
+	current := map[string]models.PlayerOwnershipRecord{
+		"p1": {PlayerID: "p1", PlayerName: "Haaland", ManagerCount: 5},
+	}
+	history := map[string][]models.PlayerOwnershipHistoryEntry{
+		"p1": {{CapturedAt: "2026-08-29T21:41:58Z", ManagerCount: 5}},
+	}
+	summaries := []models.ManagerChangeSummary{
+		{
+			ManagerID:                "m1",
+			ManagerName:              "John_Doe",
+			TeamName:                 "Finsbury_Bridge",
+			TotalChanges:             1,
+			LatestChangeAt:           "2026-08-30T18:00:00Z",
+			ChangedSinceLastSnapshot: true,
+			EventHistory: []models.TeamChangeEvent{
+				{
+					ManagerID:      "m1",
+					FromCapturedAt: "2026-08-29T12:00:00Z",
+					ToCapturedAt:   "2026-08-30T18:00:00Z",
+					ChangeCount:    1,
+					AddedPlayers:   []models.PlayerReference{{PlayerID: "p3", Name: "Saka"}},
+					RemovedPlayers: []models.PlayerReference{{PlayerID: "p2", Name: "Salah"}},
+				},
+			},
+		},
+	}
+
+	html, err := render.BuildHTML(current, history, summaries)
+	if err != nil {
+		t.Fatalf("BuildHTML returned error: %v", err)
+	}
+
+	// Verify interactive toggle function script exists
+	if !strings.Contains(html, "function toggleManagerDetail") {
+		t.Fatalf("expected toggleManagerDetail JavaScript function in HTML output")
+	}
+
+	// Verify manager detail row exists
+	if !strings.Contains(html, "class=\"manager-detail-row\"") {
+		t.Fatalf("expected manager-detail-row element in HTML output")
+	}
+
+	// Verify added and removed players with names are displayed
+	if !strings.Contains(html, "+ Saka") {
+		t.Fatalf("expected '+ Saka' in added players detail view")
+	}
+	if !strings.Contains(html, "- Salah") {
+		t.Fatalf("expected '- Salah' in removed players detail view")
+	}
+}

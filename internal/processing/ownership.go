@@ -14,36 +14,12 @@ func BuildOwnership(snapshots []models.ManagerSnapshot) (map[string]models.Playe
 		return map[string]models.PlayerOwnershipRecord{}, map[string][]models.PlayerOwnershipHistoryEntry{}, nil
 	}
 
-	latestByManager := map[string]models.ManagerSnapshot{}
-	for _, snap := range snapshots {
-		current, ok := latestByManager[snap.ManagerID]
-		if !ok || snap.CapturedAt > current.CapturedAt {
-			latestByManager[snap.ManagerID] = snap
-		}
-	}
-
-	current := map[string]models.PlayerOwnershipRecord{}
-	for _, snap := range latestByManager {
-		for _, player := range snap.Players {
-			record, ok := current[player.PlayerID]
-			if !ok {
-				record = models.PlayerOwnershipRecord{PlayerID: player.PlayerID, PlayerName: player.Name, CapturedAt: snap.CapturedAt, ManagerCount: 0}
-			}
-			record.ManagerCount++
-			record.CapturedAt = snap.CapturedAt
-			if record.PlayerName == "" {
-				record.PlayerName = player.Name
-			}
-			current[player.PlayerID] = record
-		}
-	}
-
+	// Group snapshots by timestamp
 	timestamps := map[string][]models.ManagerSnapshot{}
 	for _, snap := range snapshots {
 		timestamps[snap.CapturedAt] = append(timestamps[snap.CapturedAt], snap)
 	}
 
-	history := map[string][]models.PlayerOwnershipHistoryEntry{}
 	keys := make([]string, 0, len(timestamps))
 	for key := range timestamps {
 		keys = append(keys, key)
@@ -57,24 +33,73 @@ func BuildOwnership(snapshots []models.ManagerSnapshot) (map[string]models.Playe
 		return t1.Before(t2)
 	})
 
+	// Maintain active manager state as of each timestamp T.
+	// Because unchanged manager snapshots are skipped during capture,
+	// a manager's active team at timestamp T is their latest snapshot captured on or before T.
+	activeSnapshots := map[string]models.ManagerSnapshot{}
+	playerNames := map[string]string{}
+	history := map[string][]models.PlayerOwnershipHistoryEntry{}
+
 	for _, capturedAt := range keys {
-		counts := map[string]int{}
-		seenManagers := map[string]bool{}
+		// Update active snapshot for each manager who captured at this timestamp T
 		for _, snap := range timestamps[capturedAt] {
-			if seenManagers[snap.ManagerID] {
-				continue
+			activeSnapshots[snap.ManagerID] = snap
+			for _, player := range snap.Players {
+				if player.Name != "" {
+					playerNames[player.PlayerID] = player.Name
+				}
 			}
-			seenManagers[snap.ManagerID] = true
+		}
+
+		// Count player frequencies across ALL active manager snapshots in the league as of timestamp T
+		counts := map[string]int{}
+		for _, snap := range activeSnapshots {
 			for _, player := range snap.Players {
 				counts[player.PlayerID]++
 			}
 		}
+
+		// Record the point-in-time count for each player present at timestamp T
 		for playerID, count := range counts {
-			history[playerID] = append(history[playerID], models.PlayerOwnershipHistoryEntry{CapturedAt: capturedAt, ManagerCount: count})
+			history[playerID] = append(history[playerID], models.PlayerOwnershipHistoryEntry{
+				CapturedAt:   capturedAt,
+				ManagerCount: count,
+			})
+		}
+	}
+
+	// Current ownership is derived from activeSnapshots at the final (latest) timestamp
+	current := map[string]models.PlayerOwnershipRecord{}
+	counts := map[string]int{}
+	latestTimestamp := keys[len(keys)-1]
+
+	for _, snap := range activeSnapshots {
+		for _, player := range snap.Players {
+			counts[player.PlayerID]++
+			if player.Name != "" {
+				playerNames[player.PlayerID] = player.Name
+			}
+		}
+	}
+
+	for playerID, count := range counts {
+		current[playerID] = models.PlayerOwnershipRecord{
+			PlayerID:     playerID,
+			PlayerName:   playerNames[playerID],
+			CapturedAt:   latestTimestamp,
+			ManagerCount: count,
 		}
 	}
 
 	return current, history, nil
+}
+
+// max returns the larger of two integers.
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
 
 // BuildChangeSummaries compares consecutive snapshots for each manager and summarizes the delta history.
@@ -84,8 +109,15 @@ func BuildChangeSummaries(snapshots []models.ManagerSnapshot) ([]models.ManagerC
 	}
 
 	byManager := map[string][]models.ManagerSnapshot{}
+	playerNames := map[string]string{}
+
 	for _, snap := range snapshots {
 		byManager[snap.ManagerID] = append(byManager[snap.ManagerID], snap)
+		for _, p := range snap.Players {
+			if p.Name != "" {
+				playerNames[p.PlayerID] = p.Name
+			}
+		}
 	}
 
 	out := make([]models.ManagerChangeSummary, 0, len(byManager))
@@ -105,22 +137,48 @@ func BuildChangeSummaries(snapshots []models.ManagerSnapshot) ([]models.ManagerC
 			currentPlayers := map[string]bool{}
 			for _, player := range snap.Players {
 				currentPlayers[player.PlayerID] = true
+				if player.Name != "" {
+					playerNames[player.PlayerID] = player.Name
+				}
 			}
 			if i > 0 {
-				event := models.TeamChangeEvent{ManagerID: managerID, FromCapturedAt: entries[i-1].CapturedAt, ToCapturedAt: snap.CapturedAt}
+				event := models.TeamChangeEvent{
+					ManagerID:      managerID,
+					FromCapturedAt: entries[i-1].CapturedAt,
+					ToCapturedAt:   snap.CapturedAt,
+				}
 				for id := range currentPlayers {
 					if !last[id] {
-						event.AddedPlayers = append(event.AddedPlayers, models.PlayerReference{PlayerID: id})
+						name := playerNames[id]
+						event.AddedPlayers = append(event.AddedPlayers, models.PlayerReference{
+							PlayerID: id,
+							Name:     name,
+						})
 					}
 				}
 				for id := range last {
 					if !currentPlayers[id] {
-						event.RemovedPlayers = append(event.RemovedPlayers, models.PlayerReference{PlayerID: id})
+						name := playerNames[id]
+						event.RemovedPlayers = append(event.RemovedPlayers, models.PlayerReference{
+							PlayerID: id,
+							Name:     name,
+						})
 					}
 				}
-				event.ChangeCount = len(event.AddedPlayers) + len(event.RemovedPlayers)
+
+				// Sort added and removed players by Name/PlayerID for deterministic output
+				sort.Slice(event.AddedPlayers, func(a, b int) bool {
+					return event.AddedPlayers[a].PlayerID < event.AddedPlayers[b].PlayerID
+				})
+				sort.Slice(event.RemovedPlayers, func(a, b int) bool {
+					return event.RemovedPlayers[a].PlayerID < event.RemovedPlayers[b].PlayerID
+				})
+
+				// A substitution/transfer (1 player removed, 1 player added) equals 1 change
+				event.ChangeCount = max(len(event.AddedPlayers), len(event.RemovedPlayers))
+
 				if event.ChangeCount > 0 {
-					summary.TotalChanges++
+					summary.TotalChanges += event.ChangeCount
 					summary.LatestChangeAt = snap.CapturedAt
 					summary.ChangedSinceLastSnapshot = true
 					summary.EventHistory = append(summary.EventHistory, event)

@@ -46,6 +46,14 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString(".legend-item{display:inline-flex;align-items:center;font-size:12px;padding:3px 8px;border-radius:4px;background:#fff;border:1px solid #e2e8f0;cursor:pointer;user-select:none;transition:all .15s}\n")
 	b.WriteString(".legend-item:hover{border-color:#94a3b8;background:#f1f5f9}\n")
 	b.WriteString(".legend-color{width:10px;height:10px;border-radius:50%;margin-right:6px;display:inline-block}\n")
+	b.WriteString(".clickable-row{cursor:pointer;user-select:none}\n")
+	b.WriteString(".clickable-row:hover{background-color:#f1f5f9 !important}\n")
+	b.WriteString(".manager-detail-row{background-color:#f8fafc;display:none}\n")
+	b.WriteString(".event-card{margin:.4rem 0;padding:.6rem .8rem;border:1px solid #e2e8f0;border-radius:6px;background:#ffffff}\n")
+	b.WriteString(".event-header{font-weight:600;font-size:13px;color:#475569;margin-bottom:.3rem}\n")
+	b.WriteString(".added-player{color:#16a34a;font-size:13px;font-weight:500;margin-right:.8rem;display:inline-block}\n")
+	b.WriteString(".removed-player{color:#dc2626;font-size:13px;font-weight:500;margin-right:.8rem;display:inline-block}\n")
+	b.WriteString(".expand-icon{display:inline-block;font-size:11px;margin-left:6px;color:#64748b}\n")
 	b.WriteString("</style></head><body>\n")
 	b.WriteString("<h1>Guy Sports Team Report</h1>\n")
 	b.WriteString("<h2>Player ownership</h2>\n")
@@ -77,7 +85,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 		return n1 < n2
 	})
 
-	for _, summary := range sortedSummaries {
+	for idx, summary := range sortedSummaries {
 		mgrName := summary.ManagerName
 		if mgrName == "" {
 			mgrName = summary.ManagerID
@@ -86,15 +94,83 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 		if teamName == "" {
 			teamName = mgrName
 		}
-		b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%s</td><td>%d</td><td>%s</td></tr>\n", html.EscapeString(mgrName), html.EscapeString(teamName), summary.TotalChanges, html.EscapeString(summary.LatestChangeAt)))
+		detailId := fmt.Sprintf("mgr-detail-%d", idx)
+
+		if len(summary.EventHistory) > 0 {
+			b.WriteString(fmt.Sprintf("<tr class=\"clickable-row\" onclick=\"toggleManagerDetail('%s')\"><td>%s</td><td>%s</td><td>%d <span id=\"icon-%s\" class=\"expand-icon\">▶</span></td><td>%s</td></tr>\n",
+				detailId,
+				html.EscapeString(mgrName),
+				html.EscapeString(teamName),
+				summary.TotalChanges,
+				detailId,
+				html.EscapeString(summary.LatestChangeAt),
+			))
+
+			// Render detail row
+			b.WriteString(fmt.Sprintf("<tr id=\"%s\" class=\"manager-detail-row\"><td colspan=\"4\">\n", detailId))
+			for _, event := range summary.EventHistory {
+				formattedTime := event.ToCapturedAt
+				if t, err := time.Parse(time.RFC3339, event.ToCapturedAt); err == nil {
+					formattedTime = t.Format("2006-01-02 15:04")
+				}
+				b.WriteString("<div class=\"event-card\">\n")
+				b.WriteString(fmt.Sprintf("<div class=\"event-header\">Change at %s (%d change%s)</div>\n",
+					html.EscapeString(formattedTime),
+					event.ChangeCount,
+					pluralSuffix(event.ChangeCount),
+				))
+				b.WriteString("<div>\n")
+				for _, p := range event.AddedPlayers {
+					pName := p.Name
+					if pName == "" {
+						pName = p.PlayerID
+					}
+					b.WriteString(fmt.Sprintf("<span class=\"added-player\">+ %s</span>\n", html.EscapeString(pName)))
+				}
+				for _, p := range event.RemovedPlayers {
+					pName := p.Name
+					if pName == "" {
+						pName = p.PlayerID
+					}
+					b.WriteString(fmt.Sprintf("<span class=\"removed-player\">- %s</span>\n", html.EscapeString(pName)))
+				}
+				b.WriteString("</div>\n")
+				b.WriteString("</div>\n")
+			}
+			b.WriteString("</td></tr>\n")
+		} else {
+			b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%s</td><td>%d</td><td>%s</td></tr>\n", html.EscapeString(mgrName), html.EscapeString(teamName), summary.TotalChanges, html.EscapeString(summary.LatestChangeAt)))
+		}
 	}
 	b.WriteString("</tbody></table>\n")
 
 	b.WriteString("<h2>Historical trends</h2>\n")
 	renderHistoricalTrendsChart(&b, current, history, playerList)
 
+	b.WriteString("<script>\n")
+	b.WriteString("function toggleManagerDetail(id){\n")
+	b.WriteString("  var row = document.getElementById(id);\n")
+	b.WriteString("  var icon = document.getElementById('icon-' + id);\n")
+	b.WriteString("  if(!row) return;\n")
+	b.WriteString("  if(row.style.display === 'none' || row.style.display === ''){\n")
+	b.WriteString("    row.style.display = 'table-row';\n")
+	b.WriteString("    if(icon) icon.textContent = '▼';\n")
+	b.WriteString("  }else{\n")
+	b.WriteString("    row.style.display = 'none';\n")
+	b.WriteString("    if(icon) icon.textContent = '▶';\n")
+	b.WriteString("  }\n")
+	b.WriteString("}\n")
+	b.WriteString("</script>\n")
+
 	b.WriteString("</body></html>\n")
 	return b.String(), nil
+}
+
+func pluralSuffix(n int) string {
+	if n == 1 {
+		return ""
+	}
+	return "s"
 }
 
 // renderHistoricalTrendsChart builds a large SVG line chart showing player count trends over time with consistent x-axis spacing.
