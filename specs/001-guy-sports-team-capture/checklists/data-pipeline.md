@@ -13,7 +13,7 @@
 
 - [x] CHK001 Are the required capture responsibilities fully specified for seasonal raw data collection, including source selection, page traversal, timestamping, and additive storage? [Completeness, Spec §FR-001, FR-002, FR-003, FR-004]
 - [x] CHK002 Are the required processing outputs explicitly defined for player ownership counts and manager change summaries, with a clear link to the presentation layer? [Completeness, Spec §FR-009, FR-010, FR-011, FR-015]
-- [x] CHK003 Are the reader-facing presentation requirements sufficiently detailed for local and GitHub Pages viewing, including the static HTML requirement, the no-live-data dependency, and the large historical trends line chart with consistent x-axis date spacing? [Completeness, Spec §FR-016, FR-022, FR-023]
+- [x] CHK003 Are the reader-facing presentation requirements sufficiently detailed for local and GitHub Pages viewing, including the static HTML requirement, the no-live-data dependency, and the large historical trends line chart with x-axis positions proportional to elapsed time? [Completeness, Spec §FR-016, FR-022, FR-023]
 - [x] CHK004 Does the spec clearly define the expected repository layout for season-scoped raw data, processed data, and rendered output? [Completeness, Spec §FR-013, FR-014, Data Model]
 
 ## Requirement Clarity
@@ -33,7 +33,7 @@
 ## Acceptance Criteria Quality
 
 - [x] CHK013 Are the success criteria measurable for historical retention, change detection, and aggregate correctness without relying on implementation detail? [Acceptance Criteria, Spec §SC-002, SC-003, SC-004, SC-005]
-- [x] CHK014 Are the presentation outcomes measurable for static HTML output, local review, large historical trends line chart with uniform date spacing, and GitHub Pages-style hosting without live data access? [Acceptance Criteria, Spec §FR-016, FR-022, SC-006]
+- [x] CHK014 Are the presentation outcomes measurable for static HTML output, local review, large historical trends line chart with x-axis positions proportional to elapsed time, and GitHub Pages-style hosting without live data access? [Acceptance Criteria, Spec §FR-016, FR-022, SC-006]
 - [x] CHK015 Does the spec define objective criteria for a valid test or review of the HTML output and summary content without describing a specific framework or code path? [Acceptance Criteria, Spec §User Story 4, SC-006]
 
 ## Scenario Coverage

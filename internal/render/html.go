@@ -173,7 +173,7 @@ func pluralSuffix(n int) string {
 	return "s"
 }
 
-// renderHistoricalTrendsChart builds a large SVG line chart showing player count trends over time with consistent x-axis spacing.
+// renderHistoricalTrendsChart builds a large SVG line chart showing player count trends over elapsed time.
 func renderHistoricalTrendsChart(b *bytes.Buffer, current map[string]models.PlayerOwnershipRecord, history map[string][]models.PlayerOwnershipHistoryEntry, playerList []models.PlayerOwnershipRecord) {
 	// Collect all unique capture timestamps
 	timestampSet := make(map[string]bool)
@@ -236,14 +236,22 @@ func renderHistoricalTrendsChart(b *bytes.Buffer, current map[string]models.Play
 		yStep = 10
 	}
 
-	// Compute equidistant X coordinates for timestamps (consistent gaps on x-axis)
+	// Position each timestamp proportionally within the exact capture-time range.
 	numPoints := len(timestamps)
 	xCoords := make([]float64, numPoints)
-	for i := 0; i < numPoints; i++ {
-		if numPoints == 1 {
-			xCoords[i] = leftMargin + plotWidth/2.0
-		} else {
-			xCoords[i] = leftMargin + float64(i)*(plotWidth/float64(numPoints-1))
+	if numPoints == 1 {
+		xCoords[0] = leftMargin + plotWidth/2.0
+	} else {
+		firstTime, _ := time.Parse(time.RFC3339, timestamps[0])
+		lastTime, _ := time.Parse(time.RFC3339, timestamps[numPoints-1])
+		duration := lastTime.Sub(firstTime)
+		for i, timestamp := range timestamps {
+			capturedAt, _ := time.Parse(time.RFC3339, timestamp)
+			if duration == 0 {
+				xCoords[i] = leftMargin + plotWidth/2.0
+				continue
+			}
+			xCoords[i] = leftMargin + (float64(capturedAt.Sub(firstTime)) / float64(duration)) * plotWidth
 		}
 	}
 

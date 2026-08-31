@@ -18,6 +18,12 @@
 These terms are used consistently throughout this specification and the project
 vocabulary.
 
+## Clarifications
+
+### Session 2026-08-31
+
+- Q: Should the x-axis span exactly from the earliest to latest captured timestamp, placing each point proportionally by elapsed time? → A: Yes, exact data range.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Capture and retain each manager's current team over time (Priority: P1)
@@ -42,19 +48,19 @@ A league administrator or analyst needs to understand how team composition chang
 A manager or analyst wants to see how often each player appears in the league. The system must produce two distinct but related outputs from the stored snapshots:
 
 1. A current-state ownership view that looks only at each manager's latest team snapshot and counts how many managers currently hold each player.
-2. A historical trend view that keeps the player-count totals from each capture event across the season so the change in popularity over time is displayed as a large line chart showing player counts over time with consistent x-axis spacing between capture dates and sufficient vertical height to comfortably see and distinguish many players.
+2. A historical trend view that keeps the player-count totals from each capture event across the season so the change in popularity over time is displayed as a large line chart showing player counts over time on a continuous elapsed-time x-axis and with sufficient vertical height to comfortably see and distinguish many players.
 
 These two views must be easy to compare in a reader-friendly format.
 
 **Why this priority**: This is the primary analytical output described for the first release and provides useful insight for fans and analysts.
 
-**Independent Test**: Can be fully tested by processing captured team snapshots and verifying that the current-state counts use only the newest team snapshot for each manager while the historical trend preserves the count at each recorded capture time and renders a large line chart with consistent date spacing and clear multi-player visibility.
+**Independent Test**: Can be fully tested by processing captured team snapshots and verifying that the current-state counts use only the newest team snapshot for each manager while the historical trend preserves the count at each recorded capture time and renders a large line chart whose positions are proportional to elapsed time and clear for many players.
 
 **Acceptance Scenarios**:
 
 1. **Given** a set of historical team snapshots across manager directories, **When** the aggregation step runs, **Then** the system outputs a single `data/<season>/processed/player-ownership.yaml` file containing both the current player ownership counts and historical count trends across capture timestamps.
 2. **Given** an HTML report is rendered, **When** the player ownership table is generated, **Then** players are ordered by manager count descending (highest first), with ties broken alphabetically by player name.
-3. **Given** historical trend data across multiple capture events, **When** the HTML report is generated, **Then** the historical trends section renders as a large line chart with consistent gaps between snapshot dates on the x-axis and generous height to clearly show changes across many players.
+3. **Given** historical trend data across multiple capture events, **When** the HTML report is generated, **Then** the historical trends section renders as a large line chart whose x-axis spans exactly from the earliest to latest capture timestamp and places each point proportionally to elapsed time. Equal horizontal distances represent equal elapsed time, regardless of the time between snapshot dates. There should also be generous height to clearly show changes across many players.
 
 ---
 
@@ -80,12 +86,12 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 
 **Why this priority**: This enables the project to deliver value even before a full user-facing web experience exists and gives the project a clean, professional presentation without requiring live data access.
 
-**Independent Test**: Can be fully tested by generating a rendered output and confirming that it is clear in a local browser or a static GitHub Pages-style host without any live network dependency, including validating that the historical trends section displays as a large line chart with consistent x-axis date spacing.
+**Independent Test**: Can be fully tested by generating a rendered output and confirming that it is clear in a local browser or a static GitHub Pages-style host without any live network dependency, including validating that historical trend points are placed proportionally to elapsed time.
 
 **Acceptance Scenarios**:
 
 1. **Given** processed data in `player-ownership.yaml` and `manager-changes/*.yaml`, **When** the presentation step runs, **Then** the system outputs a readable HTML-based summary (`docs/index.html`) that can be viewed locally and in a static GitHub Pages-style environment.
-2. **Given** an HTML report is rendered for review, **When** it is opened locally or on a static host, **Then** it shows the player ownership counts sorted highest first, a large line chart representing the historical count trend for each player over time with consistent gaps between dates on the x-axis and sufficient vertical height to comfortably differentiate many players, and the manager change summary displaying Manager Name and Team Name with latest change dates, and it never requests or depends on live data access.
+2. **Given** an HTML report is rendered for review, **When** it is opened locally or on a static host, **Then** it shows the player ownership counts sorted highest first, a large line chart representing the historical count trend for each player over time with points placed proportionally to elapsed time between the earliest and latest capture timestamps and sufficient vertical height to comfortably differentiate many players, and the manager change summary displaying Manager Name and Team Name with latest change dates, and it never requests or depends on live data access.
 3. **Given** a local test run produces newer processed data or a new HTML render, **When** the experiment is discarded, **Then** the last known-good committed render remains available for the reader while the local test artifact may be reset without affecting the authoritative captured dataset.
 
 ### Edge Cases
@@ -121,7 +127,7 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - **FR-019**: The system MUST display manager changes in the rendered HTML table with both Manager Name and Team Name, rather than only manager ID.
 - **FR-020**: The system MUST read runtime configuration from a dedicated configuration file (`config.yaml`), including the active season (e.g. `2026-27`) and the number of season table pages to capture (default `3`).
 - **FR-021**: The system MUST capture data across all configured season table pages (pages 1 through N as specified in `config.yaml`, initially pages 1, 2, and 3), deduplicating managers discovered across pages before fetching rosters.
-- **FR-022**: The system MUST render the historical trends section in the HTML report as a large line chart showing the change in player manager counts over time. The chart MUST be tall enough (e.g. at least 600px–800px tall) to comfortably see and distinguish many players, and MUST have consistent (uniform/equidistant) horizontal gaps between snapshot dates on the x-axis, regardless of whether the raw snapshots were captured with regular or irregular time intervals between them.
+- **FR-022**: The system MUST render the historical trends section in the HTML report as a large line chart showing the change in player manager counts over time. The chart MUST be tall enough (e.g. at least 600px-800px tall) to comfortably see and distinguish many players. Its x-axis MUST span exactly from the earliest to latest capture timestamp, with each point positioned proportionally to elapsed time; equal horizontal distances MUST represent equal elapsed time regardless of whether captures occurred at regular or irregular intervals.
 - **FR-023**: The system MUST never generate data in the data directory or html in the docs directory during testing. only execution of the capture, process or render commands can do this.
 - **FR-024**: The system MUST use the latest processed data currently available in the local repository state as the input for the HTML render, whether that state is the latest committed data or the latest data produced by a local capture/process run, and the generated HTML render MUST remain a reader-facing artifact that is valuable to maintain and review.
 - **FR-026**: The system MUST keep all normal validation, unit tests, integration tests, and code-change checks offline and MUST NOT access the live Guy Sports or DreamTeamFC sites during routine validation.
@@ -151,7 +157,7 @@ An analyst needs a way to review computed results in a lightweight, shareable fo
 - **SC-003**: Player selection counts are reported accurately for current state and all historical capture timestamps by evaluating every manager's active snapshot as of that timestamp. When a capture run detects team changes for a subset of managers, the updated ownership totals and historical trend chart points reflect the net ownership changes from those updated teams while preserving active counts for unchanged teams. Current counts in `player-ownership.yaml`, the HTML ownership table, and the final point on the line graph match consistently.
 - **SC-004**: Each manager's total team-change count is calculated accurately from sequential snapshots without overcounting unchanged states, where swapping 1 player out for 1 player in equals 1 change, swapping 2 players out for 2 players in equals 2 changes, and total changes equals the cumulative count of all player removal/addition pairs across all change events.
 - **SC-005**: Each manager's latest change date is clearly displayed, managers with changes since the last snapshot are highlighted, and an interactive drill-down view in HTML allows expanding each manager row to show event timestamps, event change counts, and full names of added and removed players.
-- **SC-006**: Processed outputs are generated in a professional, repo-friendly HTML format that can be reviewed locally and in a GitHub Pages-style environment without a live data dependency, featuring a large, readable historical trends line chart with uniform x-axis date spacing, the latest valid render remains available to readers, and local test runs can be reset cleanly without disturbing the official captured dataset or the last known-good working render.
+- **SC-006**: Processed outputs are generated in a professional, repo-friendly HTML format that can be reviewed locally and in a GitHub Pages-style environment without a live data dependency, featuring a large, readable historical trends line chart whose x-axis positions points proportionally to elapsed time over the exact earliest-to-latest capture range, the latest valid render remains available to readers, and local test runs can be reset cleanly without disturbing the official captured dataset or the last known-good working render.
 - **SC-007**: The initial release supports Guy Sports as the primary source while leaving room for future expansion to additional data sources and derived metrics.
 
 ## Assumptions

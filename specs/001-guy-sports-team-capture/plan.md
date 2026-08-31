@@ -6,7 +6,7 @@
 
 ## Summary
 
-The first release captures Guy Sports team snapshots on a timestamped, additive basis, derives historical player ownership and manager change data from the stored raw snapshots, and renders a static HTML report (featuring sorted current ownership tables, manager change tracking, and a large historical trends line chart with consistent x-axis date intervals and ample height for multi-player readability) that can be read locally and hosted on GitHub Pages without live network access. The default implementation language is Go, with YAML as the preferred raw storage format. Any alternative language or storage format requires explicit approval before use.
+The first release captures Guy Sports team snapshots on a timestamped, additive basis, derives historical player ownership and manager change data from the stored raw snapshots, and renders a static HTML report (featuring sorted current ownership tables, manager change tracking, and a large historical trends line chart with x-axis positions proportional to elapsed time over the earliest-to-latest capture range and ample height for multi-player readability) that can be read locally and hosted on GitHub Pages without live network access. The default implementation language is Go, with YAML as the preferred raw storage format. Any alternative language or storage format requires explicit approval before use.
 
 ## Technical Context
 

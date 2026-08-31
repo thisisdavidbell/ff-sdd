@@ -36,7 +36,7 @@ The generated presentation will be static HTML that can be opened locally and al
 - It satisfies the requirement for a lightweight, shareable output that does not require a live backend.
 - It works well for generated tables, charts, and summaries without introducing a runtime dependency.
 - It is static-host friendly and repository-friendly.
-- The historical trends section is rendered as a large, self-contained SVG line chart. It provides generous height (e.g., 800px) so readers can comfortably distinguish and inspect lines for many players. The x-axis uses equidistant/uniform spacing between sequential capture dates, ensuring consistent visual gaps regardless of whether snapshot intervals were regular or irregular.
+- The historical trends section is rendered as a large, self-contained SVG line chart. It provides generous height (e.g., 800px) so readers can comfortably distinguish and inspect lines for many players. The x-axis spans exactly from the earliest to latest capture timestamp and positions points proportionally to elapsed time, so equal horizontal distances represent equal elapsed time.
 
 ### Alternatives considered
 - Markdown with Mermaid was considered as a human-readable option but is less polished for a static reader experience and less ideal for GitHub Pages hosting.

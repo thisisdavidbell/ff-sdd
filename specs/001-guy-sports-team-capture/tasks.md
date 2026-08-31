@@ -107,9 +107,9 @@
 
 ## Phase 6: User Story 4 - Present results in a GitHub-friendly and local-friendly format (Priority: P2)
 
-**Goal**: Generate a static HTML report from the latest processed data currently available in the local repository state. The HTML must display player ownership sorted highest count first, manager changes with Manager Name and Team Name, and historical trends as a large line chart with consistent x-axis date intervals and ample vertical height for multi-player readability.
+**Goal**: Generate a static HTML report from the latest processed data currently available in the local repository state. The HTML must display player ownership sorted highest count first, manager changes with Manager Name and Team Name, and historical trends as a large line chart whose points are positioned proportionally to elapsed time across the exact earliest-to-latest capture range, with ample vertical height for multi-player readability.
 
-**Independent Test**: Render the report from fixture processed data and verify the HTML is readable locally, contains sorted ownership and change summaries, and renders a large historical trends line chart with equidistant x-axis date spacing and generous height.
+**Independent Test**: Render the report from fixture processed data and verify the HTML is readable locally, contains sorted ownership and change summaries, and renders a large historical trends line chart whose x-axis places irregular capture timestamps proportionally to elapsed time and has generous height.
 
 ### Tests for User Story 4
 
@@ -123,6 +123,7 @@
 - [X] T035 [US4] Implement `cmd/render/main.go` to generate the latest report with descending player ownership sort, Manager/Team name display, and the large historical trends line chart
 - [X] T035b [US4] Implement interactive collapsible drill-down for Manager Changes in `internal/render/html.go` displaying event timestamps, `+ Added Player Name`, `- Removed Player Name`, and event change counts
 - [X] T035c [US4] Add unit test in `tests/unit/test_render_output_test.go` verifying interactive toggle script, detail row markup, and added/removed player names in HTML render
+- [X] T035d [US4] Position historical-trend x-axis coordinates proportionally to elapsed time over the exact earliest-to-latest capture range, with a unit regression test for irregular timestamp intervals in `internal/render/html.go` and `tests/unit/test_render_output_test.go`
 - [X] T036 [US4] Ensure the rendered report never queries live sources and preserves the last known-good HTML if local generation fails
 - [X] T037 [US4] Add a reset/local cleanup guide and validation notes to the quickstart workflow, including the rule that uncommitted local processed/render changes can be discarded instead of being committed
 - [X] T037b [P] Document the optional Guy Sports live smoke test as a narrowly scoped check for retrieval-code changes or explicit requests only; it is not part of the normal validation cycle

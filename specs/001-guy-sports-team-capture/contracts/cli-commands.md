@@ -49,7 +49,7 @@ Behavior:
 - Reads `data/<season>/processed/player-ownership.yaml` and manager changes from `data/<season>/processed/manager-changes/*.yaml`.
 - Orders the Player Ownership table by manager count descending (highest count first), with ties broken alphabetically by player name.
 - Renders the Manager Changes table with columns for Manager Name, Team Name, Total Changes, and Latest Change.
-- Renders historical player trend data from the unified ownership file as a large line chart with consistent x-axis spacing between capture dates and generous vertical height to comfortably see many players.
+- Renders historical player trend data from the unified ownership file as a large line chart whose x-axis spans the earliest-to-latest capture timestamps and positions points proportionally to elapsed time, with generous vertical height to comfortably see many players.
 - Writes static HTML output to `docs/index.html`.
 - Uses embedded templates and static assets with no live API dependency.
 - Must not query Guy Sports or any live source.
