@@ -2,7 +2,7 @@ name: Scheduled Data Pipeline Run
 
 on:
   schedule:
-    - cron: '0 18 * * 5' # Every Friday at 18:00 UTC
+    - cron: '0 2 * * *' # Everyday at 2:00 UTC
   workflow_dispatch:     # Manual on-demand execution
 
 jobs:
