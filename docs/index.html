@@ -31,10 +31,12 @@ tr:hover{background:var(--hover)}
 .added-player{color:#16a34a;font-size:13px;font-weight:500;margin-right:.8rem;display:inline-block}
 .removed-player{color:#dc2626;font-size:13px;font-weight:500;margin-right:.8rem;display:inline-block}
 .expand-icon{display:inline-block;font-size:11px;margin-left:6px;color:var(--muted-text)}
+.date-cell{display:inline-flex;align-items:center;gap:.4rem}.relative-time{font-size:.75rem;color:var(--muted-text)}
+.pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-day{background:#2563eb}.pill-week{background:#7c3aed}.pill-month{background:#64748b}
 @media (max-width:600px){body{margin:1rem auto;padding:0 1rem}.report-header{gap:.75rem}.theme-toggle{padding:.35rem .5rem}}
 </style></head><body>
 <header class="report-header"><div><h1>Guy Sports Team Report</h1>
-<p class="report-generated">Report generated: 2026-09-01 08:57:04 UTC</p></div><button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">Dark mode</button></header>
+<p class="report-generated">Report generated: 2026-09-01 13:58:19 UTC</p></div><button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">Dark mode</button></header>
 <h2>Player ownership</h2>
 <table><thead><tr><th>Player</th><th>Managers</th></tr></thead><tbody>
 <tr><td>Erling Haaland</td><td>28</td></tr>
@@ -164,7 +166,7 @@ tr:hover{background:var(--hover)}
 </tbody></table>
 <h2>Manager changes</h2>
 <table><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>
-<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-0')"><td>Arthur</td><td>Arthur&#39;s_Blue_Army</td><td>1 <span id="icon-mgr-detail-0" class="expand-icon">▶</span></td><td>2026-08-29T22:11:10Z</td></tr>
+<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-0')"><td>Arthur</td><td>Arthur&#39;s_Blue_Army</td><td>1 <span id="icon-mgr-detail-0" class="expand-icon">▶</span></td><td><span class="date-cell">2026-08-29T22:11:10Z <span class="relative-time">(2 days)</span> <span class="pill pill-week">Week</span></span></td></tr>
 <tr id="mgr-detail-0" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
 <div class="event-header">Change at 2026-08-29 22:11 (1 change)</div>
@@ -177,7 +179,7 @@ tr:hover{background:var(--hover)}
 <tr><td>Boardmen</td><td>Kopper_Highlights</td><td>0</td><td></td></tr>
 <tr><td>Brian_D</td><td>Tulyar</td><td>0</td><td></td></tr>
 <tr><td>Caroline_Squire</td><td>Linus&#39;s_Legends</td><td>0</td><td></td></tr>
-<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-4')"><td>Chris_Whyley</td><td>Yak_Attack</td><td>1 <span id="icon-mgr-detail-4" class="expand-icon">▶</span></td><td>2026-08-30T19:35:06Z</td></tr>
+<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-4')"><td>Chris_Whyley</td><td>Yak_Attack</td><td>1 <span id="icon-mgr-detail-4" class="expand-icon">▶</span></td><td><span class="date-cell">2026-08-30T19:35:06Z <span class="relative-time">(1 day)</span> <span class="pill pill-week">Week</span></span></td></tr>
 <tr id="mgr-detail-4" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
 <div class="event-header">Change at 2026-08-30 19:35 (1 change)</div>
@@ -188,7 +190,7 @@ tr:hover{background:var(--hover)}
 </div>
 </td></tr>
 <tr><td>Chrissie_Bell</td><td>Mineicorn</td><td>0</td><td></td></tr>
-<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-6')"><td>Colin_Berns</td><td>South_Fork_Farmers</td><td>1 <span id="icon-mgr-detail-6" class="expand-icon">▶</span></td><td>2026-08-29T22:11:10Z</td></tr>
+<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-6')"><td>Colin_Berns</td><td>South_Fork_Farmers</td><td>1 <span id="icon-mgr-detail-6" class="expand-icon">▶</span></td><td><span class="date-cell">2026-08-29T22:11:10Z <span class="relative-time">(2 days)</span> <span class="pill pill-week">Week</span></span></td></tr>
 <tr id="mgr-detail-6" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
 <div class="event-header">Change at 2026-08-29 22:11 (1 change)</div>
@@ -201,7 +203,7 @@ tr:hover{background:var(--hover)}
 <tr><td>Danny_Barden</td><td>Throwing_Schade</td><td>0</td><td></td></tr>
 <tr><td>David_Bell</td><td>Mighty_Mariners</td><td>0</td><td></td></tr>
 <tr><td>Don_Revie</td><td>Elland_M</td><td>0</td><td></td></tr>
-<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-10')"><td>Finn_whyley</td><td>Ballon_d’orgu</td><td>1 <span id="icon-mgr-detail-10" class="expand-icon">▶</span></td><td>2026-08-30T19:35:06Z</td></tr>
+<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-10')"><td>Finn_whyley</td><td>Ballon_d’orgu</td><td>1 <span id="icon-mgr-detail-10" class="expand-icon">▶</span></td><td><span class="date-cell">2026-08-30T19:35:06Z <span class="relative-time">(1 day)</span> <span class="pill pill-week">Week</span></span></td></tr>
 <tr id="mgr-detail-10" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
 <div class="event-header">Change at 2026-08-30 19:35 (1 change)</div>
@@ -216,7 +218,7 @@ tr:hover{background:var(--hover)}
 <tr><td>Graeme_Mansell</td><td>Ken_Dodds_Dads_Dog</td><td>0</td><td></td></tr>
 <tr><td>Guy</td><td>Calafiori_Cheese</td><td>0</td><td></td></tr>
 <tr><td>James_Berns</td><td>Lallana_Del_Rey</td><td>0</td><td></td></tr>
-<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-16')"><td>Jem</td><td>Chopper_Squad</td><td>1 <span id="icon-mgr-detail-16" class="expand-icon">▶</span></td><td>2026-09-01T06:02:56Z</td></tr>
+<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-16')"><td>Jem</td><td>Chopper_Squad</td><td>1 <span id="icon-mgr-detail-16" class="expand-icon">▶</span></td><td><span class="date-cell">2026-09-01T06:02:56Z <span class="relative-time">(7 hours)</span> <span class="pill pill-day">Day</span></span></td></tr>
 <tr id="mgr-detail-16" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
 <div class="event-header">Change at 2026-09-01 06:02 (1 change)</div>
@@ -227,7 +229,7 @@ tr:hover{background:var(--hover)}
 </div>
 </td></tr>
 <tr><td>Jules_Stark</td><td>Rhodis_45ers</td><td>0</td><td></td></tr>
-<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-18')"><td>Les_Fathers</td><td>Staggered_United</td><td>1 <span id="icon-mgr-detail-18" class="expand-icon">▶</span></td><td>2026-08-29T22:11:10Z</td></tr>
+<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-18')"><td>Les_Fathers</td><td>Staggered_United</td><td>1 <span id="icon-mgr-detail-18" class="expand-icon">▶</span></td><td><span class="date-cell">2026-08-29T22:11:10Z <span class="relative-time">(2 days)</span> <span class="pill pill-week">Week</span></span></td></tr>
 <tr id="mgr-detail-18" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
 <div class="event-header">Change at 2026-08-29 22:11 (1 change)</div>
@@ -239,7 +241,7 @@ tr:hover{background:var(--hover)}
 </td></tr>
 <tr><td>Lyndon_Henstridge</td><td>Finsbury_Bridge</td><td>0</td><td></td></tr>
 <tr><td>Macauley</td><td>Closemico</td><td>0</td><td></td></tr>
-<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-21')"><td>Mat_the_cat</td><td>Saka_Potatoes</td><td>2 <span id="icon-mgr-detail-21" class="expand-icon">▶</span></td><td>2026-08-29T22:11:10Z</td></tr>
+<tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-21')"><td>Mat_the_cat</td><td>Saka_Potatoes</td><td>2 <span id="icon-mgr-detail-21" class="expand-icon">▶</span></td><td><span class="date-cell">2026-08-29T22:11:10Z <span class="relative-time">(2 days)</span> <span class="pill pill-week">Week</span></span></td></tr>
 <tr id="mgr-detail-21" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
 <div class="event-header">Change at 2026-08-29 22:11 (2 changes)</div>

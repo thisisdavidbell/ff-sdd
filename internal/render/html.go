@@ -12,7 +12,8 @@ import (
 
 // BuildHTML renders a static HTML summary from current ownership and change summaries.
 func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[string][]models.PlayerOwnershipHistoryEntry, summaries []models.ManagerChangeSummary) (string, error) {
-	generatedAt := time.Now().UTC().Format("2006-01-02 15:04:05 UTC")
+	now := time.Now().UTC()
+	generatedAt := now.Format("2006-01-02 15:04:05 UTC")
 
 	// Sort players by manager count descending, then player name ascending
 	playerList := make([]models.PlayerOwnershipRecord, 0, len(current))
@@ -60,6 +61,8 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString(".added-player{color:#16a34a;font-size:13px;font-weight:500;margin-right:.8rem;display:inline-block}\n")
 	b.WriteString(".removed-player{color:#dc2626;font-size:13px;font-weight:500;margin-right:.8rem;display:inline-block}\n")
 	b.WriteString(".expand-icon{display:inline-block;font-size:11px;margin-left:6px;color:var(--muted-text)}\n")
+	b.WriteString(".date-cell{display:inline-flex;align-items:center;gap:.4rem}.relative-time{font-size:.75rem;color:var(--muted-text)}\n")
+	b.WriteString(".pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-day{background:#2563eb}.pill-week{background:#7c3aed}.pill-month{background:#64748b}\n")
 	b.WriteString("@media (max-width:600px){body{margin:1rem auto;padding:0 1rem}.report-header{gap:.75rem}.theme-toggle{padding:.35rem .5rem}}\n")
 	b.WriteString("</style></head><body>\n")
 	b.WriteString("<header class=\"report-header\"><div><h1>Guy Sports Team Report</h1>\n")
@@ -111,7 +114,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 				html.EscapeString(teamName),
 				summary.TotalChanges,
 				detailId,
-				html.EscapeString(summary.LatestChangeAt),
+				formatLatestChangeCell(summary.LatestChangeAt, now),
 			))
 
 			// Render detail row
@@ -147,7 +150,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 			}
 			b.WriteString("</td></tr>\n")
 		} else {
-			b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%s</td><td>%d</td><td>%s</td></tr>\n", html.EscapeString(mgrName), html.EscapeString(teamName), summary.TotalChanges, html.EscapeString(summary.LatestChangeAt)))
+			b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%s</td><td>%d</td><td>%s</td></tr>\n", html.EscapeString(mgrName), html.EscapeString(teamName), summary.TotalChanges, formatLatestChangeCell(summary.LatestChangeAt, now)))
 		}
 	}
 	b.WriteString("</tbody></table>\n")
@@ -180,6 +183,68 @@ func pluralSuffix(n int) string {
 		return ""
 	}
 	return "s"
+}
+
+// formatLatestChangeCell renders the "Latest change" cell: the raw value plus a
+// relative-time phrase and, for changes within the last month, a single
+// Day/Week/Month tiered pill (see specs/005-recent-manager-changes-highlight).
+func formatLatestChangeCell(latestChangeAt string, now time.Time) string {
+	escaped := html.EscapeString(latestChangeAt)
+	if latestChangeAt == "" {
+		return escaped
+	}
+	t, err := time.Parse(time.RFC3339, latestChangeAt)
+	if err != nil {
+		return escaped
+	}
+	age := now.Sub(t)
+	cell := fmt.Sprintf("<span class=\"date-cell\">%s <span class=\"relative-time\">(%s)</span>", escaped, html.EscapeString(relativeTime(age)))
+	if class, label := recencyTier(age); class != "" {
+		cell += fmt.Sprintf(" <span class=\"pill %s\">%s</span>", class, label)
+	}
+	cell += "</span>"
+	return cell
+}
+
+// relativeTime formats a duration since report generation as a human-readable phrase.
+func relativeTime(d time.Duration) string {
+	if d < 0 {
+		d = 0
+	}
+	switch {
+	case d < time.Minute:
+		return "just now"
+	case d < time.Hour:
+		mins := int(d / time.Minute)
+		return fmt.Sprintf("%d minute%s", mins, pluralSuffix(mins))
+	case d < 24*time.Hour:
+		hours := int(d / time.Hour)
+		return fmt.Sprintf("%d hour%s", hours, pluralSuffix(hours))
+	case d < 30*24*time.Hour:
+		days := int(d / (24 * time.Hour))
+		return fmt.Sprintf("%d day%s", days, pluralSuffix(days))
+	case d < 365*24*time.Hour:
+		months := int(d / (30 * 24 * time.Hour))
+		return fmt.Sprintf("%d month%s", months, pluralSuffix(months))
+	default:
+		years := int(d / (365 * 24 * time.Hour))
+		return fmt.Sprintf("%d year%s", years, pluralSuffix(years))
+	}
+}
+
+// recencyTier returns the CSS class and label for the most specific Day/Week/Month
+// tier the duration falls into, or empty strings if older than a month.
+func recencyTier(d time.Duration) (class string, label string) {
+	switch {
+	case d < 24*time.Hour:
+		return "pill-day", "Day"
+	case d < 7*24*time.Hour:
+		return "pill-week", "Week"
+	case d < 30*24*time.Hour:
+		return "pill-month", "Month"
+	default:
+		return "", ""
+	}
 }
 
 // renderHistoricalTrendsChart builds a large SVG line chart showing player count trends over elapsed time.

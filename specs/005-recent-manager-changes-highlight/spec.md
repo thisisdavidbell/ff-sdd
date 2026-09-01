@@ -1,7 +1,7 @@
 # Feature Specification: Recent Manager Change Highlight
 
 **Created**: 2026-09-01
-**Status**: Approach decided — ready for implementation
+**Status**: Complete
 **Input**: User description: "Update the rendering of the Manager Changes table to give a visual indication of changes that have happened recently, likely next to the Latest change date."
 
 ## User Scenarios & Testing
@@ -16,7 +16,7 @@ As a report viewer, I want to immediately see which managers have made changes r
 
 **Acceptance Scenarios**:
 
-1. **Given** a manager's latest change occurred, **When** a viewer looks at the Manager Changes table, **Then** the "Latest change" cell shows the absolute date plus a relative-time phrase (e.g., "2 hours ago").
+1. **Given** a manager's latest change occurred, **When** a viewer looks at the Manager Changes table, **Then** the "Latest change" cell shows the absolute date plus a relative-time phrase measured as elapsed time since report generation (e.g., "2 hours"), without an "ago" suffix that would incorrectly imply elapsed time since the viewer's current moment.
 2. **Given** a manager's latest change falls within the last day, week, or month, **When** a viewer looks at the table, **Then** that row additionally shows a tiered pill labeled "Day", "Week", or "Month" (whichever is the most specific matching tier).
 3. **Given** a manager's latest change is older than a month, or a manager has no recorded changes, **When** a viewer looks at the table, **Then** no tiered pill is shown (the relative-time phrase, if any, is still shown).
 4. **Given** the report is regenerated at a later date, **When** a previously shown tier ages into a broader tier (or out of all tiers), **Then** the pill updates accordingly (or disappears) and the relative-time phrase updates.
@@ -33,7 +33,7 @@ As a report viewer, I want to immediately see which managers have made changes r
 
 ### Functional Requirements
 
-- **FR-001**: The Manager Changes table MUST show, within the "Latest change" cell, a relative-time phrase (e.g., "2 hours ago") alongside the existing absolute date, for any manager with a recorded change.
+- **FR-001**: The Manager Changes table MUST show, within the "Latest change" cell, a relative-time phrase measuring elapsed time since report generation (e.g., "2 hours", not "2 hours ago") alongside the existing absolute date, for any manager with a recorded change.
 - **FR-002**: The Manager Changes table MUST additionally show a tiered pill labeled "Day", "Week", or "Month" next to the date when a manager's latest change falls within that tier (< 24 hours, < 7 days, < 30 days respectively, most-specific tier wins).
 - **FR-003**: Rows whose latest change is older than a month, or managers with no recorded changes, MUST NOT display a tiered pill. Managers with no recorded changes MUST also NOT display a relative-time phrase.
 - **FR-004**: The relative-time phrase and tiered pills MUST be distinguishable in both light and dark report themes.
@@ -49,7 +49,7 @@ The following options were prototyped directly in `docs/index.html` for visual c
 2. **Icon marker** — A single glyph next to the date (e.g., 🔥, ⭐, ●) with a title/tooltip explaining the recency window.
 3. **Row or cell background tint** — Subtle background highlight on the "Latest change" cell (or whole row) for recent entries, paired with a non-color cue.
 4. **Bold/emphasized date text** — Render the date itself in bold (or a distinct weight/underline) when recent, with an accessible label (e.g., `aria-label="recent change"`).
-5. **Relative time supplement** — Show a relative-time phrase alongside the absolute date (e.g., "2 days ago"). Gives useful detail but doesn't catch the eye on its own.
+5. **Relative time supplement** — Show a relative-time phrase alongside the absolute date (e.g., "2 days"). Gives useful detail but doesn't catch the eye on its own.
 6. **Tiered/graduated indicator (dots)** — Multiple thresholds with different dot counts (e.g., ●●● within 24h, ●● within 3 days, ● within 7 days) to convey "how recent," not just "recent or not."
 7. **Animated pulse/glow** — A subtle CSS animation (e.g., pulsing dot) drawing attention to very recent changes; higher visual novelty, more implementation/testing overhead, and should still degrade gracefully (e.g., `prefers-reduced-motion`).
 
@@ -76,4 +76,6 @@ The following options were prototyped directly in `docs/index.html` for visual c
 ## Validation
 
 - Prototyped in `docs/index.html` (2026-09-01): relative-time text plus tiered Day/Week/Month pills confirmed as the chosen visual approach.
-- Remaining: remove the prototype section from `docs/index.html`, implement relative-time formatting and tiered pills in `internal/render/html.go`, then run `go test ./...` and manually verify light/dark themes.
+- Implemented in `internal/render/html.go` (2026-09-01): `formatLatestChangeCell`, `relativeTime`, and `recencyTier` render the relative-time phrase and single most-specific pill for the "Latest change" cell in both table row variants.
+- Automated validation completed: `go build ./...`, `go vet ./...`, and `go test ./...` passed.
+- Manual verification completed: regenerated `docs/index.html` via `go run ./cmd/render` and confirmed rows show the correct relative-time phrase and Day/Week/Month pill (or no pill beyond a month); prototype section removed.
