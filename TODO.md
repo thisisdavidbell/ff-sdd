@@ -8,10 +8,12 @@ This file collates a list of possible future changes
 
 ## Minor Improvements
 
-- Datestamp in html
-- Dark mode for html
 - Indication of new transfer in last week(?)
 
 ## Candidate Features
 
 - Capture DreamTeam points data
+
+## Implemented Features
+
+Implemented featured are documented in [/specs](/specs) directory

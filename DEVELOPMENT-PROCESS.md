@@ -11,3 +11,6 @@ Use the full SpecKit workflow for major new features or substantial changes. Mai
 Use streamlined SDD for smaller changes, fixes, or maintenance. Record all implementation-relevant requirements in a single spec file under `specs/` before changing code. The spec must be sufficient to define the desired behavior and validation, but separate plan and task artifacts are not required.
 
 Do not make implementation-only changes: every change must be represented in the applicable SDD artifact before implementation.
+
+## Candidate Work
+[TODO.md](TODO.md) contains lists of candidate work for consideration in the future.
