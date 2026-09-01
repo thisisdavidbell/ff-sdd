@@ -68,6 +68,39 @@ func TestRenderHTMLIncludesOwnershipAndChanges(t *testing.T) {
 	}
 }
 
+func TestRenderHTMLIncludesGeneratedTimestampAndThemeControls(t *testing.T) {
+	html, err := render.BuildHTML(
+		map[string]models.PlayerOwnershipRecord{
+			"p1": {PlayerID: "p1", PlayerName: "Haaland", ManagerCount: 5},
+		},
+		nil,
+		nil,
+	)
+	if err != nil {
+		t.Fatalf("BuildHTML returned error: %v", err)
+	}
+
+	timestampPattern := regexp.MustCompile(`Report generated: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC`)
+	if !timestampPattern.MatchString(html) {
+		t.Fatalf("expected a labeled UTC generation timestamp in HTML: %s", html)
+	}
+	if strings.Index(html, "Guy Sports Team Report") > strings.Index(html, "Report generated:") {
+		t.Fatalf("expected generation timestamp directly below report title: %s", html)
+	}
+	if !strings.Contains(html, `class="theme-toggle"`) {
+		t.Fatalf("expected visible theme toggle in HTML: %s", html)
+	}
+	if !strings.Contains(html, `prefers-color-scheme: dark`) {
+		t.Fatalf("expected device theme preference detection in HTML: %s", html)
+	}
+	if !strings.Contains(html, `localStorage.getItem('report-theme')`) || !strings.Contains(html, `localStorage.setItem('report-theme',next)`) {
+		t.Fatalf("expected saved theme preference support in HTML: %s", html)
+	}
+	if !strings.Contains(html, `:root[data-theme="dark"]`) || !strings.Contains(html, `--chart-bg`) || !strings.Contains(html, `--surface-muted`) {
+		t.Fatalf("expected dark theme styles for report surfaces in HTML: %s", html)
+	}
+}
+
 func TestHistoricalTrendsChartPositionsXAxisByElapsedTime(t *testing.T) {
 	// Snapshots captured with highly irregular time gaps (1 hour, then 10 days, then 30 minutes)
 	current := map[string]models.PlayerOwnershipRecord{

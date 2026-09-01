@@ -1,7 +1,7 @@
 # Feature Specification: Report Datestamp and Dark Mode
 
 **Created**: 2026-09-01
-**Status**: Draft
+**Status**: Complete
 **Input**: User description: "Add a datestamp and dark mode to the HTML report."
 
 ## User Scenarios & Testing
@@ -70,3 +70,8 @@ As a report viewer, I want to switch between light and dark display modes so tha
 - The timestamp is presented in UTC to align with the report's existing captured-time values and to avoid ambiguity for viewers in different time zones.
 - The report's existing light presentation remains the light mode; dark mode is an alternative presentation rather than a redesign of report content or layout.
 - Theme selection is stored only in the viewer's browser and does not require accounts, server-side storage, or changes to captured data.
+
+## Validation
+
+- Automated validation completed: `go test ./...` and `git diff --check` passed.
+- Manual verification completed on 2026-09-01: confirmed the timestamp renders correctly; the theme switch works; the initial theme follows the device preference; and both light and dark presentations are satisfactory.
