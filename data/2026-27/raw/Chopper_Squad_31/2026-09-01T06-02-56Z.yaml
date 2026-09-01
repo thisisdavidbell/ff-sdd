@@ -1,0 +1,51 @@
+manager_id: "31"
+manager_name: Jem
+team_name: Chopper_Squad
+captured_at: "2026-09-01T06:02:56Z"
+source: guysports
+players:
+    - player_id: caoimhín-kelleher
+      name: Caoimhín Kelleher
+      position: GK
+      team_name: Brentford FC
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal FC
+    - player_id: timothy-castagne
+      name: Timothy Castagne
+      position: DEF
+      team_name: Fulham FC
+    - player_id: george-hemmings
+      name: George Hemmings
+      position: MID
+      team_name: Aston Villa FC
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea FC
+    - player_id: florian-wirtz
+      name: Florian Wirtz
+      position: MID
+      team_name: Liverpool FC
+    - player_id: jérémy-doku
+      name: Jérémy Doku
+      position: MID
+      team_name: Manchester City FC
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea FC
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City FC
+    - player_id: brian-brobbey
+      name: Brian Brobbey
+      position: STR
+      team_name: Sunderland AFC
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=31&name=Chopper+Squad&view=public
