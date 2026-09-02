@@ -1,5 +1,15 @@
 # ff-sdd
-A project for fantasy football data, built and maintained using spec-driven development.
+A Go-based fantasy football data pipeline for a GuySports league. It records manager team snapshots over time, calculates player ownership and team changes, and publishes a static report that makes league activity easy to inspect.
+
+## What It Does
+
+The pipeline has three stages:
+
+- **Capture** downloads the configured GuySports league pages and stores append-only manager team snapshots as YAML.
+- **Process** turns those snapshots into current and historical player ownership plus manager-change summaries.
+- **Render** generates [docs/index.html](docs/index.html), a self-contained report with ownership movement, historical trends, and expandable manager-change details.
+
+Run all three stages with `./run.sh`, or run them individually when working on a particular stage.
 
 ## Usage
 
@@ -13,9 +23,9 @@ A project for fantasy football data, built and maintained using spec-driven deve
 
 ## Architecture
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for the current application capabilities, high-level data flow, repository boundaries, and operating constraints.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the current capabilities, data flow, data locations, repository boundaries, configuration, and operating constraints.
 
 ## Development
 
-See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the project's spec-driven development process.
+This repository uses spec-driven development. See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the workflow and `specs/` for feature requirements and supporting design artifacts.
 

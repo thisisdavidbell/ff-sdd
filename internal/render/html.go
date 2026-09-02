@@ -63,28 +63,47 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString(".expand-icon{display:inline-block;font-size:11px;margin-left:6px;color:var(--muted-text)}\n")
 	b.WriteString(".date-cell{display:inline-flex;align-items:center;gap:.4rem}.relative-time{font-size:.75rem;color:var(--muted-text)}\n")
 	b.WriteString(".pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-day{background:#2563eb}.pill-week{background:#7c3aed}.pill-month{background:#64748b}\n")
+	b.WriteString(".ownership-up{color:#16a34a;font-weight:700}.ownership-down{color:#dc2626;font-weight:700}\n")
 	b.WriteString("@media (max-width:600px){body{margin:1rem auto;padding:0 1rem}.report-header{gap:.75rem}.theme-toggle{padding:.35rem .5rem}}\n")
 	b.WriteString("</style></head><body>\n")
 	b.WriteString("<header class=\"report-header\"><div><h1>Guy Sports Team Report</h1>\n")
 	b.WriteString(fmt.Sprintf("<p class=\"report-generated\">Report generated: %s</p></div><button class=\"theme-toggle\" type=\"button\" aria-label=\"Toggle dark mode\" title=\"Toggle dark mode\">Dark mode</button></header>\n", generatedAt))
 	b.WriteString("<h2>Player ownership</h2>\n")
-	b.WriteString("<table><thead><tr><th>Player</th><th>Managers</th></tr></thead><tbody>\n")
+	b.WriteString("<table><thead><tr><th>Player</th><th>Managers</th><th>Last change</th></tr></thead><tbody>\n")
 	for _, rec := range playerList {
 		name := rec.PlayerName
 		if name == "" {
 			name = rec.PlayerID
 		}
-		b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%d</td></tr>\n", html.EscapeString(name), rec.ManagerCount))
+		direction, lastChangeAt := latestOwnershipChange(history[rec.PlayerID])
+		indicator := ""
+		if direction > 0 {
+			indicator = " <span class=\"ownership-up\" aria-label=\"Ownership increased\" title=\"Ownership increased\">&#9650;</span>"
+		} else if direction < 0 {
+			indicator = " <span class=\"ownership-down\" aria-label=\"Ownership decreased\" title=\"Ownership decreased\">&#9660;</span>"
+		}
+		b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%d%s</td><td>%s</td></tr>\n", html.EscapeString(name), rec.ManagerCount, indicator, html.EscapeString(lastChangeAt)))
 	}
 	b.WriteString("</tbody></table>\n")
 
 	b.WriteString("<h2>Manager changes</h2>\n")
 	b.WriteString("<table><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>\n")
 
-	// Sort summaries by ManagerName / TeamName
+	// Sort summaries by newest change first, with unchanged managers last.
 	sortedSummaries := make([]models.ManagerChangeSummary, len(summaries))
 	copy(sortedSummaries, summaries)
 	sort.Slice(sortedSummaries, func(i, j int) bool {
+		t1, err1 := time.Parse(time.RFC3339, sortedSummaries[i].LatestChangeAt)
+		t2, err2 := time.Parse(time.RFC3339, sortedSummaries[j].LatestChangeAt)
+		if err1 == nil && err2 == nil && !t1.Equal(t2) {
+			return t1.After(t2)
+		}
+		if err1 == nil && err2 != nil {
+			return true
+		}
+		if err1 != nil && err2 == nil {
+			return false
+		}
 		n1 := sortedSummaries[i].ManagerName
 		if n1 == "" {
 			n1 = sortedSummaries[i].ManagerID
@@ -183,6 +202,30 @@ func pluralSuffix(n int) string {
 		return ""
 	}
 	return "s"
+}
+
+// latestOwnershipChange returns the direction and timestamp of the last count change.
+func latestOwnershipChange(entries []models.PlayerOwnershipHistoryEntry) (int, string) {
+	if len(entries) < 2 {
+		return 0, ""
+	}
+
+	direction := 0
+	lastChangeAt := ""
+	previousCount := entries[0].ManagerCount
+	for _, entry := range entries[1:] {
+		if entry.ManagerCount == previousCount {
+			continue
+		}
+		if entry.ManagerCount > previousCount {
+			direction = 1
+		} else {
+			direction = -1
+		}
+		lastChangeAt = entry.CapturedAt
+		previousCount = entry.ManagerCount
+	}
+	return direction, lastChangeAt
 }
 
 // formatLatestChangeCell renders the "Latest change" cell: the raw value plus a

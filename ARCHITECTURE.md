@@ -19,6 +19,7 @@ In reader-facing documentation, **Team** is the canonical term. The first releva
 - Calculate current and historical player ownership across managers.
 - Detect team additions and removals between snapshots.
 - Render ownership trends and manager changes as an interactive, responsive static report with light and dark themes.
+- Show each player's latest ownership direction and last change time, and prioritize managers with the most recent changes.
 
 ## High-Level Architecture
 
@@ -70,9 +71,9 @@ Capture is source-specific today: the supported source is GuySports. Raw files a
 
 The result is a self-contained static page containing:
 
-- Ownership tables.
+- Ownership counts with their latest increase or decrease indicator and last change time.
 - Historical trends.
-- Expandable manager-change details.
+- Manager changes ordered by most recent activity, with expandable details.
 - Browser-side interaction and theme persistence.
 
 ## Repository Boundaries

@@ -68,6 +68,60 @@ func TestRenderHTMLIncludesOwnershipAndChanges(t *testing.T) {
 	}
 }
 
+func TestRenderHTMLShowsLatestOwnershipDirectionAndChangeTime(t *testing.T) {
+
+	current := map[string]models.PlayerOwnershipRecord{
+		"up":      {PlayerID: "up", PlayerName: "Rising", ManagerCount: 4},
+		"down":    {PlayerID: "down", PlayerName: "Falling", ManagerCount: 2},
+		"steady":  {PlayerID: "steady", PlayerName: "Steady", ManagerCount: 3},
+		"single":  {PlayerID: "single", PlayerName: "New", ManagerCount: 1},
+	}
+	history := map[string][]models.PlayerOwnershipHistoryEntry{
+		"up":     {{CapturedAt: "2026-01-01T12:00:00Z", ManagerCount: 2}, {CapturedAt: "2026-01-02T12:00:00Z", ManagerCount: 2}, {CapturedAt: "2026-01-03T12:00:00Z", ManagerCount: 4}},
+		"down":   {{CapturedAt: "2026-01-01T12:00:00Z", ManagerCount: 5}, {CapturedAt: "2026-01-03T12:00:00Z", ManagerCount: 2}},
+		"steady": {{CapturedAt: "2026-01-01T12:00:00Z", ManagerCount: 3}, {CapturedAt: "2026-01-03T12:00:00Z", ManagerCount: 3}},
+		"single": {{CapturedAt: "2026-01-03T12:00:00Z", ManagerCount: 1}},
+	}
+
+	html, err := render.BuildHTML(current, history, nil)
+	if err != nil {
+		t.Fatalf("BuildHTML returned error: %v", err)
+	}
+
+	if !strings.Contains(html, "<th>Last change</th>") {
+		t.Fatalf("expected a Last change ownership column: %s", html)
+	}
+	if !strings.Contains(html, "Rising</td><td>4 <span class=\"ownership-up\"") || !strings.Contains(html, "2026-01-03T12:00:00Z") {
+		t.Fatalf("expected latest increase indicator and timestamp: %s", html)
+	}
+	if !strings.Contains(html, "Falling</td><td>2 <span class=\"ownership-down\"") {
+		t.Fatalf("expected latest decrease indicator: %s", html)
+	}
+	if strings.Contains(html, "Steady</td><td>3 <span class=\"ownership-") || strings.Contains(html, "New</td><td>1 <span class=\"ownership-") {
+		t.Fatalf("expected no direction indicator for unchanged ownership: %s", html)
+	}
+}
+
+func TestRenderHTMLOrdersManagerChangesByLatestUpdate(t *testing.T) {
+	summaries := []models.ManagerChangeSummary{
+		{ManagerID: "none", ManagerName: "No changes", TeamName: "No changes", TotalChanges: 0},
+		{ManagerID: "older", ManagerName: "Older", TeamName: "Older", TotalChanges: 1, LatestChangeAt: "2026-01-01T12:00:00Z"},
+		{ManagerID: "newer", ManagerName: "Newer", TeamName: "Newer", TotalChanges: 1, LatestChangeAt: "2026-01-03T12:00:00Z"},
+	}
+
+	html, err := render.BuildHTML(map[string]models.PlayerOwnershipRecord{}, nil, summaries)
+	if err != nil {
+		t.Fatalf("BuildHTML returned error: %v", err)
+	}
+
+	newerPos := strings.Index(html, "Newer</td>")
+	olderPos := strings.Index(html, "Older</td>")
+	nonePos := strings.Index(html, "No changes</td>")
+	if !(newerPos < olderPos && olderPos < nonePos) {
+		t.Fatalf("expected manager changes ordered newest to oldest with no changes last, got Newer=%d Older=%d No changes=%d", newerPos, olderPos, nonePos)
+	}
+}
+
 func TestRenderHTMLIncludesGeneratedTimestampAndThemeControls(t *testing.T) {
 	html, err := render.BuildHTML(
 		map[string]models.PlayerOwnershipRecord{
