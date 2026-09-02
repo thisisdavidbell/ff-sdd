@@ -1,8 +1,8 @@
-# Specification Quality Checklist: Report Navigation Prototypes
+# Specification Quality Checklist: Report Navigation
 
 **Purpose**: Validate specification completeness and quality before proceeding to implementation
 **Created**: 2026-09-02
-**Feature**: [Report Navigation Prototypes](../spec.md)
+**Feature**: [Report Navigation](../spec.md)
 
 ## Content Quality
 
@@ -31,4 +31,4 @@
 
 ## Notes
 
-- Prototype artifacts intentionally preserve the current report snapshot while leaving production generation unchanged.
+- The selected sidebar prototype preserves the current report snapshot while leaving production generation unchanged.

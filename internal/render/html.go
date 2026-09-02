@@ -29,12 +29,12 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 
 	var b bytes.Buffer
 	b.WriteString("<!doctype html>\n")
-	b.WriteString("<html><head><meta charset=\"utf-8\"><title>Guy Sports Team Report</title>\n")
+	b.WriteString("<html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Guy Sports Team Report</title>\n")
 	b.WriteString("<script>(function(){try{var theme=localStorage.getItem('report-theme');if(theme==='light'||theme==='dark'){document.documentElement.dataset.theme=theme}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.dataset.theme='dark'}}catch(e){}}())</script>\n")
 	b.WriteString("<style>\n")
 	b.WriteString(":root{color-scheme:light;--page-bg:#fff;--text:#222;--heading:#333;--border:#ddd;--subtle-border:#e2e8f0;--surface:#fff;--surface-muted:#f8f9fa;--row:#fafafa;--hover:#f1f5f9;--muted-text:#475569;--chart-bg:#fcfcfd;--grid:#e2e8f0;--grid-light:#f1f5f9;--tick:#94a3b8}\n")
 	b.WriteString(":root[data-theme=\"dark\"]{color-scheme:dark;--page-bg:#171a1f;--text:#edf2f7;--heading:#f8fafc;--border:#4a5568;--subtle-border:#3d4757;--surface:#222831;--surface-muted:#2d3642;--row:#202731;--hover:#354151;--muted-text:#cbd5e1;--chart-bg:#1d242d;--grid:#475569;--grid-light:#334155;--tick:#94a3b8}\n")
-	b.WriteString("body{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;max-width:1150px;margin:2rem auto;padding:0 1.5rem;color:var(--text);background:var(--page-bg);line-height:1.5}\n")
+	b.WriteString("html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;max-width:1150px;margin:2rem auto;padding:0 1.5rem;color:var(--text);background:var(--page-bg);line-height:1.5}\n")
 	b.WriteString(".report-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;border-bottom:2px solid var(--subtle-border);padding-bottom:.5rem;margin-bottom:1.5rem}\n")
 	b.WriteString("h1{margin:0}.report-generated{margin:.25rem 0 0;color:var(--muted-text);font-size:.875rem}.theme-toggle{flex:none;border:1px solid var(--border);border-radius:4px;background:var(--surface-muted);color:var(--text);padding:.4rem .6rem;cursor:pointer}.theme-toggle:hover{background:var(--hover)}\n")
 	b.WriteString("h2{margin-top:2rem;margin-bottom:.75rem;color:var(--heading)}\n")
@@ -65,10 +65,12 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString(".pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-day{background:#2563eb}.pill-week{background:#7c3aed}.pill-month{background:#64748b}\n")
 	b.WriteString(".ownership-up{color:#16a34a;font-weight:700}.ownership-down{color:#dc2626;font-weight:700}\n")
 	b.WriteString("@media (max-width:600px){body{margin:1rem auto;padding:0 1rem}.report-header{gap:.75rem}.theme-toggle{padding:.35rem .5rem}}\n")
+	b.WriteString(".report-nav{position:sticky;top:0;z-index:10;margin:0 -1.5rem;padding:.5rem 1.5rem;background:var(--surface);border-bottom:1px solid var(--subtle-border)}.report-nav summary{cursor:pointer;font-weight:600;color:var(--heading)}.report-nav summary:focus-visible,.report-nav a:focus-visible{outline:2px solid var(--tick);outline-offset:3px}.report-nav-links{display:grid;gap:.2rem;padding:.5rem 0}.report-nav a{display:block;padding:.45rem;color:var(--text);text-decoration:none;border-left:3px solid transparent}.report-nav a:hover,.report-nav a:focus-visible,.report-nav a[aria-current=\"true\"]{background:var(--hover);border-left-color:var(--tick)}@media(min-width:1000px){body{max-width:1150px;margin:2rem 2rem 2rem 15rem;padding:0 1.5rem}.report-nav{position:fixed;inset:0 auto 0 0;width:12rem;margin:0;padding:2rem 1rem;border-right:1px solid var(--subtle-border);background:var(--surface)}.report-nav summary{display:none}.report-nav:not([open]) .report-nav-links{display:grid}.report-nav-links{padding:0}.report-nav a{border-left:3px solid transparent}}@media(max-width:600px){.report-nav{margin:0 -1rem;padding:.5rem 1rem}}\n")
 	b.WriteString("</style></head><body>\n")
 	b.WriteString("<header class=\"report-header\"><div><h1>Guy Sports Team Report</h1>\n")
 	b.WriteString(fmt.Sprintf("<p class=\"report-generated\">Report generated: %s</p></div><button class=\"theme-toggle\" type=\"button\" aria-label=\"Toggle dark mode\" title=\"Toggle dark mode\">Dark mode</button></header>\n", generatedAt))
-	b.WriteString("<h2>Player ownership</h2>\n")
+	b.WriteString("<nav class=\"report-nav\" aria-label=\"Report sections\"><details open><summary>Report sections</summary><div class=\"report-nav-links\"><a href=\"#top\">Top</a><a href=\"#player-ownership\">Player ownership</a><a href=\"#team-changes\">Team changes</a><a href=\"#historical-trends\">Historical trends</a></div></details></nav>\n")
+	b.WriteString("<h2 id=\"player-ownership\" tabindex=\"-1\">Player ownership</h2>\n")
 	b.WriteString("<table><thead><tr><th>Player</th><th>Managers</th><th>Last change</th></tr></thead><tbody>\n")
 	for _, rec := range playerList {
 		name := rec.PlayerName
@@ -86,7 +88,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	}
 	b.WriteString("</tbody></table>\n")
 
-	b.WriteString("<h2>Manager changes</h2>\n")
+	b.WriteString("<h2 id=\"team-changes\" tabindex=\"-1\">Team changes</h2>\n")
 	b.WriteString("<table><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>\n")
 
 	// Sort summaries by newest change first, with unchanged managers last.
@@ -174,7 +176,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	}
 	b.WriteString("</tbody></table>\n")
 
-	b.WriteString("<h2>Historical trends</h2>\n")
+	b.WriteString("<h2 id=\"historical-trends\" tabindex=\"-1\">Historical trends</h2>\n")
 	renderHistoricalTrendsChart(&b, current, history, playerList)
 
 	b.WriteString("<script>\n")
@@ -192,6 +194,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString("}\n")
 	b.WriteString("(function(){var button=document.querySelector('.theme-toggle');if(!button)return;function update(theme){document.documentElement.dataset.theme=theme;button.textContent=theme==='dark'?'Light mode':'Dark mode';button.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');button.title=button.getAttribute('aria-label')}var current=document.documentElement.dataset.theme==='dark'?'dark':'light';update(current);button.addEventListener('click',function(){var next=document.documentElement.dataset.theme==='dark'?'light':'dark';update(next);try{localStorage.setItem('report-theme',next)}catch(e){}})}())\n")
 	b.WriteString("</script>\n")
+	b.WriteString("<script>(function(){var links=document.querySelectorAll('.report-nav-links a[href^=\"#\"]');var sections=Array.prototype.map.call(links,function(link){var target=link.getAttribute('href');return target==='#top'?null:document.querySelector(target)}).filter(Boolean);function update(){var current=sections[0];sections.forEach(function(section){if(section.getBoundingClientRect().top<=120){current=section}});links.forEach(function(link){var target=link.getAttribute('href');link.setAttribute('aria-current',target!=='#top'&&document.querySelector(target)===current?'true':'false')})}window.addEventListener('scroll',update,{passive:true});window.addEventListener('hashchange',update);update()}())</script>\n")
 
 	b.WriteString("</body></html>\n")
 	return b.String(), nil

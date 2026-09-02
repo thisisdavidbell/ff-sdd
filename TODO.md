@@ -8,7 +8,7 @@ This file collates a list of possible future changes
 
 ## Minor Improvements
 
-- menu/auto expand collapse
+- adopt OKF?
 
 ## Candidate Features
 

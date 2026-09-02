@@ -18,8 +18,9 @@ In reader-facing documentation, **Team** is the canonical term. The first releva
 - Preserve team snapshots as append-only YAML, skipping unchanged teams.
 - Calculate current and historical player ownership across managers.
 - Detect team additions and removals between snapshots.
-- Render ownership trends and manager changes as an interactive, responsive static report with light and dark themes.
+- Render ownership trends and team changes as an interactive, responsive static report with light and dark themes.
 - Show each player's latest ownership direction and last change time, and prioritize managers with the most recent changes.
+- Provide persistent section navigation: a full-height sidebar on desktop and an expandable section menu on narrow screens.
 
 ## High-Level Architecture
 
@@ -73,8 +74,8 @@ The result is a self-contained static page containing:
 
 - Ownership counts with their latest increase or decrease indicator and last change time.
 - Historical trends.
-- Manager changes ordered by most recent activity, with expandable details.
-- Browser-side interaction and theme persistence.
+- Team changes ordered by most recent activity, with expandable details.
+- Browser-side interaction, theme persistence, and active section navigation.
 
 ## Repository Boundaries
 

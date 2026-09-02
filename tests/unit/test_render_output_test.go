@@ -68,6 +68,30 @@ func TestRenderHTMLIncludesOwnershipAndChanges(t *testing.T) {
 	}
 }
 
+func TestRenderHTMLIncludesReportNavigation(t *testing.T) {
+	html, err := render.BuildHTML(nil, nil, nil)
+	if err != nil {
+		t.Fatalf("BuildHTML returned error: %v", err)
+	}
+
+	expectedNavigation := `<a href="#top">Top</a><a href="#player-ownership">Player ownership</a><a href="#team-changes">Team changes</a><a href="#historical-trends">Historical trends</a>`
+	if !strings.Contains(html, expectedNavigation) {
+		t.Fatalf("expected ordered report navigation, got: %s", html)
+	}
+	for _, section := range []string{
+		`<h2 id="player-ownership" tabindex="-1">Player ownership</h2>`,
+		`<h2 id="team-changes" tabindex="-1">Team changes</h2>`,
+		`<h2 id="historical-trends" tabindex="-1">Historical trends</h2>`,
+	} {
+		if !strings.Contains(html, section) {
+			t.Fatalf("expected anchored report section %q", section)
+		}
+	}
+	if !strings.Contains(html, `class="report-nav"`) || !strings.Contains(html, `@media(min-width:1000px)`) {
+		t.Fatalf("expected responsive report sidebar navigation: %s", html)
+	}
+}
+
 func TestRenderHTMLShowsLatestOwnershipDirectionAndChangeTime(t *testing.T) {
 
 	current := map[string]models.PlayerOwnershipRecord{
