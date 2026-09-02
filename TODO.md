@@ -8,7 +8,9 @@ This file collates a list of possible future changes
 
 ## Minor Improvements
 
-- Indication of new transfer in last week(?)
+- menu/auto expand collapse
+- Order transfers table by most recent made
+- Up/down arrows for player counts
 
 ## Candidate Features
 

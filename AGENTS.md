@@ -9,6 +9,10 @@ This repository provides a Go-based fantasy football data pipeline:
 - `cmd/render` produces the static HTML report in `docs/` for local viewing and github pages.
 - `run.sh` executes capture, processing, and rendering sequentially.
 
+## Architecture
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the current application capabilities, high-level data flow, repository boundaries, and operating constraints.
+
 ## Development Process
 
 See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the project's spec-driven development process.

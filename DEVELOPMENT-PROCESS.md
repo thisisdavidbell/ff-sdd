@@ -2,6 +2,16 @@
 
 This project follows spec-driven development (SDD), though with 2 different approaches depending on the task. Both approaches store their requirements and supporting artifacts in `specs/`.
 
+## Architecture Source of Truth
+
+`ARCHITECTURE.md` is the source of truth for the current repository and application:
+
+- Architecture.
+- Functionality and capabilities.
+- High-level approach.
+
+All changes MUST be made through one of the SDD processes and MUST update `ARCHITECTURE.md` to keep it in sync with the resulting current state.
+
 ## Full SpecKit SDD
 
 Use the full SpecKit workflow for major new features or substantial changes. Maintain `spec.md`, `plan.md`, `tasks.md`, and any necessary supporting artifacts, such as contracts, data models, and research. Use the SpecKit workflow to specify, plan, task, and implement the work.

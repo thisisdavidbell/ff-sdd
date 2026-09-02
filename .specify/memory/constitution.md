@@ -1,8 +1,8 @@
 <!--
 Sync Impact Report:
-- Version change: 1.0.0 -> 1.1.0
-- Modified principles: I. Spec-First Delivery; II. Data Integrity & Traceability; III. Test-First Validation; IV. Observable, Reproducible Execution; V. Simplicity and Change Control; VI. Historical Data Preservation (added)
-- Added sections: Project Constraints, Development Workflow, Historical Data Preservation principle
+- Version change: 1.1.0 -> 1.2.0
+- Modified principles: I. Spec-First Delivery; V. Simplicity and Change Control; Project Constraints; Development Workflow
+- Added sections: none
 - Removed sections: none
 - Follow-up TODOs: none
 -->
@@ -22,6 +22,11 @@ that data work.
 
 These definitions apply throughout this project and must be used consistently in
 specifications, implementation work, and project documentation.
+
+In reader-facing documentation, **Team** is the canonical term. The first relevant
+reference may identify it as **Team (roster)** for readers familiar with that term.
+Code identifiers, data fields, and historical specifications may retain `roster`
+when changing them would add churn or break an existing contract.
 
 ## Core Principles
 
@@ -86,6 +91,11 @@ comparative analysis depends on historical context, trend tracking, and replayab
 data lineage.
 
 ## Project Constraints
+
+`ARCHITECTURE.md` is the source of truth for the current repository and application
+architecture, functionality, capabilities, and high-level approach. The document
+MUST be kept in sync with every repository change.
+
 The project MUST maintain a structured repository workflow with explicit ownership,
 readable task tracking, and clear documentation for all significant changes. This
 repository is dedicated to collecting and presenting fantasy football data sourced
@@ -103,10 +113,12 @@ control. The team must preserve auditability and avoid undocumented assumptions 
 production-facing workflows.
 
 ## Development Workflow
-Features, fixes, and experiments MUST follow a defined sequence: specify the
-requirement, plan the impact, implement in small increments, validate with relevant
-checks, and document contract or behavior changes. Pull requests must be reviewed
-for correctness, compatibility, and compliance with this Constitution before merge.
+All changes MUST be made through one of the repository's SDD processes. Features,
+fixes, and experiments MUST follow a defined sequence: specify the requirement, plan
+the impact, implement in small increments, validate with relevant checks, update
+`ARCHITECTURE.md` to reflect the resulting current state, and document contract or
+behavior changes. Pull requests must be reviewed for correctness, compatibility, and
+compliance with this Constitution before merge.
 
 Data capture workflows MUST run on a scheduled, repeatable basis and persist each
 snapshot as part of the historical record. Any user-facing query or presentation path

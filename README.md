@@ -11,6 +11,10 @@ A project for fantasy football data, built and maintained using spec-driven deve
 ### Automated End-to-End Pipeline
 - **Run Pipeline**: `./run.sh`
 
+## Architecture
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the current application capabilities, high-level data flow, repository boundaries, and operating constraints.
+
 ## Development
 
 See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the project's spec-driven development process.
