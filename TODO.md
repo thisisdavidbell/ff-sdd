@@ -9,8 +9,6 @@ This file collates a list of possible future changes
 ## Minor Improvements
 
 - menu/auto expand collapse
-- Order transfers table by most recent made
-- Up/down arrows for player counts
 
 ## Candidate Features
 
