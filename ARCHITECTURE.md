@@ -74,9 +74,9 @@ Capture is source-specific today: the supported source is GuySports. Raw files a
 
 The result is a self-contained static page containing:
 
-- Ownership counts with their latest increase or decrease indicator and last change time.
+- Ownership counts with their latest increase or decrease indicator and last change time, initially previewing ten rows with a reversible control to show all players.
 - Historical trends.
-- Team changes ordered by most recent activity, with expandable details.
+- Team changes ordered by most recent activity, initially previewing ten manager rows with a reversible control to show all teams and expandable details.
 - Browser-side interaction, theme persistence, and active section navigation.
 
 ## Repository Boundaries

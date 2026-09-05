@@ -34,14 +34,15 @@ tr:hover{background:var(--hover)}
 .date-cell{display:inline-flex;align-items:center;gap:.4rem}.relative-time{font-size:.75rem;color:var(--muted-text)}
 .pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-day{background:#2563eb}.pill-week{background:#7c3aed}.pill-month{background:#64748b}
 .ownership-up{color:#16a34a;font-weight:700}.ownership-down{color:#dc2626;font-weight:700}
+.table-preview tbody tr.preview-hidden{display:none}.table-preview.is-expanded tbody tr.preview-hidden{display:table-row}.table-expander{margin:-.25rem 0 1rem;border:1px solid var(--border);border-radius:4px;background:var(--surface-muted);color:var(--text);padding:.4rem .6rem;cursor:pointer}.table-expander:hover{background:var(--hover)}
 @media (max-width:600px){body{margin:1rem auto;padding:0 1rem}.report-header{gap:.75rem}.theme-toggle{padding:.35rem .5rem}}
 .report-nav{position:sticky;top:0;z-index:10;margin:0 -1.5rem;padding:.5rem 1.5rem;background:var(--surface);border-bottom:1px solid var(--subtle-border)}.report-nav summary{cursor:pointer;font-weight:600;color:var(--heading)}.report-nav summary:focus-visible,.report-nav a:focus-visible{outline:2px solid var(--tick);outline-offset:3px}.report-nav-links{display:grid;gap:.2rem;padding:.5rem 0}.report-nav a{display:block;padding:.45rem;color:var(--text);text-decoration:none;border-left:3px solid transparent}.report-nav a:hover,.report-nav a:focus-visible,.report-nav a[aria-current="true"]{background:var(--hover);border-left-color:var(--tick)}@media(min-width:1000px){body{max-width:1150px;margin:2rem 2rem 2rem 15rem;padding:0 1.5rem}.report-nav{position:fixed;inset:0 auto 0 0;width:12rem;margin:0;padding:2rem 1rem;border-right:1px solid var(--subtle-border);background:var(--surface)}.report-nav summary{display:none}.report-nav:not([open]) .report-nav-links{display:grid}.report-nav-links{padding:0}.report-nav a{border-left:3px solid transparent}}@media(max-width:600px){.report-nav{margin:0 -1rem;padding:.5rem 1rem}}
 </style></head><body>
 <header class="report-header"><div><h1>Guy Sports Team Report</h1>
-<p class="report-generated">Report generated: 2026-09-05 16:32</p></div><button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">Dark mode</button></header>
+<p class="report-generated">Report generated: 2026-09-05 20:02</p></div><button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">Dark mode</button></header>
 <nav class="report-nav" aria-label="Report sections"><details open><summary>Report sections</summary><div class="report-nav-links"><a href="#top">Top</a><a href="#player-ownership">Player ownership</a><a href="#team-changes">Team changes</a><a href="#historical-trends">Historical trends</a></div></details></nav>
 <h2 id="player-ownership" tabindex="-1">Player ownership</h2>
-<table><thead><tr><th>Player</th><th>Managers</th><th>Last change</th></tr></thead><tbody>
+<table id="player-ownership-table" class="table-preview"><thead><tr><th>Player</th><th>Managers</th><th>Last change</th></tr></thead><tbody>
 <tr><td>Erling Haaland</td><td>28</td><td></td></tr>
 <tr><td>Gabriel</td><td>20</td><td></td></tr>
 <tr><td>João Pedro</td><td>19 <span class="ownership-up" aria-label="Ownership increased" title="Ownership increased">&#9650;</span></td><td>2026-08-29 23:11</td></tr>
@@ -167,8 +168,9 @@ tr:hover{background:var(--hover)}
 <tr><td>William Saliba</td><td>1</td><td></td></tr>
 <tr><td>Zion Suzuki</td><td>1</td><td></td></tr>
 </tbody></table>
+<button class="table-expander" type="button" data-table="player-ownership-table">Show all players</button>
 <h2 id="team-changes" tabindex="-1">Team changes</h2>
-<table><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>
+<table id="team-changes-table" class="table-preview"><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>
 <tr class="clickable-row" onclick="toggleManagerDetail('mgr-detail-0')"><td>Lyndon_Henstridge</td><td>Finsbury_Bridge</td><td>1 <span id="icon-mgr-detail-0" class="expand-icon">▶</span></td><td><span class="date-cell">2026-09-03 07:41 <span class="relative-time">(2 days)</span> <span class="pill pill-week">Week</span></span></td></tr>
 <tr id="mgr-detail-0" class="manager-detail-row"><td colspan="4">
 <div class="event-card">
@@ -276,6 +278,7 @@ tr:hover{background:var(--hover)}
 <tr><td>The_Monk</td><td>Vinnies_XI</td><td>0</td><td></td></tr>
 <tr><td>Will_Watkins</td><td>Willy’s_Wanderers</td><td>0</td><td></td></tr>
 </tbody></table>
+<button class="table-expander" type="button" data-table="team-changes-table">Show all teams</button>
 <h2 id="historical-trends" tabindex="-1">Historical trends</h2>
 <div class="chart-container">
 <svg class="trend-chart" viewBox="0 0 1100 800" preserveAspectRatio="xMidYMid meet">
@@ -2950,6 +2953,7 @@ function toggleManagerDetail(id){
   }
 }
 (function(){var button=document.querySelector('.theme-toggle');if(!button)return;function update(theme){document.documentElement.dataset.theme=theme;button.textContent=theme==='dark'?'Light mode':'Dark mode';button.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');button.title=button.getAttribute('aria-label')}var current=document.documentElement.dataset.theme==='dark'?'dark':'light';update(current);button.addEventListener('click',function(){var next=document.documentElement.dataset.theme==='dark'?'light':'dark';update(next);try{localStorage.setItem('report-theme',next)}catch(e){}})}())
+(function(){Array.prototype.forEach.call(document.querySelectorAll('.table-expander'),function(button){var table=document.getElementById(button.dataset.table);if(!table)return;var rows=Array.prototype.filter.call(table.tBodies[0].rows,function(row){return !row.classList.contains('manager-detail-row')});var hiddenRows=rows.slice(10);var itemLabel=button.dataset.table==='player-ownership-table'?'players':'teams';if(!hiddenRows.length){button.hidden=true;return}hiddenRows.forEach(function(row){row.classList.add('preview-hidden')});button.textContent='Show all '+rows.length+' '+itemLabel;button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls',table.id);button.addEventListener('click',function(){var expanded=table.classList.toggle('is-expanded');button.textContent=expanded?'Show fewer '+itemLabel:'Show all '+rows.length+' '+itemLabel;button.setAttribute('aria-expanded',String(expanded))})})}())
 </script>
 <script>(function(){var links=document.querySelectorAll('.report-nav-links a[href^="#"]');var sections=Array.prototype.map.call(links,function(link){var target=link.getAttribute('href');return target==='#top'?null:document.querySelector(target)}).filter(Boolean);function update(){var current=sections[0];sections.forEach(function(section){if(section.getBoundingClientRect().top<=120){current=section}});links.forEach(function(link){var target=link.getAttribute('href');link.setAttribute('aria-current',target!=='#top'&&document.querySelector(target)===current?'true':'false')})}window.addEventListener('scroll',update,{passive:true});window.addEventListener('hashchange',update);update()}())</script>
 </body></html>
