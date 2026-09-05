@@ -10,7 +10,9 @@ This project follows spec-driven development (SDD), though with 2 different appr
 - Functionality and capabilities.
 - High-level approach.
 
-All changes MUST be made through one of the SDD processes and MUST update `ARCHITECTURE.md` to keep it in sync with the resulting current state.
+All changes MUST be made through one of the SDD processes. A pull request that changes implementation, configuration, automation, or repository behavior MUST include the applicable SDD artifact. It also MUST update `ARCHITECTURE.md` whenever the resulting code behaviour current state differs from that defined in `ARCHITECTURE.md. Neither code-only pull requests nor SDD-only pull requests that leave `ARCHITECTURE.md` out of sync are eligible to merge.
+
+Editorial documentation corrections that do not change the repository's current behavior do not require an `ARCHITECTURE.md` update.
 
 ## SDD Selection Gate
 

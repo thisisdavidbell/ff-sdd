@@ -117,6 +117,8 @@ Run `./run.sh` to execute the stages in order. The pipeline stops when a stage r
 
 The GitHub Actions scheduled pipeline runs daily at 01:54 in the `Europe/London` timezone, avoiding the start-of-hour scheduling peak and retaining the same local time through daylight-saving changes.
 
+Repository changes follow one of the SDD approaches defined in `DEVELOPMENT-PROCESS.md`. GitHub Copilot pull-request review checks that applicable SDD artifacts accompany implementation and behavior changes, and that  this current-state architecture document is updated if needed to remain in sync with the code behaviour.
+
 ## Current Constraints
 
 - GuySports is the only supported capture source, and capture depends on the source HTML structure and network availability.
