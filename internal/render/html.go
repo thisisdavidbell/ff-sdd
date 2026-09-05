@@ -80,6 +80,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString(".date-cell{display:inline-flex;align-items:center;gap:.4rem}.relative-time{font-size:.75rem;color:var(--muted-text)}\n")
 	b.WriteString(".pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-day{background:#2563eb}.pill-week{background:#7c3aed}.pill-month{background:#64748b}\n")
 	b.WriteString(".ownership-up{color:#16a34a;font-weight:700}.ownership-down{color:#dc2626;font-weight:700}\n")
+	b.WriteString(".table-preview tbody tr.preview-hidden{display:none}.table-preview.is-expanded tbody tr.preview-hidden{display:table-row}.table-expander{margin:-.25rem 0 1rem;border:1px solid var(--border);border-radius:4px;background:var(--surface-muted);color:var(--text);padding:.4rem .6rem;cursor:pointer}.table-expander:hover{background:var(--hover)}\n")
 	b.WriteString("@media (max-width:600px){body{margin:1rem auto;padding:0 1rem}.report-header{gap:.75rem}.theme-toggle{padding:.35rem .5rem}}\n")
 	b.WriteString(".report-nav{position:sticky;top:0;z-index:10;margin:0 -1.5rem;padding:.5rem 1.5rem;background:var(--surface);border-bottom:1px solid var(--subtle-border)}.report-nav summary{cursor:pointer;font-weight:600;color:var(--heading)}.report-nav summary:focus-visible,.report-nav a:focus-visible{outline:2px solid var(--tick);outline-offset:3px}.report-nav-links{display:grid;gap:.2rem;padding:.5rem 0}.report-nav a{display:block;padding:.45rem;color:var(--text);text-decoration:none;border-left:3px solid transparent}.report-nav a:hover,.report-nav a:focus-visible,.report-nav a[aria-current=\"true\"]{background:var(--hover);border-left-color:var(--tick)}@media(min-width:1000px){body{max-width:1150px;margin:2rem 2rem 2rem 15rem;padding:0 1.5rem}.report-nav{position:fixed;inset:0 auto 0 0;width:12rem;margin:0;padding:2rem 1rem;border-right:1px solid var(--subtle-border);background:var(--surface)}.report-nav summary{display:none}.report-nav:not([open]) .report-nav-links{display:grid}.report-nav-links{padding:0}.report-nav a{border-left:3px solid transparent}}@media(max-width:600px){.report-nav{margin:0 -1rem;padding:.5rem 1rem}}\n")
 	b.WriteString("</style></head><body>\n")
@@ -87,7 +88,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString(fmt.Sprintf("<p class=\"report-generated\">Report generated: %s</p></div><button class=\"theme-toggle\" type=\"button\" aria-label=\"Toggle dark mode\" title=\"Toggle dark mode\">Dark mode</button></header>\n", generatedAt))
 	b.WriteString("<nav class=\"report-nav\" aria-label=\"Report sections\"><details open><summary>Report sections</summary><div class=\"report-nav-links\"><a href=\"#top\">Top</a><a href=\"#player-ownership\">Player ownership</a><a href=\"#team-changes\">Team changes</a><a href=\"#historical-trends\">Historical trends</a></div></details></nav>\n")
 	b.WriteString("<h2 id=\"player-ownership\" tabindex=\"-1\">Player ownership</h2>\n")
-	b.WriteString("<table><thead><tr><th>Player</th><th>Managers</th><th>Last change</th></tr></thead><tbody>\n")
+	b.WriteString("<table id=\"player-ownership-table\" class=\"table-preview\"><thead><tr><th>Player</th><th>Managers</th><th>Last change</th></tr></thead><tbody>\n")
 	for _, rec := range playerList {
 		name := rec.PlayerName
 		if name == "" {
@@ -103,9 +104,10 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 		b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%d%s</td><td>%s</td></tr>\n", html.EscapeString(name), rec.ManagerCount, indicator, html.EscapeString(formatDisplayTimestamp(lastChangeAt))))
 	}
 	b.WriteString("</tbody></table>\n")
+	b.WriteString("<button class=\"table-expander\" type=\"button\" data-table=\"player-ownership-table\">Show all players</button>\n")
 
 	b.WriteString("<h2 id=\"team-changes\" tabindex=\"-1\">Team changes</h2>\n")
-	b.WriteString("<table><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>\n")
+	b.WriteString("<table id=\"team-changes-table\" class=\"table-preview\"><thead><tr><th>Manager</th><th>Team</th><th>Total changes</th><th>Latest change</th></tr></thead><tbody>\n")
 
 	// Sort summaries by newest change first, with unchanged managers last.
 	sortedSummaries := make([]models.ManagerChangeSummary, len(summaries))
@@ -188,6 +190,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 		}
 	}
 	b.WriteString("</tbody></table>\n")
+	b.WriteString("<button class=\"table-expander\" type=\"button\" data-table=\"team-changes-table\">Show all teams</button>\n")
 
 	b.WriteString("<h2 id=\"historical-trends\" tabindex=\"-1\">Historical trends</h2>\n")
 	renderHistoricalTrendsChart(&b, current, history, playerList)
@@ -206,6 +209,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString("  }\n")
 	b.WriteString("}\n")
 	b.WriteString("(function(){var button=document.querySelector('.theme-toggle');if(!button)return;function update(theme){document.documentElement.dataset.theme=theme;button.textContent=theme==='dark'?'Light mode':'Dark mode';button.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');button.title=button.getAttribute('aria-label')}var current=document.documentElement.dataset.theme==='dark'?'dark':'light';update(current);button.addEventListener('click',function(){var next=document.documentElement.dataset.theme==='dark'?'light':'dark';update(next);try{localStorage.setItem('report-theme',next)}catch(e){}})}())\n")
+	b.WriteString("(function(){Array.prototype.forEach.call(document.querySelectorAll('.table-expander'),function(button){var table=document.getElementById(button.dataset.table);if(!table)return;var rows=Array.prototype.filter.call(table.tBodies[0].rows,function(row){return !row.classList.contains('manager-detail-row')});var hiddenRows=rows.slice(10);var itemLabel=button.dataset.table==='player-ownership-table'?'players':'teams';if(!hiddenRows.length){button.hidden=true;return}hiddenRows.forEach(function(row){row.classList.add('preview-hidden')});button.textContent='Show all '+rows.length+' '+itemLabel;button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls',table.id);button.addEventListener('click',function(){var expanded=table.classList.toggle('is-expanded');button.textContent=expanded?'Show fewer '+itemLabel:'Show all '+rows.length+' '+itemLabel;button.setAttribute('aria-expanded',String(expanded))})})}())\n")
 	b.WriteString("</script>\n")
 	b.WriteString("<script>(function(){var links=document.querySelectorAll('.report-nav-links a[href^=\"#\"]');var sections=Array.prototype.map.call(links,function(link){var target=link.getAttribute('href');return target==='#top'?null:document.querySelector(target)}).filter(Boolean);function update(){var current=sections[0];sections.forEach(function(section){if(section.getBoundingClientRect().top<=120){current=section}});links.forEach(function(link){var target=link.getAttribute('href');link.setAttribute('aria-current',target!=='#top'&&document.querySelector(target)===current?'true':'false')})}window.addEventListener('scroll',update,{passive:true});window.addEventListener('hashchange',update);update()}())</script>\n")
 

@@ -1,6 +1,7 @@
 package unit
 
 import (
+	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
@@ -312,5 +313,37 @@ func TestRenderHTMLIncludesInteractiveManagerChangeDetails(t *testing.T) {
 	}
 	if !strings.Contains(html, "Haaland: 5 managers at 2026-08-29 22:41") {
 		t.Fatalf("expected London-local chart tooltip timestamp: %s", html)
+	}
+}
+
+func TestRenderHTMLIncludesReversibleTablePreviews(t *testing.T) {
+	current := make(map[string]models.PlayerOwnershipRecord)
+	for index := 0; index < 11; index++ {
+		playerID := fmt.Sprintf("p%d", index)
+		current[playerID] = models.PlayerOwnershipRecord{PlayerID: playerID, PlayerName: fmt.Sprintf("Player %d", index), ManagerCount: 11 - index}
+	}
+
+	summaries := make([]models.ManagerChangeSummary, 11)
+	for index := range summaries {
+		summaries[index] = models.ManagerChangeSummary{ManagerID: fmt.Sprintf("m%d", index), ManagerName: fmt.Sprintf("Manager %d", index), TeamName: fmt.Sprintf("Team %d", index)}
+	}
+
+	html, err := render.BuildHTML(current, nil, summaries)
+	if err != nil {
+		t.Fatalf("BuildHTML returned error: %v", err)
+	}
+
+	for _, expected := range []string{
+		`id="player-ownership-table" class="table-preview"`,
+		`id="team-changes-table" class="table-preview"`,
+		`data-table="player-ownership-table"`,
+		`data-table="team-changes-table"`,
+		`var hiddenRows=rows.slice(10)`,
+		`button.textContent=expanded?'Show fewer '+itemLabel:'Show all '+rows.length+' '+itemLabel`,
+		`.manager-detail-row`,
+	} {
+		if !strings.Contains(html, expected) {
+			t.Fatalf("expected reversible table preview markup %q in HTML: %s", expected, html)
+		}
 	}
 }
