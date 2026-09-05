@@ -10,18 +10,12 @@ import (
 	"github.com/thisisdavidbell/ff-sdd/internal/models"
 )
 
-var londonLocation = loadLondonLocation()
-
-func loadLondonLocation() *time.Location {
-	location, err := time.LoadLocation("Europe/London")
-	if err != nil {
-		return time.UTC
-	}
-	return location
-}
+var (
+	londonLocation, londonLocationErr = time.LoadLocation("Europe/London")
+)
 
 func formatDisplayTimestamp(timestamp string) string {
-	parsed, err := time.Parse(time.RFC3339, timestamp)
+	parsed, err := time.Parse(time.RFC3339Nano, timestamp)
 	if err != nil {
 		return timestamp
 	}
@@ -30,6 +24,10 @@ func formatDisplayTimestamp(timestamp string) string {
 
 // BuildHTML renders a static HTML summary from current ownership and change summaries.
 func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[string][]models.PlayerOwnershipHistoryEntry, summaries []models.ManagerChangeSummary) (string, error) {
+	if londonLocationErr != nil {
+		return "", fmt.Errorf("load Europe/London location: %w", londonLocationErr)
+	}
+
 	now := time.Now().UTC()
 	generatedAt := now.In(londonLocation).Format("2006-01-02 15:04")
 
