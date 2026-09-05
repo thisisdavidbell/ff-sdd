@@ -2,7 +2,8 @@ name: Scheduled Data Pipeline Run
 
 on:
   schedule:
-    - cron: '0 2 * * *' # Everyday at 2:00 UTC
+    - cron: '54 1 * * *' # Daily at 01:54 London time, avoiding the hourly peak.
+      timezone: 'Europe/London'
   workflow_dispatch:     # Manual on-demand execution
 
 jobs:
