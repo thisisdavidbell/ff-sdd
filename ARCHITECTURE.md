@@ -70,6 +70,7 @@ Capture is source-specific today: the supported source is GuySports. Raw files a
 - Converts it into the report view model.
 - Delegates HTML generation to `internal/render`.
 - Retains UTC timestamps in capture and processed YAML, then converts reader-facing report timestamps to `Europe/London` at minute precision.
+- Requires IANA timezone data for `Europe/London` and fails rendering rather than publishing timestamps in a fallback timezone when that data is unavailable.
 
 The result is a self-contained static page containing:
 
@@ -121,4 +122,5 @@ The GitHub Actions scheduled pipeline runs daily at 01:54 in the `Europe/London`
 - GuySports is the only supported capture source, and capture depends on the source HTML structure and network availability.
 - Raw snapshots are intentionally manager-scoped and append-only; processing assumes the latest known snapshot represents a manager when that manager has no new capture at a later time.
 - The report is static output generated from processed YAML; its browser-side charts and controls are not a separate server application.
+- Rendering depends on IANA timezone data for `Europe/London`; deployment environments without it cannot generate a report.
 - Generated data and report output are season-specific, so the configured season and corresponding `data/<season>/` layout must agree.

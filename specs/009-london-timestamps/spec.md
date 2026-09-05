@@ -52,6 +52,7 @@ As a maintainer, I want captured and processed timestamp records to remain in UT
 - UTC timestamps remain the canonical stored format and display as their equivalent London local time.
 - A timestamp during the UK daylight-saving transition is converted using the London timezone rules rather than a fixed offset.
 - Invalid stored timestamps retain the renderer's current graceful fallback behavior and do not stop report generation.
+- The renderer fails rather than publishing a report with an incorrect fallback timezone when London timezone data is unavailable.
 - The 01:54 schedule is before the UK spring-forward skipped hour, so it remains a valid daily local time.
 
 ## Requirements
@@ -63,9 +64,10 @@ As a maintainer, I want captured and processed timestamp records to remain in UT
 - **FR-003**: Every valid timestamp displayed in the report MUST use date-and-minute precision and MUST NOT show seconds or a `Z` suffix.
 - **FR-004**: The scheduled pipeline workflow MUST run daily at 01:54 in the `Europe/London` timezone.
 - **FR-005**: The scheduled pipeline workflow MUST use its scheduler's native timezone support so daylight-saving transitions retain the intended local schedule without duplicate schedules or a custom time guard.
-- **FR-006**: Timestamp parsing and chronological ordering MUST continue to accept valid RFC3339 timestamps, including canonical UTC data.
+- **FR-006**: Timestamp parsing and chronological ordering MUST continue to accept valid RFC3339 timestamps, including canonical UTC data and timestamps with fractional seconds.
 - **FR-007**: Invalid timestamps MUST continue to avoid preventing report rendering.
 - **FR-008**: `ARCHITECTURE.md` MUST describe the London-time timestamp and scheduling behavior.
+- **FR-009**: The renderer MUST fail rather than publish report timestamps in another timezone when `Europe/London` timezone data is unavailable.
 
 ### Key Entities
 
@@ -87,4 +89,5 @@ As a maintainer, I want captured and processed timestamp records to remain in UT
 - The requested off-hour time is 01:54 London time every day.
 - Machine-readable persisted timestamps retain RFC3339 precision in UTC; the removal of seconds applies only to reader-facing HTML.
 - The report's existing behavior for invalid timestamps remains the expected fallback behavior.
+- The render environment provides IANA timezone data for `Europe/London`; rendering fails clearly when that dependency is unavailable.
 - GitHub Actions native `timezone` support is available for this repository, as documented by GitHub on 2026-09-05.
