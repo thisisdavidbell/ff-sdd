@@ -17,6 +17,10 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the current application capabilities,
 
 See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the project's spec-driven development process.
 
+## SDD Routing
+
+Before creating or changing SDD artifacts, read and follow the mandatory SDD Selection Gate in [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md). Do not infer Full SpecKit SDD merely because its skills are available.
+
 ## AI Assistance
 
 - The AI Agent should follow the users instructions at all times.
