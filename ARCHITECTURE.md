@@ -69,6 +69,7 @@ Capture is source-specific today: the supported source is GuySports. Raw files a
 - Reads the processed YAML from the processing phase.
 - Converts it into the report view model.
 - Delegates HTML generation to `internal/render`.
+- Retains UTC timestamps in capture and processed YAML, then converts reader-facing report timestamps to `Europe/London` at minute precision.
 
 The result is a self-contained static page containing:
 
@@ -112,6 +113,8 @@ Run stages individually:
 - `go run ./cmd/render`
 
 Run `./run.sh` to execute the stages in order. The pipeline stops when a stage returns an error.
+
+The GitHub Actions scheduled pipeline runs daily at 01:54 in the `Europe/London` timezone, avoiding the start-of-hour scheduling peak and retaining the same local time through daylight-saving changes.
 
 ## Current Constraints
 

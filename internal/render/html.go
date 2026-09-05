@@ -10,10 +10,28 @@ import (
 	"github.com/thisisdavidbell/ff-sdd/internal/models"
 )
 
+var londonLocation = loadLondonLocation()
+
+func loadLondonLocation() *time.Location {
+	location, err := time.LoadLocation("Europe/London")
+	if err != nil {
+		return time.UTC
+	}
+	return location
+}
+
+func formatDisplayTimestamp(timestamp string) string {
+	parsed, err := time.Parse(time.RFC3339, timestamp)
+	if err != nil {
+		return timestamp
+	}
+	return parsed.In(londonLocation).Format("2006-01-02 15:04")
+}
+
 // BuildHTML renders a static HTML summary from current ownership and change summaries.
 func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[string][]models.PlayerOwnershipHistoryEntry, summaries []models.ManagerChangeSummary) (string, error) {
 	now := time.Now().UTC()
-	generatedAt := now.Format("2006-01-02 15:04:05 UTC")
+	generatedAt := now.In(londonLocation).Format("2006-01-02 15:04")
 
 	// Sort players by manager count descending, then player name ascending
 	playerList := make([]models.PlayerOwnershipRecord, 0, len(current))
@@ -84,7 +102,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 		} else if direction < 0 {
 			indicator = " <span class=\"ownership-down\" aria-label=\"Ownership decreased\" title=\"Ownership decreased\">&#9660;</span>"
 		}
-		b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%d%s</td><td>%s</td></tr>\n", html.EscapeString(name), rec.ManagerCount, indicator, html.EscapeString(lastChangeAt)))
+		b.WriteString(fmt.Sprintf("<tr><td>%s</td><td>%d%s</td><td>%s</td></tr>\n", html.EscapeString(name), rec.ManagerCount, indicator, html.EscapeString(formatDisplayTimestamp(lastChangeAt))))
 	}
 	b.WriteString("</tbody></table>\n")
 
@@ -141,10 +159,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 			// Render detail row
 			b.WriteString(fmt.Sprintf("<tr id=\"%s\" class=\"manager-detail-row\"><td colspan=\"4\">\n", detailId))
 			for _, event := range summary.EventHistory {
-				formattedTime := event.ToCapturedAt
-				if t, err := time.Parse(time.RFC3339, event.ToCapturedAt); err == nil {
-					formattedTime = t.Format("2006-01-02 15:04")
-				}
+				formattedTime := formatDisplayTimestamp(event.ToCapturedAt)
 				b.WriteString("<div class=\"event-card\">\n")
 				b.WriteString(fmt.Sprintf("<div class=\"event-header\">Change at %s (%d change%s)</div>\n",
 					html.EscapeString(formattedTime),
@@ -235,7 +250,7 @@ func latestOwnershipChange(entries []models.PlayerOwnershipHistoryEntry) (int, s
 // relative-time phrase and, for changes within the last month, a single
 // Day/Week/Month tiered pill (see specs/005-recent-manager-changes-highlight).
 func formatLatestChangeCell(latestChangeAt string, now time.Time) string {
-	escaped := html.EscapeString(latestChangeAt)
+	escaped := html.EscapeString(formatDisplayTimestamp(latestChangeAt))
 	if latestChangeAt == "" {
 		return escaped
 	}
@@ -400,10 +415,7 @@ func renderHistoricalTrendsChart(b *bytes.Buffer, current map[string]models.Play
 		b.WriteString(fmt.Sprintf("<line x1=\"%.1f\" y1=\"%.1f\" x2=\"%.1f\" y2=\"%.1f\" stroke=\"#94a3b8\" stroke-width=\"1.5\" />\n", x, topMargin+plotHeight, x, topMargin+plotHeight+6))
 
 		// Formatted date label
-		label := ts
-		if parsed, err := time.Parse(time.RFC3339, ts); err == nil {
-			label = parsed.Format("2006-01-02 15:04")
-		}
+		label := formatDisplayTimestamp(ts)
 		b.WriteString(fmt.Sprintf("<text x=\"%.1f\" y=\"%.1f\" transform=\"rotate(-35 %.1f, %.1f)\" text-anchor=\"end\" font-size=\"11\" fill=\"#475569\" font-family=\"sans-serif\">%s</text>\n", x, topMargin+plotHeight+20, x, topMargin+plotHeight+20, html.EscapeString(label)))
 	}
 
@@ -519,7 +531,7 @@ func renderHistoricalTrendsChart(b *bytes.Buffer, current map[string]models.Play
 		for i, c := range player.counts {
 			y := topMargin + plotHeight - (float64(c)/float64(yMax))*plotHeight
 			b.WriteString(fmt.Sprintf("<circle cx=\"%.1f\" cy=\"%.1f\" r=\"3.5\" fill=\"%s\" class=\"player-point\" data-player-id=\"%s\">\n", xCoords[i], y, player.color, html.EscapeString(player.id)))
-			b.WriteString(fmt.Sprintf("<title>%s: %d managers at %s</title>\n", html.EscapeString(player.name), c, html.EscapeString(timestamps[i])))
+			b.WriteString(fmt.Sprintf("<title>%s: %d managers at %s</title>\n", html.EscapeString(player.name), c, html.EscapeString(formatDisplayTimestamp(timestamps[i]))))
 			b.WriteString("</circle>\n")
 		}
 

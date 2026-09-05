@@ -115,7 +115,7 @@ func TestRenderHTMLShowsLatestOwnershipDirectionAndChangeTime(t *testing.T) {
 	if !strings.Contains(html, "<th>Last change</th>") {
 		t.Fatalf("expected a Last change ownership column: %s", html)
 	}
-	if !strings.Contains(html, "Rising</td><td>4 <span class=\"ownership-up\"") || !strings.Contains(html, "2026-01-03T12:00:00Z") {
+	if !strings.Contains(html, "Rising</td><td>4 <span class=\"ownership-up\"") || !strings.Contains(html, "2026-01-03 12:00") {
 		t.Fatalf("expected latest increase indicator and timestamp: %s", html)
 	}
 	if !strings.Contains(html, "Falling</td><td>2 <span class=\"ownership-down\"") {
@@ -158,9 +158,12 @@ func TestRenderHTMLIncludesGeneratedTimestampAndThemeControls(t *testing.T) {
 		t.Fatalf("BuildHTML returned error: %v", err)
 	}
 
-	timestampPattern := regexp.MustCompile(`Report generated: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} UTC`)
+	timestampPattern := regexp.MustCompile(`Report generated: \d{4}-\d{2}-\d{2} \d{2}:\d{2}`)
 	if !timestampPattern.MatchString(html) {
-		t.Fatalf("expected a labeled UTC generation timestamp in HTML: %s", html)
+		t.Fatalf("expected a labeled minute-precision generation timestamp in HTML: %s", html)
+	}
+	if strings.Contains(html, "Report generated:") && strings.Contains(html, " UTC") {
+		t.Fatalf("expected generation timestamp without a timezone label: %s", html)
 	}
 	if strings.Index(html, "Guy Sports Team Report") > strings.Index(html, "Report generated:") {
 		t.Fatalf("expected generation timestamp directly below report title: %s", html)
@@ -303,5 +306,11 @@ func TestRenderHTMLIncludesInteractiveManagerChangeDetails(t *testing.T) {
 	}
 	if !strings.Contains(html, "- Salah") {
 		t.Fatalf("expected '- Salah' in removed players detail view")
+	}
+	if !strings.Contains(html, "Change at 2026-08-30 19:00") {
+		t.Fatalf("expected London-local event timestamp: %s", html)
+	}
+	if !strings.Contains(html, "Haaland: 5 managers at 2026-08-29 22:41") {
+		t.Fatalf("expected London-local chart tooltip timestamp: %s", html)
 	}
 }
