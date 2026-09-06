@@ -6,7 +6,7 @@ tags: [report, rendering, theming, logo, mobile, display]
 status: draft
 feature: 018-minimal-report-theming
 sdd_approach: streamlined
-input_summary: Rename the report to Fantasy Football Data, add an FFD logo, label its generation time Updated, ensure the mobile title is smaller than section titles, and introduce one basic theme color.
+input_summary: Rename the report to Fantasy Football Data, add an FFD logo, label its generation time Updated, ensure the mobile title is larger than section titles, and introduce one basic theme color.
 generated: { by: GitHub Copilot, at: 2026-09-06T00:00:00Z }
 ---
 
@@ -45,7 +45,7 @@ The visual treatment MUST remain restrained and information-first, inspired by t
 - Renderer output includes `Fantasy Football Data` in the document title and both report headers, and excludes the former title.
 - Renderer output includes an accessible `FFD` lettermark logo in the desktop and mobile report headers.
 - Renderer output labels generated timestamps as `Updated:` in the desktop and mobile headers.
-- The narrow-viewport CSS gives `.mobile-title` a font size smaller than `h2`.
+- The narrow-viewport CSS gives `.mobile-title` a font size larger than `h2`.
 - A shared accent-color custom property is defined for both display modes and visibly themes the FFD lettermark and report interaction emphasis.
 - The report retains its compact, data-first layout without decorative imagery or a large visual treatment.
 - Existing focused renderer tests pass, the checked-in `docs/index.html` matches renderer output, and `ARCHITECTURE.md` describes the delivered presentation behavior.
