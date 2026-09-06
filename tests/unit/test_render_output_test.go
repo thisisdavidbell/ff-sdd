@@ -61,8 +61,14 @@ func TestRenderHTMLIncludesOwnershipAndChanges(t *testing.T) {
 	if !strings.Contains(html, "<svg class=\"trend-chart\"") {
 		t.Fatalf("historical trends line chart SVG missing from HTML: %s", html)
 	}
+	if !strings.Contains(html, `<meta name="viewport" content="width=device-width, initial-scale=1">`) {
+		t.Fatalf("expected standard responsive viewport metadata: %s", html)
+	}
 	if !strings.Contains(html, "viewBox=\"0 0 1100 800\"") {
-		t.Fatalf("expected 800px tall chart viewBox in HTML: %s", html)
+		t.Fatalf("expected chart viewBox in HTML: %s", html)
+	}
+	if !strings.Contains(html, ".trend-chart{min-height:0;height:auto;aspect-ratio:11/8}") && !strings.Contains(html, ".trend-chart{min-height:0;height:auto;aspect-ratio:11 / 8}") {
+		t.Fatalf("expected responsive mobile chart height: %s", html)
 	}
 	if !strings.Contains(html, "class=\"player-line\"") {
 		t.Fatalf("expected player line paths in HTML: %s", html)
@@ -319,6 +325,16 @@ func TestRenderHTMLIncludesInteractiveManagerChangeDetails(t *testing.T) {
 	}
 	if !strings.Contains(html, "Haaland: 5 managers at 2026-08-29 22:41") {
 		t.Fatalf("expected London-local chart tooltip timestamp: %s", html)
+	}
+	for _, expected := range []string{
+		`@media(min-width:1000px){body{max-width:1150px`,
+		`.report-nav{inset:var(--mobile-header-height,4.25rem) 0 auto 0;max-height:`,
+		`updateMobileHeaderHeight`,
+		`header.getBoundingClientRect().height`,
+	} {
+		if !strings.Contains(html, expected) {
+			t.Fatalf("expected mobile report layout rule %q: %s", expected, html)
+		}
 	}
 }
 

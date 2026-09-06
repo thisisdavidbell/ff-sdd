@@ -17,3 +17,4 @@ okf_version: "0.2"
 * [011 Table preview toggle](011-table-preview-toggle/) - Reversible report table previews.
 * [012 Report navigation menu](012-report-navigation-menu/) - Grouped desktop and mobile navigation menu.
 * [013 OKF specification metadata](013-okf-specification-metadata/) - OKF rollout for SDD artifacts.
+* [014 Mobile report layout](014-mobile-report-layout/) - Responsive mobile report layout fixes.
