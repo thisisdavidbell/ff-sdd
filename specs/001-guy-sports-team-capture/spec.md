@@ -1,12 +1,20 @@
+---
+type: Feature Specification
+title: "Guy Sports Team Capture and Usage Analysis"
+description: Historical spec artifact for 001-guy-sports-team-capture.
+tags: [sdd, feature-specification, 001-guy-sports-team-capture]
+status: stable
+feature: 001-guy-sports-team-capture
+sdd_approach: full-speckit
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Guy Sports Team Capture and Usage Analysis
 
-**Feature Branch**: `001-guy-sports-team-capture`
 
-**Created**: 2026-08-29
 
-**Status**: Draft
 
-**Input**: User description: "The project will have commands/scripts which are scheduled to run periodically to retrieve data. Initially these can be run manually, and as part of testing, to pull and store the data. there will be one for guysports and another for dreamteamfc. this first project will focus on guysports. it will retrieve the current team data for every manager playing the guy sports game. these can be found in the season table pages, e.g. page 1 is https://www.guysports.co.uk/guysports/season.php?page=1 . there are buttons on the page for each page, though currently only 3 have pages of managers. We do not need to pull the player score data when pulling the team data, or the price data. only the players listed in their team. Changes to the team should be captured, such that all data is preserved about the players in the team over time. This data will initially be used to show: counts of how many managers have selected each player, i.e. perhaps 30/32 managers have selected Haarland. how many changes to their team a manager has made. Over a season each manager only get 6 changes, so we will track how many they have made. There will be future pieces of work to pull additional data about the players scores and prices from https://www.guysports.co.uk/guysports/players.php?code=GK but this initial piece of work will focus on the players in the managers' teams. ideally the data will be stored in yaml files, though if this becomes too large, the ai may suggest a more efficient approach. the useful processed data (initially how many managers have selected each player, and how many changes each player had made ) will be presented in such a way that they can be viewed in github and locally. md files with something like mermaid, or github pages seem like the most appropriate. Havnig separate commands/tools for retrieving data and processing and presenting the data seems like a sensible approach."
 
 ## Terminology
 

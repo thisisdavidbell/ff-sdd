@@ -1,3 +1,15 @@
+---
+type: Data Model
+title: "Data Model: Guy Sports Team Capture and Usage Analysis"
+description: Historical data-model artifact for 001-guy-sports-team-capture.
+tags: [sdd, data-model, 001-guy-sports-team-capture]
+status: stable
+feature: 001-guy-sports-team-capture
+sdd_approach: full-speckit
+input_summary: Historical data-model artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Data Model: Guy Sports Team Capture and Usage Analysis
 
 ## Configuration Entity

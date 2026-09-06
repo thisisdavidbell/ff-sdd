@@ -1,9 +1,17 @@
+---
+type: Feature Specification
+title: "Copilot PR SDD Enforcement"
+description: Historical spec artifact for 010-copilot-pr-sdd-enforcement.
+tags: [sdd, feature-specification, 010-copilot-pr-sdd-enforcement]
+status: stable
+feature: 010-copilot-pr-sdd-enforcement
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Copilot PR SDD Enforcement
 
-**Feature Branch**: `010-copilot-pr-sdd-enforcement`
-**Created**: 2026-09-05
-**Status**: Draft
-**Input**: User description: "Configure GitHub Copilot PR review to enforce the repository SDD process and architecture documentation synchronization."
 
 ## Requested Behavior
 

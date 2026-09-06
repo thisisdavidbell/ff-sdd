@@ -1,3 +1,15 @@
+---
+type: Research
+title: "Research: Automated Data Pipeline & Capture Source Separation"
+description: Historical research artifact for 002-automated-data-pipeline.
+tags: [sdd, research, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical research artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Research: Automated Data Pipeline & Capture Source Separation
 
 **Feature**: [002-automated-data-pipeline](../spec.md)

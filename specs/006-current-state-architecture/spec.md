@@ -1,8 +1,17 @@
+---
+type: Feature Specification
+title: "Current-State Architecture Document"
+description: Historical spec artifact for 006-current-state-architecture.
+tags: [sdd, feature-specification, 006-current-state-architecture]
+status: stable
+feature: 006-current-state-architecture
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Current-State Architecture Document
 
-**Feature Branch**: `006-current-state-architecture`
-**Created**: 2026-09-02
-**Status**: Draft
 
 ## User Scenarios & Testing
 

@@ -21,9 +21,14 @@ See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the project's spec-driv
 
 Before creating or changing SDD artifacts, read and follow the mandatory SDD Selection Gate in [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md). Do not infer Full SpecKit SDD merely because its skills are available.
 
+`specs/` is an OKF v0.2 knowledge bundle. Every non-reserved Markdown artifact there MUST use the required OKF frontmatter profile defined in [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md); `index.md` and `log.md` follow their reserved OKF roles. Do not extend this requirement to Markdown outside `specs/`.
+
+## SDD Approval
+
+After preparing the applicable SDD artifact, stop and obtain explicit user approval before changing implementation, configuration, automation, generated output, `ARCHITECTURE.md`, or any unrelated SDD artifact. Keep the artifact at `status: draft` while awaiting review; change it to `status: stable` only after approval. A stated user exception applies only to that current request and must be recorded in its SDD artifact.
+
 ## AI Assistance
 
 - The AI Agent should follow the users instructions at all times.
 - The AI Agent can make suggestions and provide feedback.
-- The AI Agent should never implement any changes without confirming with the user first.
-- The AI should never perform its own tasks, or implement ideas without confirmation.
+- The AI Agent must follow the SDD Approval Gate and must not infer approval from silence, continued conversation, or a request to create, update, inspect, or discuss an SDD artifact.

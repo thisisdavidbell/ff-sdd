@@ -1,7 +1,17 @@
+---
+type: Feature Specification
+title: "Development Process Guidance"
+description: Historical spec artifact for 003-readme-development-guidance.
+tags: [sdd, feature-specification, 003-readme-development-guidance]
+status: stable
+feature: 003-readme-development-guidance
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Development Process Guidance
 
-**Created**: 2026-09-01
-**Status**: Complete
 
 ## Requirements
 

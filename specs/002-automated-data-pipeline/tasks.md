@@ -1,6 +1,17 @@
+---
+type: Task List
+title: "Tasks: Automated Data Pipeline & Capture Source Separation"
+description: Historical tasks artifact for 002-automated-data-pipeline.
+tags: [sdd, task-list, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical tasks artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Tasks: Automated Data Pipeline & Capture Source Separation
 
-**Input**: Design documents from `/specs/002-automated-data-pipeline/`
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/cli-commands.md, quickstart.md
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.

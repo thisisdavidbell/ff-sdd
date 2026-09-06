@@ -1,8 +1,17 @@
+---
+type: Feature Specification
+title: "Recent Manager Change Highlight"
+description: Historical spec artifact for 005-recent-manager-changes-highlight.
+tags: [sdd, feature-specification, 005-recent-manager-changes-highlight]
+status: stable
+feature: 005-recent-manager-changes-highlight
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Recent Manager Change Highlight
 
-**Created**: 2026-09-01
-**Status**: Complete
-**Input**: User description: "Update the rendering of the Manager Changes table to give a visual indication of changes that have happened recently, likely next to the Latest change date."
 
 ## User Scenarios & Testing
 

@@ -1,8 +1,19 @@
+---
+type: Implementation Plan
+title: "Implementation Plan: Automated Data Pipeline & Capture Source Separation"
+description: Historical plan artifact for 002-automated-data-pipeline.
+tags: [sdd, implementation-plan, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical plan artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Implementation Plan: Automated Data Pipeline & Capture Source Separation
 
 **Branch**: `002-automated-data-pipeline` | **Date**: 2026-08-30 | **Spec**: [spec.md](./spec.md)
 
-**Input**: Feature specification from `/specs/002-automated-data-pipeline/spec.md`
 
 ## Summary
 

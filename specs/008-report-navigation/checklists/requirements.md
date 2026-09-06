@@ -1,7 +1,18 @@
+---
+type: Checklist
+title: "Report Navigation"
+description: Historical requirements artifact for 008-report-navigation.
+tags: [sdd, checklist, 008-report-navigation]
+status: stable
+feature: 008-report-navigation
+sdd_approach: streamlined
+input_summary: Historical requirements artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Specification Quality Checklist: Report Navigation
 
 **Purpose**: Validate specification completeness and quality before proceeding to implementation
-**Created**: 2026-09-02
 **Feature**: [Report Navigation](../spec.md)
 
 ## Content Quality

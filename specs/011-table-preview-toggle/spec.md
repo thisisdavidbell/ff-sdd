@@ -1,9 +1,17 @@
+---
+type: Feature Specification
+title: "Table Preview Toggle"
+description: Historical spec artifact for 011-table-preview-toggle.
+tags: [sdd, feature-specification, 011-table-preview-toggle]
+status: stable
+feature: 011-table-preview-toggle
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Table Preview Toggle
 
-**Feature Branch**: `011-table-preview-toggle`
-**Created**: 2026-09-05
-**Status**: Implemented
-**Input**: User description: "For both tables, display the initial 10 lines, and allow the user to click to expand and see all other lines with 1 click. There should also be a button to hide most of the teams again so its reversible."
 
 ## Requested Behavior
 

@@ -1,8 +1,17 @@
+---
+type: Feature Specification
+title: "Report Datestamp and Dark Mode"
+description: Historical spec artifact for 004-datestamp-darkmode.
+tags: [sdd, feature-specification, 004-datestamp-darkmode]
+status: stable
+feature: 004-datestamp-darkmode
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Report Datestamp and Dark Mode
 
-**Created**: 2026-09-01
-**Status**: Complete
-**Input**: User description: "Add a datestamp and dark mode to the HTML report."
 
 ## User Scenarios & Testing
 

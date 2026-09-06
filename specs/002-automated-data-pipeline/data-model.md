@@ -1,3 +1,15 @@
+---
+type: Data Model
+title: "Data Model: Automated Data Pipeline & Capture Source Separation"
+description: Historical data-model artifact for 002-automated-data-pipeline.
+tags: [sdd, data-model, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical data-model artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Data Model: Automated Data Pipeline & Capture Source Separation
 
 **Feature**: [002-automated-data-pipeline](../spec.md)

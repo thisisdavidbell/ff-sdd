@@ -1,9 +1,17 @@
+---
+type: Feature Specification
+title: "London Timestamps"
+description: Historical spec artifact for 009-london-timestamps.
+tags: [sdd, feature-specification, 009-london-timestamps]
+status: stable
+feature: 009-london-timestamps
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: London Timestamps
 
-**Feature Branch**: `009-london-timestamps`
-**Created**: 2026-09-05
-**Status**: Draft
-**Input**: User description: "Set all timestamps to UK time (London timezone), including the GitHub Actions schedule. Display report times without seconds or Z. Schedule the pipeline away from the hour."
 
 ## User Scenarios & Testing
 

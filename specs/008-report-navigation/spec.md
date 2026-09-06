@@ -1,8 +1,17 @@
+---
+type: Feature Specification
+title: "Report Navigation"
+description: Historical spec artifact for 008-report-navigation.
+tags: [sdd, feature-specification, 008-report-navigation]
+status: stable
+feature: 008-report-navigation
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Report Navigation
 
-**Feature Branch**: `008-report-navigation`
-**Created**: 2026-09-02
-**Status**: Implemented
 
 ## User Scenarios & Testing
 

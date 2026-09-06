@@ -1,3 +1,15 @@
+---
+type: Contract
+title: "Command Contracts"
+description: Historical cli-commands artifact for 001-guy-sports-team-capture.
+tags: [sdd, contract, 001-guy-sports-team-capture]
+status: stable
+feature: 001-guy-sports-team-capture
+sdd_approach: full-speckit
+input_summary: Historical cli-commands artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Command Contracts
 
 ## Configuration

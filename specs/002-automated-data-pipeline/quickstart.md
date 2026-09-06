@@ -1,3 +1,15 @@
+---
+type: Quickstart
+title: "Quickstart & Validation Guide: Automated Data Pipeline"
+description: Historical quickstart artifact for 002-automated-data-pipeline.
+tags: [sdd, quickstart, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical quickstart artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Quickstart & Validation Guide: Automated Data Pipeline
 
 **Feature**: [002-automated-data-pipeline](../spec.md)

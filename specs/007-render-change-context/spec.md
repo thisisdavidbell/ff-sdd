@@ -1,8 +1,17 @@
+---
+type: Feature Specification
+title: "Render Change Context"
+description: Historical spec artifact for 007-render-change-context.
+tags: [sdd, feature-specification, 007-render-change-context]
+status: stable
+feature: 007-render-change-context
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Render Change Context
 
-**Feature Branch**: `007-render-change-context`
-**Created**: 2026-09-02
-**Status**: Draft
 
 ## User Scenarios & Testing
 

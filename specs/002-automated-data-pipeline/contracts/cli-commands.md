@@ -1,3 +1,15 @@
+---
+type: Contract
+title: "CLI Commands & Automation Script"
+description: Historical cli-commands artifact for 002-automated-data-pipeline.
+tags: [sdd, contract, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical cli-commands artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Interface Contract: CLI Commands & Automation Script
 
 **Feature**: [002-automated-data-pipeline](../spec.md)

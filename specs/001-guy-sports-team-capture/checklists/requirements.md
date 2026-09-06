@@ -1,7 +1,18 @@
+---
+type: Checklist
+title: "Guy Sports Team Capture and Usage Analysis"
+description: Historical requirements artifact for 001-guy-sports-team-capture.
+tags: [sdd, checklist, 001-guy-sports-team-capture]
+status: stable
+feature: 001-guy-sports-team-capture
+sdd_approach: full-speckit
+input_summary: Historical requirements artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Specification Quality Checklist: Guy Sports Team Capture and Usage Analysis
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2026-08-29
 **Feature**: [spec.md](../spec.md)
 
 ## Content Quality

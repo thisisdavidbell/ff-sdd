@@ -1,8 +1,19 @@
+---
+type: Implementation Plan
+title: "Implementation Plan: Guy Sports Team Capture and Usage Analysis"
+description: Historical plan artifact for 001-guy-sports-team-capture.
+tags: [sdd, implementation-plan, 001-guy-sports-team-capture]
+status: stable
+feature: 001-guy-sports-team-capture
+sdd_approach: full-speckit
+input_summary: Historical plan artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Implementation Plan: Guy Sports Team Capture and Usage Analysis
 
 **Branch**: `001-guy-sports-team-capture` | **Date**: 2026-08-29 | **Spec**: [specs/001-guy-sports-team-capture/spec.md](specs/001-guy-sports-team-capture/spec.md)
 
-**Input**: Feature specification from `/specs/001-guy-sports-team-capture/spec.md`
 
 ## Summary
 

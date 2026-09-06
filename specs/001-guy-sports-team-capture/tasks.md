@@ -1,6 +1,17 @@
+---
+type: Task List
+title: "Tasks: Guy Sports Team Capture and Usage Analysis"
+description: Historical tasks artifact for 001-guy-sports-team-capture.
+tags: [sdd, task-list, 001-guy-sports-team-capture]
+status: stable
+feature: 001-guy-sports-team-capture
+sdd_approach: full-speckit
+input_summary: Historical tasks artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Tasks: Guy Sports Team Capture and Usage Analysis
 
-**Input**: Design documents from `/specs/001-guy-sports-team-capture/`
 
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/cli-commands.md
 

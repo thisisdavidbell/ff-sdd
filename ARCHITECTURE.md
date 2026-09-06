@@ -90,6 +90,7 @@ The result is a self-contained static page containing:
 - `internal/render/`: static HTML generation.
 - `data/<season>/`: raw inputs and processed intermediate outputs.
 - `docs/`: generated published HTML web page.
+- `specs/`: an OKF v0.2 knowledge bundle holding SDD feature concepts and supporting artifacts, with YAML frontmatter for discovery and validation.
 - `tests/unit/` and `tests/integration/`: parser, model, processing, rendering, configuration, script, and persistence coverage.
 
 ## Configuration
@@ -117,7 +118,7 @@ Run `./run.sh` to execute the stages in order. The pipeline stops when a stage r
 
 The GitHub Actions scheduled pipeline runs daily at 01:54 in the `Europe/London` timezone, avoiding the start-of-hour scheduling peak and retaining the same local time through daylight-saving changes.
 
-Repository changes follow one of the SDD approaches defined in `DEVELOPMENT-PROCESS.md`. GitHub Copilot pull-request review checks that applicable SDD artifacts accompany implementation and behavior changes, and that  this current-state architecture document is updated if needed to remain in sync with the code behaviour.
+Repository changes follow one of the SDD approaches defined in `DEVELOPMENT-PROCESS.md`. SDD artifacts are maintained as OKF concepts within `specs/`, with `index.md` and `log.md` supporting discovery and history. GitHub Copilot pull-request review checks that applicable SDD artifacts accompany implementation and behavior changes, and that this current-state architecture document is updated if needed to remain in sync with the code behaviour.
 
 ## Current Constraints
 

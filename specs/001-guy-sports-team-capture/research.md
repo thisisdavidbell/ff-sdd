@@ -1,3 +1,15 @@
+---
+type: Research
+title: "Research: Guy Sports Team Capture and Usage Analysis"
+description: Historical research artifact for 001-guy-sports-team-capture.
+tags: [sdd, research, 001-guy-sports-team-capture]
+status: stable
+feature: 001-guy-sports-team-capture
+sdd_approach: full-speckit
+input_summary: Historical research artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Research: Guy Sports Team Capture and Usage Analysis
 
 ## Decision: Go is the default implementation language

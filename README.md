@@ -27,5 +27,5 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the current capabilities, data flow, 
 
 ## Development
 
-This repository uses spec-driven development. See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the workflow and `specs/` for feature requirements and supporting design artifacts.
+This repository uses spec-driven development. See [DEVELOPMENT-PROCESS.md](DEVELOPMENT-PROCESS.md) for the workflow and [specs/index.md](specs/index.md) for its OKF v0.2 feature knowledge bundle. All non-reserved Markdown artifacts within `specs/` use the required OKF frontmatter profile.
 

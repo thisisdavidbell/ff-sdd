@@ -1,9 +1,17 @@
+---
+type: Feature Specification
+title: "Report Navigation Menu"
+description: Historical spec artifact for 012-report-navigation-menu.
+tags: [sdd, feature-specification, 012-report-navigation-menu]
+status: stable
+feature: 012-report-navigation-menu
+sdd_approach: streamlined
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Report Navigation Menu
 
-**Feature Branch**: `012-report-navigation-menu`
-**Created**: 2026-09-06
-**Status**: Implemented
-**Input**: User description: "Improve the desktop and mobile report menu, move the dark mode toggle into settings, rename the report to Guy Sports Data, and remove the Top menu item."
 
 ## Requested Behavior
 

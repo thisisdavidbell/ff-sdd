@@ -1,12 +1,20 @@
+---
+type: Feature Specification
+title: "Automated Data Pipeline & Capture Source Separation"
+description: Historical spec artifact for 002-automated-data-pipeline.
+tags: [sdd, feature-specification, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical spec artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Feature Specification: Automated Data Pipeline & Capture Source Separation
 
-**Feature Branch**: `002-automated-data-pipeline`
 
-**Created**: 2026-08-30
 
-**Status**: Draft
 
-**Input**: User description: "Lets start a new feature. this feature is to automate the update of the raw data, processed data and html. we will continue to allow the commands to be run locally, but will also enable github actions. The proposed deliveries are as follows (though it is acceptable to propose alternative approaches if deemed better approaches) 1. the capture command needs to have different commands for capture from guysports and from dreamteam in the future, so we should prepare for that, to allow capture from just one source. changing capture to capture-guysports would be one approach. 2. create a run.sh script, which performs the full set of actions required in the automation. This will perform a capture from guysports. if it succeeds it will then run the process step. if this succeeds it will then run the render step. 3. create a github actions file in the default location of .github/workflows called schedule-run-action.yml. this should schedule the run.sh command to be run once a week, at 6pm every Friday. It should also be possible to trigger it manually."
 
 ## User Scenarios & Testing *(mandatory)*
 

@@ -1,7 +1,18 @@
+---
+type: Checklist
+title: "Automated Data Pipeline & Capture Source Separation"
+description: Historical requirements artifact for 002-automated-data-pipeline.
+tags: [sdd, checklist, 002-automated-data-pipeline]
+status: stable
+feature: 002-automated-data-pipeline
+sdd_approach: full-speckit
+input_summary: Historical requirements artifact.
+generated: { by: process:okf-migration, at: 2026-09-06T00:00:00Z }
+---
+
 # Specification Quality Checklist: Automated Data Pipeline & Capture Source Separation
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2026-08-30
 **Feature**: [spec.md](../spec.md)
 
 ## Content Quality
