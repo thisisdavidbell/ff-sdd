@@ -20,7 +20,7 @@ In reader-facing documentation, **Team** is the canonical term. The first releva
 - Detect team additions and removals between snapshots.
 - Render ownership trends and team changes as an interactive, responsive static report with light and dark themes.
 - Show each player's latest ownership direction and last change time, and prioritize managers with the most recent changes.
-- Provide persistent section navigation: a full-height sidebar on desktop and an expandable section menu on narrow screens.
+- Provide persistent grouped section navigation: a full-height desktop sidebar with Statistics, Trends, and Settings groups, and a closed-by-default hamburger menu with the report title and timestamp on narrow screens.
 
 ## High-Level Architecture
 
@@ -77,7 +77,7 @@ The result is a self-contained static page containing:
 - Ownership counts with their latest increase or decrease indicator and last change time, initially previewing ten rows with a reversible control to show all players.
 - Historical trends.
 - Team changes ordered by most recent activity, initially previewing ten manager rows with a reversible control to show all teams and expandable details.
-- Browser-side interaction, theme persistence, and active section navigation.
+- Browser-side interaction, theme persistence through the navigation Settings group, and active section navigation.
 
 ## Repository Boundaries
 

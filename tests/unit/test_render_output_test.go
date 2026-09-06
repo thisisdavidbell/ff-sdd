@@ -75,9 +75,12 @@ func TestRenderHTMLIncludesReportNavigation(t *testing.T) {
 		t.Fatalf("BuildHTML returned error: %v", err)
 	}
 
-	expectedNavigation := `<a href="#top">Top</a><a href="#player-ownership">Player ownership</a><a href="#team-changes">Team changes</a><a href="#historical-trends">Historical trends</a>`
+	expectedNavigation := `<span class="nav-label">Statistics</span><a href="#player-ownership">Player ownership</a><a href="#team-changes">Team changes</a></div><div class="nav-group"><span class="nav-label">Trends</span><a href="#historical-trends">Historical trends</a>`
 	if !strings.Contains(html, expectedNavigation) {
-		t.Fatalf("expected ordered report navigation, got: %s", html)
+		t.Fatalf("expected grouped report navigation, got: %s", html)
+	}
+	if strings.Contains(html, `href="#top"`) {
+		t.Fatalf("expected Top navigation link to be removed: %s", html)
 	}
 	for _, section := range []string{
 		`<h2 id="player-ownership" tabindex="-1">Player ownership</h2>`,
@@ -88,7 +91,7 @@ func TestRenderHTMLIncludesReportNavigation(t *testing.T) {
 			t.Fatalf("expected anchored report section %q", section)
 		}
 	}
-	if !strings.Contains(html, `class="report-nav"`) || !strings.Contains(html, `@media(min-width:1000px)`) {
+	if !strings.Contains(html, `class="report-nav"`) || !strings.Contains(html, `class="mobile-header"`) || !strings.Contains(html, `class="menu-button"`) || !strings.Contains(html, `aria-expanded="false"`) {
 		t.Fatalf("expected responsive report sidebar navigation: %s", html)
 	}
 }
@@ -166,11 +169,14 @@ func TestRenderHTMLIncludesGeneratedTimestampAndThemeControls(t *testing.T) {
 	if strings.Contains(html, "Report generated:") && strings.Contains(html, " UTC") {
 		t.Fatalf("expected generation timestamp without a timezone label: %s", html)
 	}
-	if strings.Index(html, "Guy Sports Team Report") > strings.Index(html, "Report generated:") {
+	if !strings.Contains(html, "<title>Guy Sports Data</title>") || !strings.Contains(html, "<h1>Guy Sports Data</h1>") {
+		t.Fatalf("expected Guy Sports Data browser and report titles: %s", html)
+	}
+	if strings.Index(html, "Guy Sports Data") > strings.Index(html, "Report generated:") {
 		t.Fatalf("expected generation timestamp directly below report title: %s", html)
 	}
-	if !strings.Contains(html, `class="theme-toggle"`) {
-		t.Fatalf("expected visible theme toggle in HTML: %s", html)
+	if strings.Count(html, `class="theme-toggle"`) != 1 || !strings.Contains(html, `<div class="nav-settings"><span class="nav-label">Settings</span>`) {
+		t.Fatalf("expected one theme toggle in navigation settings: %s", html)
 	}
 	if !strings.Contains(html, `prefers-color-scheme: dark`) {
 		t.Fatalf("expected device theme preference detection in HTML: %s", html)

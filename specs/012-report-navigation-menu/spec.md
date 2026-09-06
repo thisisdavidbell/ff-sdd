@@ -2,7 +2,7 @@
 
 **Feature Branch**: `012-report-navigation-menu`
 **Created**: 2026-09-06
-**Status**: Planned
+**Status**: Implemented
 **Input**: User description: "Improve the desktop and mobile report menu, move the dark mode toggle into settings, rename the report to Guy Sports Data, and remove the Top menu item."
 
 ## Requested Behavior
