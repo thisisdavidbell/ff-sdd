@@ -1,5 +1,29 @@
 manager_id: "9"
 manager_name: Macauley
 team_name: Closemico
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 4
+latest_change_at: "2026-09-06T05:16:48Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "9"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-09-06T05:16:48Z"
+      added_players:
+        - player_id: alexander-isak
+          name: Alexander Isak
+        - player_id: ben-white
+          name: Ben White
+        - player_id: nathan-collins
+          name: Nathan Collins
+        - player_id: riccardo-calafiori
+          name: Riccardo Calafiori
+      removed_players:
+        - player_id: jurriën-timber
+          name: Jurriën Timber
+        - player_id: ollie-watkins
+          name: Ollie Watkins
+        - player_id: wesley-fofana
+          name: Wesley Fofana
+        - player_id: william-saliba
+          name: William Saliba
+      change_count: 4

@@ -1,0 +1,51 @@
+manager_id: "9"
+manager_name: Macauley
+team_name: Closemico
+captured_at: "2026-09-06T05:16:48Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal
+    - player_id: ben-white
+      name: Ben White
+      position: DEF
+      team_name: Arsenal
+    - player_id: matty-cash
+      name: Matty Cash
+      position: DEF
+      team_name: Aston Villa
+    - player_id: nathan-collins
+      name: Nathan Collins
+      position: DEF
+      team_name: Brentford
+    - player_id: alex-scott
+      name: Alex Scott
+      position: MID
+      team_name: Bournemouth
+    - player_id: lewis-cook
+      name: Lewis Cook
+      position: MID
+      team_name: Bournemouth
+    - player_id: marcus-tavernier
+      name: Marcus Tavernier
+      position: MID
+      team_name: Bournemouth
+    - player_id: alexander-isak
+      name: Alexander Isak
+      position: STR
+      team_name: Liverpool
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=9&name=Closemico&view=public
