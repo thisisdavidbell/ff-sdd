@@ -77,7 +77,7 @@ The result is a self-contained static page containing:
 - Ownership counts with their latest increase or decrease indicator and last change time, initially previewing ten rows with a reversible control to show all players.
 - Historical trends.
 - Team changes ordered by most recent activity, initially previewing ten manager rows with a reversible control to show all teams and expandable details; collapsed Latest change cells show rounded relative time with Hours, Days, Weeks, or Months pills, while expanded details retain exact timestamps. The Hours pill uses fuchsia to make the most recent changes visually distinctive.
-- Browser-side interaction, blue visual emphasis, theme persistence through the navigation Settings group, and active section navigation.
+- Browser-side interaction, blue visual emphasis across the FFD lettermark and long-form report title, theme persistence through the navigation Settings group, and active section navigation.
 
 ## Repository Boundaries
 

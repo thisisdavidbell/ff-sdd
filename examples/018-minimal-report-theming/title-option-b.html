@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fantasy Football Data: Title Option B</title>
+<style>html,body,iframe{width:100%;height:100%;margin:0;border:0}iframe{display:block}</style>
+</head>
+<body>
+<iframe src="../../docs/index.html" title="Fantasy Football Data with all-blue title"></iframe>
+<script>
+  (function () {
+    var frame = document.querySelector('iframe');
+    frame.addEventListener('load', function () {
+      var doc = frame.contentDocument;
+      var style = doc.createElement('style');
+      style.textContent = '.title-accent{color:var(--accent)}';
+      doc.head.appendChild(style);
+      doc.querySelectorAll('.report-header h1, .mobile-header h1').forEach(function (title) {
+        title.classList.add('title-accent');
+      });
+    });
+  }());
+</script>
+</body>
+</html>

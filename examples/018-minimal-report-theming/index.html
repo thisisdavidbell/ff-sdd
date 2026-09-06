@@ -89,6 +89,19 @@
   .whistle .caption span { color: #fff; }
   .whistle th:first-child { border-left: 3px solid var(--accent); padding-left: .55rem; }
 
+  .title-directions { margin-top: 2.5rem; }
+  .title-directions > h2 { margin: 0 0 .75rem; font-family: "Trebuchet MS", sans-serif; font-size: 1rem; letter-spacing: 0; }
+  .title-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .title-direction { min-width: 0; border: 1px solid var(--border); border-top: 5px solid var(--accent); background: var(--surface); }
+  .title-preview { display: flex; align-items: center; min-height: 8rem; padding: 1.25rem; }
+  .title-mark { position: relative; flex: none; margin-right: .85rem; padding: .12rem .18rem; border: 2px solid var(--accent); color: var(--accent); font-family: "Arial Black", Impact, sans-serif; font-size: 1.35rem; font-weight: 900; letter-spacing: -.11em; line-height: 1; }
+  .title-mark::after { position: absolute; right: -.3rem; bottom: -.3rem; width: .45rem; height: .45rem; border-radius: 50%; background: var(--accent); content: ""; }
+  .long-title { margin: 0; color: var(--text); font-family: "Trebuchet MS", sans-serif; font-size: 1.35rem; font-weight: 800; line-height: 1.1; letter-spacing: 0; }
+  .title-accent { color: var(--accent); }
+  .title-initials .title-accent { display: inline-block; min-width: .68em; }
+  .title-rule .long-title { padding-bottom: .3rem; border-bottom: 3px solid var(--accent); }
+  .title-bar .long-title { padding-left: .55rem; border-left: 5px solid var(--accent); }
+
   :root[data-theme="dark"] .signal { --accent: #ff4f76; }
   :root[data-theme="dark"] .pitch { --accent: #45be7c; }
   :root[data-theme="dark"] .north { --accent: #58a6ff; }
@@ -98,7 +111,7 @@
     main { padding: 1rem; }
     .intro { display: block; }
     .intro-controls { margin-top: .5rem; justify-content: space-between; }
-    .directions { grid-template-columns: 1fr; }
+    .directions, .title-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -169,6 +182,36 @@
         <nav class="nav"><span class="active">Statistics</span><span>Trends</span><span>Settings</span></nav>
       </div>
     </article>
+  </section>
+
+  <section class="title-directions" aria-label="Blue title treatments">
+    <h2>Long-form title treatments</h2>
+    <div class="title-grid">
+      <article class="title-direction north title-initials">
+        <div class="caption">A <span>Initial letters</span></div>
+        <div class="title-preview"><span class="title-mark" aria-hidden="true">FFD</span><p class="long-title"><span class="title-accent">F</span>antasy <span class="title-accent">F</span>ootball <span class="title-accent">D</span>ata</p></div>
+      </article>
+      <article class="title-direction north">
+        <div class="caption">B <span>All blue</span></div>
+        <div class="title-preview"><span class="title-mark" aria-hidden="true">FFD</span><p class="long-title title-accent">Fantasy Football Data</p></div>
+      </article>
+      <article class="title-direction north">
+        <div class="caption">C <span>Fantasy Football</span></div>
+        <div class="title-preview"><span class="title-mark" aria-hidden="true">FFD</span><p class="long-title"><span class="title-accent">Fantasy Football</span> Data</p></div>
+      </article>
+      <article class="title-direction north">
+        <div class="caption">D <span>Data</span></div>
+        <div class="title-preview"><span class="title-mark" aria-hidden="true">FFD</span><p class="long-title">Fantasy Football <span class="title-accent">Data</span></p></div>
+      </article>
+      <article class="title-direction north title-rule">
+        <div class="caption">E <span>Blue rule</span></div>
+        <div class="title-preview"><span class="title-mark" aria-hidden="true">FFD</span><p class="long-title">Fantasy Football Data</p></div>
+      </article>
+      <article class="title-direction north title-bar">
+        <div class="caption">F <span>Blue bar</span></div>
+        <div class="title-preview"><span class="title-mark" aria-hidden="true">FFD</span><p class="long-title">Fantasy Football Data</p></div>
+      </article>
+    </div>
   </section>
 </main>
 <script>

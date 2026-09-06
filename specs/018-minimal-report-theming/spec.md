@@ -24,6 +24,8 @@ On a narrow viewport, the mobile report title MUST render at a larger font size 
 
 The report MUST use a single shared accent color to provide a recognisable basic visual theme. The accent MUST be applied consistently to the FFD lettermark, primary report identity, and interactive emphasis while preserving the existing light and dark display modes.
 
+The desktop and mobile long-form report titles MUST use the selected option B treatment: all of `Fantasy Football Data` in the shared blue accent color.
+
 The visual treatment MUST remain restrained and information-first, inspired by the clarity and recognisability of BBC and BBC Sport branding rather than a broad redesign.
 
 ## Scope Boundaries
@@ -54,9 +56,12 @@ The visual treatment MUST remain restrained and information-first, inspired by t
 - The narrow-viewport CSS gives `.mobile-title` a font size larger than `h2`.
 - Desktop CSS renders the sidebar logo at `9rem` wide and `5.4rem` high, with navigation content below it.
 - A shared accent-color custom property is defined for both display modes and visibly themes the FFD lettermark and report interaction emphasis.
+- The desktop and mobile long-form report titles use the shared accent color.
 - The report retains its compact, data-first layout without decorative imagery or a large visual treatment.
 - A local comparison prototype presents multiple restrained accent and FFD lettermark directions for review before one is applied to the report.
 - The local comparison prototype offers a toggle to review every direction in light and dark modes.
+- The local comparison prototype presents blue long-form title treatments, including initial letters, all words, Fantasy Football, Data, a rule, and a bar, for user selection.
+- The local comparison prototype includes separate full-report review pages for title option A (blue initial letters) and title option B (all-blue title).
 - Existing focused renderer tests pass, the checked-in `docs/index.html` matches renderer output, and `ARCHITECTURE.md` describes the delivered presentation behavior.
 
 ## Assumptions And Decisions
@@ -69,3 +74,6 @@ The visual treatment MUST remain restrained and information-first, inspired by t
 - BBC and BBC Sport are visual references for clarity and brand recognition only; no third-party trademarks, typefaces, or visual assets will be reused.
 - The title-size requirement applies specifically to the existing narrow-viewport layout and compares the mobile title with `h2` section titles.
 - The enlarged logo and moved navigation apply only to the desktop sidebar; the compact logo remains in the mobile header. The `9rem` by `5.4rem` desktop dimensions are a fifty-percent increase from the prior sidebar size.
+- The long-form title-color treatments are exploratory prototype work; no title treatment changes the generated report until the user selects one.
+- The user selected option B, which colors the entire long-form title blue.
+- The full-report title option pages load the generated report and apply only their selected title treatment, so report content and interaction remain representative.

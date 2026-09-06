@@ -217,7 +217,7 @@ func TestRenderHTMLIncludesGeneratedTimestampAndThemeControls(t *testing.T) {
 	if strings.Contains(html, "Updated:") && strings.Contains(html, " UTC") {
 		t.Fatalf("expected generation timestamp without a timezone label: %s", html)
 	}
-	if !strings.Contains(html, "<title>Fantasy Football Data</title>") || !strings.Contains(html, "<h1>Fantasy Football Data</h1>") {
+	if !strings.Contains(html, "<title>Fantasy Football Data</title>") || !strings.Contains(html, `<h1 class="report-title">Fantasy Football Data</h1>`) || !strings.Contains(html, `<h1 class="mobile-title report-title">Fantasy Football Data</h1>`) {
 		t.Fatalf("expected Fantasy Football Data browser and report titles: %s", html)
 	}
 	if strings.Contains(html, "Guy Sports Data") {
@@ -226,7 +226,7 @@ func TestRenderHTMLIncludesGeneratedTimestampAndThemeControls(t *testing.T) {
 	if strings.Count(html, `class="report-logo" src="assets/ffd-logo.svg" alt="FFD"`) != 1 || !strings.Contains(html, `<nav class="report-nav" aria-label="Report sections"><img class="sidebar-logo" src="assets/ffd-logo.svg" alt="FFD">`) || !strings.Contains(html, `rel="icon" href="assets/ffd-favicon.svg"`) {
 		t.Fatalf("expected the compact mobile logo, enlarged sidebar logo, and favicon: %s", html)
 	}
-	if !strings.Contains(html, `--accent:#0057b8`) || !strings.Contains(html, `.mobile-title{font-size:1.65rem}h2{font-size:1.35rem}`) || !strings.Contains(html, `.sidebar-logo{display:block;width:9rem;height:5.4rem`) {
+	if !strings.Contains(html, `--accent:#0057b8`) || !strings.Contains(html, `.report-title{color:var(--accent)}`) || !strings.Contains(html, `.mobile-title{font-size:1.65rem}h2{font-size:1.35rem}`) || !strings.Contains(html, `.sidebar-logo{display:block;width:9rem;height:5.4rem`) {
 		t.Fatalf("expected selected blue theme, larger mobile report title, and enlarged sidebar logo: %s", html)
 	}
 	if strings.Index(html, "Fantasy Football Data") > strings.Index(html, "Updated:") {
