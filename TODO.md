@@ -8,6 +8,7 @@ This file collates a list of possible future changes
 
 ## Minor Improvements
 
+- hamburger icon
 - adopt OKF?
 - capture team points and position with snapshots, for future use.
 - add day, week, month pills to player counts table

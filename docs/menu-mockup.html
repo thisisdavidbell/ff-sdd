@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guy Sports Data</title>
+  <style>
+    :root { color-scheme: light; --page: #f7f8fa; --surface: #ffffff; --text: #1f2937; --muted: #64748b; --line: #dbe1e8; --hover: #eef4f8; --accent: #176b87; }
+    :root[data-theme="dark"] { color-scheme: dark; --page: #171a1f; --surface: #222831; --text: #edf2f7; --muted: #cbd5e1; --line: #455160; --hover: #354151; --accent: #6cc4df; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; line-height: 1.5; color: var(--text); background: var(--page); }
+    button { font: inherit; color: inherit; }
+    .mobile-bar, .mobile-menu { display: none; }
+    .sidebar { position: fixed; inset: 0 auto 0 0; display: flex; flex-direction: column; width: 15rem; padding: 2rem 1rem; background: var(--surface); border-right: 1px solid var(--line); }
+    .nav-group { margin-bottom: 1.5rem; }
+    .nav-label { display: block; margin: 0 0 .3rem .75rem; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .nav-link { display: block; padding: .45rem .75rem; border-left: 3px solid transparent; color: var(--text); text-decoration: none; }
+    .nav-link:hover, .nav-link:focus-visible, .nav-link[aria-current="true"] { border-left-color: var(--accent); background: var(--hover); outline: 0; }
+    .settings { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); }
+    .theme-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: .5rem .75rem; background: transparent; border: 0; cursor: pointer; text-align: left; }
+    .theme-toggle:hover, .theme-toggle:focus-visible { background: var(--hover); outline: 2px solid var(--accent); outline-offset: 2px; }
+    .switch { width: 2.25rem; height: 1.25rem; padding: 2px; border-radius: 999px; background: var(--muted); transition: background .15s; }
+    .switch::after { display: block; width: .9rem; height: .9rem; border-radius: 50%; background: var(--surface); content: ""; transition: transform .15s; }
+    :root[data-theme="dark"] .switch { background: var(--accent); }
+    :root[data-theme="dark"] .switch::after { transform: translateX(1rem); }
+    main { max-width: 70rem; margin: 0 auto 0 15rem; padding: 2rem 3rem 6rem; }
+    .report-header { padding-bottom: 1rem; border-bottom: 2px solid var(--line); }
+    h1, h2 { margin: 0; line-height: 1.2; }
+    h1 { font-size: 2rem; } h2 { margin-top: 3rem; font-size: 1.45rem; }
+    .generated { margin: .4rem 0 0; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: .875rem; }
+    .table-placeholder, .chart-placeholder { margin-top: 1rem; border: 1px solid var(--line); background: var(--surface); }
+    .table-placeholder { height: 15rem; background: repeating-linear-gradient(to bottom, transparent 0, transparent 2.9rem, var(--line) 3rem); }
+    .chart-placeholder { height: 18rem; background-image: linear-gradient(155deg, transparent 0 28%, var(--accent) 28.3% 29%, transparent 29.3% 48%, var(--accent) 48.3% 49%, transparent 49.3%); }
+    @media (max-width: 760px) {
+      .sidebar { display: none; }
+      .mobile-bar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; min-height: 4.25rem; padding: .6rem 1rem; background: var(--surface); border-bottom: 1px solid var(--line); }
+      .mobile-title { margin: 0; font-size: 1.15rem; line-height: 1.1; }.mobile-generated { margin: .25rem 0 0; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: .75rem; }
+      .menu-button { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; padding: 0; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); cursor: pointer; }
+      .menu-button:hover, .menu-button:focus-visible { background: var(--hover); outline: 2px solid var(--accent); outline-offset: 2px; }
+      .hamburger, .hamburger::before, .hamburger::after { display: block; width: 1.15rem; height: 2px; background: var(--text); content: ""; }
+      .hamburger { position: relative; }.hamburger::before { position: absolute; top: -.35rem; }.hamburger::after { position: absolute; top: .35rem; }
+      .mobile-menu { display: none; position: fixed; top: 4.25rem; right: 0; left: 0; z-index: 9; padding: 1rem; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 .5rem 1rem rgba(0,0,0,.12); }
+      .mobile-menu.is-open { display: block; }.mobile-menu .nav-group { margin-bottom: 1rem; }.mobile-menu .settings { margin-top: 0; }
+      .report-header { display: none; }
+      main { margin: 0; padding: 1.5rem 1rem 4rem; } h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mobile-bar">
+    <div><h1 class="mobile-title">Guy Sports Data</h1><p class="mobile-generated">Report generated: 2026-09-06 06:16</p></div>
+    <button class="menu-button" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false"><span class="hamburger"></span></button>
+  </header>
+  <nav class="sidebar" aria-label="Report navigation">
+    <div class="nav-group"><span class="nav-label">Statistics</span><a class="nav-link" href="#player-ownership">Player ownership</a><a class="nav-link" href="#team-changes">Team changes</a></div>
+    <div class="nav-group"><span class="nav-label">Trends</span><a class="nav-link" href="#historical-trends">Historical trends</a></div>
+    <div class="settings"><span class="nav-label">Settings</span><button class="theme-toggle" type="button" aria-pressed="false">Dark mode <span class="switch" aria-hidden="true"></span></button></div>
+  </nav>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Report navigation">
+    <div class="nav-group"><span class="nav-label">Statistics</span><a class="nav-link" href="#player-ownership">Player ownership</a><a class="nav-link" href="#team-changes">Team changes</a></div>
+    <div class="nav-group"><span class="nav-label">Trends</span><a class="nav-link" href="#historical-trends">Historical trends</a></div>
+    <div class="settings"><span class="nav-label">Settings</span><button class="theme-toggle" type="button" aria-pressed="false">Dark mode <span class="switch" aria-hidden="true"></span></button></div>
+  </nav>
+  <main id="report-start">
+    <header class="report-header"><h1>Guy Sports Data</h1><p class="generated">Report generated: 2026-09-06 06:16</p></header>
+    <section id="player-ownership"><h2>Player ownership</h2><div class="table-placeholder" aria-label="Player ownership table preview"></div></section>
+    <section id="team-changes"><h2>Team changes</h2><div class="table-placeholder" aria-label="Team changes table preview"></div></section>
+    <section id="historical-trends"><h2>Historical trends</h2><div class="chart-placeholder" aria-label="Historical trends chart preview"></div></section>
+  </main>
+  <script>
+    (function () {
+      var menuButton = document.querySelector('.menu-button');
+      var mobileMenu = document.querySelector('.mobile-menu');
+      menuButton.addEventListener('click', function () {
+        var open = mobileMenu.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('.mobile-menu a'), function (link) { link.addEventListener('click', function () { mobileMenu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open navigation menu'); }); });
+      Array.prototype.forEach.call(document.querySelectorAll('.theme-toggle'), function (button) { button.addEventListener('click', function () { var dark = document.documentElement.dataset.theme !== 'dark'; document.documentElement.dataset.theme = dark ? 'dark' : 'light'; Array.prototype.forEach.call(document.querySelectorAll('.theme-toggle'), function (toggle) { toggle.setAttribute('aria-pressed', String(dark)); }); }); });
+    }());
+  </script>
+</body>
+</html>
