@@ -1,7 +1,7 @@
 ---
 type: Feature Specification
 title: Mobile Report Layout
-description: Fix mobile chart spacing and navigation-menu clipping while restoring the Team changes table to its pre-feature layout.
+description: Fix mobile chart spacing and navigation-menu clipping, and hide the Manager column from the Team changes table on mobile.
 tags: [report, mobile, responsive-design, rendering]
 status: stable
 feature: 014-mobile-report-layout
@@ -16,7 +16,7 @@ The generated Guy Sports report MUST use the narrow viewport effectively without
 
 At narrow viewport widths, the historical-trends chart MUST occupy a height proportionate to its rendered plotting area, without the large empty vertical regions above and below the chart. The chart and its legend MUST remain readable and usable without horizontal page overflow.
 
-The Team changes table MUST be restored to its pre-feature markup and responsive behavior. This feature MUST not apply a shared minimum report width, change Team changes column widths, alter Latest change wrapping, move Latest change context, or change the mobile table presentation. Existing expandable change details MUST remain available.
+The Team changes table MUST retain its existing markup and desktop behavior. At mobile widths, the Manager column MUST be hidden, leaving Team, Total changes, and Latest change visible. This feature MUST not apply a shared minimum report width, change the widths or wrapping behavior of visible Team changes columns, move Latest change context, or change the existing expandable change details.
 
 The mobile hamburger menu MUST open wholly below the compact fixed header. Its Statistics, Trends, and Settings labels MUST be fully visible from their top edges, including when the page is scrolled.
 
@@ -39,6 +39,7 @@ The mobile hamburger menu MUST open wholly below the compact fixed header. Its S
 
 - At a 320 CSS-pixel-wide viewport, the historical-trends chart container has no avoidable large blank region above or below the plotted chart and legend; its rendered height is bounded by the chart content rather than a desktop minimum height.
 - The Team changes markup and its responsive CSS match their pre-feature-014 form, including the four columns and Latest change cell presentation.
+- At mobile widths, the Manager header and corresponding Manager data cells are not displayed; Team, Total changes, and Latest change remain displayed in their existing order.
 - This feature adds no `report-content` wrapper or mobile minimum width that affects the Team changes table, Player ownership table, chart, or report header.
 - At a 320 CSS-pixel-wide viewport, opening the hamburger menu at the top of the report and after scrolling fully displays the top of the Statistics label below the mobile header.
 - The mobile menu remains closed by default, retains its existing accessible open/closed state, and continues to navigate to Player ownership, Team changes, and Historical trends.
@@ -51,6 +52,7 @@ The mobile hamburger menu MUST open wholly below the compact fixed header. Its S
 - This is a focused presentation repair with a single generated-report and responsive-browser validation path, so Streamlined SDD applies.
 - The trend chart should use responsive container sizing or a mobile-specific height constraint; reducing the chart data or omitting the legend is out of scope.
 - Earlier Team changes table approaches in this feature, including hiding the Latest change column, adding a shared report width, modifying column widths, and Android-specific breakpoint changes, are rejected and will be removed.
+- Hiding the Manager column only on mobile is accepted because the Team column remains the reader-facing identifier for each row. The desktop table continues to show all four columns.
 - The browser viewport declaration returns to the pre-feature standard `width=device-width, initial-scale=1`. The existing width-based mobile navigation remains unchanged; no Android-specific selector is retained in this feature.
 - The mobile navigation panel will be positioned relative to the compact header's actual height, with a stacking order that keeps it visible while scrolling.
 - The attached screenshots are the visual regression references. The “title header disappearing” is treated as likely horizontal-overflow behavior and is covered by the no-page-overflow acceptance check; implementation investigation may establish a more direct cause.
