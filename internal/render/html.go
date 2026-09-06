@@ -78,7 +78,7 @@ func BuildHTML(current map[string]models.PlayerOwnershipRecord, history map[stri
 	b.WriteString(".removed-player{color:#dc2626;font-size:13px;font-weight:500;margin-right:.8rem;display:inline-block}\n")
 	b.WriteString(".expand-icon{display:inline-block;font-size:11px;margin-left:6px;color:var(--muted-text)}\n")
 	b.WriteString(".date-cell{display:inline-flex;align-items:center;gap:.4rem}.relative-time{font-size:.75rem;color:var(--muted-text)}\n")
-	b.WriteString(".pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-day{background:#2563eb}.pill-week{background:#7c3aed}.pill-month{background:#64748b}\n")
+	b.WriteString(".pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:999px;padding:.1rem .5rem}.pill-hours{background:#c026d3}.pill-days{background:#2563eb}.pill-weeks{background:#a16207}.pill-months{background:#64748b}\n")
 	b.WriteString(".ownership-up{color:#16a34a;font-weight:700}.ownership-down{color:#dc2626;font-weight:700}\n")
 	b.WriteString(".table-preview tbody tr.preview-hidden{display:none}.table-preview.is-expanded tbody tr.preview-hidden{display:table-row}.table-expander{margin:-.25rem 0 1rem;border:1px solid var(--border);border-radius:4px;background:var(--surface-muted);color:var(--text);padding:.4rem .6rem;cursor:pointer}.table-expander:hover{background:var(--hover)}\n")
 	b.WriteString(".mobile-header{display:none}.report-nav{position:fixed;inset:0 auto 0 0;z-index:10;display:flex;flex-direction:column;width:12rem;margin:0;padding:2rem 1rem;border-right:1px solid var(--subtle-border);background:var(--surface)}.report-nav-content{display:flex;flex:1;flex-direction:column}.nav-group{margin-bottom:1.5rem}.nav-label{display:block;margin:0 0 .3rem .75rem;color:var(--muted-text);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.report-nav a,.theme-toggle{display:block;padding:.45rem .75rem;color:var(--text);text-decoration:none;border-left:3px solid transparent}.report-nav a:hover,.report-nav a:focus-visible,.report-nav a[aria-current=\"true\"],.theme-toggle:hover,.theme-toggle:focus-visible{background:var(--hover);border-left-color:var(--tick);outline:0}.nav-settings{margin-top:auto;padding-top:1rem;border-top:1px solid var(--subtle-border)}.theme-toggle{border-left:3px solid transparent}.menu-button{display:none}@media(min-width:1000px){body{max-width:1150px;margin:2rem 2rem 2rem 15rem;padding:0 1.5rem}}@media(max-width:999px){body{margin:0 auto;padding:0 1rem}.mobile-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;min-height:4.25rem;margin:0 -1rem;padding:.6rem 1rem;background:var(--surface);border-bottom:1px solid var(--subtle-border)}.mobile-title{margin:0;font-size:1.15rem;line-height:1.1}.mobile-generated{margin:.25rem 0 0;color:var(--muted-text);font-size:.75rem}.report-header{display:none}.menu-button{position:relative;display:grid;place-items:center;width:2.5rem;height:2.5rem;padding:0;border:1px solid var(--border);border-radius:4px;background:var(--surface);cursor:pointer}.menu-button:hover,.menu-button:focus-visible{background:var(--hover);outline:2px solid var(--tick);outline-offset:2px}.hamburger,.hamburger::before,.hamburger::after{display:block;width:1.15rem;height:2px;background:var(--text);content:\"\"}.hamburger{position:relative}.hamburger::before{position:absolute;top:-.35rem}.hamburger::after{position:absolute;top:.35rem}.report-nav{position:fixed;inset:4.25rem 0 auto 0;display:block;width:auto;padding:0;border:0;border-bottom:1px solid var(--subtle-border);box-shadow:0 .5rem 1rem rgba(0,0,0,.12)}.report-nav-content{display:none;padding:1rem}.report-nav.is-open .report-nav-content{display:flex}.nav-group{margin-bottom:1rem}.nav-settings{margin-top:0}}\n")
@@ -251,9 +251,7 @@ func latestOwnershipChange(entries []models.PlayerOwnershipHistoryEntry) (int, s
 	return direction, lastChangeAt
 }
 
-// formatLatestChangeCell renders the "Latest change" cell: the raw value plus a
-// relative-time phrase and, for changes within the last month, a single
-// Day/Week/Month tiered pill (see specs/005-recent-manager-changes-highlight).
+// formatLatestChangeCell renders rounded elapsed time and its recency category.
 func formatLatestChangeCell(latestChangeAt string, now time.Time) string {
 	escaped := html.EscapeString(formatDisplayTimestamp(latestChangeAt))
 	if latestChangeAt == "" {
@@ -264,52 +262,45 @@ func formatLatestChangeCell(latestChangeAt string, now time.Time) string {
 		return escaped
 	}
 	age := now.Sub(t)
-	cell := fmt.Sprintf("<span class=\"date-cell\">%s <span class=\"relative-time\">(%s)</span>", escaped, html.EscapeString(relativeTime(age)))
-	if class, label := recencyTier(age); class != "" {
-		cell += fmt.Sprintf(" <span class=\"pill %s\">%s</span>", class, label)
-	}
-	cell += "</span>"
-	return cell
+	class, label := recencyTier(age)
+	return fmt.Sprintf("<span class=\"date-cell\"><span class=\"relative-time\">%s ago</span> <span class=\"pill %s\">%s</span></span>", html.EscapeString(relativeTime(age)), class, label)
 }
 
-// relativeTime formats a duration since report generation as a human-readable phrase.
+// relativeTime formats a duration using the unit selected by recencyTier.
 func relativeTime(d time.Duration) string {
 	if d < 0 {
 		d = 0
 	}
 	switch {
-	case d < time.Minute:
-		return "just now"
-	case d < time.Hour:
-		mins := int(d / time.Minute)
-		return fmt.Sprintf("%d minute%s", mins, pluralSuffix(mins))
 	case d < 24*time.Hour:
-		hours := int(d / time.Hour)
+		hours := int(d.Round(time.Hour) / time.Hour)
 		return fmt.Sprintf("%d hour%s", hours, pluralSuffix(hours))
-	case d < 30*24*time.Hour:
-		days := int(d / (24 * time.Hour))
+	case d < 7*24*time.Hour:
+		days := int(d.Round(24*time.Hour) / (24 * time.Hour))
 		return fmt.Sprintf("%d day%s", days, pluralSuffix(days))
-	case d < 365*24*time.Hour:
-		months := int(d / (30 * 24 * time.Hour))
-		return fmt.Sprintf("%d month%s", months, pluralSuffix(months))
+	case d < 30*24*time.Hour:
+		weeks := int(d.Round(7*24*time.Hour) / (7 * 24 * time.Hour))
+		return fmt.Sprintf("%d week%s", weeks, pluralSuffix(weeks))
 	default:
-		years := int(d / (365 * 24 * time.Hour))
-		return fmt.Sprintf("%d year%s", years, pluralSuffix(years))
+		months := int(d.Round(30*24*time.Hour) / (30 * 24 * time.Hour))
+		return fmt.Sprintf("%d month%s", months, pluralSuffix(months))
 	}
 }
 
-// recencyTier returns the CSS class and label for the most specific Day/Week/Month
-// tier the duration falls into, or empty strings if older than a month.
+// recencyTier returns the CSS class and label for the elapsed-time interval.
 func recencyTier(d time.Duration) (class string, label string) {
+	if d < 0 {
+		d = 0
+	}
 	switch {
 	case d < 24*time.Hour:
-		return "pill-day", "Day"
+		return "pill-hours", "Hours"
 	case d < 7*24*time.Hour:
-		return "pill-week", "Week"
+		return "pill-days", "Days"
 	case d < 30*24*time.Hour:
-		return "pill-month", "Month"
+		return "pill-weeks", "Weeks"
 	default:
-		return "", ""
+		return "pill-months", "Months"
 	}
 }
 

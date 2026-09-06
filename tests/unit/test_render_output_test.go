@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/thisisdavidbell/ff-sdd/internal/models"
 	"github.com/thisisdavidbell/ff-sdd/internal/render"
@@ -153,6 +154,47 @@ func TestRenderHTMLOrdersManagerChangesByLatestUpdate(t *testing.T) {
 	nonePos := strings.Index(html, "No changes</td>")
 	if !(newerPos < olderPos && olderPos < nonePos) {
 		t.Fatalf("expected manager changes ordered newest to oldest with no changes last, got Newer=%d Older=%d No changes=%d", newerPos, olderPos, nonePos)
+	}
+}
+
+func TestRenderHTMLClassifiesLatestChangeRelativeTimePills(t *testing.T) {
+	now := time.Now().UTC()
+	summaries := []models.ManagerChangeSummary{
+		{ManagerID: "hours", ManagerName: "Hours", TeamName: "Hours", TotalChanges: 1, LatestChangeAt: now.Add(-2 * time.Hour).Format(time.RFC3339)},
+		{ManagerID: "days", ManagerName: "Days", TeamName: "Days", TotalChanges: 1, LatestChangeAt: now.Add(-2 * 24 * time.Hour).Format(time.RFC3339)},
+		{ManagerID: "weeks", ManagerName: "Weeks", TeamName: "Weeks", TotalChanges: 1, LatestChangeAt: now.Add(-14 * 24 * time.Hour).Format(time.RFC3339)},
+		{ManagerID: "months", ManagerName: "Months", TeamName: "Months", TotalChanges: 1, LatestChangeAt: now.Add(-60 * 24 * time.Hour).Format(time.RFC3339)},
+	}
+
+	html, err := render.BuildHTML(nil, nil, summaries)
+	if err != nil {
+		t.Fatalf("BuildHTML returned error: %v", err)
+	}
+
+	for _, expected := range []string{
+		`<span class="relative-time">2 hours ago</span> <span class="pill pill-hours">Hours</span>`,
+		`<span class="relative-time">2 days ago</span> <span class="pill pill-days">Days</span>`,
+		`<span class="relative-time">2 weeks ago</span> <span class="pill pill-weeks">Weeks</span>`,
+		`<span class="relative-time">2 months ago</span> <span class="pill pill-months">Months</span>`,
+	} {
+		if !strings.Contains(html, expected) {
+			t.Fatalf("expected latest-change presentation %q: %s", expected, html)
+		}
+	}
+	if !strings.Contains(html, `.pill-hours{background:#c026d3}`) {
+		t.Fatalf("expected permanent fuchsia Hours pill style: %s", html)
+	}
+	if strings.Contains(html, `hours-pill-prototype`) || strings.Contains(html, `data-hours-pill-color`) {
+		t.Fatalf("expected temporary Hours-pill prototype control to be removed: %s", html)
+	}
+
+	tableStart := strings.Index(html, `<table id="team-changes-table"`)
+	tableEnd := strings.Index(html, `<button class="table-expander" type="button" data-table="team-changes-table">`)
+	if tableStart == -1 || tableEnd == -1 {
+		t.Fatalf("expected Team changes table and preview control: %s", html)
+	}
+	if strings.Contains(html[tableStart:tableEnd], now.Format("2006-01-02")) {
+		t.Fatalf("expected Team changes table to omit exact latest-change dates: %s", html[tableStart:tableEnd])
 	}
 }
 
