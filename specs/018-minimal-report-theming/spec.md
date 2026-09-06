@@ -20,7 +20,7 @@ The desktop sidebar logo MUST render at `9rem` wide by `5.4rem` high, and the na
 
 The timestamp label in both report headers MUST read `Updated:`.
 
-On a narrow viewport, the mobile report title MUST render at a larger font size than the report's section headings.
+On a narrow viewport, the mobile report title MUST render at a larger font size than the report's section headings. The mobile FFD logo MUST render at `5rem` wide by `3rem` high.
 
 The report MUST use a single shared accent color to provide a recognisable basic visual theme. The accent MUST be applied consistently to the FFD lettermark, primary report identity, and interactive emphasis while preserving the existing light and dark display modes.
 
@@ -54,6 +54,7 @@ The visual treatment MUST remain restrained and information-first, inspired by t
 - Renderer output includes an accessible `FFD` lettermark logo above desktop sidebar navigation and in the mobile report header.
 - Renderer output labels generated timestamps as `Updated:` in the desktop and mobile headers.
 - The narrow-viewport CSS gives `.mobile-title` a font size larger than `h2`.
+- Narrow-viewport CSS renders the mobile FFD logo at `5rem` wide and `3rem` high.
 - Desktop CSS renders the sidebar logo at `9rem` wide and `5.4rem` high, with navigation content below it.
 - A shared accent-color custom property is defined for both display modes and visibly themes the FFD lettermark and report interaction emphasis.
 - The desktop and mobile long-form report titles use the shared accent color.
