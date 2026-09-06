@@ -18,3 +18,6 @@ okf_version: "0.2"
 * [012 Report navigation menu](012-report-navigation-menu/) - Grouped desktop and mobile navigation menu.
 * [013 OKF specification metadata](013-okf-specification-metadata/) - OKF rollout for SDD artifacts.
 * [014 Mobile report layout](014-mobile-report-layout/) - Responsive mobile report layout fixes.
+* [015 Team change relative-time pills](015-team-change-relative-time-pills/) - Rounded relative-time presentation for Team changes.
+* [016 New specification per change policy](016-new-spec-per-change-policy/) - Standalone specification requirement for new work.
+* [017 Mobile Team change expansion](017-mobile-team-change-expansion/) - Mobile Team changes detail visibility fix.

@@ -370,7 +370,7 @@ func TestRenderHTMLIncludesInteractiveManagerChangeDetails(t *testing.T) {
 	}
 	for _, expected := range []string{
 		`@media(min-width:1000px){body{max-width:1150px`,
-		`#team-changes-table th:first-child,#team-changes-table td:first-child{display:none}`,
+		`#team-changes-table thead th:first-child,#team-changes-table tbody tr:not(.manager-detail-row) td:first-child{display:none}`,
 		`.report-nav{inset:var(--mobile-header-height,4.25rem) 0 auto 0;max-height:`,
 		`updateMobileHeaderHeight`,
 		`header.getBoundingClientRect().height`,

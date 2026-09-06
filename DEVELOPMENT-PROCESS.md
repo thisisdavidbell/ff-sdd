@@ -52,6 +52,8 @@ A streamlined spec MUST record the requested behavior, scope boundaries, affecte
 
 The streamlined `spec.md` is an OKF concept with `type: Feature Specification` and `sdd_approach: streamlined`; record its feature status in frontmatter rather than a presentation-style metadata header.
 
+Every new body of work MUST have a new standalone specification. Do not amend a completed historical specification to describe a later fix, maintenance task, configuration change, display change, or behavior change. A new specification MAY reference an earlier specification for context, but it MUST contain the requirements and acceptance checks for its own work. Corrections to a draft specification remain permitted before approval because they refine the same work.
+
 Create or amend the single streamlined spec for review, then stop for the SDD Approval Gate before making any change outside that spec.
 
 Do not make implementation-only changes: every change must be represented in the applicable SDD artifact before implementation.
