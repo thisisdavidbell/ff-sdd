@@ -27,6 +27,8 @@ Before creating or changing SDD artifacts, read and follow the mandatory SDD Sel
 
 After preparing the applicable SDD artifact, stop and obtain explicit user approval before changing implementation, configuration, automation, generated output, `ARCHITECTURE.md`, or any unrelated SDD artifact. Keep the artifact at `status: draft` while awaiting review; change it to `status: stable` only after approval. A stated user exception applies only to that current request and must be recorded in its SDD artifact.
 
+An approved specification remains active until its scoped work is complete. Related user-requested refinements may be added to that active specification; completed historical specifications must not be amended to describe later work.
+
 ## AI Assistance
 
 - The AI Agent should follow the users instructions at all times.

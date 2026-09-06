@@ -21,3 +21,4 @@ okf_version: "0.2"
 * [015 Team change relative-time pills](015-team-change-relative-time-pills/) - Rounded relative-time presentation for Team changes.
 * [016 New specification per change policy](016-new-spec-per-change-policy/) - Standalone specification requirement for new work.
 * [017 Mobile Team change expansion](017-mobile-team-change-expansion/) - Mobile Team changes detail visibility fix.
+* [018 Minimal report theming](018-minimal-report-theming/) - Blue FFD report identity, favicon, and revised report copy.

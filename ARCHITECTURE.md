@@ -18,7 +18,7 @@ In reader-facing documentation, **Team** is the canonical term. The first releva
 - Preserve team snapshots as append-only YAML, skipping unchanged teams.
 - Calculate current and historical player ownership across managers.
 - Detect team additions and removals between snapshots.
-- Render ownership trends and team changes as an interactive, responsive static report with light and dark themes, including compact mobile chart sizing and a mobile Team changes view that omits the Manager column while retaining tap-to-expand change details.
+- Render ownership trends and team changes as an interactive, responsive static report with light and dark themes, a blue FFD lettermark with a solid-circle football detail used above desktop sidebar navigation, in the mobile header, and as the favicon, compact mobile chart sizing, and a mobile Team changes view that omits the Manager column while retaining tap-to-expand change details.
 - Show each player's latest ownership direction and last change time, and prioritize managers with the most recent changes.
 - Provide persistent grouped section navigation: a full-height desktop sidebar with Statistics, Trends, and Settings groups, and a closed-by-default hamburger menu positioned below the report title and timestamp on narrow screens.
 
@@ -77,7 +77,7 @@ The result is a self-contained static page containing:
 - Ownership counts with their latest increase or decrease indicator and last change time, initially previewing ten rows with a reversible control to show all players.
 - Historical trends.
 - Team changes ordered by most recent activity, initially previewing ten manager rows with a reversible control to show all teams and expandable details; collapsed Latest change cells show rounded relative time with Hours, Days, Weeks, or Months pills, while expanded details retain exact timestamps. The Hours pill uses fuchsia to make the most recent changes visually distinctive.
-- Browser-side interaction, theme persistence through the navigation Settings group, and active section navigation.
+- Browser-side interaction, blue visual emphasis, theme persistence through the navigation Settings group, and active section navigation.
 
 ## Repository Boundaries
 

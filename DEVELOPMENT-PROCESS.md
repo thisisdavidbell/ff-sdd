@@ -52,7 +52,9 @@ A streamlined spec MUST record the requested behavior, scope boundaries, affecte
 
 The streamlined `spec.md` is an OKF concept with `type: Feature Specification` and `sdd_approach: streamlined`; record its feature status in frontmatter rather than a presentation-style metadata header.
 
-Every new body of work MUST have a new standalone specification. Do not amend a completed historical specification to describe a later fix, maintenance task, configuration change, display change, or behavior change. A new specification MAY reference an earlier specification for context, but it MUST contain the requirements and acceptance checks for its own work. Corrections to a draft specification remain permitted before approval because they refine the same work.
+Every new body of work MUST have a new standalone specification. Do not amend a completed historical specification to describe a later fix, maintenance task, configuration change, display change, or behavior change. A new specification MAY reference an earlier specification for context, but it MUST contain the requirements and acceptance checks for its own work.
+
+An active feature may be amended to incorporate a related user-requested refinement before its implementation is complete, even after its specification has been approved. An approved `status: stable` specification remains active until its scoped acceptance checks have been delivered; `stable` records approval, not completion. The amended active specification MUST continue to record the complete current scope, decisions, and acceptance checks. Completed historical specifications remain immutable, except to correct a factual error in the artifact itself.
 
 Create or amend the single streamlined spec for review, then stop for the SDD Approval Gate before making any change outside that spec.
 

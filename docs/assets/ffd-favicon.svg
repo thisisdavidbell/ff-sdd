@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .mark { fill: #0057b8; }
+    .outline { fill: none; stroke: #0057b8; }
+    @media (prefers-color-scheme: dark) { .mark { fill: #58a6ff; } .outline { stroke: #58a6ff; } }
+  </style>
+  <rect class="outline" x="4" y="10" width="50" height="40" stroke-width="4"/>
+  <text class="mark" x="8" y="38" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="-3">FFD</text>
+  <circle class="mark" cx="54" cy="50" r="7"/>
+</svg>

@@ -210,17 +210,26 @@ func TestRenderHTMLIncludesGeneratedTimestampAndThemeControls(t *testing.T) {
 		t.Fatalf("BuildHTML returned error: %v", err)
 	}
 
-	timestampPattern := regexp.MustCompile(`Report generated: \d{4}-\d{2}-\d{2} \d{2}:\d{2}`)
+	timestampPattern := regexp.MustCompile(`Updated: \d{4}-\d{2}-\d{2} \d{2}:\d{2}`)
 	if !timestampPattern.MatchString(html) {
 		t.Fatalf("expected a labeled minute-precision generation timestamp in HTML: %s", html)
 	}
-	if strings.Contains(html, "Report generated:") && strings.Contains(html, " UTC") {
+	if strings.Contains(html, "Updated:") && strings.Contains(html, " UTC") {
 		t.Fatalf("expected generation timestamp without a timezone label: %s", html)
 	}
-	if !strings.Contains(html, "<title>Guy Sports Data</title>") || !strings.Contains(html, "<h1>Guy Sports Data</h1>") {
-		t.Fatalf("expected Guy Sports Data browser and report titles: %s", html)
+	if !strings.Contains(html, "<title>Fantasy Football Data</title>") || !strings.Contains(html, "<h1>Fantasy Football Data</h1>") {
+		t.Fatalf("expected Fantasy Football Data browser and report titles: %s", html)
 	}
-	if strings.Index(html, "Guy Sports Data") > strings.Index(html, "Report generated:") {
+	if strings.Contains(html, "Guy Sports Data") {
+		t.Fatalf("expected former Guy Sports Data title to be absent: %s", html)
+	}
+	if strings.Count(html, `class="report-logo" src="assets/ffd-logo.svg" alt="FFD"`) != 1 || !strings.Contains(html, `<nav class="report-nav" aria-label="Report sections"><img class="sidebar-logo" src="assets/ffd-logo.svg" alt="FFD">`) || !strings.Contains(html, `rel="icon" href="assets/ffd-favicon.svg"`) {
+		t.Fatalf("expected the compact mobile logo, enlarged sidebar logo, and favicon: %s", html)
+	}
+	if !strings.Contains(html, `--accent:#0057b8`) || !strings.Contains(html, `.mobile-title{font-size:1.65rem}h2{font-size:1.35rem}`) || !strings.Contains(html, `.sidebar-logo{display:block;width:9rem;height:5.4rem`) {
+		t.Fatalf("expected selected blue theme, larger mobile report title, and enlarged sidebar logo: %s", html)
+	}
+	if strings.Index(html, "Fantasy Football Data") > strings.Index(html, "Updated:") {
 		t.Fatalf("expected generation timestamp directly below report title: %s", html)
 	}
 	if strings.Count(html, `class="theme-toggle"`) != 1 || !strings.Contains(html, `<div class="nav-settings"><span class="nav-label">Settings</span>`) {
