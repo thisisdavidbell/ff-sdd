@@ -1,5 +1,17 @@
 manager_id: "27"
 manager_name: George_Cullen
 team_name: Cunha_believe_it?
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-09-19T05:15:20Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "27"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-09-19T05:15:20Z"
+      added_players:
+        - player_id: ryan-giles
+          name: Ryan Giles
+      removed_players:
+        - player_id: issa-diop
+          name: Issa Diop
+      change_count: 1
