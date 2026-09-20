@@ -1,5 +1,17 @@
 manager_id: "11"
 manager_name: Guy
 team_name: Calafiori_Cheese
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-09-20T05:31:42Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "11"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-09-20T05:31:42Z"
+      added_players:
+        - player_id: maxim-de-cuyper
+          name: Maxim De Cuyper
+      removed_players:
+        - player_id: maxence-lacroix
+          name: Maxence Lacroix
+      change_count: 1
