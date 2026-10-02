@@ -1,5 +1,17 @@
 manager_id: "12"
 manager_name: Caroline_Squire
 team_name: Linus's_Legends
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-10-02T06:24:18Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "12"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-02T06:24:18Z"
+      added_players:
+        - player_id: vitaly-janelt
+          name: Vitaly Janelt
+      removed_players:
+        - player_id: mathias-jensen
+          name: Mathias Jensen
+      change_count: 1
