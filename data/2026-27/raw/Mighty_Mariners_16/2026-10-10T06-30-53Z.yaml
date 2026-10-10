@@ -1,0 +1,51 @@
+manager_id: "16"
+manager_name: David_Bell
+team_name: Mighty_Mariners
+captured_at: "2026-10-10T06:30:53Z"
+source: guysports
+players:
+    - player_id: robin-roefs
+      name: Robin Roefs
+      position: GK
+      team_name: Sunderland
+    - player_id: adrien-truffert
+      name: Adrien Truffert
+      position: DEF
+      team_name: Bournemouth
+    - player_id: luka-vuskovic
+      name: Luka Vuskovic
+      position: DEF
+      team_name: Brighton & Hove Albion
+    - player_id: ferdi-kadioglu
+      name: Ferdi Kadioglu
+      position: DEF
+      team_name: Brighton & Hove Albion
+    - player_id: nordi-mukiele
+      name: Nordi Mukiele
+      position: DEF
+      team_name: Sunderland
+    - player_id: emiliano-buendía
+      name: Emiliano Buendía
+      position: MID
+      team_name: Aston Villa
+    - player_id: rayan
+      name: Rayan
+      position: MID
+      team_name: Bournemouth
+    - player_id: ismaïla-sarr
+      name: Ismaïla Sarr
+      position: MID
+      team_name: Crystal Palace
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United
+    - player_id: alexander-isak
+      name: Alexander Isak
+      position: STR
+      team_name: Liverpool
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=16&name=Mighty+Mariners&view=public
