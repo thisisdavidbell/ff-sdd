@@ -1,5 +1,17 @@
 manager_id: "30"
 manager_name: Steve_Heath
 team_name: It_Ain't_Half_Hot_Mum
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-10-11T06:36:45Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "30"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-11T06:36:45Z"
+      added_players:
+        - player_id: charalampos-kostoulas
+          name: Charalampos Kostoulas
+      removed_players:
+        - player_id: promise-david
+          name: Promise David
+      change_count: 1

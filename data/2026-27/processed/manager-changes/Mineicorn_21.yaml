@@ -1,5 +1,17 @@
 manager_id: "21"
 manager_name: Chrissie_Bell
 team_name: Mineicorn
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-10-11T06:36:45Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "21"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-11T06:36:45Z"
+      added_players:
+        - player_id: thierno-barry
+          name: Thierno Barry
+      removed_players:
+        - player_id: brian-brobbey
+          name: Brian Brobbey
+      change_count: 1

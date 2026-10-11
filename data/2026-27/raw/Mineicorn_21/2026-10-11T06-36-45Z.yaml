@@ -1,0 +1,51 @@
+manager_id: "21"
+manager_name: Chrissie_Bell
+team_name: Mineicorn
+captured_at: "2026-10-11T06:36:45Z"
+source: guysports
+players:
+    - player_id: senne-lammens
+      name: Senne Lammens
+      position: GK
+      team_name: Manchester United
+    - player_id: milan-van-ewijk
+      name: Milan van Ewijk
+      position: DEF
+      team_name: Coventry City
+    - player_id: nico-o-reilly
+      name: Nico O'Reilly
+      position: DEF
+      team_name: Manchester City
+    - player_id: luke-shaw
+      name: Luke Shaw
+      position: DEF
+      team_name: Manchester United
+    - player_id: micky-van-de-ven
+      name: Micky van de Ven
+      position: DEF
+      team_name: Tottenham Hotspur
+    - player_id: dominik-szoboszlai
+      name: Dominik Szoboszlai
+      position: MID
+      team_name: Liverpool
+    - player_id: antoine-semenyo
+      name: Antoine Semenyo
+      position: MID
+      team_name: Manchester City
+    - player_id: enzo-le-fée
+      name: Enzo Le Fée
+      position: MID
+      team_name: Sunderland
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea
+    - player_id: thierno-barry
+      name: Thierno Barry
+      position: STR
+      team_name: Everton
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=21&name=Mineicorn&view=public
