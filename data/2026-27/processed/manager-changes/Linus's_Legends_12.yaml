@@ -1,8 +1,8 @@
 manager_id: "12"
 manager_name: Caroline_Squire
 team_name: Linus's_Legends
-total_changes: 1
-latest_change_at: "2026-10-02T06:24:18Z"
+total_changes: 2
+latest_change_at: "2026-10-14T05:36:05Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "12"
@@ -14,4 +14,14 @@ event_history:
       removed_players:
         - player_id: mathias-jensen
           name: Mathias Jensen
+      change_count: 1
+    - manager_id: "12"
+      from_captured_at: "2026-10-02T06:24:18Z"
+      to_captured_at: "2026-10-14T05:36:05Z"
+      added_players:
+        - player_id: maxim-de-cuyper
+          name: Maxim De Cuyper
+      removed_players:
+        - player_id: virgil-van-dijk
+          name: Virgil van Dijk
       change_count: 1
