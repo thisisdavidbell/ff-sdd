@@ -1,0 +1,51 @@
+manager_id: "17"
+manager_name: Will_Watkins
+team_name: Willy’s_Wanderers
+captured_at: "2026-10-17T05:10:40Z"
+source: guysports
+players:
+    - player_id: jordan-pickford
+      name: Jordan Pickford
+      position: GK
+      team_name: Everton
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal
+    - player_id: james-tarkowski
+      name: James Tarkowski
+      position: DEF
+      team_name: Everton
+    - player_id: rayan
+      name: Rayan
+      position: MID
+      team_name: Bournemouth
+    - player_id: florian-wirtz
+      name: Florian Wirtz
+      position: MID
+      team_name: Liverpool
+    - player_id: iliman-ndiaye
+      name: Iliman Ndiaye
+      position: MID
+      team_name: Manchester City
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United
+    - player_id: nicolas-jackson
+      name: Nicolas Jackson
+      position: STR
+      team_name: Aston Villa
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=17&name=Willy%E2%80%99s+Wanderers&view=public

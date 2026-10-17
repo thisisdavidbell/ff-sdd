@@ -1,5 +1,21 @@
 manager_id: "17"
 manager_name: Will_Watkins
 team_name: Willy’s_Wanderers
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 2
+latest_change_at: "2026-10-17T05:10:40Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "17"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-17T05:10:40Z"
+      added_players:
+        - player_id: james-tarkowski
+          name: James Tarkowski
+        - player_id: nicolas-jackson
+          name: Nicolas Jackson
+      removed_players:
+        - player_id: benjamin-sesko
+          name: Benjamin Sesko
+        - player_id: milan-van-ewijk
+          name: Milan van Ewijk
+      change_count: 2
