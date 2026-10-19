@@ -56,7 +56,7 @@ func main() {
 	}
 
 	if len(current) == 0 {
-		fmt.Fprintf(os.Stderr, "no processed player ownership data found in %s; please run process first\n", cfg.ProcessDir)
+		fmt.Fprintf(os.Stderr, "ERROR: no processed player ownership data found in %s; please run process first\n", cfg.ProcessDir)
 		os.Exit(1)
 	}
 
@@ -79,16 +79,16 @@ func main() {
 
 	html, err := render.BuildHTML(current, history, changes)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "render failed: %v\n", err)
+		fmt.Fprintf(os.Stderr, "ERROR: render failed: %v\n", err)
 		os.Exit(1)
 	}
 	if err := os.MkdirAll(filepath.Dir(outputFile), 0o755); err != nil {
-		fmt.Fprintf(os.Stderr, "unable to prepare output dir: %v\n", err)
+		fmt.Fprintf(os.Stderr, "ERROR: unable to prepare output dir: %v\n", err)
 		os.Exit(1)
 	}
 	if err := os.WriteFile(outputFile, []byte(html), 0o644); err != nil {
-		fmt.Fprintf(os.Stderr, "unable to write render output: %v\n", err)
+		fmt.Fprintf(os.Stderr, "ERROR: unable to write render output: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("rendered report to %s\n", outputFile)
+	fmt.Printf("SUCCESS: rendered report to %s\n", outputFile)
 }
