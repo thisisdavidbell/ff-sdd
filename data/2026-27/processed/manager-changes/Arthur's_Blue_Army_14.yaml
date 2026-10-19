@@ -1,8 +1,8 @@
 manager_id: "14"
 manager_name: Arthur
 team_name: Arthur's_Blue_Army
-total_changes: 1
-latest_change_at: "2026-08-29T22:11:10Z"
+total_changes: 2
+latest_change_at: "2026-10-19T05:27:15Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "14"
@@ -14,4 +14,14 @@ event_history:
       removed_players:
         - player_id: unknown-1
           name: Unknown
+      change_count: 1
+    - manager_id: "14"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-19T05:27:15Z"
+      added_players:
+        - player_id: leif-davis
+          name: Leif Davis
+      removed_players:
+        - player_id: ola-aina
+          name: Ola Aina
       change_count: 1
