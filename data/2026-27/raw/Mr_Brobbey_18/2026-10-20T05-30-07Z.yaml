@@ -1,0 +1,51 @@
+manager_id: "18"
+manager_name: Steve_Whyley
+team_name: Mr_Brobbey
+captured_at: "2026-10-20T05:30:07Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal
+    - player_id: maxim-de-cuyper
+      name: Maxim De Cuyper
+      position: DEF
+      team_name: Brighton & Hove Albion
+    - player_id: leif-davis
+      name: Leif Davis
+      position: DEF
+      team_name: Ipswich Town
+    - player_id: johan-manzambi
+      name: Johan Manzambi
+      position: MID
+      team_name: Aston Villa
+    - player_id: emiliano-buendía
+      name: Emiliano Buendía
+      position: MID
+      team_name: Aston Villa
+    - player_id: bradley-barcola
+      name: Bradley Barcola
+      position: MID
+      team_name: Liverpool
+    - player_id: bryan-mbeumo
+      name: Bryan Mbeumo
+      position: MID
+      team_name: Manchester United
+    - player_id: bruno-fernandes
+      name: Bruno Fernandes
+      position: MID
+      team_name: Manchester United
+    - player_id: charalampos-kostoulas
+      name: Charalampos Kostoulas
+      position: STR
+      team_name: Brighton & Hove Albion
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=18&name=Mr+Brobbey&view=public

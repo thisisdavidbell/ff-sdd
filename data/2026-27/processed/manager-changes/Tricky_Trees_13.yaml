@@ -1,5 +1,17 @@
 manager_id: "13"
 manager_name: Garibaldi
 team_name: Tricky_Trees
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-10-20T05:30:07Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "13"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-20T05:30:07Z"
+      added_players:
+        - player_id: bryan-mbeumo
+          name: Bryan Mbeumo
+      removed_players:
+        - player_id: jean-philippe-mateta
+          name: Jean-Philippe Mateta
+      change_count: 1
