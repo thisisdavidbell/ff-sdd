@@ -1,8 +1,8 @@
 manager_id: "8"
 manager_name: Lyndon_Henstridge
 team_name: Finsbury_Bridge
-total_changes: 1
-latest_change_at: "2026-09-03T06:41:17Z"
+total_changes: 3
+latest_change_at: "2026-10-21T05:30:33Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "8"
@@ -15,3 +15,17 @@ event_history:
         - player_id: tyler-adams
           name: Tyler Adams
       change_count: 1
+    - manager_id: "8"
+      from_captured_at: "2026-09-03T06:41:17Z"
+      to_captured_at: "2026-10-21T05:30:33Z"
+      added_players:
+        - player_id: james-justin
+          name: James Justin
+        - player_id: kristoffer-ajer
+          name: Kristoffer Ajer
+      removed_players:
+        - player_id: luke-shaw
+          name: Luke Shaw
+        - player_id: milan-van-ewijk
+          name: Milan van Ewijk
+      change_count: 2
