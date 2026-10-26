@@ -1,8 +1,8 @@
 manager_id: "30"
 manager_name: Steve_Heath
 team_name: It_Ain't_Half_Hot_Mum
-total_changes: 1
-latest_change_at: "2026-10-11T06:36:45Z"
+total_changes: 2
+latest_change_at: "2026-10-26T07:11:39Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "30"
@@ -14,4 +14,14 @@ event_history:
       removed_players:
         - player_id: promise-david
           name: Promise David
+      change_count: 1
+    - manager_id: "30"
+      from_captured_at: "2026-10-11T06:36:45Z"
+      to_captured_at: "2026-10-26T07:11:39Z"
+      added_players:
+        - player_id: pascal-groß
+          name: Pascal Groß
+      removed_players:
+        - player_id: bukayo-saka
+          name: Bukayo Saka
       change_count: 1

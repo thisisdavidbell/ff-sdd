@@ -1,0 +1,51 @@
+manager_id: "14"
+manager_name: Arthur
+team_name: Arthur's_Blue_Army
+captured_at: "2026-10-26T07:11:39Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal
+    - player_id: michael-kayode
+      name: Michael Kayode
+      position: DEF
+      team_name: Brentford
+    - player_id: leif-davis
+      name: Leif Davis
+      position: DEF
+      team_name: Ipswich Town
+    - player_id: tarik-muharemovic
+      name: Tarik Muharemovic
+      position: DEF
+      team_name: Leeds United
+    - player_id: marcus-tavernier
+      name: Marcus Tavernier
+      position: MID
+      team_name: Bournemouth
+    - player_id: jérémy-doku
+      name: Jérémy Doku
+      position: MID
+      team_name: Manchester City
+    - player_id: rayan-cherki
+      name: Rayan Cherki
+      position: MID
+      team_name: Manchester City
+    - player_id: joão-pedro
+      name: João Pedro
+      position: STR
+      team_name: Chelsea
+    - player_id: dominic-calvert-lewin
+      name: Dominic Calvert-Lewin
+      position: STR
+      team_name: Leeds United
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=14&name=Arthur%27s+Blue+Army&view=public
