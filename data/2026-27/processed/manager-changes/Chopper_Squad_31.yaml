@@ -1,8 +1,8 @@
 manager_id: "31"
 manager_name: Jem
 team_name: Chopper_Squad
-total_changes: 1
-latest_change_at: "2026-09-01T06:02:56Z"
+total_changes: 3
+latest_change_at: "2026-10-30T07:51:47Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "31"
@@ -15,3 +15,17 @@ event_history:
         - player_id: robert-sánchez
           name: Robert Sánchez
       change_count: 1
+    - manager_id: "31"
+      from_captured_at: "2026-09-01T06:02:56Z"
+      to_captured_at: "2026-10-30T07:51:47Z"
+      added_players:
+        - player_id: malick-yalcouyé
+          name: Malick Yalcouyé
+        - player_id: nicolas-jackson
+          name: Nicolas Jackson
+      removed_players:
+        - player_id: brian-brobbey
+          name: Brian Brobbey
+        - player_id: george-hemmings
+          name: George Hemmings
+      change_count: 2
