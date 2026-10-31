@@ -1,0 +1,51 @@
+manager_id: "5"
+manager_name: Jules_Stark
+team_name: Rhodis_45ers
+captured_at: "2026-10-31T07:41:05Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal
+    - player_id: jurriën-timber
+      name: Jurriën Timber
+      position: DEF
+      team_name: Arsenal
+    - player_id: marc-guéhi
+      name: Marc Guéhi
+      position: DEF
+      team_name: Manchester City
+    - player_id: bruno-guimarães
+      name: Bruno Guimarães
+      position: MID
+      team_name: Arsenal
+    - player_id: marcus-tavernier
+      name: Marcus Tavernier
+      position: MID
+      team_name: Bournemouth
+    - player_id: kieran-dowell
+      name: Kieran Dowell
+      position: MID
+      team_name: Hull City
+    - player_id: dominik-szoboszlai
+      name: Dominik Szoboszlai
+      position: MID
+      team_name: Liverpool
+    - player_id: granit-xhaka
+      name: Granit Xhaka
+      position: MID
+      team_name: Sunderland
+    - player_id: evanilson
+      name: Evanilson
+      position: STR
+      team_name: Bournemouth
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=5&name=Rhodis+45ers&view=public

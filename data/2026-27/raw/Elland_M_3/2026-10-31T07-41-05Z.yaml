@@ -1,0 +1,51 @@
+manager_id: "3"
+manager_name: Don_Revie
+team_name: Elland_M
+captured_at: "2026-10-31T07:41:05Z"
+source: guysports
+players:
+    - player_id: joe-gauci
+      name: Joe Gauci
+      position: GK
+      team_name: Aston Villa
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal
+    - player_id: miguel-ángel-brau
+      name: Miguel Ángel Brau
+      position: DEF
+      team_name: Coventry City
+    - player_id: aurèle-amenda
+      name: Aurèle Amenda
+      position: DEF
+      team_name: Coventry City
+    - player_id: josko-gvardiol
+      name: Josko Gvardiol
+      position: DEF
+      team_name: Manchester City
+    - player_id: martin-ødegaard
+      name: Martin Ødegaard
+      position: MID
+      team_name: Arsenal
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea
+    - player_id: regan-slater
+      name: Regan Slater
+      position: MID
+      team_name: Hull City
+    - player_id: dominik-szoboszlai
+      name: Dominik Szoboszlai
+      position: MID
+      team_name: Liverpool
+    - player_id: antoine-semenyo
+      name: Antoine Semenyo
+      position: MID
+      team_name: Manchester City
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=3&name=Elland+M&view=public

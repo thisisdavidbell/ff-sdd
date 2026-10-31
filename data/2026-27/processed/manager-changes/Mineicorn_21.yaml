@@ -1,8 +1,8 @@
 manager_id: "21"
 manager_name: Chrissie_Bell
 team_name: Mineicorn
-total_changes: 1
-latest_change_at: "2026-10-11T06:36:45Z"
+total_changes: 3
+latest_change_at: "2026-10-31T07:41:05Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "21"
@@ -15,3 +15,17 @@ event_history:
         - player_id: brian-brobbey
           name: Brian Brobbey
       change_count: 1
+    - manager_id: "21"
+      from_captured_at: "2026-10-11T06:36:45Z"
+      to_captured_at: "2026-10-31T07:41:05Z"
+      added_players:
+        - player_id: matty-cash
+          name: Matty Cash
+        - player_id: morgan-rogers
+          name: Morgan Rogers
+      removed_players:
+        - player_id: antoine-semenyo
+          name: Antoine Semenyo
+        - player_id: luke-shaw
+          name: Luke Shaw
+      change_count: 2

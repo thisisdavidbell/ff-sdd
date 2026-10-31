@@ -1,5 +1,25 @@
 manager_id: "3"
 manager_name: Don_Revie
 team_name: Elland_M
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 3
+latest_change_at: "2026-10-31T07:41:05Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "3"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-31T07:41:05Z"
+      added_players:
+        - player_id: cole-palmer
+          name: Cole Palmer
+        - player_id: josko-gvardiol
+          name: Josko Gvardiol
+        - player_id: martin-ødegaard
+          name: Martin Ødegaard
+      removed_players:
+        - player_id: bruno-fernandes
+          name: Bruno Fernandes
+        - player_id: bukayo-saka
+          name: Bukayo Saka
+        - player_id: jurriën-timber
+          name: Jurriën Timber
+      change_count: 3

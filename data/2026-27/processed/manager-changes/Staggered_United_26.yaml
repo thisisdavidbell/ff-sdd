@@ -1,8 +1,8 @@
 manager_id: "26"
 manager_name: Les_Fathers
 team_name: Staggered_United
-total_changes: 1
-latest_change_at: "2026-08-29T22:11:10Z"
+total_changes: 2
+latest_change_at: "2026-10-31T07:41:05Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "26"
@@ -14,4 +14,14 @@ event_history:
       removed_players:
         - player_id: unknown-5
           name: Unknown
+      change_count: 1
+    - manager_id: "26"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-10-31T07:41:05Z"
+      added_players:
+        - player_id: nicolas-jackson
+          name: Nicolas Jackson
+      removed_players:
+        - player_id: joão-pedro
+          name: João Pedro
       change_count: 1

@@ -1,0 +1,51 @@
+manager_id: "4"
+manager_name: Brian_D
+team_name: Tulyar
+captured_at: "2026-10-31T07:41:05Z"
+source: guysports
+players:
+    - player_id: david-raya
+      name: David Raya
+      position: GK
+      team_name: Arsenal
+    - player_id: gabriel
+      name: Gabriel
+      position: DEF
+      team_name: Arsenal
+    - player_id: jurriën-timber
+      name: Jurriën Timber
+      position: DEF
+      team_name: Arsenal
+    - player_id: adrien-truffert
+      name: Adrien Truffert
+      position: DEF
+      team_name: Bournemouth
+    - player_id: nico-o-reilly
+      name: Nico O'Reilly
+      position: DEF
+      team_name: Manchester City
+    - player_id: martin-ødegaard
+      name: Martin Ødegaard
+      position: MID
+      team_name: Arsenal
+    - player_id: vitaly-janelt
+      name: Vitaly Janelt
+      position: MID
+      team_name: Brentford
+    - player_id: james-garner
+      name: James Garner
+      position: MID
+      team_name: Everton
+    - player_id: kieran-dowell
+      name: Kieran Dowell
+      position: MID
+      team_name: Hull City
+    - player_id: alexander-isak
+      name: Alexander Isak
+      position: STR
+      team_name: Liverpool
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=4&name=Tulyar&view=public

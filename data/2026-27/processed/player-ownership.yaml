@@ -1,5 +1,5 @@
 season: 2026-27
-generated_at: "2026-10-30T07:51:50Z"
+generated_at: "2026-10-31T07:41:08Z"
 players:
     - player_id: erling-haaland
       player_name: Erling Haaland
@@ -47,6 +47,8 @@ players:
           manager_count: 28
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 28
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 28
     - player_id: gabriel
       player_name: Gabriel
       current_count: 20
@@ -93,59 +95,63 @@ players:
           manager_count: 20
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 20
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 20
     - player_id: joão-pedro
       player_name: João Pedro
-      current_count: 19
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 18
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 19
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 19
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 19
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 19
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 19
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 19
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 19
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 19
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 19
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 19
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 19
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 19
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 19
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 19
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 19
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 19
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 19
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 19
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 19
-        - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 19
-    - player_id: bruno-fernandes
-      player_name: Bruno Fernandes
       current_count: 18
       history:
         - captured_at: "2026-08-24T12:00:00Z"
           manager_count: 18
         - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 19
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 19
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 19
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 19
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 19
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 19
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 19
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 19
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 19
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 19
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 19
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 19
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 19
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 19
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 19
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 19
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 19
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 19
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 19
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 19
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 18
+    - player_id: bruno-fernandes
+      player_name: Bruno Fernandes
+      current_count: 14
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 18
+        - captured_at: "2026-08-29T22:11:10Z"
           manager_count: 18
         - captured_at: "2026-08-30T19:35:06Z"
           manager_count: 18
@@ -185,6 +191,8 @@ players:
           manager_count: 18
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 18
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 14
     - player_id: david-raya
       player_name: David Raya
       current_count: 12
@@ -230,6 +238,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 12
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 12
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 12
     - player_id: bryan-mbeumo
       player_name: Bryan Mbeumo
@@ -277,6 +287,56 @@ players:
           manager_count: 11
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 11
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 11
+    - player_id: cole-palmer
+      player_name: Cole Palmer
+      current_count: 9
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 6
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 6
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 6
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 6
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 6
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 6
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 7
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 7
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 7
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 7
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 7
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 7
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 7
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 7
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 7
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 7
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 7
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 7
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 8
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 8
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 8
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 9
     - player_id: riccardo-calafiori
       player_name: Riccardo Calafiori
       current_count: 9
@@ -323,52 +383,56 @@ players:
           manager_count: 9
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 9
-    - player_id: cole-palmer
-      player_name: Cole Palmer
-      current_count: 8
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 9
+    - player_id: martin-ødegaard
+      player_name: Martin Ødegaard
+      current_count: 7
       history:
         - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 6
+          manager_count: 3
         - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 6
+          manager_count: 3
         - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 6
+          manager_count: 4
         - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 6
+          manager_count: 4
         - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 6
+          manager_count: 4
         - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 6
+          manager_count: 4
         - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 7
+          manager_count: 4
         - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 8
+          manager_count: 5
         - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 8
+          manager_count: 5
         - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 8
+          manager_count: 5
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 7
     - player_id: maxim-de-cuyper
       player_name: Maxim De Cuyper
       current_count: 7
@@ -414,6 +478,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 7
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 7
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 7
     - player_id: florian-wirtz
       player_name: Florian Wirtz
@@ -461,6 +527,56 @@ players:
           manager_count: 6
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 6
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 6
+    - player_id: marcus-tavernier
+      player_name: Marcus Tavernier
+      current_count: 6
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 3
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 3
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 3
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 3
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 3
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 3
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 3
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 3
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 3
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 3
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 3
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 3
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 4
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 4
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 6
     - player_id: alexander-isak
       player_name: Alexander Isak
       current_count: 5
@@ -506,6 +622,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 5
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 5
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 5
     - player_id: dominik-szoboszlai
       player_name: Dominik Szoboszlai
@@ -553,6 +671,8 @@ players:
           manager_count: 5
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 5
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 5
     - player_id: leif-davis
       player_name: Leif Davis
       current_count: 5
@@ -599,52 +719,104 @@ players:
           manager_count: 5
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 5
-    - player_id: martin-ødegaard
-      player_name: Martin Ødegaard
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 5
+    - player_id: rayan-cherki
+      player_name: Rayan Cherki
       current_count: 5
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 3
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 3
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 3
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 3
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 3
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 3
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 4
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 4
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 4
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 4
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 5
+    - player_id: bruno-guimarães
+      player_name: Bruno Guimarães
+      current_count: 4
       history:
         - captured_at: "2026-08-24T12:00:00Z"
           manager_count: 3
         - captured_at: "2026-08-29T22:11:10Z"
           manager_count: 3
         - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 4
+          manager_count: 3
         - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 5
+          manager_count: 3
         - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 5
+          manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 5
+          manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 4
     - player_id: declan-rice
       player_name: Declan Rice
       current_count: 4
@@ -690,6 +862,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 4
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 4
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 4
     - player_id: harry-maguire
       player_name: Harry Maguire
@@ -737,6 +911,8 @@ players:
           manager_count: 4
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 4
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 4
     - player_id: igor-thiago
       player_name: Igor Thiago
       current_count: 4
@@ -783,97 +959,7 @@ players:
           manager_count: 4
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 4
-    - player_id: jurriën-timber
-      player_name: Jurriën Timber
-      current_count: 4
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 5
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 5
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 5
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 5
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 5
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 4
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 4
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 4
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 4
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 4
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 4
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 4
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 4
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 4
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 4
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 4
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 4
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 4
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 4
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 4
-        - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 4
-    - player_id: marcus-tavernier
-      player_name: Marcus Tavernier
-      current_count: 4
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 3
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 3
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 3
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 3
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 3
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 3
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 3
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 3
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 3
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 3
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 3
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 3
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 4
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 4
     - player_id: nico-o-reilly
       player_name: Nico O'Reilly
@@ -921,51 +1007,7 @@ players:
           manager_count: 4
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 4
-    - player_id: rayan-cherki
-      player_name: Rayan Cherki
-      current_count: 4
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 3
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 3
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 3
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 3
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 3
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 3
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 4
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 4
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 4
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 4
     - player_id: robin-roefs
       player_name: Robin Roefs
@@ -1013,6 +1055,8 @@ players:
           manager_count: 4
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 4
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 4
     - player_id: antonín-kinsky
       player_name: Antonín Kinsky
       current_count: 3
@@ -1059,97 +1103,7 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 3
-    - player_id: bruno-guimarães
-      player_name: Bruno Guimarães
-      current_count: 3
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 3
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 3
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 3
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 3
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 3
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 3
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 3
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 3
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 3
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 3
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 3
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 3
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 3
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 3
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 3
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 3
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 3
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 3
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 3
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 3
-        - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 3
-    - player_id: bukayo-saka
-      player_name: Bukayo Saka
-      current_count: 3
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 6
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 6
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 6
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 6
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 6
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 6
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 6
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 6
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 6
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 6
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 6
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 6
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 6
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 6
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 6
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 6
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 6
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 6
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 4
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 3
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 3
     - player_id: christos-tzolis
       player_name: Christos Tzolis
@@ -1197,51 +1151,7 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 3
-    - player_id: darko-gyabi
-      player_name: Darko Gyabi
-      current_count: 3
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 3
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 3
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 3
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 3
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 3
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 3
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 3
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 3
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 3
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 3
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 3
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 3
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 3
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 3
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 3
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 3
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 3
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 3
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 3
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 3
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 3
     - player_id: dominic-calvert-lewin
       player_name: Dominic Calvert-Lewin
@@ -1289,51 +1199,7 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 3
-    - player_id: emiliano-buendía
-      player_name: Emiliano Buendía
-      current_count: 3
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 3
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 3
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 3
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 3
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 3
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 3
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 3
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 3
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 3
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 3
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 3
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 3
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 3
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 3
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 3
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 3
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 3
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 3
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 3
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 3
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 3
     - player_id: enzo-le-fée
       player_name: Enzo Le Fée
@@ -1381,6 +1247,8 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
     - player_id: iliman-ndiaye
       player_name: Iliman Ndiaye
       current_count: 3
@@ -1426,6 +1294,56 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: james-hill
+      player_name: James Hill
+      current_count: 3
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 3
     - player_id: james-trafford
       player_name: James Trafford
@@ -1473,6 +1391,152 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: jordan-pickford
+      player_name: Jordan Pickford
+      current_count: 3
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: josko-gvardiol
+      player_name: Josko Gvardiol
+      current_count: 3
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: jurriën-timber
+      player_name: Jurriën Timber
+      current_count: 3
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 5
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 5
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 5
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 5
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 5
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 4
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 4
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 4
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 4
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 4
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 4
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 4
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 4
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 4
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 4
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 4
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 4
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 4
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 4
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 4
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 4
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
     - player_id: jérémy-doku
       player_name: Jérémy Doku
       current_count: 3
@@ -1518,6 +1582,104 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: kieran-dowell
+      player_name: Kieran Dowell
+      current_count: 3
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: luka-vuskovic
+      player_name: Luka Vuskovic
+      current_count: 3
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 1
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 1
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 1
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 1
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 1
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 1
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 1
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 1
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 1
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 1
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 1
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 3
     - player_id: morgan-gibbs-white
       player_name: Morgan Gibbs-White
@@ -1565,6 +1727,56 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: morgan-rogers
+      player_name: Morgan Rogers
+      current_count: 3
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
     - player_id: neco-williams
       player_name: Neco Williams
       current_count: 3
@@ -1610,6 +1822,28 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: nicolas-jackson
+      player_name: Nicolas Jackson
+      current_count: 3
+      history:
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 1
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 1
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 1
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 1
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 1
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 1
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 3
     - player_id: pascal-groß
       player_name: Pascal Groß
@@ -1657,6 +1891,56 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 3
+    - player_id: adrien-truffert
+      player_name: Adrien Truffert
+      current_count: 2
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 1
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 1
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 1
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 1
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 1
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 1
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 1
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 1
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 1
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 1
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 1
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 1
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 1
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 1
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 1
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 1
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 1
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 1
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 1
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 1
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: alex-scott
       player_name: Alex Scott
       current_count: 2
@@ -1703,97 +1987,7 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
-    - player_id: antoine-semenyo
-      player_name: Antoine Semenyo
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 4
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 4
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 4
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 4
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 4
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 4
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 4
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 4
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 4
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 4
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 4
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 4
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 4
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 4
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 4
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 4
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 3
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 2
-    - player_id: aurèle-amenda
-      player_name: Aurèle Amenda
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: brian-brobbey
       player_name: Brian Brobbey
@@ -1841,6 +2035,56 @@ players:
           manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
+    - player_id: bukayo-saka
+      player_name: Bukayo Saka
+      current_count: 2
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 6
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 6
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 6
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 6
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 6
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 6
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 6
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 6
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 6
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 6
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 6
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 6
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 6
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 6
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 6
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 6
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 6
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 6
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 4
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 3
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: caoimhín-kelleher
       player_name: Caoimhín Kelleher
       current_count: 2
@@ -1887,6 +2131,8 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: charalampos-kostoulas
       player_name: Charalampos Kostoulas
       current_count: 2
@@ -1908,6 +2154,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: daizen-maeda
       player_name: Daizen Maeda
@@ -1955,143 +2203,55 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
-    - player_id: james-hill
-      player_name: James Hill
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
+    - player_id: emiliano-buendía
+      player_name: Emiliano Buendía
       current_count: 2
       history:
         - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
+          manager_count: 3
         - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 2
-    - player_id: jordan-pickford
-      player_name: Jordan Pickford
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 2
-    - player_id: josko-gvardiol
-      player_name: Josko Gvardiol
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 3
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: jørgen-strand-larsen
       player_name: Jørgen Strand Larsen
@@ -2124,6 +2284,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: kai-havertz
       player_name: Kai Havertz
@@ -2171,6 +2333,8 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: kevin-schade
       player_name: Kevin Schade
       current_count: 2
@@ -2217,51 +2381,7 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
-    - player_id: kieran-dowell
-      player_name: Kieran Dowell
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: kristoffer-ajer
       player_name: Kristoffer Ajer
@@ -2309,97 +2429,7 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
-    - player_id: luka-vuskovic
-      player_name: Luka Vuskovic
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 1
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 1
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 1
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 1
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 1
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 1
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 1
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 1
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 1
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 1
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 1
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 2
-    - player_id: luke-shaw
-      player_name: Luke Shaw
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 4
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 4
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 4
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 4
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 4
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 4
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 4
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 3
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 3
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 3
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 3
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 3
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 3
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 3
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 3
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 3
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 3
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: malick-thiaw
       player_name: Malick Thiaw
@@ -2447,6 +2477,8 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: marc-guéhi
       player_name: Marc Guéhi
       current_count: 2
@@ -2493,51 +2525,55 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
-    - player_id: miguel-ángel-brau
-      player_name: Miguel Ángel Brau
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
+    - player_id: matty-cash
+      player_name: Matty Cash
       current_count: 2
       history:
         - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
+          manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: milan-van-ewijk
       player_name: Milan van Ewijk
@@ -2585,51 +2621,7 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
-    - player_id: morgan-rogers
-      player_name: Morgan Rogers
-      current_count: 2
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 2
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 2
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 2
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 2
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 2
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 2
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 2
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 2
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 2
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 2
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 2
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 2
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 2
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 2
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 2
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 2
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 2
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 2
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: nathan-collins
       player_name: Nathan Collins
@@ -2677,23 +2669,7 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
-    - player_id: nicolas-jackson
-      player_name: Nicolas Jackson
-      current_count: 2
-      history:
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 1
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 1
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 1
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 1
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 1
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 1
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: nordi-mukiele
       player_name: Nordi Mukiele
@@ -2741,6 +2717,8 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: pedro-porro
       player_name: Pedro Porro
       current_count: 2
@@ -2786,6 +2764,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: rayan
       player_name: Rayan
@@ -2833,6 +2813,8 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: regan-slater
       player_name: Regan Slater
       current_count: 2
@@ -2878,6 +2860,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: tarik-muharemovic
       player_name: Tarik Muharemovic
@@ -2925,6 +2909,8 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: thierno-barry
       player_name: Thierno Barry
       current_count: 2
@@ -2946,6 +2932,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: trai-hume
       player_name: Trai Hume
@@ -2993,6 +2981,8 @@ players:
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
     - player_id: virgil-van-dijk
       player_name: Virgil van Dijk
       current_count: 2
@@ -3038,6 +3028,36 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 2
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 2
+    - player_id: vitaly-janelt
+      player_name: Vitaly Janelt
+      current_count: 2
+      history:
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 1
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 1
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 1
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 1
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 1
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 1
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 1
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 1
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 1
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 1
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 2
     - player_id: adam-smith
       player_name: Adam Smith
@@ -3085,6 +3105,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: adam-wharton
       player_name: Adam Wharton
       current_count: 1
@@ -3131,51 +3153,7 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
-    - player_id: adrien-truffert
-      player_name: Adrien Truffert
-      current_count: 1
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 1
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 1
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 1
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 1
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 1
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 1
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 1
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 1
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 1
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 1
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 1
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 1
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 1
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 1
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 1
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 1
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 1
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 1
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 1
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 1
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: alexis-mac-allister
       player_name: Alexis Mac Allister
@@ -3223,6 +3201,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: andy-robertson
       player_name: Andy Robertson
       current_count: 1
@@ -3269,6 +3249,56 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
+    - player_id: antoine-semenyo
+      player_name: Antoine Semenyo
+      current_count: 1
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 4
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 4
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 4
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 4
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 4
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 4
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 4
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 4
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 4
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 4
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 4
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 4
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 4
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 4
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 4
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 4
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 3
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: anton-stach
       player_name: Anton Stach
       current_count: 1
@@ -3306,6 +3336,56 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
+    - player_id: aurèle-amenda
+      player_name: Aurèle Amenda
+      current_count: 1
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: bart-verbruggen
       player_name: Bart Verbruggen
@@ -3353,6 +3433,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: ben-white
       player_name: Ben White
       current_count: 1
@@ -3388,6 +3470,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: bobby-thomas
       player_name: Bobby Thomas
@@ -3435,6 +3519,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: bradley-barcola
       player_name: Bradley Barcola
       current_count: 1
@@ -3448,6 +3534,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: brenden-aaronson
       player_name: Brenden Aaronson
@@ -3495,6 +3583,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: brian-madjo
       player_name: Brian Madjo
       current_count: 1
@@ -3540,6 +3630,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: daniel-muñoz
       player_name: Daniel Muñoz
@@ -3587,6 +3679,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: diego-gómez
       player_name: Diego Gómez
       current_count: 1
@@ -3632,6 +3726,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: emiliano-martínez
       player_name: Emiliano Martínez
@@ -3679,6 +3775,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: evanilson
       player_name: Evanilson
       current_count: 1
@@ -3724,6 +3822,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: ezri-konsa
       player_name: Ezri Konsa
@@ -3771,6 +3871,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: ferdi-kadioglu
       player_name: Ferdi Kadioglu
       current_count: 1
@@ -3816,6 +3918,14 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
+    - player_id: granit-xhaka
+      player_name: Granit Xhaka
+      current_count: 1
+      history:
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: harry-wilson
       player_name: Harry Wilson
@@ -3863,6 +3973,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: igor-jesus
       player_name: Igor Jesus
       current_count: 1
@@ -3909,51 +4021,7 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
-    - player_id: ismaïla-sarr
-      player_name: Ismaïla Sarr
-      current_count: 1
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 2
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 2
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 1
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 1
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 1
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 1
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 1
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 1
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 1
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 1
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 1
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 1
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 1
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 1
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 1
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 1
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 1
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 1
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 1
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 1
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: issa-diop
       player_name: Issa Diop
@@ -4001,6 +4069,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: james-garner
       player_name: James Garner
       current_count: 1
@@ -4047,6 +4117,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: james-justin
       player_name: James Justin
       current_count: 1
@@ -4058,6 +4130,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: james-tarkowski
       player_name: James Tarkowski
@@ -4076,6 +4150,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: joe-gauci
       player_name: Joe Gauci
@@ -4123,6 +4199,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: joe-rodon
       player_name: Joe Rodon
       current_count: 1
@@ -4169,6 +4247,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: johan-manzambi
       player_name: Johan Manzambi
       current_count: 1
@@ -4182,6 +4262,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: john-mcginn
       player_name: John McGinn
@@ -4229,6 +4311,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: jorrel-hato
       player_name: Jorrel Hato
       current_count: 1
@@ -4274,6 +4358,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: jérémy-jacquet
       player_name: Jérémy Jacquet
@@ -4321,51 +4407,7 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
-    - player_id: kayne-van-oevelen
-      player_name: Kayne van Oevelen
-      current_count: 1
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 1
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 1
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 1
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 1
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 1
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 1
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 1
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 1
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 1
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 1
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 1
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 1
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 1
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 1
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 1
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 1
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 1
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 1
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 1
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 1
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: kobbie-mainoo
       player_name: Kobbie Mainoo
@@ -4413,6 +4455,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: lewis-cook
       player_name: Lewis Cook
       current_count: 1
@@ -4458,6 +4502,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: lewis-dunk
       player_name: Lewis Dunk
@@ -4505,6 +4551,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: lewis-hall
       player_name: Lewis Hall
       current_count: 1
@@ -4551,11 +4599,63 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
+    - player_id: luke-shaw
+      player_name: Luke Shaw
+      current_count: 1
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 4
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 4
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 4
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 4
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 4
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 4
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 4
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 3
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 3
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 3
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 3
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 3
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 3
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 3
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 3
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 3
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 3
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: malick-yalcouyé
       player_name: Malick Yalcouyé
       current_count: 1
       history:
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: mamadou-sangaré
       player_name: Mamadou Sangaré
@@ -4598,6 +4698,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: marco-palestra
       player_name: Marco Palestra
@@ -4645,97 +4747,7 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
-    - player_id: mason-burstow
-      player_name: Mason Burstow
-      current_count: 1
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 1
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 1
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 1
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 1
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 1
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 1
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 1
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 1
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 1
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 1
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 1
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 1
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 1
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 1
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 1
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 1
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 1
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 1
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 1
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 1
-        - captured_at: "2026-10-30T07:51:47Z"
-          manager_count: 1
-    - player_id: matty-cash
-      player_name: Matty Cash
-      current_count: 1
-      history:
-        - captured_at: "2026-08-24T12:00:00Z"
-          manager_count: 1
-        - captured_at: "2026-08-29T22:11:10Z"
-          manager_count: 1
-        - captured_at: "2026-08-30T19:35:06Z"
-          manager_count: 1
-        - captured_at: "2026-09-01T06:02:56Z"
-          manager_count: 1
-        - captured_at: "2026-09-03T06:41:17Z"
-          manager_count: 1
-        - captured_at: "2026-09-06T05:16:48Z"
-          manager_count: 1
-        - captured_at: "2026-09-12T05:13:53Z"
-          manager_count: 1
-        - captured_at: "2026-09-15T05:34:04Z"
-          manager_count: 1
-        - captured_at: "2026-09-19T05:15:20Z"
-          manager_count: 1
-        - captured_at: "2026-09-20T05:31:42Z"
-          manager_count: 1
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 1
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 1
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 1
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 1
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 1
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 1
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 1
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 1
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 1
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 1
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: michael-kayode
       player_name: Michael Kayode
@@ -4783,6 +4795,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: micky-van-de-ven
       player_name: Micky van de Ven
       current_count: 1
@@ -4828,6 +4842,56 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
+    - player_id: miguel-ángel-brau
+      player_name: Miguel Ángel Brau
+      current_count: 1
+      history:
+        - captured_at: "2026-08-24T12:00:00Z"
+          manager_count: 2
+        - captured_at: "2026-08-29T22:11:10Z"
+          manager_count: 2
+        - captured_at: "2026-08-30T19:35:06Z"
+          manager_count: 2
+        - captured_at: "2026-09-01T06:02:56Z"
+          manager_count: 2
+        - captured_at: "2026-09-03T06:41:17Z"
+          manager_count: 2
+        - captured_at: "2026-09-06T05:16:48Z"
+          manager_count: 2
+        - captured_at: "2026-09-12T05:13:53Z"
+          manager_count: 2
+        - captured_at: "2026-09-15T05:34:04Z"
+          manager_count: 2
+        - captured_at: "2026-09-19T05:15:20Z"
+          manager_count: 2
+        - captured_at: "2026-09-20T05:31:42Z"
+          manager_count: 2
+        - captured_at: "2026-10-02T06:24:18Z"
+          manager_count: 2
+        - captured_at: "2026-10-10T06:30:53Z"
+          manager_count: 2
+        - captured_at: "2026-10-11T06:36:45Z"
+          manager_count: 2
+        - captured_at: "2026-10-14T05:36:05Z"
+          manager_count: 2
+        - captured_at: "2026-10-17T05:10:40Z"
+          manager_count: 2
+        - captured_at: "2026-10-19T05:27:15Z"
+          manager_count: 2
+        - captured_at: "2026-10-20T05:30:07Z"
+          manager_count: 2
+        - captured_at: "2026-10-21T05:30:33Z"
+          manager_count: 2
+        - captured_at: "2026-10-24T05:11:41Z"
+          manager_count: 2
+        - captured_at: "2026-10-26T07:11:39Z"
+          manager_count: 2
+        - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 2
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: oscar-bobb
       player_name: Oscar Bobb
@@ -4875,6 +4939,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: pau-torres
       player_name: Pau Torres
       current_count: 1
@@ -4920,6 +4986,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: reece-james
       player_name: Reece James
@@ -4967,6 +5035,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: rio-ngumoha
       player_name: Rio Ngumoha
       current_count: 1
@@ -5012,6 +5082,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: ronald-araujo
       player_name: Ronald Araujo
@@ -5059,6 +5131,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: ryan-giles
       player_name: Ryan Giles
       current_count: 1
@@ -5088,6 +5162,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: ryan-gravenberch
       player_name: Ryan Gravenberch
@@ -5135,6 +5211,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: ryan-sessegnon
       player_name: Ryan Sessegnon
       current_count: 1
@@ -5180,6 +5258,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: sandro-tonali
       player_name: Sandro Tonali
@@ -5227,6 +5307,8 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
+          manager_count: 1
     - player_id: senne-lammens
       player_name: Senne Lammens
       current_count: 1
@@ -5272,6 +5354,8 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: timothy-castagne
       player_name: Timothy Castagne
@@ -5319,31 +5403,7 @@ players:
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
           manager_count: 1
-    - player_id: vitaly-janelt
-      player_name: Vitaly Janelt
-      current_count: 1
-      history:
-        - captured_at: "2026-10-02T06:24:18Z"
-          manager_count: 1
-        - captured_at: "2026-10-10T06:30:53Z"
-          manager_count: 1
-        - captured_at: "2026-10-11T06:36:45Z"
-          manager_count: 1
-        - captured_at: "2026-10-14T05:36:05Z"
-          manager_count: 1
-        - captured_at: "2026-10-17T05:10:40Z"
-          manager_count: 1
-        - captured_at: "2026-10-19T05:27:15Z"
-          manager_count: 1
-        - captured_at: "2026-10-20T05:30:07Z"
-          manager_count: 1
-        - captured_at: "2026-10-21T05:30:33Z"
-          manager_count: 1
-        - captured_at: "2026-10-24T05:11:41Z"
-          manager_count: 1
-        - captured_at: "2026-10-26T07:11:39Z"
-          manager_count: 1
-        - captured_at: "2026-10-30T07:51:47Z"
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1
     - player_id: zion-suzuki
       player_name: Zion Suzuki
@@ -5390,4 +5450,6 @@ players:
         - captured_at: "2026-10-26T07:11:39Z"
           manager_count: 1
         - captured_at: "2026-10-30T07:51:47Z"
+          manager_count: 1
+        - captured_at: "2026-10-31T07:41:05Z"
           manager_count: 1

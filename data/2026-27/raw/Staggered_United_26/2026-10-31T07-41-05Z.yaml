@@ -1,0 +1,51 @@
+manager_id: "26"
+manager_name: Les_Fathers
+team_name: Staggered_United
+captured_at: "2026-10-31T07:41:05Z"
+source: guysports
+players:
+    - player_id: james-trafford
+      name: James Trafford
+      position: GK
+      team_name: Leeds United
+    - player_id: jorrel-hato
+      name: Jorrel Hato
+      position: DEF
+      team_name: Chelsea
+    - player_id: nico-o-reilly
+      name: Nico O'Reilly
+      position: DEF
+      team_name: Manchester City
+    - player_id: lewis-hall
+      name: Lewis Hall
+      position: DEF
+      team_name: Newcastle United
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea
+    - player_id: morgan-rogers
+      name: Morgan Rogers
+      position: MID
+      team_name: Chelsea
+    - player_id: kobbie-mainoo
+      name: Kobbie Mainoo
+      position: MID
+      team_name: Manchester United
+    - player_id: sandro-tonali
+      name: Sandro Tonali
+      position: MID
+      team_name: Tottenham Hotspur
+    - player_id: nicolas-jackson
+      name: Nicolas Jackson
+      position: STR
+      team_name: Aston Villa
+    - player_id: igor-thiago
+      name: Igor Thiago
+      position: STR
+      team_name: Brentford
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=26&name=Staggered+United&view=public
