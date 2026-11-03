@@ -1,5 +1,21 @@
 manager_id: "7"
 manager_name: Steve_Whyley_Snr
 team_name: Rogues_Gallery
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 2
+latest_change_at: "2026-11-03T08:47:14Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "7"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-11-03T08:47:14Z"
+      added_players:
+        - player_id: morgan-rogers
+          name: Morgan Rogers
+        - player_id: tarik-muharemovic
+          name: Tarik Muharemovic
+      removed_players:
+        - player_id: bukayo-saka
+          name: Bukayo Saka
+        - player_id: harry-maguire
+          name: Harry Maguire
+      change_count: 2
