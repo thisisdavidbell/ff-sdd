@@ -1,0 +1,51 @@
+manager_id: "1"
+manager_name: Richard_Pearce
+team_name: Daisen_Giants
+captured_at: "2026-11-04T08:16:42Z"
+source: guysports
+players:
+    - player_id: caoimhín-kelleher
+      name: Caoimhín Kelleher
+      position: GK
+      team_name: Brentford
+    - player_id: riccardo-calafiori
+      name: Riccardo Calafiori
+      position: DEF
+      team_name: Arsenal
+    - player_id: maxim-de-cuyper
+      name: Maxim De Cuyper
+      position: DEF
+      team_name: Brighton & Hove Albion
+    - player_id: ronald-araujo
+      name: Ronald Araujo
+      position: DEF
+      team_name: Liverpool
+    - player_id: jérémy-jacquet
+      name: Jérémy Jacquet
+      position: DEF
+      team_name: Liverpool
+    - player_id: martin-ødegaard
+      name: Martin Ødegaard
+      position: MID
+      team_name: Arsenal
+    - player_id: pascal-groß
+      name: Pascal Groß
+      position: MID
+      team_name: Brighton & Hove Albion
+    - player_id: cole-palmer
+      name: Cole Palmer
+      position: MID
+      team_name: Chelsea
+    - player_id: nicolas-jackson
+      name: Nicolas Jackson
+      position: STR
+      team_name: Aston Villa
+    - player_id: alexander-isak
+      name: Alexander Isak
+      position: STR
+      team_name: Liverpool
+    - player_id: erling-haaland
+      name: Erling Haaland
+      position: STR
+      team_name: Manchester City
+raw_url: https://www.guysports.co.uk/guysports/publicteamdetail.php?id=1&name=Daisen+Giants&view=public

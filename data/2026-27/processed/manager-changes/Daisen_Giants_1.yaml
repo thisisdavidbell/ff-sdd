@@ -1,8 +1,8 @@
 manager_id: "1"
 manager_name: Richard_Pearce
 team_name: Daisen_Giants
-total_changes: 2
-latest_change_at: "2026-09-12T05:13:53Z"
+total_changes: 5
+latest_change_at: "2026-11-04T08:16:42Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "1"
@@ -19,3 +19,21 @@ event_history:
         - player_id: harry-maguire
           name: Harry Maguire
       change_count: 2
+    - manager_id: "1"
+      from_captured_at: "2026-09-12T05:13:53Z"
+      to_captured_at: "2026-11-04T08:16:42Z"
+      added_players:
+        - player_id: maxim-de-cuyper
+          name: Maxim De Cuyper
+        - player_id: nicolas-jackson
+          name: Nicolas Jackson
+        - player_id: ronald-araujo
+          name: Ronald Araujo
+      removed_players:
+        - player_id: joão-pedro
+          name: João Pedro
+        - player_id: malick-thiaw
+          name: Malick Thiaw
+        - player_id: milan-van-ewijk
+          name: Milan van Ewijk
+      change_count: 3

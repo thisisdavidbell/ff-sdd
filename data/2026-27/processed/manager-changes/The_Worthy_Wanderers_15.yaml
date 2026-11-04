@@ -1,5 +1,17 @@
 manager_id: "15"
 manager_name: Ollie_Dineen
 team_name: The_Worthy_Wanderers
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 1
+latest_change_at: "2026-11-04T08:16:42Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "15"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-11-04T08:16:42Z"
+      added_players:
+        - player_id: evanilson
+          name: Evanilson
+      removed_players:
+        - player_id: joão-pedro
+          name: João Pedro
+      change_count: 1
