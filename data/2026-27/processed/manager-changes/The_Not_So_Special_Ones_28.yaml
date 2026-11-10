@@ -1,5 +1,25 @@
 manager_id: "28"
 manager_name: Mike_Whyley
 team_name: The_Not_So_Special_Ones
-total_changes: 0
-changed_since_last_snapshot: false
+total_changes: 3
+latest_change_at: "2026-11-10T08:55:53Z"
+changed_since_last_snapshot: true
+event_history:
+    - manager_id: "28"
+      from_captured_at: "2026-08-29T22:11:10Z"
+      to_captured_at: "2026-11-10T08:55:53Z"
+      added_players:
+        - player_id: marcus-tavernier
+          name: Marcus Tavernier
+        - player_id: maxim-de-cuyper
+          name: Maxim De Cuyper
+        - player_id: nicolas-jackson
+          name: Nicolas Jackson
+      removed_players:
+        - player_id: brian-madjo
+          name: Brian Madjo
+        - player_id: christos-tzolis
+          name: Christos Tzolis
+        - player_id: harry-maguire
+          name: Harry Maguire
+      change_count: 3
