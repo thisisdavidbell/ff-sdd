@@ -1,8 +1,8 @@
 manager_id: "20"
 manager_name: Boardmen
 team_name: Kopper_Highlights
-total_changes: 2
-latest_change_at: "2026-10-11T06:36:45Z"
+total_changes: 4
+latest_change_at: "2026-11-21T08:56:52Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "20"
@@ -18,4 +18,18 @@ event_history:
           name: Igor Jesus
         - player_id: pedro-porro
           name: Pedro Porro
+      change_count: 2
+    - manager_id: "20"
+      from_captured_at: "2026-10-11T06:36:45Z"
+      to_captured_at: "2026-11-21T08:56:52Z"
+      added_players:
+        - player_id: evanilson
+          name: Evanilson
+        - player_id: nicolas-jackson
+          name: Nicolas Jackson
+      removed_players:
+        - player_id: igor-thiago
+          name: Igor Thiago
+        - player_id: joão-pedro
+          name: João Pedro
       change_count: 2
