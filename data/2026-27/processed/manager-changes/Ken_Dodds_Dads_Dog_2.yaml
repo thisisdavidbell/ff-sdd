@@ -1,8 +1,8 @@
 manager_id: "2"
 manager_name: Graeme_Mansell
 team_name: Ken_Dodds_Dads_Dog
-total_changes: 1
-latest_change_at: "2026-10-21T05:30:33Z"
+total_changes: 3
+latest_change_at: "2026-11-26T10:10:19Z"
 changed_since_last_snapshot: true
 event_history:
     - manager_id: "2"
@@ -15,3 +15,17 @@ event_history:
         - player_id: antoine-semenyo
           name: Antoine Semenyo
       change_count: 1
+    - manager_id: "2"
+      from_captured_at: "2026-10-21T05:30:33Z"
+      to_captured_at: "2026-11-26T10:10:19Z"
+      added_players:
+        - player_id: evanilson
+          name: Evanilson
+        - player_id: luka-vuskovic
+          name: Luka Vuskovic
+      removed_players:
+        - player_id: joão-pedro
+          name: João Pedro
+        - player_id: leif-davis
+          name: Leif Davis
+      change_count: 2
